@@ -4,39 +4,21 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>QR Code - Time to Learn English</title>
-	<link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/blog.css" rel="stylesheet">
-	<script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
     <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
+      html, body {
+        height: 100%;
       }
-      
-      body {
-        background-color: #ffffff;
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-      
-      .qr-container {
-        text-align: center;
-      }
-      
-      .qr-container svg {
-        max-width: 300px;
-        height: auto;
-      }
-     
     </style>
   </head>
-  <body>
-    <div class="qr-container">
-      <img src="img/qr-code.svg" alt="QR Code" style="max-width: 300px; height: auto;">
-      <p><a class="blog-header-logo header-link text-dark" href="index.html">Time to Learn English</a></p>
+  <body class="bg-white d-flex justify-content-center align-items-center p-3">
+    <div class="text-center">
+      <img src="img/qr-code.svg" alt="QR Code" class="img-fluid" style="max-width: 300px;">
+      <p class="mt-3 mb-0">
+        <a class="blog-header-logo header-link text-dark" href="index.html">Time to Learn English</a>
+      </p>
     </div>
   </body>
 </html>
