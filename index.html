@@ -40,6 +40,29 @@
           font-size: 3.5rem;
         }
       }
+	  @keyframes bg-scroll {
+			0% { background-position: 0 center; }
+			100% { background-position: -1300px center; }
+		}
+
+		.animate-bg {
+			background-image: url('img/full-bg.jpg');
+			background-repeat: repeat-x;
+			background-size: auto 100%;
+			background-position: 0 center;
+			animation: bg-scroll 270s linear infinite;
+		}
+
+		.animate-bg::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background: rgba(0, 0, 0, 0.55);
+			border-radius: inherit;
+		}
     </style>
 
   </head>
@@ -74,9 +97,9 @@
 </div>
 
 <main class="container">
-  <div class="p-4 p-md-5 mb-4 text-white rounded second-bg">
-    <div class="col-md-6 px-0">
-        <h1 class="display-4 fst-italic">Giveaway Coming Soon!🎁</h1>
+  <div class="p-4 p-md-5 mb-4 text-white rounded second-bg animate-bg position-relative">
+    <div class="col-md-6 px-0 position-relative">
+        <h1 class="display-4 fst-italic">Giveaway Coming Soon! 🎁</h1>
         <p class="lead my-3">We're launching a lottery for a <strong>gift certificate</strong> — an 8-meeting subscription to Moscow English speaking clubs. New friends, live English practice, and a great atmosphere. Stay tuned!</p>
         <p class="lead mb-0"><a href="https://forms.yandex.ru/u/69ecb58590fa7b2a738608f0" target="_blank" class="text-white fw-bold">Subscribe not to miss →</a></p>
     </div>
