@@ -1,192 +1,291 @@
-
 <!doctype html>
 <html lang="en" data-bs-theme="dark">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="Alexey Leonov, and Bootstrap contributors">
-    <title>Time to Learn English</title>   
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="" />
+        <meta name="author" content="Alexey Leonov, and Bootstrap contributors" />
+        <title>Time to Learn English</title>
 
-	<link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/blog.css" rel="stylesheet">
-	<script src="js/bootstrap.bundle.min.js"></script>
+        <link href="css/bootstrap.min.css" rel="stylesheet" />
+        <link href="css/blog.css" rel="stylesheet" />
+        <script src="js/bootstrap.bundle.min.js"></script>
 
-	<meta name="theme-color" content="#7952b3">
-	
-	<meta property="og:title" content="Time to Learn English">
-	<meta property="og:description" content="Your go-to guide for live English practice in Moscow. Speaking clubs, game nights, stand-up shows, and more!">
-	<meta property="og:image" content="https://alexey0097.github.io/time-to-learn-english/img/preview.jpg">
-	<meta property="og:url" content="https://alexey0097.github.io/time-to-learn-english/">
-	<meta property="og:type" content="website">
+        <meta name="theme-color" content="#7952b3" />
 
-	<link rel="icon" type="image/png" href="img/favicon/favicon-96x96.png" sizes="96x96" />
-	<link rel="icon" type="image/svg+xml" href="img/favicon/favicon.svg" />
-	<link rel="shortcut icon" href="img/favicon/favicon.ico" />
-	<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png" />
-	<link rel="manifest" href="img/favicon/site.webmanifest" />
+        <meta property="og:title" content="Time to Learn English" />
+        <meta
+            property="og:description"
+            content="Your go-to guide for live English practice in Moscow. Speaking clubs, game nights, stand-up shows, and more!"
+        />
+        <meta property="og:image" content="https://alexey0097.github.io/time-to-learn-english/img/preview.jpg" />
+        <meta property="og:url" content="https://alexey0097.github.io/time-to-learn-english/" />
+        <meta property="og:type" content="website" />
 
-	<style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        user-select: none;
-      }
+        <link rel="icon" type="image/png" href="img/favicon/favicon-96x96.png" sizes="96x96" />
+        <link rel="icon" type="image/svg+xml" href="img/favicon/favicon.svg" />
+        <link rel="shortcut icon" href="img/favicon/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png" />
+        <link rel="manifest" href="img/favicon/site.webmanifest" />
 
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-	  @keyframes bg-scroll {
-			0% { background-position: 0 center; }
-			100% { background-position: -1300px center; }
-		}
+        <style>
+            .bd-placeholder-img {
+                font-size: 1.125rem;
+                text-anchor: middle;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                user-select: none;
+            }
 
-		.animate-bg {
-			background-image: url('img/full-bg.jpg');
-			background-repeat: repeat-x;
-			background-size: auto 100%;
-			background-position: 0 center;
-			animation: bg-scroll 270s linear infinite;
-		}
+            @media (min-width: 768px) {
+                .bd-placeholder-img-lg {
+                    font-size: 3.5rem;
+                }
+            }
+            @keyframes bg-scroll {
+                0% {
+                    background-position: 0 center;
+                }
+                100% {
+                    background-position: -1300px center;
+                }
+            }
 
-		.animate-bg::before {
-			content: '';
-			position: absolute;
-			top: 0;
-			left: 0;
-			right: 0;
-			bottom: 0;
-			background: rgba(0, 0, 0, 0.55);
-			border-radius: inherit;
-		}
-    </style>
-	
-	<!-- Yandex.Metrika counter -->
-	<script type="text/javascript">
-		(function(m,e,t,r,i,k,a){
-			m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-			m[i].l=1*new Date();
-			for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-			k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
-		})(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=108766865', 'ym');
+            .animate-bg {
+                background-image: url("img/full-bg.jpg");
+                background-repeat: repeat-x;
+                background-size: auto 100%;
+                background-position: 0 center;
+                animation: bg-scroll 270s linear infinite;
+            }
 
-		ym(108766865, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
-	</script>
-	<noscript><div><img src="https://mc.yandex.ru/watch/108766865" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-	<!-- /Yandex.Metrika counter -->
+            .animate-bg::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba(0, 0, 0, 0.55);
+                border-radius: inherit;
+            }
+        </style>
 
-  </head>
-  <body>
-    
-<div class="container">
-  <header class="blog-header py-3">
-    <div class="row flex-nowrap justify-content-between align-items-center">
-      <div class="col-4 pt-1">
-        <a class="link-secondary" target="_blank" href="https://t.me/eng_events">Subscribe</a>
-      </div>
-      <div class="col-4 text-center">
-        <a class="blog-header-logo header-link" href="index.html">Time to Learn English</a>
-      </div>
-      <div class="col-4 d-flex justify-content-end align-items-center">
-        <a class="link-secondary" href="#" aria-label="Search">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="mx-3" role="img" viewBox="0 0 24 24"><title>Search</title><circle cx="10.5" cy="10.5" r="7.5"/><path d="M21 21l-5.2-5.2"/></svg>
-        </a>
-        <a class="btn btn-sm btn-outline-secondary" href="#">Sign up</a>
-      </div>
-    </div>
-  </header>
+        <!-- Yandex.Metrika counter -->
+        <script type="text/javascript">
+            (function (m, e, t, r, i, k, a) {
+                m[i] =
+                    m[i] ||
+                    function () {
+                        (m[i].a = m[i].a || []).push(arguments);
+                    };
+                m[i].l = 1 * new Date();
+                for (var j = 0; j < document.scripts.length; j++) {
+                    if (document.scripts[j].src === r) {
+                        return;
+                    }
+                }
+                (k = e.createElement(t)),
+                    (a = e.getElementsByTagName(t)[0]),
+                    (k.async = 1),
+                    (k.src = r),
+                    a.parentNode.insertBefore(k, a);
+            })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js?id=108766865", "ym");
 
-  <div class="nav-scroller py-1 mb-2">
-    <nav class="nav d-flex justify-content-between">
-      <a class="p-2 link-secondary" href="index.html#actual-schedule">Schedule</a>
-      <a class="p-2 link-secondary" href="#">Clubs</a>
-      <a class="p-2 link-secondary" href="#">Teachers</a>
-      <a class="p-2 link-secondary" href="#contacts">Contacts</a>
-    </nav>
-  </div>
-</div>
+            ym(108766865, "init", {
+                ssr: true,
+                webvisor: true,
+                clickmap: true,
+                ecommerce: "dataLayer",
+                referrer: document.referrer,
+                url: location.href,
+                accurateTrackBounce: true,
+                trackLinks: true,
+            });
+        </script>
+        <noscript
+            ><div>
+                <img src="https://mc.yandex.ru/watch/108766865" style="position: absolute; left: -9999px" alt="" /></div
+        ></noscript>
+        <!-- /Yandex.Metrika counter -->
+    </head>
+    <body>
+        <div class="container">
+            <header class="blog-header py-3">
+                <div class="row flex-nowrap justify-content-between align-items-center">
+                    <div class="col-4 pt-1">
+                        <a class="link-secondary" target="_blank" href="https://t.me/eng_events">Subscribe</a>
+                    </div>
+                    <div class="col-4 text-center">
+                        <a class="blog-header-logo header-link" href="index.html">Time to Learn English</a>
+                    </div>
+                    <div class="col-4 d-flex justify-content-end align-items-center">
+                        <a class="link-secondary" href="#" aria-label="Search">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="20"
+                                height="20"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                class="mx-3"
+                                role="img"
+                                viewBox="0 0 24 24"
+                            >
+                                <title>Search</title>
+                                <circle cx="10.5" cy="10.5" r="7.5" />
+                                <path d="M21 21l-5.2-5.2" />
+                            </svg>
+                        </a>
+                        <a class="btn btn-sm btn-outline-secondary" href="#">Sign up</a>
+                    </div>
+                </div>
+            </header>
 
-<main class="container">
-  <div class="row g-5" style="margin-left: 0; margin-right: 0;">
-    <div class="col-md-8" style="max-width: 100%;">
-	 
-	  <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm position-relative">
-		<div class="col p-4 d-flex flex-column position-static">
-		  <strong class="d-inline-block mb-2 text-primary">Speed Meetings</strong>
-		  <h3 class="mb-0">Real Talk English Club</h3>
-		  <div class="mb-1 text-muted">Tue, Wed, Fri, Sat, Sun</div>
-		  <p class="card-text mb-auto">11 years of live English in the heart of Moscow. 1-on-1 conversations, switching partners every 15 minutes, 20–35 people per night. No boring lectures — just real communication and board games after. Perfect for Intermediate and above.</p>
-		  <a href="real-talk.html" class="stretched-link">Full details</a>
-		</div>
-		<div class="col-auto d-none d-lg-block">
-		  <img src="img/min_photo_2026-04-19_18-19-53.jpg" width="200" height="250" style="object-fit: cover;object-position: 15% 85%;">
-		</div>
-	  </div>
-	  <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm position-relative">
-		  <div class="col p-4 d-flex flex-column position-static">
-			<strong class="d-inline-block mb-2 text-primary">Speaking Meetings</strong>
-			<h3 class="mb-0">English Club with Nataly</h3>
-			<div class="mb-1 text-muted">Mon, Tue, Wed, Thu, Fri, Sat, Sun</div>
-			<p class="card-text mb-auto">Cozy conversations in pairs and mini-groups — no lectures, you speak 90% of the time. Interest Circles, speed dating, board game nights, and rooftop sessions in summer. Hosts pair you by level so everyone feels comfortable.</p>
-			<a href="nataly-club.html" class="stretched-link">Full details</a>
-		  </div>
-		  <div class="col-auto d-none d-lg-block">
-			<img src="img/min_IMG_2212.JPG" width="200" height="250" style="object-fit: cover; object-position: 0% 50%;">
-		  </div>
-		</div>
-	  <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-		<div class="col p-4 d-flex flex-column position-static">
-		  <strong class="d-inline-block mb-2 text-success">Board Games</strong>
-		  <h3 class="mb-0">Mendeley the Cat Game Club</h3>
-		  <div class="mb-1 text-muted">Sat</div>
-		  <p class="mb-auto">A classic game of deception, deduction, and diplomacy — entirely in English. 4 hours of bluffing, arguing, and reading people at a cozy venue. Sharpen your logic, boost your charisma, and practice English without even noticing.</p>
-		  <a href="igroteka-kota-m.html" class="stretched-link">Full details</a>
-		</div>
-		<div class="col-auto d-none d-lg-block">
-		  <img src="img/min_photo_2026-03-11_18-45-04.jpg" width="200" height="250" style="object-fit: cover;object-position: 60% 40%;">
-
-		</div>
-	  </div>
-	  
-	  <nav class="blog-pagination" aria-label="Pagination">
-        <a class="btn btn-outline-primary" href="#archives">Older</a>
-        <a class="btn btn-outline-secondary disabled" href="#" tabindex="-1" aria-disabled="true">Newer</a>
-      </nav>
-
-    </div>
-
-    <div class="col-md-4">
-      <div class="position-sticky" style="top: 2rem;">
-        <div class="p-4 mb-3 second-bg rounded">
-          <h4 class="fst-italic">About</h4>
-          <p class="mb-0">Hi, my name is Alex! This website is your go-to guide for live English practice in Moscow. We post a daily schedule of free and paid speaking clubs, game nights, stand-up shows, and other English events. Come talk with us!</p>
+            <div class="nav-scroller py-1 mb-2">
+                <nav class="nav d-flex justify-content-between">
+                    <a class="p-2 link-secondary" href="index.html#actual-schedule">Schedule</a>
+                    <a class="p-2 link-secondary" href="#">Clubs</a>
+                    <a class="p-2 link-secondary" href="#">Teachers</a>
+                    <a class="p-2 link-secondary" href="#contacts">Contacts</a>
+                </nav>
+            </div>
         </div>
 
-        <div id="contacts" class="p-4">
-          <h4 class="fst-italic">Elsewhere</h4>
-          <ol class="list-unstyled">
-            <li>Email: <a href="mailto:alexey0097@yandex.ru" target="_blank">alexey0097@yandex.ru</a></li>
-            <li>Telegram: <a href="https://t.me/eng_events" target="_blank">@eng_events</a></li>
-            <li>QR Code: <a href="qr-code.html">time-to-learn-eng</a></li>
-          </ol>
-        </div>
-      </div>
-    </div>
-  </div>
+        <main class="container">
+            <div class="row g-5" style="margin-left: 0; margin-right: 0">
+                <div class="col-md-8" style="max-width: 100%">
+                    <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm position-relative">
+                        <div class="col p-4 d-flex flex-column position-static">
+                            <strong class="d-inline-block mb-2 text-primary">Speed Meetings</strong>
+                            <h3 class="mb-0">Real Talk English Club</h3>
+                            <div class="mb-1 text-muted">Tue, Wed, Fri 19:00 & Sat, Sun 15:00, Moscow time</div>
+                            <p class="card-text mb-auto">
+                                11 years of live English in the heart of Moscow. 1-on-1 conversations, switching
+                                partners every 15 minutes, 20–35 people per night. No boring lectures — just real
+                                communication and board games after. Perfect for Intermediate and above.
+                            </p>
+                            <a href="real-talk.html" class="stretched-link">Full details</a>
+                        </div>
+                        <div class="col-auto d-none d-lg-block">
+                            <img
+                                src="img/min_photo_2026-04-19_18-19-53.jpg"
+                                width="200"
+                                height="250"
+                                style="object-fit: cover; object-position: 15% 85%"
+                            />
+                        </div>
+                    </div>
+                    <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm position-relative">
+                        <div class="col p-4 d-flex flex-column position-static">
+                            <strong class="d-inline-block mb-2 text-primary">Speed Meetings</strong>
+                            <h3 class="mb-0">English Club with Nataly</h3>
+                            <div class="mb-1 text-muted">Mon, Tue, Wed, Thu, Fri, Sat, Sun</div>
+                            <p class="card-text mb-auto">
+                                Cozy conversations in pairs and mini-groups — no lectures, you speak 90% of the time.
+                                Interest Circles, speed dating, board game nights, and rooftop sessions in summer. Hosts
+                                pair you by level so everyone feels comfortable.
+                            </p>
+                            <a href="nataly-club.html" class="stretched-link">Full details</a>
+                        </div>
+                        <div class="col-auto d-none d-lg-block">
+                            <img
+                                src="img/min_IMG_2212.JPG"
+                                width="200"
+                                height="250"
+                                style="object-fit: cover; object-position: 0% 50%"
+                            />
+                        </div>
+                    </div>
+                    <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                        <div class="col p-4 d-flex flex-column position-static">
+                            <strong class="d-inline-block mb-2 text-success">Board Games</strong>
+                            <h3 class="mb-0">Mendeley the Cat Game Club</h3>
+                            <div class="mb-1 text-muted">Sat 17:00, Moscow time</div>
+                            <p class="mb-auto">
+                                A classic game of deception, deduction, and diplomacy — entirely in English. 4 hours of
+                                bluffing, arguing, and reading people at a cozy venue. Sharpen your logic, boost your
+                                charisma, and practice English without even noticing.
+                            </p>
+                            <a href="igroteka-kota-m.html" class="stretched-link">Full details</a>
+                        </div>
+                        <div class="col-auto d-none d-lg-block">
+                            <img
+                                src="img/min_photo_2026-03-11_18-45-04.jpg"
+                                width="200"
+                                height="250"
+                                style="object-fit: cover; object-position: 60% 40%"
+                            />
+                        </div>
+                    </div>
+                    <h3 class="pb-4 mb-4 fst-italic border-bottom">
+							        Online
+							      </h3>
+							      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm position-relative">
+										    <div class="col p-4 d-flex flex-column position-static">
+										        <strong class="d-inline-block mb-2 text-info">Group Meetings</strong>
+										        <h3 class="mb-0">English Galaxy Speaking Club</h3>
+										        <div class="mb-1 text-muted">Thu 19:00 (A1-A2) & Sun 14:00 (A2+), Moscow time</div>
+										        <p class="card-text mb-auto">
+										            Free Zoom practice with guided vocab and questions. Thu for beginners, Sun role-plays for A2+. 
+										            Welcoming atmosphere, zero pressure. You can just listen if you’re not ready to speak.
+										        </p>
+										        <a href="english-galaxy-club.html" class="stretched-link">Full details</a>
+										    </div>
+										    <div class="col-auto d-none d-lg-block">
+										        <img
+										            src="img/photo_2023-03-07_21-32-04.jpg"
+										            width="200"
+										            height="250"
+										            style="object-fit: cover; object-position: 51% 0%"
+										        />
+										    </div>
+										</div>
+                    <nav class="blog-pagination" aria-label="Pagination">
+                        <a class="btn btn-outline-primary" href="#archives">Older</a>
+                        <a class="btn btn-outline-secondary disabled" href="#" tabindex="-1" aria-disabled="true"
+                            >Newer</a
+                        >
+                    </nav>
+                </div>
 
-</main>
+                <div class="col-md-4">
+                    <div class="position-sticky" style="top: 2rem">
+                        <div class="p-4 mb-3 second-bg rounded">
+                            <h4 class="fst-italic">About</h4>
+                            <p class="mb-0">
+                                Hi, my name is Alex! This website is your go-to guide for live English practice in
+                                Moscow. We post a daily schedule of free and paid speaking clubs, game nights, stand-up
+                                shows, and other English events. Come talk with us!
+                            </p>
+                        </div>
 
-<footer class="blog-footer">
-  <p>Blog template built for <a href="https://getbootstrap.com/">Bootstrap</a> by <a href="https://t.me/alexey_acc">@alexey_acc</a>.</p>
-  <p>
-    <a href="#">Back to top</a>
-  </p>
-</footer>
+                        <div id="contacts" class="p-4">
+                            <h4 class="fst-italic">Elsewhere</h4>
+                            <ol class="list-unstyled">
+                                <li>
+                                    Email:
+                                    <a href="mailto:alexey0097@yandex.ru" target="_blank">alexey0097@yandex.ru</a>
+                                </li>
+                                <li>Telegram: <a href="https://t.me/eng_events" target="_blank">@eng_events</a></li>
+                                <li>QR Code: <a href="qr-code.html">time-to-learn-eng</a></li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
 
-    
-  </body>
+        <footer class="blog-footer">
+            <p>
+                Blog template built for <a href="https://getbootstrap.com/">Bootstrap</a> by
+                <a href="https://t.me/alexey_acc">@alexey_acc</a>.
+            </p>
+            <p>
+                <a href="#">Back to top</a>
+            </p>
+        </footer>
+    </body>
 </html>
