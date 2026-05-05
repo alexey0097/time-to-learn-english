@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="" />
+        <meta name="author" content="Alexey Leonov, and Bootstrap contributors" />
+        <title>Time to Learn English</title>
+
+        <link href="css/bootstrap.min.css" rel="stylesheet" />
+        <link href="css/blog.css" rel="stylesheet" />
+        <script src="js/bootstrap.bundle.min.js"></script>
+
+        <meta name="theme-color" content="#7952b3" />
+
+        <meta property="og:title" content="Time to Learn English" />
+        <meta
+            property="og:description"
+            content="Your go-to guide for live English practice in Moscow. Speaking clubs, game nights, stand-up shows, and more!"
+        />
+        <meta property="og:image" content="https://alexey0097.github.io/time-to-learn-english/img/preview.jpg" />
+        <meta property="og:url" content="https://alexey0097.github.io/time-to-learn-english/" />
+        <meta property="og:type" content="website" />
+
+        <link rel="icon" type="image/png" href="img/favicon/favicon-96x96.png" sizes="96x96" />
+        <link rel="icon" type="image/svg+xml" href="img/favicon/favicon.svg" />
+        <link rel="shortcut icon" href="img/favicon/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png" />
+        <link rel="manifest" href="img/favicon/site.webmanifest" />
+
+        <style>
+            .bd-placeholder-img {
+                font-size: 1.125rem;
+                text-anchor: middle;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                user-select: none;
+            }
+
+            @media (min-width: 768px) {
+                .bd-placeholder-img-lg {
+                    font-size: 3.5rem;
+                }
+            }
+            @keyframes bg-scroll {
+                0% {
+                    background-position: 0 center;
+                }
+                100% {
+                    background-position: -1300px center;
+                }
+            }
+
+            .animate-bg {
+                background-image: url("img/full-bg.jpg");
+                background-repeat: repeat-x;
+                background-size: auto 100%;
+                background-position: 0 center;
+                animation: bg-scroll 270s linear infinite;
+            }
+
+            .animate-bg::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba(0, 0, 0, 0.55);
+                border-radius: inherit;
+            }
+        </style>
+
+        <!-- Yandex.Metrika counter -->
+        <script type="text/javascript">
+            (function (m, e, t, r, i, k, a) {
+                m[i] =
+                    m[i] ||
+                    function () {
+                        (m[i].a = m[i].a || []).push(arguments);
+                    };
+                m[i].l = 1 * new Date();
+                for (var j = 0; j < document.scripts.length; j++) {
+                    if (document.scripts[j].src === r) {
+                        return;
+                    }
+                }
+                (k = e.createElement(t)),
+                    (a = e.getElementsByTagName(t)[0]),
+                    (k.async = 1),
+                    (k.src = r),
+                    a.parentNode.insertBefore(k, a);
+            })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js?id=108766865", "ym");
+
+            ym(108766865, "init", {
+                ssr: true,
+                webvisor: true,
+                clickmap: true,
+                ecommerce: "dataLayer",
+                referrer: document.referrer,
+                url: location.href,
+                accurateTrackBounce: true,
+                trackLinks: true,
+            });
+        </script>
+        <noscript
+            ><div>
+                <img src="https://mc.yandex.ru/watch/108766865" style="position: absolute; left: -9999px" alt="" /></div
+        ></noscript>
+        <!-- /Yandex.Metrika counter -->
+    </head>
+    <body>
+        <div class="container">
+            <header class="blog-header py-3">
+                <div class="row flex-nowrap justify-content-between align-items-center">
+                    <div class="col-4 pt-1">
+                        <a class="link-secondary" target="_blank" href="https://t.me/eng_events">Subscribe</a>
+                    </div>
+                    <div class="col-4 text-center">
+                        <a class="blog-header-logo header-link" href="index.html">Time to Learn English</a>
+                    </div>
+                    <div class="col-4 d-flex justify-content-end align-items-center">
+                        <a class="link-secondary" href="#" aria-label="Search">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="20"
+                                height="20"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                class="mx-3"
+                                role="img"
+                                viewBox="0 0 24 24"
+                            >
+                                <title>Search</title>
+                                <circle cx="10.5" cy="10.5" r="7.5" />
+                                <path d="M21 21l-5.2-5.2" />
+                            </svg>
+                        </a>
+                        <a class="btn btn-sm btn-outline-secondary" href="#">Sign up</a>
+                    </div>
+                </div>
+            </header>
+
+            <div class="nav-scroller py-1 mb-2">
+                <nav class="nav d-flex justify-content-between">
+                    <a class="p-2 link-secondary" href="index.html#actual-schedule">Schedule</a>
+                    <a class="p-2 link-secondary" href="clubs.html">Clubs</a>
+                    <a class="p-2 link-secondary" href="#">Teachers</a>
+                    <a class="p-2 link-secondary" href="#contacts">Contacts</a>
+                </nav>
+            </div>
+        </div>
+
+        <main class="container">
+            <div class="row g-5" style="margin-left: 0; margin-right: 0">
+                <div class="col-md-8" style="max-width: 100%">
+                    <article id="ReadingVocabClub" class="blog-post">
+                        <h2 class="blog-post-title">Reading and Vocabulary Club</h2>
+                        <p class="blog-post-meta">May 5, 2026 by <a href="#contacts">Alexey Leonov</a></p>
+
+                        <img
+                            src="img/min_IMG_1840.JPG"
+                            class="rounded mb-4 img-fluid"
+                            alt="Reading and Vocabulary Club"
+                            style="max-height: 400px; max-width: 100%; object-fit: cover"
+                        />
+
+                        <p>
+                            <strong>Free online reading club with a CELTA-certified teacher.</strong> Read authentic
+                            texts, learn new words in context, and actually use them in conversation. No homework, no
+                            preparation — just show up and practice. Making mistakes is absolutely fine. 😌
+                        </p>
+
+                        <hr />
+
+                        <p><strong>💫 Price:</strong> Free in 2026</p>
+                        <p>
+                            <strong>💫 Sign-Up:</strong> Message Elena directly:
+                            <a href="https://t.me/helen_9119" target="_blank">@helen_9119</a> or leave a comment in the
+                            channel
+                        </p>
+                        <p><strong>💫 Where:</strong> Online (Zoom, camera on)</p>
+                        <p><strong>💫 When:</strong> Sunday 20:00 (60 min with a short break)</p>
+
+                        <hr />
+
+                        <p>
+                            <strong>Level:</strong> B1–B2 (Intermediate). Not sure about your level? Elena explains
+                            it simply: you can chat on everyday topics, understand most news and fiction, and actively
+                            express your opinion. If that sounds like you — come join!
+                        </p>
+                        <p>
+                            <strong>Group size:</strong> 4 to 12 people. Registration is required so everyone feels
+                            comfortable. If your plans change, just let Elena know — no hard feelings.
+                        </p>
+
+                        <hr />
+
+                        <p>
+                            <strong>What we read:</strong> Authentic, non-adapted materials — book excerpts,
+                            articles, short stories. Past topics include the psychology of color and light from
+                            <em>Joyful</em> by Ingrid Fetell Lee, fake news detection, sleep science from Matthew
+                            Walker's <em>Why We Sleep</em>, and even a special Women's Day session with Gloria Gaynor's
+                            lyrics. 🎶
+                        </p>
+                        <p>
+                            <strong>About the teacher:</strong> Elena Larina has been teaching English since 2014 and
+                            earned her CELTA certificate from Cambridge in 2025. She also runs free charity lessons for
+                            motivated students and believes that <em>motivation is the best payment for success</em>. ❤️
+                        </p>
+
+                        <hr />
+
+                        <p>
+                            📢 Club announcements and schedule:
+                            <a href="https://t.me/reading_and_vocabulary_club" target="_blank"
+                                >@reading_and_vocabulary_club</a
+                            >
+                        </p>
+                    </article>
+                    <nav class="blog-pagination" aria-label="Pagination">
+                        <a class="btn btn-outline-primary" href="#archives">Older</a>
+                        <a class="btn btn-outline-secondary disabled" href="#" tabindex="-1" aria-disabled="true"
+                            >Newer</a
+                        >
+                    </nav>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="position-sticky" style="top: 2rem">
+                        <div class="p-4 mb-3 second-bg rounded">
+                            <h4 class="fst-italic">About</h4>
+                            <p class="mb-0">
+                                Hi, my name is Alex! This website is your go-to guide for live English practice in
+                                Moscow. We post a daily schedule of free and paid speaking clubs, game nights, stand-up
+                                shows, and other English events. Come talk with us!
+                            </p>
+                        </div>
+
+                        <div id="contacts" class="p-4">
+                            <h4 class="fst-italic">Elsewhere</h4>
+                            <ol class="list-unstyled">
+                                <li>
+                                    Email:
+                                    <a href="mailto:alexey0097@yandex.ru" target="_blank">alexey0097@yandex.ru</a>
+                                </li>
+                                <li>Telegram: <a href="https://t.me/eng_events" target="_blank">@eng_events</a></li>
+                                <li>QR Code: <a href="qr-code.html">time-to-learn-eng</a></li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="blog-footer">
+            <p>
+                Blog template built for <a href="https://getbootstrap.com/">Bootstrap</a> by
+                <a href="https://t.me/alexey_acc">@alexey_acc</a>.
+            </p>
+            <p>
+                <a href="#">Back to top</a>
+            </p>
+        </footer>
+    </body>
+</html>
