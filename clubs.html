@@ -264,16 +264,16 @@
                     const clubs = [
                           {
                             "name": "Blah-Blah Club",
-                            "time": "",
-                            "desc": "",
-                            "link": "",
-                            "image": "",
-                            "type": [],
-                            "isActive": false,
+                            "time": "Mon, Tue, Wed, Thu, Fri, Sat, Sun, Moscow time",
+                            "desc": "Cosy meetups over coffee at Surf Coffee® spots across Moscow and SPb. Small groups of 4–12, prepared topics and vocab sent in advance, game nights and picnics included. We hav a trial meetup, members get 10% off drinks.",
+                            "link": "blah-blah-club.html",
+                            "image": "img/min_ed760b3e-cde4-47e4-9cf8-a30b42623a7e.jpg",
+                            "type": ["Group Meetings"],
+                            "isActive": true,
                             "priority": 0,
-                            "imagePosition": "",
-                            "cost": 0,
-                            "daysOfWeek": []
+                            "imagePosition": "0% 60%",
+                            "cost": 1,
+                            "daysOfWeek": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
                           },
                           {
                             "name": "Chatty Chillies",
@@ -904,7 +904,8 @@
                             if (club.type && club.type.length > 0) {
                                 const firstType = club.type[0].toLowerCase();
                                 if (firstType.includes('board') || firstType.includes('game')) badgeColor = 'text-success';
-                                if (firstType.includes('online') || firstType.includes('group')) badgeColor = 'text-info';
+                                if (firstType.includes('online')) badgeColor = 'text-info';
+                                if (firstType.includes('group')) badgeColor = 'text-warning';
                             }
                             
                             const imageHTML = club.image 
