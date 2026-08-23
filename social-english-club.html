@@ -131,19 +131,6 @@
                 border-radius: 8px;
                 margin-bottom: 12px;
             }
-            .signup-box {
-                max-width: 420px;
-            }
-            .signup-success {
-                max-width: 420px;
-                background: #16341f;
-                color: #7ddba3;
-                border-radius: 10px;
-                padding: 28px 20px;
-                font-size: 1rem;
-                font-weight: 600;
-                text-align: center;
-            }
         </style>
 
         <!-- Yandex.Metrika counter -->
@@ -472,45 +459,18 @@
                         <h3>Оставить заявку на участие</h3>
 
                         <p class="text-muted">
-                            Это не регистрация — просто чтобы не потерять контакт с тобой. Заявка уходит организатору
-                            клуба на почту через сервис formsubmit.co.
+                            Это не регистрация — просто чтобы не потерять контакт с тобой. Анкета откроется в новой
+                            вкладке.
                         </p>
 
-                        <form class="signup-box" id="signupForm">
-                            <input type="hidden" name="_subject" value="Новая заявка — Social English by Leonid" />
-                            <input type="hidden" name="_template" value="table" />
-                            <input type="hidden" name="_captcha" value="false" />
-                            <div class="mb-3">
-                                <label class="form-label" for="s-name">Имя</label>
-                                <input class="form-control" id="s-name" name="name" type="text" required />
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label" for="s-tg">Telegram ID</label>
-                                <input
-                                    class="form-control"
-                                    id="s-tg"
-                                    name="telegram"
-                                    type="text"
-                                    placeholder="@username"
-                                    required
-                                />
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label" for="s-email">Email</label>
-                                <input class="form-control" id="s-email" name="email" type="email" required />
-                            </div>
-                            <button type="submit" class="btn btn-outline-secondary w-100">Отправить заявку</button>
-                            <div
-                                id="signupError"
-                                class="text-danger text-center mt-3"
-                                style="display: none; font-size: 0.85rem"
+                        <p>
+                            <a
+                                class="btn btn-outline-secondary"
+                                href="https://forms.yandex.ru/u/6a8ae4d59029028854c9d9d4"
+                                target="_blank"
+                                >Заполнить заявку</a
                             >
-                                Не получилось отправить. Попробуй ещё раз или напиши нам в Telegram.
-                            </div>
-                        </form>
-                        <div class="signup-success" id="signupSuccess" style="display: none">
-                            Поздравляю со вступлением в клуб! Ждём вас на следующей встрече.
-                        </div>
+                        </p>
                     </article>
                     <nav class="blog-pagination" aria-label="Pagination">
                         <a class="btn btn-outline-primary" href="#archives">Older</a>
@@ -556,30 +516,5 @@
                 <a href="#">Back to top</a>
             </p>
         </footer>
-
-        <script>
-            document.getElementById("signupForm").addEventListener("submit", function (e) {
-                e.preventDefault();
-                const form = this;
-                const errorBox = document.getElementById("signupError");
-                errorBox.style.display = "none";
-                fetch("https://formsubmit.co/ajax/lkokovin@mail.ru", {
-                    method: "POST",
-                    headers: { Accept: "application/json" },
-                    body: new FormData(form),
-                })
-                    .then((r) => {
-                        if (!r.ok) throw new Error("bad response");
-                        return r.json();
-                    })
-                    .then(() => {
-                        form.style.display = "none";
-                        document.getElementById("signupSuccess").style.display = "block";
-                    })
-                    .catch(() => {
-                        errorBox.style.display = "block";
-                    });
-            });
-        </script>
     </body>
 </html>
