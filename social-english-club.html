@@ -1,0 +1,586 @@
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="" />
+        <meta name="author" content="Alexey Leonov, and Bootstrap contributors" />
+        <title>Time to Learn English</title>
+
+        <link href="css/bootstrap.min.css" rel="stylesheet" />
+        <link href="css/blog.css" rel="stylesheet" />
+        <script src="js/bootstrap.bundle.min.js"></script>
+
+        <meta name="theme-color" content="#7952b3" />
+
+        <meta property="og:title" content="Time to Learn English" />
+        <meta
+            property="og:description"
+            content="Your go-to guide for live English practice in Moscow. Speaking clubs, game nights, stand-up shows, and more!"
+        />
+        <meta property="og:image" content="https://alexey0097.github.io/time-to-learn-english/img/preview.jpg" />
+        <meta property="og:url" content="https://alexey0097.github.io/time-to-learn-english/" />
+        <meta property="og:type" content="website" />
+
+        <link rel="icon" type="image/png" href="img/favicon/favicon-96x96.png" sizes="96x96" />
+        <link rel="icon" type="image/svg+xml" href="img/favicon/favicon.svg" />
+        <link rel="shortcut icon" href="img/favicon/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png" />
+        <link rel="manifest" href="img/favicon/site.webmanifest" />
+
+        <style>
+            .bd-placeholder-img {
+                font-size: 1.125rem;
+                text-anchor: middle;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                user-select: none;
+            }
+
+            @media (min-width: 768px) {
+                .bd-placeholder-img-lg {
+                    font-size: 3.5rem;
+                }
+            }
+            @keyframes bg-scroll {
+                0% {
+                    background-position: 0 center;
+                }
+                100% {
+                    background-position: -1300px center;
+                }
+            }
+
+            .animate-bg {
+                background-image: url("img/full-bg.jpg");
+                background-repeat: repeat-x;
+                background-size: auto 100%;
+                background-position: 0 center;
+                animation: bg-scroll 270s linear infinite;
+            }
+
+            .animate-bg::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba(0, 0, 0, 0.55);
+                border-radius: inherit;
+            }
+
+            /* --- Social English Club --- */
+            .logo-inline {
+                height: 32px;
+                vertical-align: -4px;
+                margin-right: 10px;
+            }
+            .club-carousel .carousel-item img {
+                height: 420px;
+                object-fit: cover;
+            }
+            @media (max-width: 575.98px) {
+                .club-carousel .carousel-item img {
+                    height: 240px;
+                }
+            }
+            .tag-pill {
+                display: inline-block;
+                font-size: 0.8125rem;
+                font-weight: 700;
+                padding: 3px 10px;
+                border-radius: 20px;
+                white-space: nowrap;
+            }
+            .tag-pill.free {
+                background: #16341f;
+                color: #7ddba3;
+            }
+            .tag-pill.paid {
+                background: #3a1f14;
+                color: #ffa477;
+            }
+            .host-card {
+                text-align: center;
+                margin-bottom: 24px;
+            }
+            .host-card img {
+                width: 88px;
+                height: 88px;
+                object-fit: cover;
+                object-position: center 18%;
+                border-radius: 50%;
+                margin-bottom: 10px;
+            }
+            .host-card .role {
+                color: #9a9a9a;
+                font-size: 0.75rem;
+                text-transform: uppercase;
+                letter-spacing: 0.4px;
+                margin-bottom: 6px;
+            }
+            .host-card a {
+                display: block;
+                font-size: 0.85rem;
+            }
+            .gallery-grid img {
+                width: 100%;
+                height: 150px;
+                object-fit: cover;
+                border-radius: 8px;
+                margin-bottom: 12px;
+            }
+            .signup-box {
+                max-width: 420px;
+            }
+            .signup-success {
+                max-width: 420px;
+                background: #16341f;
+                color: #7ddba3;
+                border-radius: 10px;
+                padding: 28px 20px;
+                font-size: 1rem;
+                font-weight: 600;
+                text-align: center;
+            }
+        </style>
+
+        <!-- Yandex.Metrika counter -->
+        <script type="text/javascript">
+            (function (m, e, t, r, i, k, a) {
+                m[i] =
+                    m[i] ||
+                    function () {
+                        (m[i].a = m[i].a || []).push(arguments);
+                    };
+                m[i].l = 1 * new Date();
+                for (var j = 0; j < document.scripts.length; j++) {
+                    if (document.scripts[j].src === r) {
+                        return;
+                    }
+                }
+                (k = e.createElement(t)),
+                    (a = e.getElementsByTagName(t)[0]),
+                    (k.async = 1),
+                    (k.src = r),
+                    a.parentNode.insertBefore(k, a);
+            })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js?id=108766865", "ym");
+
+            ym(108766865, "init", {
+                ssr: true,
+                webvisor: true,
+                clickmap: true,
+                ecommerce: "dataLayer",
+                referrer: document.referrer,
+                url: location.href,
+                accurateTrackBounce: true,
+                trackLinks: true,
+            });
+        </script>
+        <noscript
+            ><div>
+                <img src="https://mc.yandex.ru/watch/108766865" style="position: absolute; left: -9999px" alt="" /></div
+        ></noscript>
+        <!-- /Yandex.Metrika counter -->
+    </head>
+    <body>
+        <div class="container">
+            <header class="blog-header py-3">
+                <div class="row flex-nowrap justify-content-between align-items-center">
+                    <div class="col-4 pt-1">
+                        <a class="link-secondary" target="_blank" href="https://t.me/eng_events">Subscribe</a>
+                    </div>
+                    <div class="col-4 text-center">
+                        <a class="blog-header-logo header-link" href="index.html">Time to Learn English</a>
+                    </div>
+                    <div class="col-4 d-flex justify-content-end align-items-center">
+                        <a class="link-secondary" href="#" aria-label="Search">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="20"
+                                height="20"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                class="mx-3"
+                                role="img"
+                                viewBox="0 0 24 24"
+                            >
+                                <title>Search</title>
+                                <circle cx="10.5" cy="10.5" r="7.5" />
+                                <path d="M21 21l-5.2-5.2" />
+                            </svg>
+                        </a>
+                        <a class="btn btn-sm btn-outline-secondary" href="#">Sign up</a>
+                    </div>
+                </div>
+            </header>
+
+            <div class="nav-scroller py-1 mb-2">
+                <nav class="nav d-flex justify-content-between">
+                    <a class="p-2 link-secondary" href="index.html#actual-schedule">Schedule</a>
+                    <a class="p-2 link-secondary" href="clubs.html">Clubs</a>
+                    <a class="p-2 link-secondary" href="#">Teachers</a>
+                    <a class="p-2 link-secondary" href="#contacts">Contacts</a>
+                </nav>
+            </div>
+        </div>
+
+        <main class="container">
+            <div class="row g-5" style="margin-left: 0; margin-right: 0">
+                <div class="col-md-8" style="max-width: 100%">
+                    <article id="social-english-club" class="blog-post">
+                        <h2 class="blog-post-title">
+                            <img src="img/club-logo.png" class="logo-inline" alt="" />Social English Club
+                        </h2>
+                        <p class="blog-post-meta">August 23, 2026 by <a href="#contacts">Alexey Leonov</a></p>
+
+                        <div
+                            id="carouselSocialEnglish"
+                            class="carousel slide club-carousel mb-4"
+                            data-bs-ride="carousel"
+                        >
+                            <div class="carousel-indicators">
+                                <button
+                                    type="button"
+                                    data-bs-target="#carouselSocialEnglish"
+                                    data-bs-slide-to="0"
+                                    class="active"
+                                    aria-current="true"
+                                    aria-label="Slide 1"
+                                ></button>
+                                <button
+                                    type="button"
+                                    data-bs-target="#carouselSocialEnglish"
+                                    data-bs-slide-to="1"
+                                    aria-label="Slide 2"
+                                ></button>
+                                <button
+                                    type="button"
+                                    data-bs-target="#carouselSocialEnglish"
+                                    data-bs-slide-to="2"
+                                    aria-label="Slide 3"
+                                ></button>
+                                <button
+                                    type="button"
+                                    data-bs-target="#carouselSocialEnglish"
+                                    data-bs-slide-to="3"
+                                    aria-label="Slide 4"
+                                ></button>
+                                <button
+                                    type="button"
+                                    data-bs-target="#carouselSocialEnglish"
+                                    data-bs-slide-to="4"
+                                    aria-label="Slide 5"
+                                ></button>
+                            </div>
+                            <div class="carousel-inner rounded">
+                                <div class="carousel-item active">
+                                    <img
+                                        src="img/min_social-leonid-01.jpg"
+                                        class="d-block w-100"
+                                        alt="Social English Club meetup"
+                                    />
+                                </div>
+                                <div class="carousel-item">
+                                    <img
+                                        src="img/min_social-leonid-02.jpg"
+                                        class="d-block w-100"
+                                        alt="Social English Club meetup"
+                                    />
+                                </div>
+                                <div class="carousel-item">
+                                    <img
+                                        src="img/min_social-leonid-03.jpg"
+                                        class="d-block w-100"
+                                        alt="Social English Club meetup"
+                                    />
+                                </div>
+                                <div class="carousel-item">
+                                    <img
+                                        src="img/min_social-leonid-04.jpg"
+                                        class="d-block w-100"
+                                        alt="Social English Club meetup"
+                                    />
+                                </div>
+                                <div class="carousel-item">
+                                    <img
+                                        src="img/min_social-leonid-05.jpg"
+                                        class="d-block w-100"
+                                        alt="Social English Club meetup"
+                                    />
+                                </div>
+                            </div>
+                            <button
+                                class="carousel-control-prev"
+                                type="button"
+                                data-bs-target="#carouselSocialEnglish"
+                                data-bs-slide="prev"
+                            >
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button
+                                class="carousel-control-next"
+                                type="button"
+                                data-bs-target="#carouselSocialEnglish"
+                                data-bs-slide="next"
+                            >
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+
+                        <p>
+                            <strong>Free (and now also low-cost) English speaking practice, in pairs and small groups.</strong>
+                            Organized by Leonid Kokovin &amp; Andrey Gorbatov.
+                        </p>
+
+                        <p>
+                            Every Monday, 19:00, a small group gathers at Surf Coffee® x Ostozhenka (Ostozhenka St.,
+                            40/1, near Park Kultury) for free English conversation practice — no registration, no fees,
+                            minimum level B1. As the group has grown, we&rsquo;ve added a second weekly meeting: every
+                            Thursday, 19:30, a paid session (500&nbsp;₽) at a location we&rsquo;ll confirm closer to the
+                            date.
+                        </p>
+
+                        <p>
+                            We also run free English-speaking walks around Moscow — Sparrow Hills, MSU, wherever the
+                            route takes us that week — same &laquo;just show up&raquo; spirit, still completely free.
+                        </p>
+
+                        <hr />
+
+                        <h3>Our Format</h3>
+
+                        <p>
+                            We rotate between pairs and small circles of 3–4 so everyone actually gets to talk (not just
+                            listen to the one confident extrovert). Some weeks it&rsquo;s straight conversation practice;
+                            some weeks it&rsquo;s board games; some weeks it&rsquo;s a walking tour through Moscow,
+                            practicing English the whole way.
+                        </p>
+
+                        <h3>Schedule</h3>
+
+                        <div class="table-responsive">
+                            <table class="table align-middle">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Day</th>
+                                        <th scope="col">Time</th>
+                                        <th scope="col">Price</th>
+                                        <th scope="col">Location</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Monday</td>
+                                        <td>19:00</td>
+                                        <td><span class="tag-pill free">Free</span></td>
+                                        <td>
+                                            Surf Coffee® x Ostozhenka, Ostozhenka St., 40/1 (5 min from Park Kultury)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Thursday</td>
+                                        <td>19:30</td>
+                                        <td><span class="tag-pill paid">500 ₽</span></td>
+                                        <td><em>TBA — announced in the club&rsquo;s Telegram closer to the date</em></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <h3>Who Shows Up</h3>
+
+                        <p>
+                            Regulars, first-timers, people prepping for a move abroad, people who just miss speaking
+                            English out loud. We ask for B1 or above so conversations move at a good pace — ages and
+                            backgrounds are otherwise mixed on purpose.
+                        </p>
+
+                        <hr />
+
+                        <h3>Hosts</h3>
+
+                        <div class="row">
+                            <div class="col-12 col-sm-4 host-card">
+                                <img src="img/host-leonid.jpg" alt="Leonid Kokovin" />
+                                <h4 class="h6 mb-0">Leonid Kokovin</h4>
+                                <div class="role">Founder &amp; host</div>
+                                <a href="https://t.me/lkokovin" target="_blank">Telegram: @lkokovin</a>
+                                <a href="https://t.me/kokovin_expert" target="_blank">Channel: @kokovin_expert</a>
+                            </div>
+                            <div class="col-12 col-sm-4 host-card">
+                                <img src="img/host-andrey.jpg" alt="Andrey Gorbatov" />
+                                <h4 class="h6 mb-0">Andrey Gorbatov</h4>
+                                <div class="role">Co-organizer &amp; host</div>
+                                <a href="https://t.me/andre_go2" target="_blank">Telegram: @andre_go2</a>
+                                <a href="https://www.instagram.com/andrey____go/" target="_blank"
+                                    >Instagram: @andrey____go</a
+                                >
+                            </div>
+                            <div class="col-12 col-sm-4 host-card">
+                                <img src="img/host-dmitry.jpg" alt="Dmitry Glin" />
+                                <h4 class="h6 mb-0">Dmitry Glin</h4>
+                                <div class="role">Host</div>
+                                <a href="https://t.me/MoscowHQ" target="_blank">Telegram: @MoscowHQ</a>
+                            </div>
+                        </div>
+
+                        <hr />
+
+                        <h3>From Our Meetings</h3>
+
+                        <div class="row gallery-grid">
+                            <div class="col-6 col-sm-4">
+                                <img src="img/min_social-leonid-06.jpg" alt="Social English Club meetup" />
+                            </div>
+                            <div class="col-6 col-sm-4">
+                                <img src="img/min_social-leonid-07.jpg" alt="Social English Club meetup" />
+                            </div>
+                            <div class="col-6 col-sm-4">
+                                <img src="img/min_social-leonid-08.jpg" alt="Social English Club meetup" />
+                            </div>
+                            <div class="col-6 col-sm-4">
+                                <img src="img/min_social-leonid-09.jpg" alt="Social English Club meetup" />
+                            </div>
+                            <div class="col-6 col-sm-4">
+                                <img src="img/min_social-leonid-10.jpg" alt="Social English Club meetup" />
+                            </div>
+                        </div>
+
+                        <hr />
+
+                        <h3>Join</h3>
+
+                        <p>
+                            📢 Main channel:
+                            <a href="https://t.me/Social_Leonid" target="_blank">@Social_Leonid</a> — no registration
+                            needed for Monday, just show up.
+                        </p>
+                        <p>
+                            📺 Also here:
+                            <a href="https://vk.ru/clips/englishleonid" target="_blank">VKontakte</a> |
+                            <a href="https://www.instagram.com/englishleonid.ru/" target="_blank">Instagram</a>
+                        </p>
+
+                        <hr />
+
+                        <h3>Оставить заявку на участие</h3>
+
+                        <p class="text-muted">
+                            Это не регистрация — просто чтобы не потерять контакт с тобой. Заявка уходит организатору
+                            клуба на почту через сервис formsubmit.co.
+                        </p>
+
+                        <form class="signup-box" id="signupForm">
+                            <input type="hidden" name="_subject" value="Новая заявка — Social English Club" />
+                            <input type="hidden" name="_template" value="table" />
+                            <input type="hidden" name="_captcha" value="false" />
+                            <div class="mb-3">
+                                <label class="form-label" for="s-name">Имя</label>
+                                <input class="form-control" id="s-name" name="name" type="text" required />
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="s-tg">Telegram ID</label>
+                                <input
+                                    class="form-control"
+                                    id="s-tg"
+                                    name="telegram"
+                                    type="text"
+                                    placeholder="@username"
+                                    required
+                                />
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="s-email">Email</label>
+                                <input class="form-control" id="s-email" name="email" type="email" required />
+                            </div>
+                            <button type="submit" class="btn btn-outline-secondary w-100">Отправить заявку</button>
+                            <div
+                                id="signupError"
+                                class="text-danger text-center mt-3"
+                                style="display: none; font-size: 0.85rem"
+                            >
+                                Не получилось отправить. Попробуй ещё раз или напиши нам в Telegram.
+                            </div>
+                        </form>
+                        <div class="signup-success" id="signupSuccess" style="display: none">
+                            Поздравляю со вступлением в клуб! Ждём вас на следующей встрече.
+                        </div>
+                    </article>
+                    <nav class="blog-pagination" aria-label="Pagination">
+                        <a class="btn btn-outline-primary" href="#archives">Older</a>
+                        <a class="btn btn-outline-secondary disabled" href="#" tabindex="-1" aria-disabled="true"
+                            >Newer</a
+                        >
+                    </nav>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="position-sticky" style="top: 2rem">
+                        <div class="p-4 mb-3 second-bg rounded">
+                            <h4 class="fst-italic">About</h4>
+                            <p class="mb-0">
+                                Hi, my name is Alex! This website is your go-to guide for live English practice in
+                                Moscow. We post a daily schedule of free and paid speaking clubs, game nights, stand-up
+                                shows, and other English events. Come talk with us!
+                            </p>
+                        </div>
+
+                        <div id="contacts" class="p-4">
+                            <h4 class="fst-italic">Elsewhere</h4>
+                            <ol class="list-unstyled">
+                                <li>
+                                    Email:
+                                    <a href="mailto:alexey0097@yandex.ru" target="_blank">alexey0097@yandex.ru</a>
+                                </li>
+                                <li>Telegram: <a href="https://t.me/eng_events" target="_blank">@eng_events</a></li>
+                                <li>QR Code: <a href="qr-code.html">time-to-learn-eng</a></li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="blog-footer">
+            <p>
+                Blog template built for <a href="https://getbootstrap.com/">Bootstrap</a> by
+                <a href="https://t.me/alexey_acc">@alexey_acc</a>.
+            </p>
+            <p>
+                <a href="#">Back to top</a>
+            </p>
+        </footer>
+
+        <script>
+            document.getElementById("signupForm").addEventListener("submit", function (e) {
+                e.preventDefault();
+                const form = this;
+                const errorBox = document.getElementById("signupError");
+                errorBox.style.display = "none";
+                fetch("https://formsubmit.co/ajax/lkokovin@mail.ru", {
+                    method: "POST",
+                    headers: { Accept: "application/json" },
+                    body: new FormData(form),
+                })
+                    .then((r) => {
+                        if (!r.ok) throw new Error("bad response");
+                        return r.json();
+                    })
+                    .then(() => {
+                        form.style.display = "none";
+                        document.getElementById("signupSuccess").style.display = "block";
+                    })
+                    .catch(() => {
+                        errorBox.style.display = "block";
+                    });
+            });
+        </script>
+    </body>
+</html>
