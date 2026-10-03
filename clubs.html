@@ -1082,22 +1082,17 @@
                             if (selectedPrices.length === 0) return false;
                             // День
                             if (selectedDay !== 'all') {
-                                const today = new Date();
                                 const weekDays = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+                                // Расписание в московском времени, поэтому и «сегодня» считаем по Москве
+                                const todayName = new Intl.DateTimeFormat('en-US', { weekday: 'short', timeZone: 'Europe/Moscow' }).format(new Date());
                                 
                                 if (selectedDay === 'today') {
                                     // Проверяем, работает ли клуб сегодня
-                                    const todayName = weekDays[today.getDay()];
                                     if (!club.daysOfWeek.includes(todayName)) return false;
                                 } else if (selectedDay === 'week') {
-                                    // Собираем оставшиеся дни недели (включая сегодня)
-                                    const todayIndex = (today.getDay() + 6) % 7;
-                                    const remainingDays = [];
-                                    for (let i = todayIndex; i < 7; i++) {
-                                        remainingDays.push(weekDays[i]);
-                                    }
-                                    const hasDayThisWeek = club.daysOfWeek.some(day => remainingDays.includes(day));
-                                    if (!hasDayThisWeek) return false;
+                                    // Оставшиеся дни недели: от сегодня до воскресенья включительно
+                                    const remainingDays = weekDays.slice(weekDays.indexOf(todayName));
+                                    if (!club.daysOfWeek.some(day => remainingDays.includes(day))) return false;
                                 } else {
                                     // Выбран конкретный день недели
                                     if (!club.daysOfWeek.includes(selectedDay)) return false;
