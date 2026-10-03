@@ -69,6 +69,24 @@
                 background: rgba(0, 0, 0, 0.55);
                 border-radius: inherit;
             }
+
+            .text-standup {
+                color: #a98eda;
+            }
+
+            .club-featured {
+                background-color: rgba(255, 193, 7, 0.08);
+            }
+
+            .featured-star {
+                vertical-align: -2px;
+                filter: drop-shadow(1px 0 0 #000) drop-shadow(-1px 0 0 #000) drop-shadow(0 1px 0 #000) drop-shadow(0 -1px 0 #000);
+            }
+
+            .club-featured .club-type,
+            .club-featured .stretched-link {
+                color: var(--bs-warning);
+            }
         </style>
 
         <!-- Yandex.Metrika counter -->
@@ -190,6 +208,10 @@
                                         <input class="form-check-input filter-type" type="checkbox" value="Online" id="filterOnline" checked>
                                         <label class="form-check-label" for="filterOnline">Online</label>
                                     </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input filter-type" type="checkbox" value="Stand-up" id="filterStandup" checked>
+                                        <label class="form-check-label" for="filterStandup">Stand-up</label>
+                                    </div>
                                 </div>
 
                                 <div class="col-md-6 mb-3">
@@ -290,7 +312,7 @@
                           },
                           {
                             "name": "Bright School N1",
-                            "time": "Sun 17:00 (by announcement), Moscow time",
+                            "time": "Fri 19:30, Moscow time",
                             "desc": "A language school on Izmailovsky Boulevard that hosts English clubs with native speakers — like the Sunday club with Dale from Oxford — plus movie sessions for adults and a foreign literature course.",
                             "link": "bright-school-no1.html",
                             "image": "img/min_bright-school-02.jpg",
@@ -299,7 +321,7 @@
                             "priority": 0,
                             "imagePosition": "52% 50%",
                             "cost": 1,
-                            "daysOfWeek": ["Sun"]
+                            "daysOfWeek": ["Fri"]
                           },
                           {
                             "name": "Chatty Chillies",
@@ -333,8 +355,9 @@
                             "desc": "A cozy stand-up comedy night in English with clean humour, improv games and an international crowd. Local and foreign comedians try out fresh jokes on a new topic every show at Irish pub Silvers or Bar Na Kover.",
                             "link": "clean-open-mic.html",
                             "image": "img/min_clean-open-mic-01.jpg",
-                            "type": ["Group Meetings"],
+                            "type": ["Stand-up"],
                             "isActive": true,
+                            "promoted": true,
                             "priority": 0,
                             "imagePosition": "36% 30%",
                             "cost": 1,
@@ -355,20 +378,20 @@
                           },
                           {
                             "name": "Dark English Academia",
-                            "time": "Thu 21:00 (online) & weekend trips, Moscow time",
+                            "time": "Thu 21:00 (online) & Sun 14:30 trips, Moscow time",
                             "desc": "A community for global minds hosted by an international student: C1+ and thinking clubs online on Thursdays, plus English trips to the Tretyakov Gallery, the zoo and festivals, and Mafia nights. Registration by donation.",
                             "link": "dark-english-academia.html",
                             "image": "img/min_dark-english-academia-01.jpg",
-                            "type": ["Online", "Group Meetings"],
+                            "type": ["Online"],
                             "isActive": true,
                             "priority": 0,
                             "imagePosition": "50% 50%",
                             "cost": 1,
-                            "daysOfWeek": ["Thu", "Sat", "Sun"]
+                            "daysOfWeek": ["Thu", "Sun"]
                           },
                           {
                             "name": "English at IRISHMAN",
-                            "time": "Wed 19:30 & Sun 17:00, Moscow time",
+                            "time": "Wed 19:20, Moscow time",
                             "desc": "A speaking club in the cozy halls of IRISHMAN pubs: Wednesdays near Ulitsa 1905 Goda with a native-speaking coach (B2+), Sundays in Kurkino (B1+). A big wooden table, a warm company and live English.",
                             "link": "english-at-irishman.html",
                             "image": "img/min_irishman-01.jpg",
@@ -377,7 +400,7 @@
                             "priority": 0,
                             "imagePosition": "50% 50%",
                             "cost": 1,
-                            "daysOfWeek": ["Wed", "Sun"]
+                            "daysOfWeek": ["Wed"]
                           },
                           {
                             "name": "English Club at Triumph Lounge Bar",
@@ -411,7 +434,7 @@
                             "desc": "A club that grew out of the 128bpm studio community, hosted by Chi Chi — eight years in the States and a well-known \"slang English\" series. One hour online on Saturdays, plus offline mornings in the centre, all built around films, series and songs: The Housemaid, Euphoria, Britney's memoir. Café meet-ups are free; the bigger events are ticketed.",
                             "link": "english-club-moscow.html",
                             "image": "img/min_english-club-moscow-01.jpg",
-                            "type": ["Group Meetings", "Online"],
+                            "type": ["Online"],
                             "isActive": true,
                             "priority": 0,
                             "imagePosition": "50% 50%",
@@ -446,7 +469,7 @@
                           },
                           {
                             "name": "English Games Club",
-                            "time": "About once a week, 19:00-21:00, day announced in chat, Moscow time",
+                            "time": "Wed 19:00, Moscow time",
                             "desc": "Free board game nights in English for beginners (A1+/A2+) at cafe Grabli on Tverskaya: a short warm-up, ice-breakers and 2-3 simple games like Codenames, Taboo and Snake Oil. The only rule is that you speak. In summer the club sometimes plays in Muzeon park.",
                             "link": "english-games-club.html",
                             "image": "img/min_english-games-club-01.jpg",
@@ -455,11 +478,11 @@
                             "priority": 0,
                             "imagePosition": "50% 50%",
                             "cost": 0,
-                            "daysOfWeek": []
+                            "daysOfWeek": ["Wed"]
                           },
                           {
                             "name": "English Literature Club",
-                            "time": "Wed 18:45 & Fri 19:00, Moscow time",
+                            "time": "Wed 18:45, Moscow time",
                             "desc": "Weekly short story discussions at Svetlovka library — from Vonnegut and Graham Greene to Ted Chiang. The story and an intro to the author are posted in advance. Friday evenings are for films and big questions.",
                             "link": "english-literature-club.html",
                             "image": "img/min_english-literature-01.jpg",
@@ -468,11 +491,11 @@
                             "priority": 0,
                             "imagePosition": "50% 30%",
                             "cost": 0,
-                            "daysOfWeek": ["Wed", "Fri"]
+                            "daysOfWeek": ["Wed"]
                           },
                           {
                             "name": "English Lounge",
-                            "time": "Wed 19:00 & some Sat, Moscow time",
+                            "time": "Sat 18:30, Moscow time",
                             "desc": "A cozy speaking club near Mayakovskaya: chat in mini-groups of 2–5 people on a new topic every week, any level welcome. Wednesdays at Ziferblat, weekend meetups in coffee shops and Mafia in English.",
                             "link": "english-lounge.html",
                             "image": "img/min_english-lounge-01.jpg",
@@ -481,11 +504,11 @@
                             "priority": 0,
                             "imagePosition": "65% 50%",
                             "cost": 1,
-                            "daysOfWeek": ["Wed", "Sat"]
+                            "daysOfWeek": ["Sat"]
                           },
                           {
                             "name": "English Speaking Club",
-                            "time": "Mon, Wed 19:30, Fri 19:00 & Sun 15:00, Moscow time",
+                            "time": "Tue, Thu 19:30, Fri 19:00 & Sun 15:00, Moscow time",
                             "desc": "An active community meeting almost every day in cafés near Mendeleevskaya and Sukharevskaya: speed meetings, board game nights and thematic talks. Weekend walks in Kolomenskoe, pub quizzes, mafia and movie nights too.",
                             "link": "english-speaking-club.html",
                             "image": "img/min_esc-moscow-01.jpg",
@@ -494,7 +517,7 @@
                             "priority": 0,
                             "imagePosition": "35% 50%",
                             "cost": 1,
-                            "daysOfWeek": ["Mon", "Wed", "Fri", "Sun"]
+                            "daysOfWeek": ["Tue", "Thu", "Fri", "Sun"]
                           },
                           {
                             "name": "English Speaking Club at VDNH",
@@ -511,7 +534,7 @@
                           },
                           {
                             "name": "English Starts Today!",
-                            "time": "Sat 12:00, Moscow time",
+                            "time": "Mon–Fri 19:00, Moscow time",
                             "desc": "A free open speaking club in Zoom that has been running for the third year: every Saturday dozens of people from Moscow and around the world talk in pairs and mini-groups on the topic of the week. A2–B2, live workbook included.",
                             "link": "english-starts-today.html",
                             "image": "img/min_english-starts-today-01.jpg",
@@ -520,7 +543,7 @@
                             "priority": 0,
                             "imagePosition": "30% 50%",
                             "cost": 0,
-                            "daysOfWeek": ["Sat"]
+                            "daysOfWeek": ["Mon", "Tue", "Wed", "Thu", "Fri"]
                           },
                           {
                             "name": "English with Gily & Masha",
@@ -537,7 +560,7 @@
                           },
                           {
                             "name": "Engsider Speaking Club",
-                            "time": "Thu 18:00 & Sat 14:00, Moscow time",
+                            "time": "Thu 18:00, Moscow time",
                             "desc": "An online club for people who need English at work and in interviews — the speaking side of a school for IT specialists. Four live meetings a month with Dan, a native-speaker host, a topic set every Monday with vocabulary sent in advance, and a closed chat in between. B1–B2+, by subscription at 1125 ₽ a week.",
                             "link": "engsider-speaking-club.html",
                             "image": "img/min_engsider-01.jpg",
@@ -546,7 +569,7 @@
                             "priority": 0,
                             "imagePosition": "55% 45%",
                             "cost": 1,
-                            "daysOfWeek": ["Thu", "Sat"]
+                            "daysOfWeek": ["Thu"]
                           },
                           {
                             "name": "International VIP",
@@ -619,7 +642,7 @@
                             "desc": "A friendly community that meets twice a week: Thursday conversations on a topic of the week at Ziferblat on Mayakovskaya, and Saturday board games — Taboo, Codenames, Citadels — at Stars Coffee on Tsvetnoy Bulvar.",
                             "link": "just-talk.html",
                             "image": "img/min_just-talk-01.jpg",
-                            "type": ["Group Meetings", "Board Games"],
+                            "type": ["Group Meetings"],
                             "isActive": true,
                             "priority": 0,
                             "imagePosition": "50% 50%",
@@ -628,11 +651,11 @@
                           },
                           {
                             "name": "Kate's English Speaking Club",
-                            "time": "Sat 19:30, Moscow time",
+                            "time": "Sat 18:00, Moscow time",
                             "desc": "A Saturday board game night in English at StrEAT Food Mall by Avtozavodskaya. One long table on the second floor, Secret Hitler, Mafia, Imaginarium and Codenames, and three hours of banter with regulars and first-timers. Donation-based, no level requirement — vote yourself in under the weekly announcement and show up. Summer Saturdays move to a picnic in Kolomenskoe Park.",
                             "link": "kates-english-speaking-club.html",
                             "image": "img/min_kates-01.jpg",
-                            "type": ["Board Games", "Group Meetings"],
+                            "type": ["Board Games"],
                             "isActive": true,
                             "priority": 0,
                             "imagePosition": "50% 50%",
@@ -654,7 +677,7 @@
                           },
                           {
                             "name": "LinguaClub",
-                            "time": "Monthly, online, Moscow time",
+                            "time": "Wed 19:10 & Thu 14:00, online, Moscow time",
                             "desc": "A monthly online club for B2–C1 learners: a mini-group of 3–6 people in Zoom, 75 minutes of discussion on a topic chosen by vote. Prep materials with advanced vocabulary arrive three days before each meeting.",
                             "link": "linguaclub.html",
                             "image": "img/min_linguaclub-01.jpg",
@@ -663,7 +686,7 @@
                             "priority": 0,
                             "imagePosition": "78% 50%",
                             "cost": 1,
-                            "daysOfWeek": ["Tue"]
+                            "daysOfWeek": ["Wed", "Thu"]
                           },
                           {
                             "name": "Mendeley the Cat Game Club",
@@ -706,16 +729,16 @@
                           },
                           {
                             "name": "Moscow Today Club",
-                            "time": "Mon & Thu 19:30, Moscow time",
+                            "time": "Tue 19:15 & Sat 17:00, Moscow time",
                             "desc": "A rotating speaking club at Surf Coffee on Ostozhenka, two minutes from Park Kultury, running since 2023 with an American host. A new conversation partner every 15 minutes — no teacher, no textbook, no homework. Monday is free; Thursday is 500 ₽ and your first visit is free. Board game nights are announced in the chat.",
                             "link": "moscow-today-club.html",
                             "image": "img/min_moscow-today-01.jpg",
-                            "type": ["Speed Meetings", "Board Games"],
+                            "type": ["Speed Meetings"],
                             "isActive": true,
                             "priority": 0,
                             "imagePosition": "50% 45%",
                             "cost": 1,
-                            "daysOfWeek": ["Mon", "Thu"]
+                            "daysOfWeek": ["Tue", "Sat"]
                           },
                           {
                             "name": "MoscowLEM",
@@ -732,7 +755,7 @@
                           },
                           {
                             "name": "Moscow Pals Club",
-                            "time": "Meetups announced in the chat",
+                            "time": "Sun 18:00, Moscow time",
                             "desc": "The fastest growing English-speaking community in Russia: 6,000+ locals and foreigners in one chat, with meetups, events, job connections and support for expats. Be kind, come in and make some new pals.",
                             "link": "moscow-pals.html",
                             "image": "img/min_moscow-pals-01.jpg",
@@ -741,7 +764,7 @@
                             "priority": 0,
                             "imagePosition": "45% 70%",
                             "cost": 0,
-                            "daysOfWeek": []
+                            "daysOfWeek": ["Sun"]
                           },
                           {
                             "name": "Nastushka's Speaking Club",
@@ -771,7 +794,7 @@
                           },
                           {
                             "name": "Pablo Place - The Art of Gatherings",
-                            "time": "Sat 20:30 & Tue 10:30 (online) · kids' groups Tue–Sun, Moscow time",
+                            "time": "Mon 19:00 & Tue, Thu 10:30 (online), Moscow time",
                             "desc": "No lessons — just English in real life. Adults of any level meet on Saturday evenings at MEGA Khimki and on Tuesday mornings in Zoom. Playful groups for kids from 5 and teens 14–17, offline and online, with Pablo Coins for every lesson.",
                             "link": "pablo-place.html",
                             "image": "img/min_pablo-place-logo.jpg",
@@ -780,7 +803,7 @@
                             "priority": 0,
                             "imagePosition": "50% 50%",
                             "cost": 1,
-                            "daysOfWeek": ["Tue", "Thu", "Sat", "Sun"]
+                            "daysOfWeek": ["Mon", "Tue", "Thu"]
                           },
                           {
                             "name": "Reading and Vocabulary Club",
@@ -853,7 +876,7 @@
                             "desc": "Stand-up comedy in English with comedians from Russia, the USA, Zambia, Colombia and beyond. The Big Sunday Show and Razgony at Stand Up Club na Trubnoy, plus an international open mic at The Hole. Free entrance, donations welcome.",
                             "link": "stand-up-club-in-english.html",
                             "image": "img/min_standup-english-01.jpg",
-                            "type": ["Group Meetings"],
+                            "type": ["Stand-up"],
                             "isActive": true,
                             "priority": 0,
                             "imagePosition": "50% 50%",
@@ -901,20 +924,20 @@
                           },
                           {
                             "name": "Viva Lingua Club",
-                            "time": "Mon–Fri 19:00 & Sat 12:00, 14:00, Moscow time",
+                            "time": "Mon–Thu 19:00, Wed 20:00 (online) & Sat 12:00, 14:00, Moscow time",
                             "desc": "Online speaking club seeking native English speakers to host groups. Adult learners at B1–C1 in a relaxed social atmosphere. If you're friendly, outgoing, and want to be part of a fun edutainment project near Kurskaya.",
                             "link": "viva-lingua-club.html",
                             "image": "img/min_viva_lingua.jpg",
-                            "type": ["Online"],
+                            "type": ["Group Meetings"],
                             "isActive": true,
                             "priority": 0,
                             "imagePosition": "40% 0%",
                             "cost": 1,
-                            "daysOfWeek": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
+                            "daysOfWeek": ["Mon", "Tue", "Wed", "Thu", "Sat"]
                           },
                           {
                             "name": "Wednesday English Speaking Club",
-                            "time": "Wed 19:00 & first Sat 14:00, Moscow time",
+                            "time": "Wed 19:00, Moscow time",
                             "desc": "A simple, reliable tradition: every Wednesday evening, rain or shine, a friendly company meets at Checkpoint on Myasnitskaya to chat in English with Peter, a native-speaking host. 300 ₽. Plus a special Saturday edition on the first Saturday of the month.",
                             "link": "wednesday-english-speaking-club.html",
                             "image": "img/min_wednesday-club-01.jpg",
@@ -923,7 +946,7 @@
                             "priority": 0,
                             "imagePosition": "30% 50%",
                             "cost": 1,
-                            "daysOfWeek": ["Wed", "Sat"]
+                            "daysOfWeek": ["Wed"]
                           },
                           {
                             "name": "Yoteach in touch",
@@ -931,7 +954,7 @@
                             "desc": "A lively Sunday club at Surf Coffee × Ostankino for up to 10 people: one hot topic about people and psychology — red flags, attraction, why humans are irrational — followed by board games in English.",
                             "link": "yoteach-in-touch.html",
                             "image": "img/min_yoteach-01.jpg",
-                            "type": ["Group Meetings", "Board Games"],
+                            "type": ["Group Meetings"],
                             "isActive": true,
                             "priority": 0,
                             "imagePosition": "50% 50%",
@@ -940,7 +963,7 @@
                           },
                           {
                             "name": "Ziferblat's English Club",
-                            "time": "Mon, Thu, Fri, Sat, Sun, Moscow time",
+                            "time": "Mon, Tue, Wed, Fri, Sat, Sun, Moscow time",
                             "desc": "Cosy English conversations in a historic pay-per-minute living room. Soft armchairs, unlimited tea & coffee, piano in the corner. Small rotating groups with a warm host — no pressure, just connection.",
                             "link": "ziferblat.html",
                             "image": "img/min_IMG_2384.jpg",
@@ -949,7 +972,7 @@
                             "priority": 0,
                             "imagePosition": "50% 0%",
                             "cost": 1,
-                            "daysOfWeek": ["Mon", "Thu", "Fri", "Sat", "Sun"]
+                            "daysOfWeek": ["Mon", "Tue", "Wed", "Fri", "Sat", "Sun"]
                           },
                           {
                             "name": "Long story short",
@@ -982,8 +1005,9 @@
                     // Фильтруем только активные
                     const activeClubs = clubs.filter(club => club.isActive === true);
                     
-                    // Сортируем
+                    // Сортируем: сначала премиум-продвижение, затем priority, затем по алфавиту
                     activeClubs.sort((a, b) => {
+                        if (!!a.promoted !== !!b.promoted) return a.promoted ? -1 : 1;
                         if (b.priority !== a.priority) return b.priority - a.priority;
                         return a.name.localeCompare(b.name);
                     });
@@ -1010,6 +1034,7 @@
                                 if (firstType.includes('board') || firstType.includes('game')) badgeColor = 'text-success';
                                 if (firstType.includes('online')) badgeColor = 'text-info';
                                 if (firstType.includes('group')) badgeColor = 'text-warning';
+                                if (firstType.includes('stand')) badgeColor = 'text-standup';
                             }
                             
                             const imageHTML = club.image 
@@ -1017,9 +1042,11 @@
                                 : '';
                             
                             clubsHTML += `
-                                <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm position-relative">
+                                <div class="row g-0 border ${club.promoted ? 'border-2 border-warning club-featured' : ''} rounded overflow-hidden flex-md-row mb-4 shadow-sm position-relative">
                                     <div class="col p-4 d-flex flex-column position-static">
-                                        <strong class="d-inline-block mb-2 ${badgeColor}">${typeString}</strong>
+                                        ${club.promoted
+                                            ? `<div class="mb-2"><strong class="d-inline-block club-type">${typeString}</strong> <span class="badge rounded-pill text-bg-warning ms-1"><img src="img/star.png" alt="" width="14" height="14" class="featured-star"> Top pick</span></div>`
+                                            : `<strong class="d-inline-block mb-2 ${badgeColor}">${typeString}</strong>`}
                                         <h3 class="mb-0">${club.name}</h3>
                                         ${club.time ? `<div class="mb-1 text-muted">${club.time}</div>` : ''}
                                         ${club.desc ? `<p class="card-text mb-auto">${club.desc}</p>` : ''}
