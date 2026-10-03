@@ -2196,6 +2196,29 @@
                         "short": false,
                         "promoted": false,
                         "rating": 99.5
+                      },
+                      {
+                        "id": "fabio-souza",
+                        "name": "Fábio Souza — Communicative Portuguese and English for Adults and Professionals",
+                        "date": "2026-10-03",
+                        "languages": [
+                          "Portuguese",
+                          "English"
+                        ],
+                        "facts": [
+                          "<img src=\"img/flags/br.svg\" class=\"flag\" alt=\"\"> Native Portuguese, Brazil",
+                          "🎓 CELTA (2014), 10+ years of teaching",
+                          "💻 Online"
+                        ],
+                        "photo": "img/min_teacher-fabio-souza.jpg",
+                        "contact": "https://t.me/Fabiohsf",
+                        "contactLabel": "Message on Telegram →",
+                        "phone": "+7 985 688-04-85",
+                        "email": "fabio.hsfs@mail.com",
+                        "body": "<p>I teach <strong>Portuguese and English</strong> to adults and teenagers, from beginner to advanced levels, with a strong focus on communication and real-world language use. I use authentic materials wherever possible, so you learn the language people actually speak, write, and encounter in everyday life, not just the language textbooks create for learners. My approach is student-centered and communicative, with plenty of opportunities to speak, discuss, and use the language meaningfully, from the very first lesson.</p> <ul> <li>🗣 Conversation, grammar, pronunciation, vocabulary</li> <li>💼 Business English, including corporate classes</li> <li>🌎 Native Portuguese speaker, born in Brazil</li> <li>🎓 10+ years of English teaching, CELTA in 2014</li> </ul> <p>💰 ₽2,000 per 60 minutes. Also on WhatsApp at the number below.</p>",
+                        "short": false,
+                        "promoted": false,
+                        "rating": 99.2
                       }
                     ];
 
@@ -2256,7 +2279,8 @@
                                     ${t.body}
                                     <div class="d-flex flex-wrap gap-2">
                                         <a class="btn btn-sm btn-outline-secondary" href="${t.contact}" target="_blank" rel="noopener">${t.contactLabel}</a>
-                                        ${t.phone ? `<button type="button" class="btn btn-sm btn-outline-secondary copy-phone" data-phone="${t.phone}" title="Copy phone number">${t.phone}</button>` : ''}
+                                        ${t.phone ? `<button type="button" class="btn btn-sm btn-outline-secondary copy-value" data-copy="${t.phone}" title="Copy phone number">${t.phone}</button>` : ''}
+                                        ${t.email ? `<button type="button" class="btn btn-sm btn-outline-secondary copy-value" data-copy="${t.email}" title="Copy email">${t.email}</button>` : ''}
                                     </div>
                                 </article>
                             `;
@@ -2292,7 +2316,7 @@
                         applyFilters();
                     });
 
-                    // ========== КОПИРОВАНИЕ ТЕЛЕФОНА ==========
+                    // ========== КОПИРОВАНИЕ ТЕЛЕФОНА И EMAIL ==========
                     function copyText(text) {
                         if (navigator.clipboard && window.isSecureContext) {
                             return navigator.clipboard.writeText(text);
@@ -2310,15 +2334,15 @@
                     }
 
                     document.getElementById('teachersContainer').addEventListener('click', function (event) {
-                        const button = event.target.closest('.copy-phone');
+                        const button = event.target.closest('.copy-value');
                         if (!button || button.dataset.copied) return;
-                        const phone = button.dataset.phone;
-                        copyText(phone).then(() => {
+                        const value = button.dataset.copy;
+                        copyText(value).then(() => {
                             button.dataset.copied = '1';
                             button.style.minWidth = button.offsetWidth + 'px'; // чтобы кнопка не прыгала по ширине
                             button.textContent = 'Copied!';
                             setTimeout(() => {
-                                button.textContent = phone;
+                                button.textContent = value;
                                 button.style.minWidth = '';
                                 delete button.dataset.copied;
                             }, 1000);
