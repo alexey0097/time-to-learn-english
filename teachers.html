@@ -2219,6 +2219,28 @@
                         "short": false,
                         "promoted": false,
                         "rating": 99.2
+                      },
+                      {
+                        "id": "dalvine",
+                        "name": "Dalvine — English for Professionals and Daily Communication",
+                        "date": "2026-10-03",
+                        "languages": [
+                          "English"
+                        ],
+                        "facts": [
+                          "<img src=\"img/flags/za.svg\" class=\"flag\" alt=\"\"> Native, South Africa",
+                          "📍 Moscow / Online",
+                          "💰 ₽2,500 / hour"
+                        ],
+                        "photo": "img/min_teacher-dalvine.jpg",
+                        "contact": "",
+                        "contactLabel": "",
+                        "phone": "+7 916 984-27-33",
+                        "email": "dalvinelungabinedell@gmail.com",
+                        "body": "<p>I teach kids, teens, adults, companies, beginners and exam candidates. I use <strong>TPR (Total Physical Response)</strong> as my method of teaching, which involves my students in the lesson and keeps them engaged.</p> <ul> <li>🗣 Conversation, grammar, pronunciation</li> <li>💼 Business English</li> <li>📝 IELTS preparation</li> <li>🕖 Tue, Thu 6pm–8pm / Sat 11am–3pm</li> <li>👧 Kids 5–12, teens and adults</li> </ul> <p><em>\"If learning how to communicate in English is your main goal, you are in the right hands!\"</em> 👨‍🎓👩‍🎓</p>",
+                        "short": false,
+                        "promoted": false,
+                        "rating": 99.1
                       }
                     ];
 
@@ -2278,7 +2300,7 @@
                                     </div>
                                     ${t.body}
                                     <div class="d-flex flex-wrap gap-2">
-                                        <a class="btn btn-sm btn-outline-secondary" href="${t.contact}" target="_blank" rel="noopener">${t.contactLabel}</a>
+                                        ${t.contact ? `<a class="btn btn-sm btn-outline-secondary" href="${t.contact}" target="_blank" rel="noopener">${t.contactLabel}</a>` : ''}
                                         ${t.phone ? `<button type="button" class="btn btn-sm btn-outline-secondary copy-value" data-copy="${t.phone}" title="Copy phone number">${t.phone}</button>` : ''}
                                         ${t.email ? `<button type="button" class="btn btn-sm btn-outline-secondary copy-value" data-copy="${t.email}" title="Copy email">${t.email}</button>` : ''}
                                     </div>
