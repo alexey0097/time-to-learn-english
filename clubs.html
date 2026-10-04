@@ -71,10 +71,6 @@
                 border-radius: inherit;
             }
 
-            .text-standup {
-                color: #a98eda;
-            }
-
             .club-featured {
                 background-color: rgba(255, 193, 7, 0.08);
             }
@@ -1041,13 +1037,13 @@
                                 ? club.type[0] 
                                 : 'Speaking Club';
                             
-                            let badgeColor = 'text-primary-emphasis';
+                            let badgeColor = 'cat-speed';
                             if (club.type && club.type.length > 0) {
                                 const firstType = club.type[0].toLowerCase();
-                                if (firstType.includes('board') || firstType.includes('game')) badgeColor = 'text-success-emphasis';
-                                if (firstType.includes('online')) badgeColor = 'text-info';
-                                if (firstType.includes('group')) badgeColor = 'text-warning';
-                                if (firstType.includes('stand')) badgeColor = 'text-standup';
+                                if (firstType.includes('board') || firstType.includes('game')) badgeColor = 'cat-games';
+                                if (firstType.includes('online')) badgeColor = 'cat-online';
+                                if (firstType.includes('group')) badgeColor = 'cat-group';
+                                if (firstType.includes('stand')) badgeColor = 'cat-standup';
                             }
                             
                             const imageHTML = club.image 
@@ -1063,7 +1059,7 @@
                                         <h3 class="mb-0">${club.name}</h3>
                                         ${club.time ? `<div class="mb-1 text-muted">${club.time}</div>` : ''}
                                         ${club.desc ? `<p class="card-text mb-auto">${club.desc}</p>` : ''}
-                                        ${club.link ? `<a href="${club.link}" class="stretched-link">Full details</a>` : ''}
+                                        ${club.link ? `<a href="${club.link}" class="stretched-link">Full details<span class="visually-hidden"> about ${club.name}</span></a>` : ''}
                                     </div>
                                     ${imageHTML ? `<div class="col-12 col-lg-auto order-first order-lg-last card-photo">${imageHTML}</div>` : ''}
                                 </div>

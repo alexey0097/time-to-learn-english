@@ -269,6 +269,52 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+/* Цвета категорий клубов: один цвет — одна категория. Жёлтый оставлен только для промо и Top pick */
+.cat-speed { color: var(--bs-primary-text-emphasis); }
+.cat-games { color: var(--bs-success-text-emphasis); }
+.cat-group { color: #e685b5; }
+.cat-online { color: var(--bs-info); }
+.cat-standup { color: #a98eda; }
+
+/* Кликабельные карточки (вся карточка — ссылка): видимые hover и фокус */
+.border.rounded:has(.stretched-link) {
+  transition: border-color .15s ease-in-out, transform .15s ease-in-out;
+}
+.border.rounded:has(.stretched-link):not(.border-warning):hover,
+.border.rounded:has(.stretched-link):not(.border-warning):focus-within {
+  border-color: var(--bs-secondary-color) !important;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .border.rounded:has(.stretched-link):hover,
+  .border.rounded:has(.stretched-link):focus-within {
+    transform: translateY(-2px);
+  }
+}
+
+/* Строка расписания: время отдельной колонкой с табличными цифрами, место — второй строкой.
+   Разметка: <li><strong>19:00</strong> <a …>Клуб</a> [метка] <span class="place">Место</span></li> */
+.schedule {
+  padding-left: 0;
+  list-style: none;
+}
+.schedule li {
+  padding-left: 3.5em;
+  margin-bottom: .5rem;
+  text-indent: -3.5em;
+}
+.schedule li > strong:first-child {
+  display: inline-block;
+  width: 3.5em;
+  text-indent: 0;
+  font-variant-numeric: tabular-nums;
+}
+.schedule .place {
+  display: block;
+  font-size: .875em;
+  color: var(--bs-secondary-color);
+  text-indent: 0;
+}
+
 /* Pagination */
 .blog-pagination {
   margin-bottom: 4rem;
