@@ -11,7 +11,7 @@
         <link href="css/blog.css" rel="stylesheet" />
         <script src="js/bootstrap.bundle.min.js"></script>
 
-        <meta name="theme-color" content="#7952b3" />
+        <meta name="theme-color" content="#121212" />
 
         <meta property="og:title" content="Time to Learn English" />
         <meta
@@ -1028,10 +1028,10 @@
                                 ? club.type[0] 
                                 : 'Speaking Club';
                             
-                            let badgeColor = 'text-primary';
+                            let badgeColor = 'text-primary-emphasis';
                             if (club.type && club.type.length > 0) {
                                 const firstType = club.type[0].toLowerCase();
-                                if (firstType.includes('board') || firstType.includes('game')) badgeColor = 'text-success';
+                                if (firstType.includes('board') || firstType.includes('game')) badgeColor = 'text-success-emphasis';
                                 if (firstType.includes('online')) badgeColor = 'text-info';
                                 if (firstType.includes('group')) badgeColor = 'text-warning';
                                 if (firstType.includes('stand')) badgeColor = 'text-standup';
