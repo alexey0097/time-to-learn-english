@@ -1085,7 +1085,9 @@
                     // Подпись кнопки фильтров на телефоне: сколько групп фильтров сужают список
                     function updateFiltersToggle() {
                         let active = 0;
-                        if (Array.from(document.querySelectorAll('.filter-type')).some(cb => !cb.checked)) active++;
+                        // Все типы сняты — фильтр по типу не применяется (как в applyFilters)
+                        const types = Array.from(document.querySelectorAll('.filter-type'));
+                        if (types.some(cb => !cb.checked) && types.some(cb => cb.checked)) active++;
                         if (Array.from(document.querySelectorAll('.filter-price')).some(cb => !cb.checked)) active++;
                         if (!document.getElementById('scheduleAll').checked) active++;
                         document.getElementById('filtersToggle').textContent = active ? `Filters (${active} active)` : 'Filters';
