@@ -99,6 +99,11 @@
     text-decoration-color: var(--bs-body-color) !important;
 }
 
+/* Рекламные блоки сайдбара: отличаются от редакционных пунктирной рамкой и меткой Sponsored */
+.sponsored {
+    border: 1px dashed var(--bs-border-color);
+}
+
 /* Ссылки с target="_blank": скринридер дочитает «(opens in new tab)» (WCAG, техника G201).
    Текст визуально скрыт; у .stretched-link ::after занят, им предупреждение дано в aria-label */
 a[target="_blank"]:not(.stretched-link)::after {
@@ -129,6 +134,7 @@ a[target="_blank"]:not(.stretched-link)::after {
 }
 
 .blog-header-logo {
+  text-decoration: none;
   font-family: "Playfair Display", Georgia, "Times New Roman", serif/*rtl:Amiri, Georgia, "Times New Roman", serif*/;
   font-size: 2.25rem;
 }
