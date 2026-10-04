@@ -99,6 +99,14 @@
     text-decoration-color: var(--bs-body-color) !important;
 }
 
+/* Бегущий фон героя (.animate-bg задан во встроенном <style> страниц) — без движения,
+   если в системе включено уменьшение анимации. html повышает специфичность над встроенным стилем */
+@media (prefers-reduced-motion: reduce) {
+    html .animate-bg {
+        animation: none;
+    }
+}
+
 
 .blog-header {
   line-height: 1;
