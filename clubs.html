@@ -176,6 +176,11 @@
         <main class="container">
             <div class="row g-5 d-flex flex-md-row" style="margin-left: 0; margin-right: 0">
                 <div id="clubsContainer" class="col-md-8 order-2 order-md-1 mt-0 mt-md-5" style="max-width: 100%">
+                    <p id="clubsCount" class="small text-body-secondary mb-3" aria-live="polite"></p>
+                    <div id="clubsEmpty" class="p-4 mb-4 border rounded text-center d-none">
+                        <p class="mb-3">No clubs match these filters. Try &ldquo;All days&rdquo; or turn on more types.</p>
+                        <button id="resetFiltersEmpty" class="btn btn-outline-secondary btn-sm" type="button">Reset Filters</button>
+                    </div>
                     
                     <nav class="blog-pagination" aria-label="Pagination">
                         <a class="btn btn-outline-primary" href="#archives">Older</a>
@@ -185,66 +190,73 @@
                     </nav>
                 </div>
 
-                <div class="col-md-4 order-1 order-md-2">
+                <div class="col-md-4 order-1 order-md-2 catalog-aside">
                     <div class="position-sticky" style="top: 2rem">
-                        <div class="p-4 mb-3 second-bg rounded">
-                            <h4 class="fst-italic">Filters</h4>
+                        <div class="p-3 p-md-4 mb-3 second-bg rounded catalog-filters">
+                            <button id="filtersToggle" class="btn btn-outline-secondary w-100 d-md-none" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#filtersBody" aria-expanded="false"
+                                aria-controls="filtersBody">Filters</button>
+                            <div id="filtersBody" class="collapse d-md-block">
+                                <div class="pt-3 pt-md-0">
+                                    <h4 class="fst-italic d-none d-md-block">Filters</h4>
                             
-                            <div class="row">
-                                <div class="col-md-6 mb-3">
-                                    <label class="form-label fw-bold">Type</label>
-                                    <div class="form-check">
-                                        <input class="form-check-input filter-type" type="checkbox" value="Speed Meetings" id="filterSpeed" checked>
-                                        <label class="form-check-label" for="filterSpeed">Speed Meetings</label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input filter-type" type="checkbox" value="Board Games" id="filterBoard" checked>
-                                        <label class="form-check-label" for="filterBoard">Board Games</label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input filter-type" type="checkbox" value="Group Meetings" id="filterGroup" checked>
-                                        <label class="form-check-label" for="filterGroup">Group Meetings</label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input filter-type" type="checkbox" value="Online" id="filterOnline" checked>
-                                        <label class="form-check-label" for="filterOnline">Online</label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input filter-type" type="checkbox" value="Stand-up" id="filterStandup" checked>
-                                        <label class="form-check-label" for="filterStandup">Stand-up</label>
-                                    </div>
-                                </div>
+                                    <div class="row">
+                                        <div class="col-md-6 mb-3">
+                                            <label class="form-label fw-bold">Type</label>
+                                            <div class="form-check">
+                                                <input class="form-check-input filter-type" type="checkbox" value="Speed Meetings" id="filterSpeed" checked>
+                                                <label class="form-check-label" for="filterSpeed">Speed Meetings</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input filter-type" type="checkbox" value="Board Games" id="filterBoard" checked>
+                                                <label class="form-check-label" for="filterBoard">Board Games</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input filter-type" type="checkbox" value="Group Meetings" id="filterGroup" checked>
+                                                <label class="form-check-label" for="filterGroup">Group Meetings</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input filter-type" type="checkbox" value="Online" id="filterOnline" checked>
+                                                <label class="form-check-label" for="filterOnline">Online</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input filter-type" type="checkbox" value="Stand-up" id="filterStandup" checked>
+                                                <label class="form-check-label" for="filterStandup">Stand-up</label>
+                                            </div>
+                                        </div>
 
-                                <div class="col-md-6 mb-3">
-                                    <label class="form-label fw-bold">Price</label>
-                                    <div class="form-check">
-                                        <input class="form-check-input filter-price" type="checkbox" value="free" id="priceFree" checked>
-                                        <label class="form-check-label" for="priceFree">Free</label>
+                                        <div class="col-md-6 mb-3">
+                                            <label class="form-label fw-bold">Price</label>
+                                            <div class="form-check">
+                                                <input class="form-check-input filter-price" type="checkbox" value="free" id="priceFree" checked>
+                                                <label class="form-check-label" for="priceFree">Free</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input filter-price" type="checkbox" value="paid" id="pricePaid" checked>
+                                                <label class="form-check-label" for="pricePaid">Paid</label>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input filter-price" type="checkbox" value="paid" id="pricePaid" checked>
-                                        <label class="form-check-label" for="pricePaid">Paid</label>
+
+                                    <div class="mb-3">
+                                        <label class="form-label fw-bold">Schedule</label>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="scheduleFilter" id="scheduleAll" value="all" checked>
+                                            <label class="form-check-label" for="scheduleAll">All days</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="scheduleFilter" id="scheduleToday" value="today">
+                                            <label class="form-check-label" for="scheduleToday">Today</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="scheduleFilter" id="scheduleWeek" value="week">
+                                            <label class="form-check-label" for="scheduleWeek">This week</label>
+                                        </div>
                                     </div>
+
+                                    <button id="resetFilters" class="btn btn-outline-secondary btn-sm w-100">Reset Filters</button>
                                 </div>
                             </div>
-
-                            <div class="mb-3">
-                                <label class="form-label fw-bold">Schedule</label>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="scheduleFilter" id="scheduleAll" value="all" checked>
-                                    <label class="form-check-label" for="scheduleAll">All days</label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="scheduleFilter" id="scheduleToday" value="today">
-                                    <label class="form-check-label" for="scheduleToday">Today</label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="scheduleFilter" id="scheduleWeek" value="week">
-                                    <label class="form-check-label" for="scheduleWeek">This week</label>
-                                </div>
-                            </div>
-
-                            <button id="resetFilters" class="btn btn-outline-secondary btn-sm w-100">Reset Filters</button>
                         </div>
 
                         <div class="p-4 mb-3 second-bg rounded d-none d-md-block">
@@ -1039,7 +1051,7 @@
                             }
                             
                             const imageHTML = club.image 
-                                ? `<img src="${club.image}" alt="${club.name}" class="position-absolute top-0 start-0 w-100 h-100" style="object-fit: cover; object-position: ${club.imagePosition || '50% 50%'};" />`
+                                ? `<img src="${club.image}" alt="${club.name}" loading="lazy" class="position-absolute top-0 start-0 w-100 h-100" style="object-fit: cover; object-position: ${club.imagePosition || '50% 50%'};" />`
                                 : '';
                             
                             clubsHTML += `
@@ -1053,7 +1065,7 @@
                                         ${club.desc ? `<p class="card-text mb-auto">${club.desc}</p>` : ''}
                                         ${club.link ? `<a href="${club.link}" class="stretched-link">Full details</a>` : ''}
                                     </div>
-                                    ${imageHTML ? `<div class="col-auto d-none d-lg-block position-relative" style="width: 200px; min-height: 250px;">${imageHTML}</div>` : ''}
+                                    ${imageHTML ? `<div class="col-12 col-lg-auto order-first order-lg-last card-photo">${imageHTML}</div>` : ''}
                                 </div>
                             `;
                         });
@@ -1064,6 +1076,19 @@
                         } else {
                             clubsContainer.insertAdjacentHTML('afterbegin', clubsHTML);
                         }
+
+                        // Счётчик результатов и пустое состояние
+                        document.getElementById('clubsCount').textContent = `Showing ${filteredClubs.length} of ${activeClubs.length} clubs`;
+                        document.getElementById('clubsEmpty').classList.toggle('d-none', filteredClubs.length > 0);
+                    }
+
+                    // Подпись кнопки фильтров на телефоне: сколько групп фильтров сужают список
+                    function updateFiltersToggle() {
+                        let active = 0;
+                        if (Array.from(document.querySelectorAll('.filter-type')).some(cb => !cb.checked)) active++;
+                        if (Array.from(document.querySelectorAll('.filter-price')).some(cb => !cb.checked)) active++;
+                        if (!document.getElementById('scheduleAll').checked) active++;
+                        document.getElementById('filtersToggle').textContent = active ? `Filters (${active} active)` : 'Filters';
                     }
 
                     // ========== ФИЛЬТРАЦИЯ ==========
@@ -1103,6 +1128,7 @@
                         });
                         
                         renderClubs(filtered);
+                        updateFiltersToggle();
                     }
 
                     // ========== НАВЕШИВАЕМ ОБРАБОТЧИКИ ==========
@@ -1112,12 +1138,14 @@
                     document.querySelectorAll('input[name="scheduleFilter"]').forEach(radio => {
                         radio.addEventListener('change', applyFilters);
                     });
-                    document.getElementById('resetFilters').addEventListener('click', function() {
+                    function resetFilters() {
                         document.querySelectorAll('.filter-type').forEach(cb => cb.checked = true);
                         document.querySelectorAll('.filter-price').forEach(cb => cb.checked = true);
                         document.getElementById('scheduleAll').checked = true;
                         applyFilters();
-                    });
+                    }
+                    document.getElementById('resetFilters').addEventListener('click', resetFilters);
+                    document.getElementById('resetFiltersEmpty').addEventListener('click', resetFilters);
 
                     // ========== ПЕРВЫЙ РЕНДЕР ==========
                     renderClubs(activeClubs);

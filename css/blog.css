@@ -162,8 +162,8 @@ a[target="_blank"]:not(.stretched-link)::after {
   align-items: center;
 }
 
-/* «Sign up» — второстепенная кнопка; дефолтный серый #6c757d не проходит контраст 4,5:1 */
-.blog-header .btn-outline-secondary {
+/* Второстепенные кнопки (Sign up, Reset Filters, Filters): дефолтный серый #6c757d не проходит контраст 4,5:1 */
+[data-bs-theme="dark"] .btn-outline-secondary {
   --bs-btn-color: var(--bs-secondary-color);
   --bs-btn-border-color: var(--bs-border-color);
   --bs-btn-hover-color: var(--bs-body-color);
@@ -231,6 +231,42 @@ h1, h2, h3, h4, h5, h6 {
 .h-250 { height: 250px; }
 @media (min-width: 768px) {
   .h-md-250 { height: 250px; }
+}
+@media (min-width: 992px) {
+  .h-lg-250 { height: 250px; }
+}
+
+/* Фото в карточках клубов и промо: ниже lg — сверху карточки 16:9, с lg — справа 200×250 */
+.card-photo {
+  position: relative;
+  aspect-ratio: 16 / 9;
+}
+@media (min-width: 992px) {
+  .card-photo {
+    width: 200px;
+    min-height: 250px;
+    aspect-ratio: auto;
+  }
+}
+
+/* Каталог на телефоне: блоки сайдбара встают в общий поток —
+   фильтры над списком клубов, «Elsewhere» под ним */
+@media (max-width: 767.98px) {
+  .catalog-aside,
+  .catalog-aside > .position-sticky {
+    display: contents;
+  }
+  .catalog-aside > .position-sticky > * {
+    order: 1;
+    width: calc(100% - var(--bs-gutter-x));
+    margin-inline: calc(var(--bs-gutter-x) * .5);
+  }
+  .catalog-aside .catalog-filters {
+    margin-top: var(--bs-gutter-y);
+  }
+  .catalog-aside #contacts {
+    order: 3;
+  }
 }
 
 /* Pagination */
