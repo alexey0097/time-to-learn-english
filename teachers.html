@@ -1,90 +1,31 @@
 <!doctype html>
-<html lang="en" data-bs-theme="dark">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="description" content="" />
-        <meta name="author" content="Alexey Leonov, and Bootstrap contributors" />
-        <title>Teachers — Time to Learn English</title>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="" name="description"/>
+<meta content="Alexey Leonov" name="author"/>
+<link rel="stylesheet" href="metro/metro.css">
+<script src="metro/metro.js"></script>
+<meta name="theme-color" content="#18803a">
+<title>Teachers — Time to Learn English</title>
 
-        <link href="css/bootstrap.min.css" rel="stylesheet" />
-        <link rel="preload" href="fonts/playfair-700-latin.woff2" as="font" type="font/woff2" crossorigin />
-        <link href="css/blog.css" rel="stylesheet" />
-        <script src="js/bootstrap.bundle.min.js"></script>
 
-        <meta name="theme-color" content="#121212" />
 
-        <meta property="og:title" content="Teachers — Time to Learn English" />
-        <meta
-            property="og:description"
-            content="Private language teachers in Moscow and online: native English speakers, Russian for foreigners, Spanish, Chinese and more."
-        />
-        <meta property="og:image" content="https://alexey0097.github.io/time-to-learn-english/img/preview.jpg" />
-        <meta property="og:url" content="https://alexey0097.github.io/time-to-learn-english/teachers.html" />
-        <meta property="og:type" content="website" />
 
-        <link rel="icon" type="image/png" href="img/favicon/favicon-96x96.png" sizes="96x96" />
-        <link rel="icon" type="image/svg+xml" href="img/favicon/favicon.svg" />
-        <link rel="shortcut icon" href="img/favicon/favicon.ico" />
-        <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png" />
-        <link rel="manifest" href="img/favicon/site.webmanifest" />
+<meta content="Teachers — Time to Learn English" property="og:title"/>
+<meta content="Private language teachers in Moscow and online: native English speakers, Russian for foreigners, Spanish, Chinese and more." property="og:description"/>
+<meta content="https://alexey0097.github.io/time-to-learn-english/img/preview.jpg" property="og:image"/>
+<meta content="https://alexey0097.github.io/time-to-learn-english/teachers.html" property="og:url"/>
+<meta content="website" property="og:type"/>
+<link href="img/favicon/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png"/>
+<link href="img/favicon/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="img/favicon/favicon.ico" rel="shortcut icon"/>
+<link href="img/favicon/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="img/favicon/site.webmanifest" rel="manifest"/>
 
-        <style>
-            .bd-placeholder-img {
-                font-size: 1.125rem;
-                text-anchor: middle;
-                -webkit-user-select: none;
-                -moz-user-select: none;
-                user-select: none;
-            }
-
-            @media (min-width: 768px) {
-                .bd-placeholder-img-lg {
-                    font-size: 3.5rem;
-                }
-            }
-
-            .teacher-avatar {
-                width: 72px;
-                height: 72px;
-                flex-shrink: 0;
-                border-radius: 50%;
-                object-fit: cover;
-            }
-
-            .teacher-initials {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                font-family: "Playfair Display", "Playfair Display Fallback", Georgia, "Times New Roman", serif;
-                font-weight: 700;
-            }
-
-            .teacher-facts li {
-                display: inline;
-            }
-
-            .teacher-facts li + li::before {
-                content: " · ";
-            }
-
-            .flag {
-                display: inline-block;
-                width: 1.35em;
-                height: 0.9em;
-                object-fit: cover;
-                border-radius: 2px;
-                vertical-align: -0.1em;
-                box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.14);
-            }
-
-            .flag + .flag {
-                margin-left: 0.2em;
-            }
-        </style>
-
-        <!-- Yandex.Metrika counter -->
-        <script type="text/javascript">
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
             (function (m, e, t, r, i, k, a) {
                 m[i] =
                     m[i] ||
@@ -115,151 +56,84 @@
                 trackLinks: true,
             });
         </script>
-        <noscript
-            ><div>
-                <img src="https://mc.yandex.ru/watch/108766865" style="position: absolute; left: -9999px" alt="" /></div
-        ></noscript>
-        <!-- /Yandex.Metrika counter -->
-    </head>
-    <body>
-        <div class="container">
-            <header class="blog-header py-3">
-                <div class="row flex-wrap flex-md-nowrap justify-content-between align-items-center gy-2 gy-md-0">
-                    <div class="col-auto col-md-4">
-                        <a class="btn btn-sm btn-primary" target="_blank" href="https://t.me/eng_events">Subscribe</a>
-                    </div>
-                    <div class="col-12 col-md-4 text-center order-first order-md-0">
-                        <a class="blog-header-logo header-link" href="index.html">Time to Learn English</a>
-                    </div>
-                    <div class="col-auto col-md-4 d-flex justify-content-end align-items-center">
-                        <a class="link-secondary" href="#" aria-label="Search">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="20"
-                                height="20"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                stroke-width="2"
-                                class="mx-3"
-                                role="img"
-                                viewBox="0 0 24 24"
-                            >
-                                <title>Search</title>
-                                <circle cx="10.5" cy="10.5" r="7.5" />
-                                <path d="M21 21l-5.2-5.2" />
-                            </svg>
-                        </a>
-                        <a class="btn btn-sm btn-outline-secondary" href="#">Sign up</a>
-                    </div>
-                </div>
-            </header>
+<noscript><div>
+<img alt="" src="https://mc.yandex.ru/watch/108766865" style="position: absolute; left: -9999px"/></div></noscript>
+<!-- /Yandex.Metrika counter -->
+</head>
+<body>
 
-            <div class="nav-scroller py-1 mb-2">
-                <nav class="nav d-flex justify-content-between">
-                    <a class="p-2 link-secondary" href="index.html#actual-schedule">Schedule</a>
-                    <a class="p-2 link-secondary" href="clubs.html">Clubs</a>
-                    <a class="p-2 link-secondary" href="teachers.html">Teachers</a>
-                    <a class="p-2 link-secondary" href="#contacts">Contacts</a>
-                </nav>
-            </div>
-        </div>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="index.html">Time to Learn English</a>
+    <nav aria-label="Main">
+      <a href="index.html#actual-schedule">Schedule</a>
+      <a href="clubs.html">Clubs</a>
+      <a href="teachers.html" aria-current="page">Teachers</a>
+      <a href="#contacts">Contacts</a>
+    </nav>
+    <a class="btn btn--primary" href="https://t.me/eng_events" target="_blank">Subscribe</a>
+  </div>
+</header>
 
-        <main class="container">
-            <div class="row g-5 d-flex flex-md-row" style="margin-left: 0; margin-right: 0">
-                <div id="teachersContainer" class="col-md-8 order-2 order-md-1" style="max-width: 100%">
-                    <h3 class="pb-4 mb-4 fst-italic border-bottom">Teachers</h3>
-                </div>
+<main>
+  <section class="intro wrap">
+    <h1>Teachers in Moscow and online</h1>
+    <p class="lede">Clubs are great for practice, but sometimes you need a teacher. Here are <strong id="teacherCount"></strong> of them: native English speakers, Russian for foreigners, Spanish, Chinese and more.</p>
+  </section>
 
-                <div class="col-md-4 order-1 order-md-2">
-                    <div class="position-sticky" style="top: 2rem">
-                        <div class="p-4 mb-3 second-bg rounded">
-                            <h4 class="fst-italic">Filters</h4>
+  <div class="layout wrap">
+    <details class="layout__top filters panel" open data-collapse-below="60rem">
+      <summary>Filters</summary>
+      <div>
+        <fieldset>
+          <legend>Language</legend>
+          <div class="chips">
+          <label class="chip line-blue"><input class="filter-lang" type="checkbox" value="English" id="langEnglish" checked><span>English <span class="n" data-count="English"></span></span></label>
+          <label class="chip line-sky"><input class="filter-lang" type="checkbox" value="Russian" id="langRussian" checked><span>Russian <span class="n" data-count="Russian"></span></span></label>
+          <label class="chip line-yellow"><input class="filter-lang" type="checkbox" value="Spanish" id="langSpanish" checked><span>Spanish <span class="n" data-count="Spanish"></span></span></label>
+          <label class="chip line-violet"><input class="filter-lang" type="checkbox" value="French" id="langFrench" checked><span>French <span class="n" data-count="French"></span></span></label>
+          <label class="chip line-grey"><input class="filter-lang" type="checkbox" value="German" id="langGerman" checked><span>German <span class="n" data-count="German"></span></span></label>
+          <label class="chip line-red"><input class="filter-lang" type="checkbox" value="Chinese" id="langChinese" checked><span>Chinese <span class="n" data-count="Chinese"></span></span></label>
+          <label class="chip line-green"><input class="filter-lang" type="checkbox" value="Arabic" id="langArabic" checked><span>Arabic <span class="n" data-count="Arabic"></span></span></label>
+          <label class="chip chip--plain"><input class="filter-lang" type="checkbox" value="Other" id="langOther" checked><span>Other <span class="n" data-count="Other"></span></span></label>
+          </div>
+        </fieldset>
+        <button id="resetFilters" class="link-btn link-btn--quiet" type="button">Reset filters</button>
+      </div>
+    </details>
 
-                            <label class="form-label fw-bold">Language</label>
-                            <div class="row">
-                                <div class="col-6 mb-3">
-                                <div class="form-check">
-                                    <input class="form-check-input filter-lang" type="checkbox" value="English" id="langEnglish" checked>
-                                    <label class="form-check-label" for="langEnglish">English <span class="text-body-secondary" data-count="English"></span></label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input filter-lang" type="checkbox" value="Russian" id="langRussian" checked>
-                                    <label class="form-check-label" for="langRussian">Russian <span class="text-body-secondary" data-count="Russian"></span></label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input filter-lang" type="checkbox" value="Spanish" id="langSpanish" checked>
-                                    <label class="form-check-label" for="langSpanish">Spanish <span class="text-body-secondary" data-count="Spanish"></span></label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input filter-lang" type="checkbox" value="French" id="langFrench" checked>
-                                    <label class="form-check-label" for="langFrench">French <span class="text-body-secondary" data-count="French"></span></label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input filter-lang" type="checkbox" value="German" id="langGerman" checked>
-                                    <label class="form-check-label" for="langGerman">German <span class="text-body-secondary" data-count="German"></span></label>
-                                </div>
-                                </div>
-                                <div class="col-6 mb-3">
-                                <div class="form-check">
-                                    <input class="form-check-input filter-lang" type="checkbox" value="Chinese" id="langChinese" checked>
-                                    <label class="form-check-label" for="langChinese">Chinese <span class="text-body-secondary" data-count="Chinese"></span></label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input filter-lang" type="checkbox" value="Arabic" id="langArabic" checked>
-                                    <label class="form-check-label" for="langArabic">Arabic <span class="text-body-secondary" data-count="Arabic"></span></label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input filter-lang" type="checkbox" value="Other" id="langOther" checked>
-                                    <label class="form-check-label" for="langOther">Other <span class="text-body-secondary" data-count="Other"></span></label>
-                                </div>
-                                </div>
-                            </div>
+    <div class="layout__main">
+      <p id="resultCount" class="count" aria-live="polite"></p>
+      <ul id="teacherList" class="entries"></ul>
+    </div>
 
-                            <button id="resetFilters" class="btn btn-outline-secondary btn-sm w-100">Reset Filters</button>
-                        </div>
+    <aside class="layout__aside">
+      <section class="panel">
+        <h4>Before you write</h4>
+        <p class="note">Prices may have changed, so check with the teacher.</p>
+        <p class="note">Teacher yourself? Write to <a href="https://t.me/eng_events" target="_blank">@eng_events</a> to be added.</p>
+      </section>
+      <section class="panel panel--quiet" id="contacts">
+        <h4>Elsewhere</h4>
+        <ol>
+          <li>Email: <a href="mailto:alexey0097@yandex.ru" target="_blank">alexey0097@yandex.ru</a></li>
+          <li>Telegram: <a href="https://t.me/eng_events" target="_blank">@eng_events</a></li>
+          <li>QR code: <a href="qr-code.html">time-to-learn-eng</a></li>
+        </ol>
+      </section>
+    </aside>
+  </div>
+</main>
 
-                        <div class="p-4 mb-3 second-bg rounded d-none d-md-block">
-                            <h4 class="fst-italic">Find Your Teacher</h4>
-                            <p class="mb-2">
-                                Clubs are great for practice, but sometimes you need a teacher. Here are
-                                <strong id="teacherCount"></strong> of them in Moscow and online — native English
-                                speakers, Russian for foreigners, Spanish, Chinese and more.
-                            </p>
-                            <p class="mb-0 text-body-secondary">
-                                <em>Prices may have changed — please check with the teacher.</em> Teacher? Write to
-                                <a href="https://t.me/eng_events" target="_blank">@eng_events</a> to be added.
-                            </p>
-                        </div>
+<footer class="footer">
+  <div class="wrap">
+    <p>Made by <a href="https://t.me/alexey_acc">@alexey_acc</a> for everyone practising English in Moscow.</p>
+    <p><a href="#">Back to top</a></p>
+  </div>
+</footer>
 
-                        <div id="contacts" class="p-4">
-                            <h4 class="fst-italic">Elsewhere</h4>
-                            <ol class="list-unstyled">
-                                <li>
-                                    Email:
-                                    <a href="mailto:alexey0097@yandex.ru" target="_blank">alexey0097@yandex.ru</a>
-                                </li>
-                                <li>Telegram: <a href="https://t.me/eng_events" target="_blank">@eng_events</a></li>
-                                <li>QR Code: <a href="qr-code.html">time-to-learn-eng</a></li>
-                            </ol>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </main>
+<script>
 
-        <footer class="blog-footer">
-            <p>
-                © 2026 Time to Learn English · Made by
-                <a href="https://t.me/alexey_acc">@alexey_acc</a> with <a href="https://getbootstrap.com/">Bootstrap</a>
-            </p>
-            <p>
-                <a href="#">Back to top</a>
-            </p>
-        </footer>
-
-        <script type="text/javascript">
                     const teachers = [
                       {
                         "id": "alex-british-english",
@@ -613,7 +487,7 @@
                         "body": "<p>Martin was born in a small English town and is a semi-retired engineer who now spends his time helping people improve their English. He teaches the way UK schools do, following the <strong>Oxford English syllabus</strong>, with homework after every lesson.</p> <ul> <li>👶 Students from 3 to 90 years old — games and interactive lessons for little ones</li> <li>📈 One student went from IELTS 4 to 8; another earned their CELTA with his help</li> <li>📚 His 11-year-olds are reading Harry Potter in the original</li> <li><img src=\"img/flags/gb.svg\" class=\"flag\" alt=\"\"> Lessons come with a good dose of British culture and history</li> </ul> <p>Each session is a full hour. Rates have ranged from ₽2,000 to ₽3,000 per hour across his offers (5+ lessons booked in advance were ₽2,800 each), so ask for the current price. Because of the homework, the limit is two lessons a week.</p>",
                         "short": false,
                         "promoted": false,
-                        "rating": 100
+                        "rating": 99.5
                       },
                       {
                         "id": "dale-oxford",
@@ -742,6 +616,28 @@
                         "short": false,
                         "promoted": false,
                         "rating": 99
+                      },
+                      {
+                        "id": "rodion",
+                        "name": "Rodion — Arabic Language for Everyone",
+                        "date": "2026-10-04",
+                        "languages": [
+                          "Arabic",
+                          "English"
+                        ],
+                        "facts": [
+                          "⏳ 6 years of Arabic",
+                          "🎓 B2 degree after language practice in Morocco",
+                          "💰 ₽2,000 / hour"
+                        ],
+                        "photo": "img/min_teacher-rodion.jpg",
+                        "contact": "https://t.me/zovite_menya_sneg",
+                        "contactLabel": "Message on Telegram →",
+                        "phone": "+7 993 450-09-52",
+                        "body": "<p>Teaching <strong>Arabic for all purposes, all levels and all ages</strong>. Teaching technique based on the program of the HSE University with a focus on student’s personal needs in learning the language. As a non-native speaker and a person who mastered the language, I can carry you through all the stages and explain the depth of the language.</p> <ul> <li>📚 Been learning Arabic for 6 years</li> <li>🕌 Worked as a teacher in an Islamic school, as a translator at high-level events, and as a Middle East specialist on RBC Radio</li> <li>🌍 Had a language practice for 2 months in Morocco, after which I received a degree for B2 level of Arabic</li> </ul> <p>💰 2k rubles per hour.</p>",
+                        "short": false,
+                        "promoted": false,
+                        "rating": 99.5
                       },
                       {
                         "id": "linda-gilbert",
@@ -2245,14 +2141,6 @@
                       }
                     ];
 
-                    const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-                    const PALETTE = ['primary', 'success', 'warning', 'danger', 'info', 'secondary'];
-
-                    function formatDate(iso) {
-                        const [y, m, d] = iso.split('-').map(Number);
-                        return `${MONTHS[m - 1]} ${d}, ${y}`;
-                    }
-
                     function initials(name) {
                         const parts = name.split(' — ')[0].split(/[\s-]+/).filter(p => /\p{L}/u.test(p[0] || ''));
                         return ((parts[0] || '?')[0] + (parts[1] ? parts[1][0] : '')).toUpperCase();
@@ -2265,51 +2153,58 @@
                         return b.date.localeCompare(a.date);
                     });
 
+                    // Цвет языка: цвета флагов и устойчивые положительные ассоциации. Остальные языки без цвета.
+                    const LANG_COLOR = {"English": "blue", "Russian": "sky", "Spanish": "yellow", "French": "violet", "German": "grey", "Chinese": "red", "Arabic": "green", "Portuguese": "lime"};
+
                     // ========== ФУНКЦИЯ ОТРИСОВКИ ==========
+                    const esc = s => String(s).replace(/[&<>"]/g, ch => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;'}[ch]));
+
                     function renderTeachers(list) {
-                        const container = document.getElementById('teachersContainer');
-                        if (!container) return;
-                        container.querySelectorAll('article.blog-post, .teachers-empty').forEach(el => el.remove());
+                        const box = document.getElementById('teacherList');
+                        const count = document.getElementById('resultCount');
+                        if (!box) return;
+                        count.textContent = list.length === teachers.length
+                            ? `All ${list.length} teachers`
+                            : `${list.length} of ${teachers.length} teachers`;
 
                         if (list.length === 0) {
-                            container.insertAdjacentHTML('beforeend', '<p class="teachers-empty text-body-secondary">No teachers match these filters — try another language.</p>');
+                            box.innerHTML = `<li class="empty"><h2>No teachers for these languages</h2>
+                                <p>Turn on more languages to see more teachers.</p>
+                                <button class="btn btn--primary" type="button" onclick="document.getElementById('resetFilters').click()">Reset filters</button></li>`;
                             return;
                         }
 
-                        let html = '';
-                        list.forEach((t, i) => {
-                            const alt = t.name.split(' — ')[0];
-                            const color = PALETTE[i % PALETTE.length];
+                        box.innerHTML = list.map(t => {
+                            const [person, ...rest] = t.name.split(' — ');
+                            const role = rest.join(' — ');
                             const avatar = t.photo
-                                ? `<img src="${t.photo}" class="teacher-avatar" alt="${alt}" width="72" height="72" loading="lazy" />`
-                                : `<div class="teacher-avatar teacher-initials bg-${color}-subtle text-${color}-emphasis fs-4" aria-hidden="true">${initials(t.name)}</div>`;
-                            const langs = t.languages.map(l => `<span class="badge rounded-pill text-bg-warning">${l}</span>`).join(' ');
-                            const facts = t.facts.length
-                                ? `<ul class="list-inline teacher-facts text-body-secondary mb-0">${t.facts.map(f => `<li>${f}</li>`).join('')}</ul>`
-                                : '';
+                                ? `<img class="entry__avatar" src="${esc(t.photo)}" alt="" width="72" height="72" loading="lazy">`
+                                : `<div class="entry__avatar" aria-hidden="true">${initials(t.name)}</div>`;
+                            const langs = t.languages.map(l => `<b class="tag ${LANG_COLOR[l] ? 'line-' + LANG_COLOR[l] : 'tag--plain'}">${esc(l)}</b>`).join('');
+                            const facts = t.facts.length ? `<ul class="facts">${t.facts.map(f => `<li>${f}</li>`).join('')}</ul>` : '';
+                            const label = (t.contactLabel || '').replace(/\s*→\s*$/, '');
+                            // Цвет карточки — по первому языку, у которого есть цвет; иначе нейтральный
+                            const tone = t.languages.map(l => LANG_COLOR[l]).find(Boolean);
+                            return `<li class="entry ${tone ? 'line-' + tone : 'is-neutral'}" id="${esc(t.id)}">
+                                ${avatar}
+                                <div class="entry__head">
+                                    <h2>${esc(person)}</h2>
+                                    ${role ? `<div class="entry__sub">${esc(role)}</div>` : ''}
+                                    <div class="tags">${langs}</div>
+                                    ${facts}
+                                </div>
+                                <div class="entry__text" data-clamp>${t.body}</div>
+                                <div class="entry__actions">
+                                    ${t.contact ? `<a class="btn btn--primary" href="${esc(t.contact)}" target="_blank" rel="noopener">${esc(label)}</a>` : ''}
+                                    ${t.phone ? `<button type="button" class="btn" data-copy="${esc(t.phone)}" title="Copy phone number">${esc(t.phone)}</button>` : ''}
+                                    ${t.email ? `<button type="button" class="btn" data-copy="${esc(t.email)}" title="Copy email">${esc(t.email)}</button>` : ''}
+                                </div>
+                            </li>`;
+                        }).join('');
 
-                            html += `
-                                <article class="blog-post" id="${t.id}">
-                                    <h2 class="blog-post-title">${t.name}</h2>
-                                    <p class="blog-post-meta">${formatDate(t.date)}</p>
-                                    <div class="d-flex align-items-center gap-3 mb-3">
-                                        ${avatar}
-                                        <div>
-                                            <div class="d-flex flex-wrap gap-1${facts ? ' mb-2' : ''}">${langs}</div>
-                                            ${facts}
-                                        </div>
-                                    </div>
-                                    ${t.body}
-                                    <div class="d-flex flex-wrap gap-2">
-                                        ${t.contact ? `<a class="btn btn-sm btn-outline-secondary" href="${t.contact}" target="_blank" rel="noopener">${t.contactLabel}</a>` : ''}
-                                        ${t.phone ? `<button type="button" class="btn btn-sm btn-outline-secondary copy-value" data-copy="${t.phone}" title="Copy phone number">${t.phone}</button>` : ''}
-                                        ${t.email ? `<button type="button" class="btn btn-sm btn-outline-secondary copy-value" data-copy="${t.email}" title="Copy email">${t.email}</button>` : ''}
-                                    </div>
-                                </article>
-                            `;
-                        });
-                        container.insertAdjacentHTML('beforeend', html);
+                        Metro.init(box);
                     }
+
 
                     // ========== ФИЛЬТРАЦИЯ ==========
                     // Группа фильтра считается из languages: языки из списка чекбоксов — как есть, всё прочее — Other
@@ -2326,7 +2221,7 @@
 
                     // Количество преподавателей рядом с каждым языком
                     document.querySelectorAll('[data-count]').forEach(el => {
-                        el.textContent = '(' + teachers.filter(t => filterGroups(t).includes(el.dataset.count)).length + ')';
+                        el.textContent = teachers.filter(t => filterGroups(t).includes(el.dataset.count)).length;
                     });
                     document.getElementById('teacherCount').textContent = teachers.length;
 
@@ -2339,41 +2234,9 @@
                         applyFilters();
                     });
 
-                    // ========== КОПИРОВАНИЕ ТЕЛЕФОНА И EMAIL ==========
-                    function copyText(text) {
-                        if (navigator.clipboard && window.isSecureContext) {
-                            return navigator.clipboard.writeText(text);
-                        }
-                        // Запасной вариант для http:// и старых браузеров
-                        const area = document.createElement('textarea');
-                        area.value = text;
-                        area.style.position = 'fixed';
-                        area.style.opacity = '0';
-                        document.body.appendChild(area);
-                        area.select();
-                        const ok = document.execCommand('copy');
-                        area.remove();
-                        return ok ? Promise.resolve() : Promise.reject();
-                    }
-
-                    document.getElementById('teachersContainer').addEventListener('click', function (event) {
-                        const button = event.target.closest('.copy-value');
-                        if (!button || button.dataset.copied) return;
-                        const value = button.dataset.copy;
-                        copyText(value).then(() => {
-                            button.dataset.copied = '1';
-                            button.style.minWidth = button.offsetWidth + 'px'; // чтобы кнопка не прыгала по ширине
-                            button.textContent = 'Copied!';
-                            setTimeout(() => {
-                                button.textContent = value;
-                                button.style.minWidth = '';
-                                delete button.dataset.copied;
-                            }, 1000);
-                        });
-                    });
-
                     // ========== ПЕРВЫЙ РЕНДЕР ==========
                     renderTeachers(teachers);
-        </script>
-    </body>
+
+</script>
+</body>
 </html>

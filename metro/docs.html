@@ -1,0 +1,713 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Metro CSS</title>
+<link rel="stylesheet" href="metro.css">
+<script src="metro.js"></script>
+<style>
+  .doc { padding-block: 3rem; border-top: 1px solid var(--rule); }
+  .doc > h2 { font-size: var(--step-2); }
+  .doc > .lede { font-size: var(--step-0); }
+  .doc code { font: 0.9em ui-monospace, "SF Mono", Consolas, monospace; }
+  .demo { margin-top: 1.5rem; padding: clamp(1rem, 3vw, 2rem); border: 1px dashed var(--rule); border-radius: var(--radius); }
+  .doc pre { margin-top: 1rem; padding: 1rem 1.25rem; overflow-x: auto; border-radius: var(--radius); background: var(--surface); font-size: 0.85rem; line-height: 1.55; }
+  .swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(13.5rem, 1fr)); gap: 1rem; margin-top: 1rem; }
+  .sw { border-radius: 12px; overflow: hidden; background: var(--surface); box-shadow: 0 0 0 1px var(--rule); }
+  .sw__pair { display: grid; grid-template-columns: 1fr 1fr; }
+  .sw__half { height: 5rem; display: flex; flex-direction: column; justify-content: flex-end; padding: 0.5rem 0.6rem; font: 0.72rem ui-monospace, Consolas, monospace; }
+  .sw__half span { color: light-dark(#16181d, #eceef2); background: light-dark(rgb(255 255 255 / 0.8), rgb(0 0 0 / 0.55)); padding: 0.1rem 0.3rem; border-radius: 4px; width: fit-content; }
+  .sw__text { background: var(--paper); justify-content: space-between; height: 4.5rem; }
+  .sw__text b { font: 600 1.4rem/1 var(--display); }
+  .sw__text span { background: none; padding: 0; color: var(--muted); }
+  .sw__fill { height: 5.5rem; padding: 0.6rem; display: grid; grid-template-columns: auto 1fr; grid-template-rows: 1fr auto; gap: 0.3rem 0.6rem;
+               background: var(--line-fill); color: var(--on-line); font: 0.72rem ui-monospace, Consolas, monospace; }
+  .sw__fill b { font: 600 1.5rem/1 var(--display); align-self: center; }
+  .sw__fill > span:last-child { grid-column: 1 / -1; }
+  .sw__fill .mark { width: 2rem; height: 2rem; font-size: 0.8rem; align-self: center; }
+  .sw__meta { padding: 0.7rem 0.8rem 0.8rem; display: grid; gap: 0.15rem; font-size: 0.95rem; }
+  .sw__meta code { font-size: 0.8rem; color: var(--muted); }
+  .sw-group { font-size: var(--step-0); margin-top: 2.25rem; }
+  .sw-group:first-child { margin-top: 0; }
+  .toc { display: flex; flex-wrap: wrap; gap: 0.25rem 1rem; margin-top: 1.5rem; font-size: var(--step--1); }
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="#">Metro CSS</a>
+    <nav aria-label="Main"><a href="#start">Start</a><a href="#tokens">Colours</a><a href="#route">Route</a><a href="#entries">Entries</a><a href="#js">JS</a></nav>
+    <button class="btn" type="button" data-theme-toggle>Light / dark</button>
+  </div>
+</header>
+<main class="wrap">
+  <section class="intro">
+    <h1>Metro CSS</h1>
+    <p class="lede">The design system of Time to Learn English. One CSS file, one optional JS file, two fonts. No build step and no dependencies.</p>
+    <nav class="toc" aria-label="Contents">
+      <a href="#start">Getting started</a>
+      <a href="#tokens">Colours</a>
+      <a href="#recolour">Recolouring components</a>
+      <a href="#type">Type</a>
+      <a href="#topbar">Top bar</a>
+      <a href="#intro">Intro</a>
+      <a href="#linemap">Linemap</a>
+      <a href="#route">Route</a>
+      <a href="#cards">Feature, cards, panels</a>
+      <a href="#tags">Tags and buttons</a>
+      <a href="#entries">Entries</a>
+      <a href="#filters">Filters and chips</a>
+      <a href="#fold">Fold and empty state</a>
+      <a href="#layout">Layout</a>
+      <a href="#js">metro.js</a>
+    </nav>
+  </section>
+  <section class="doc" id="start">
+  <h2>Getting started</h2>
+  <p class="lede">Copy the <code>metro</code> folder into your project and add two lines to every page. Fonts live in <code>metro/fonts</code> and load from there.</p>
+  
+  <pre><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;metro/metro.css&quot;&gt;
+&lt;script src=&quot;metro/metro.js&quot;&gt;&lt;/script&gt;</code></pre>
+</section><section class="doc" id="tokens">
+  <h2>Colours</h2>
+  <p class="lede">Everything is coloured by tokens on <code>:root</code>. Each token has a value for the light theme and one for the dark theme; the swatches show both. Text colours are checked for at least 4.5:1 contrast on the page in either theme.</p>
+  <div class="demo"><h3 class="sw-group">Base</h3>
+<div class="swatches">
+  <div class="sw">
+    <div class="sw__pair">
+      <div class="sw__half" style="color-scheme:light;background:var(--paper)"><span>#f3f4f6</span></div>
+      <div class="sw__half" style="color-scheme:dark;background:var(--paper)"><span>#121418</span></div>
+    </div>
+    <div class="sw__meta"><b>Paper</b> <code>--paper</code><span class="small muted">Page background</span></div>
+  </div>
+  <div class="sw">
+    <div class="sw__pair">
+      <div class="sw__half" style="color-scheme:light;background:var(--surface)"><span>#ffffff</span></div>
+      <div class="sw__half" style="color-scheme:dark;background:var(--surface)"><span>#1b1e24</span></div>
+    </div>
+    <div class="sw__meta"><b>Surface</b> <code>--surface</code><span class="small muted">Cards, panels, chips</span></div>
+  </div>
+  <div class="sw">
+    <div class="sw__pair">
+      <div class="sw__half" style="color-scheme:light;background:var(--rule)"><span>#dfe2e7</span></div>
+      <div class="sw__half" style="color-scheme:dark;background:var(--rule)"><span>#2b2f37</span></div>
+    </div>
+    <div class="sw__meta"><b>Rule</b> <code>--rule</code><span class="small muted">Hairlines and borders</span></div>
+  </div>
+  <div class="sw">
+    <div class="sw__pair">
+      <div class="sw__half" style="color-scheme:light;background:var(--muted)"><span>#5d6470</span></div>
+      <div class="sw__half" style="color-scheme:dark;background:var(--muted)"><span>#9aa1ad</span></div>
+    </div>
+    <div class="sw__meta"><b>Muted</b> <code>--muted</code><span class="small muted">Secondary text, captions</span></div>
+  </div>
+  <div class="sw">
+    <div class="sw__pair">
+      <div class="sw__half" style="color-scheme:light;background:var(--ink)"><span>#16181d</span></div>
+      <div class="sw__half" style="color-scheme:dark;background:var(--ink)"><span>#eceef2</span></div>
+    </div>
+    <div class="sw__meta"><b>Ink</b> <code>--ink</code><span class="small muted">Body text and headings</span></div>
+  </div>
+</div>
+<h3 class="sw-group">Accents</h3>
+<div class="swatches">
+  <div class="sw">
+    <div class="sw__pair">
+      <div class="sw__half sw__text" style="color-scheme:light"><b style="color:var(--line)">Aa</b><span>#00712b</span></div>
+      <div class="sw__half sw__text" style="color-scheme:dark"><b style="color:var(--line)">Aa</b><span>#4cc764</span></div>
+    </div>
+    <div class="sw__meta"><b>Line</b> <code>--line</code><span class="small muted">Main accent: links, buttons, the route</span></div>
+  </div>
+  <div class="sw">
+    <div class="sw__pair">
+      <div class="sw__half sw__text" style="color-scheme:light"><b style="color:var(--alt)">Aa</b><span>#0063ad</span></div>
+      <div class="sw__half sw__text" style="color-scheme:dark"><b style="color:var(--alt)">Aa</b><span>#4aa8ff</span></div>
+    </div>
+    <div class="sw__meta"><b>Alt</b> <code>--alt</code><span class="small muted">Second line: online meetups</span></div>
+  </div>
+  <div class="sw">
+    <div class="sw__pair">
+      <div class="sw__half sw__text" style="color-scheme:light"><b style="color:var(--gold)">Aa</b><span>#a05c00</span></div>
+      <div class="sw__half sw__text" style="color-scheme:dark"><b style="color:var(--gold)">Aa</b><span>#f5b73b</span></div>
+    </div>
+    <div class="sw__meta"><b>Gold</b> <code>--gold</code><span class="small muted">Editor's pick, top</span></div>
+  </div>
+</div>
+<h3 class="sw-group">Meaning</h3>
+<div class="swatches">
+  <div class="sw">
+    <div class="sw__pair">
+      <div class="sw__half sw__text" style="color-scheme:light"><b style="color:var(--red)">Aa</b><span>#c50000</span></div>
+      <div class="sw__half sw__text" style="color-scheme:dark"><b style="color:var(--red)">Aa</b><span>#fe4c38</span></div>
+    </div>
+    <div class="sw__meta"><b>Danger</b> <code>--red</code><span class="small muted"><code>--danger</code> · cancelled, errors</span></div>
+  </div>
+  <div class="sw">
+    <div class="sw__pair">
+      <div class="sw__half sw__text" style="color-scheme:light"><b style="color:var(--orange)">Aa</b><span>#a64c00</span></div>
+      <div class="sw__half sw__text" style="color-scheme:dark"><b style="color:var(--orange)">Aa</b><span>#f07e24</span></div>
+    </div>
+    <div class="sw__meta"><b>Warning</b> <code>--orange</code><span class="small muted"><code>--warning</code> · changes, few seats</span></div>
+  </div>
+  <div class="sw">
+    <div class="sw__pair">
+      <div class="sw__half sw__text" style="color-scheme:light"><b style="color:var(--green)">Aa</b><span>#217627</span></div>
+      <div class="sw__half sw__text" style="color-scheme:dark"><b style="color:var(--green)">Aa</b><span>#4baf4f</span></div>
+    </div>
+    <div class="sw__meta"><b>Success</b> <code>--green</code><span class="small muted"><code>--success</code> · saved, confirmed</span></div>
+  </div>
+  <div class="sw">
+    <div class="sw__pair">
+      <div class="sw__half sw__text" style="color-scheme:light"><b style="color:var(--blue)">Aa</b><span>#0065ac</span></div>
+      <div class="sw__half sw__text" style="color-scheme:dark"><b style="color:var(--blue)">Aa</b><span>#4195db</span></div>
+    </div>
+    <div class="sw__meta"><b>Info</b> <code>--blue</code><span class="small muted"><code>--info</code> · tips and notes</span></div>
+  </div>
+</div>
+<h3 class="sw-group">Metro lines</h3>
+<p class="small muted" style="margin-top:0.4rem;max-width:60ch">One colour per Moscow metro line. The top block is the line's own colour (<code>--name-fill</code>) with its text colour on it (<code>--name-on</code>). Below it is the text-safe version (<code>--name</code>) on the light and the dark page. Add <code>.line-name</code> to any element to use it.</p>
+<div class="swatches swatches--lines">
+  <div class="sw line-red">
+    <div class="sw__fill"><span class="mark mark--ring">1</span><b>Aa</b><span>#e42313</span></div>
+    <div class="sw__pair">
+      <div class="sw__half sw__text" style="color-scheme:light"><b style="color:var(--red)">Text</b><span>#c50000</span></div>
+      <div class="sw__half sw__text" style="color-scheme:dark"><b style="color:var(--red)">Text</b><span>#fe4c38</span></div>
+    </div>
+    <div class="sw__meta"><b>Red</b> <code>.line-red</code><span class="small muted">Sokolnicheskaya</span></div>
+  </div>
+  <div class="sw line-green">
+    <div class="sw__fill"><span class="mark mark--ring">2</span><b>Aa</b><span>#4baf4f</span></div>
+    <div class="sw__pair">
+      <div class="sw__half sw__text" style="color-scheme:light"><b style="color:var(--green)">Text</b><span>#217627</span></div>
+      <div class="sw__half sw__text" style="color-scheme:dark"><b style="color:var(--green)">Text</b><span>#4baf4f</span></div>
+    </div>
+    <div class="sw__meta"><b>Green</b> <code>.line-green</code><span class="small muted">Zamoskvoretskaya</span></div>
+  </div>
+  <div class="sw line-blue">
+    <div class="sw__fill"><span class="mark mark--ring">3</span><b>Aa</b><span>#0072ba</span></div>
+    <div class="sw__pair">
+      <div class="sw__half sw__text" style="color-scheme:light"><b style="color:var(--blue)">Text</b><span>#0065ac</span></div>
+      <div class="sw__half sw__text" style="color-scheme:dark"><b style="color:var(--blue)">Text</b><span>#4195db</span></div>
+    </div>
+    <div class="sw__meta"><b>Blue</b> <code>.line-blue</code><span class="small muted">Arbatsko-Pokrovskaya</span></div>
+  </div>
+  <div class="sw line-sky">
+    <div class="sw__fill"><span class="mark mark--ring">4</span><b>Aa</b><span>#1ebcef</span></div>
+    <div class="sw__pair">
+      <div class="sw__half sw__text" style="color-scheme:light"><b style="color:var(--sky)">Text</b><span>#007096</span></div>
+      <div class="sw__half sw__text" style="color-scheme:dark"><b style="color:var(--sky)">Text</b><span>#1ebcef</span></div>
+    </div>
+    <div class="sw__meta"><b>Sky</b> <code>.line-sky</code><span class="small muted">Filyovskaya</span></div>
+  </div>
+  <div class="sw line-brown">
+    <div class="sw__fill"><span class="mark mark--ring">5</span><b>Aa</b><span>#915133</span></div>
+    <div class="sw__pair">
+      <div class="sw__half sw__text" style="color-scheme:light"><b style="color:var(--brown)">Text</b><span>#915133</span></div>
+      <div class="sw__half sw__text" style="color-scheme:dark"><b style="color:var(--brown)">Text</b><span>#bd8064</span></div>
+    </div>
+    <div class="sw__meta"><b>Brown</b> <code>.line-brown</code><span class="small muted">Koltsevaya</span></div>
+  </div>
+  <div class="sw line-orange">
+    <div class="sw__fill"><span class="mark mark--ring">6</span><b>Aa</b><span>#f07e24</span></div>
+    <div class="sw__pair">
+      <div class="sw__half sw__text" style="color-scheme:light"><b style="color:var(--orange)">Text</b><span>#a64c00</span></div>
+      <div class="sw__half sw__text" style="color-scheme:dark"><b style="color:var(--orange)">Text</b><span>#f07e24</span></div>
+    </div>
+    <div class="sw__meta"><b>Orange</b> <code>.line-orange</code><span class="small muted">Kaluzhsko-Rizhskaya</span></div>
+  </div>
+  <div class="sw line-violet">
+    <div class="sw__fill"><span class="mark mark--ring">7</span><b>Aa</b><span>#943e90</span></div>
+    <div class="sw__pair">
+      <div class="sw__half sw__text" style="color-scheme:light"><b style="color:var(--violet)">Text</b><span>#943e90</span></div>
+      <div class="sw__half sw__text" style="color-scheme:dark"><b style="color:var(--violet)">Text</b><span>#c171bc</span></div>
+    </div>
+    <div class="sw__meta"><b>Violet</b> <code>.line-violet</code><span class="small muted">Tagansko-Krasnopresnenskaya</span></div>
+  </div>
+  <div class="sw line-yellow">
+    <div class="sw__fill"><span class="mark mark--ring">8</span><b>Aa</b><span>#ffcd1c</span></div>
+    <div class="sw__pair">
+      <div class="sw__half sw__text" style="color-scheme:light"><b style="color:var(--yellow)">Text</b><span>#886700</span></div>
+      <div class="sw__half sw__text" style="color-scheme:dark"><b style="color:var(--yellow)">Text</b><span>#ffcd1c</span></div>
+    </div>
+    <div class="sw__meta"><b>Yellow</b> <code>.line-yellow</code><span class="small muted">Kalininskaya</span></div>
+  </div>
+  <div class="sw line-grey">
+    <div class="sw__fill"><span class="mark mark--ring">9</span><b>Aa</b><span>#adacac</span></div>
+    <div class="sw__pair">
+      <div class="sw__half sw__text" style="color-scheme:light"><b style="color:var(--grey)">Text</b><span>#696868</span></div>
+      <div class="sw__half sw__text" style="color-scheme:dark"><b style="color:var(--grey)">Text</b><span>#adacac</span></div>
+    </div>
+    <div class="sw__meta"><b>Grey</b> <code>.line-grey</code><span class="small muted">Serpukhovsko-Timiryazevskaya</span></div>
+  </div>
+  <div class="sw line-lime">
+    <div class="sw__fill"><span class="mark mark--ring">10</span><b>Aa</b><span>#bed12c</span></div>
+    <div class="sw__pair">
+      <div class="sw__half sw__text" style="color-scheme:light"><b style="color:var(--lime)">Text</b><span>#667100</span></div>
+      <div class="sw__half sw__text" style="color-scheme:dark"><b style="color:var(--lime)">Text</b><span>#bed12c</span></div>
+    </div>
+    <div class="sw__meta"><b>Lime</b> <code>.line-lime</code><span class="small muted">Lyublinsko-Dmitrovskaya</span></div>
+  </div>
+  <div class="sw line-teal">
+    <div class="sw__fill"><span class="mark mark--ring">11</span><b>Aa</b><span>#82c0c0</span></div>
+    <div class="sw__pair">
+      <div class="sw__half sw__text" style="color-scheme:light"><b style="color:var(--teal)">Text</b><span>#457172</span></div>
+      <div class="sw__half sw__text" style="color-scheme:dark"><b style="color:var(--teal)">Text</b><span>#82c0c0</span></div>
+    </div>
+    <div class="sw__meta"><b>Teal</b> <code>.line-teal</code><span class="small muted">Bolshaya Koltsevaya</span></div>
+  </div>
+  <div class="sw line-lavender">
+    <div class="sw__fill"><span class="mark mark--ring">12</span><b>Aa</b><span>#a1b3d4</span></div>
+    <div class="sw__pair">
+      <div class="sw__half sw__text" style="color-scheme:light"><b style="color:var(--lavender)">Text</b><span>#5d6a82</span></div>
+      <div class="sw__half sw__text" style="color-scheme:dark"><b style="color:var(--lavender)">Text</b><span>#a1b3d4</span></div>
+    </div>
+    <div class="sw__meta"><b>Lavender</b> <code>.line-lavender</code><span class="small muted">Butovskaya</span></div>
+  </div>
+  <div class="sw line-pink">
+    <div class="sw__fill"><span class="mark mark--ring">15</span><b>Aa</b><span>#de64a1</span></div>
+    <div class="sw__pair">
+      <div class="sw__half sw__text" style="color-scheme:light"><b style="color:var(--pink)">Text</b><span>#a73f75</span></div>
+      <div class="sw__half sw__text" style="color-scheme:dark"><b style="color:var(--pink)">Text</b><span>#e46aa7</span></div>
+    </div>
+    <div class="sw__meta"><b>Pink</b> <code>.line-pink</code><span class="small muted">Nekrasovskaya</span></div>
+  </div>
+</div></div>
+  <pre><code>:root {
+  --line:        light-dark(#00712b, #4cc764);   /* light theme, dark theme */
+  --alt:         light-dark(#0063ad, #4aa8ff);
+
+  --orange:      light-dark(#a64c00, #f07e24);   /* text-safe */
+  --orange-fill: #f07e24;                         /* the line&#x27;s own colour */
+  --orange-on:   #16181d;                         /* text on the fill */
+}
+
+&lt;html class=&quot;line-orange&quot;&gt;              repaint the whole site
+&lt;b class=&quot;tag line-red&quot;&gt;Sold out&lt;/b&gt;    or one element
+&lt;span class=&quot;mark line-red&quot;&gt;1&lt;/span&gt;    a line badge</code></pre>
+</section><section class="doc" id="recolour">
+  <h2>Recolouring components</h2>
+  <p class="lede">The same markup in different lines. <code>.mark</code> is a line badge like on the metro map; <code>.notice</code> is a message, with <code>--success</code>, <code>--warning</code>, <code>--danger</code> and <code>--info</code> variants.</p>
+  <div class="demo"><div class="grid" style="--min: 15rem">
+  <section class="day line-orange" style="margin:0">
+    <h3><span class="mark">6</span> Orange line</h3>
+    <ul class="route">
+      <li><time>18:00</time> <a href="#">Book club</a> <b class="tag">New</b></li>
+      <li><time>19:30</time> <a href="#">Board games</a></li>
+    </ul>
+  </section>
+  <section class="day line-violet" style="margin:0">
+    <h3><span class="mark">7</span> Violet line</h3>
+    <ul class="route">
+      <li><time>18:00</time> <a href="#">Film club</a> <b class="tag">Top</b></li>
+      <li><time>19:30</time> <a href="#">Speed dating</a></li>
+    </ul>
+  </section>
+  <section class="day line-sky" style="margin:0">
+    <h3><span class="mark">4</span> Sky line</h3>
+    <ul class="route">
+      <li><time>18:00</time> <a href="#">Debate club</a> <b class="tag">Hot</b></li>
+      <li><time>19:30</time> <a href="#">Open mic</a></li>
+    </ul>
+  </section>
+</div>
+<div class="cluster" style="margin-top:1.5rem">
+  <a class="btn btn--primary line-red" href="#">Red</a>
+  <a class="btn btn--primary line-brown" href="#">Brown</a>
+  <a class="btn btn--primary line-yellow" href="#">Yellow</a>
+  <a class="btn btn--primary line-lime" href="#">Lime</a>
+  <a class="btn btn--primary line-teal" href="#">Teal</a>
+  <a class="btn btn--primary line-pink" href="#">Pink</a>
+</div>
+<div class="cluster" style="margin-top:1rem">
+  <b class="tag line-red">Sold out</b> <b class="tag line-orange">Few seats</b> <b class="tag line-violet">Literature</b>
+  <b class="tag line-lavender">Beginners</b> <b class="tag line-grey">Paused</b> <b class="tag line-pink">Girls only</b>
+  <span class="mark mark--sm line-green">2</span> <span class="mark mark--sm line-blue">3</span> <span class="mark mark--ring line-brown">5</span>
+</div>
+<div class="stack" style="margin-top:1.5rem;--stack:0.75rem">
+  <div class="notice notice--success"><strong>Saved.</strong> Your club is on the map.</div>
+  <div class="notice notice--warning"><strong>Moved.</strong> The meeting is on Saturday this week.</div>
+  <div class="notice notice--danger"><strong>Cancelled.</strong> No meeting on October 4.</div>
+  <div class="notice notice--info"><strong>Tip.</strong> Times are Moscow time.</div>
+</div></div>
+  <pre><code>&lt;div class=&quot;grid&quot; style=&quot;--min: 15rem&quot;&gt;
+  &lt;section class=&quot;day line-orange&quot; style=&quot;margin:0&quot;&gt;
+    &lt;h3&gt;&lt;span class=&quot;mark&quot;&gt;6&lt;/span&gt; Orange line&lt;/h3&gt;
+    &lt;ul class=&quot;route&quot;&gt;
+      &lt;li&gt;&lt;time&gt;18:00&lt;/time&gt; &lt;a href=&quot;#&quot;&gt;Book club&lt;/a&gt; &lt;b class=&quot;tag&quot;&gt;New&lt;/b&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;time&gt;19:30&lt;/time&gt; &lt;a href=&quot;#&quot;&gt;Board games&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/section&gt;
+  &lt;section class=&quot;day line-violet&quot; style=&quot;margin:0&quot;&gt;
+    &lt;h3&gt;&lt;span class=&quot;mark&quot;&gt;7&lt;/span&gt; Violet line&lt;/h3&gt;
+    &lt;ul class=&quot;route&quot;&gt;
+      &lt;li&gt;&lt;time&gt;18:00&lt;/time&gt; &lt;a href=&quot;#&quot;&gt;Film club&lt;/a&gt; &lt;b class=&quot;tag&quot;&gt;Top&lt;/b&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;time&gt;19:30&lt;/time&gt; &lt;a href=&quot;#&quot;&gt;Speed dating&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/section&gt;
+  &lt;section class=&quot;day line-sky&quot; style=&quot;margin:0&quot;&gt;
+    &lt;h3&gt;&lt;span class=&quot;mark&quot;&gt;4&lt;/span&gt; Sky line&lt;/h3&gt;
+    &lt;ul class=&quot;route&quot;&gt;
+      &lt;li&gt;&lt;time&gt;18:00&lt;/time&gt; &lt;a href=&quot;#&quot;&gt;Debate club&lt;/a&gt; &lt;b class=&quot;tag&quot;&gt;Hot&lt;/b&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;time&gt;19:30&lt;/time&gt; &lt;a href=&quot;#&quot;&gt;Open mic&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/section&gt;
+&lt;/div&gt;
+&lt;div class=&quot;cluster&quot; style=&quot;margin-top:1.5rem&quot;&gt;
+  &lt;a class=&quot;btn btn--primary line-red&quot; href=&quot;#&quot;&gt;Red&lt;/a&gt;
+  &lt;a class=&quot;btn btn--primary line-brown&quot; href=&quot;#&quot;&gt;Brown&lt;/a&gt;
+  &lt;a class=&quot;btn btn--primary line-yellow&quot; href=&quot;#&quot;&gt;Yellow&lt;/a&gt;
+  &lt;a class=&quot;btn btn--primary line-lime&quot; href=&quot;#&quot;&gt;Lime&lt;/a&gt;
+  &lt;a class=&quot;btn btn--primary line-teal&quot; href=&quot;#&quot;&gt;Teal&lt;/a&gt;
+  &lt;a class=&quot;btn btn--primary line-pink&quot; href=&quot;#&quot;&gt;Pink&lt;/a&gt;
+&lt;/div&gt;
+&lt;div class=&quot;cluster&quot; style=&quot;margin-top:1rem&quot;&gt;
+  &lt;b class=&quot;tag line-red&quot;&gt;Sold out&lt;/b&gt; &lt;b class=&quot;tag line-orange&quot;&gt;Few seats&lt;/b&gt; &lt;b class=&quot;tag line-violet&quot;&gt;Literature&lt;/b&gt;
+  &lt;b class=&quot;tag line-lavender&quot;&gt;Beginners&lt;/b&gt; &lt;b class=&quot;tag line-grey&quot;&gt;Paused&lt;/b&gt; &lt;b class=&quot;tag line-pink&quot;&gt;Girls only&lt;/b&gt;
+  &lt;span class=&quot;mark mark--sm line-green&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;mark mark--sm line-blue&quot;&gt;3&lt;/span&gt; &lt;span class=&quot;mark mark--ring line-brown&quot;&gt;5&lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;stack&quot; style=&quot;margin-top:1.5rem;--stack:0.75rem&quot;&gt;
+  &lt;div class=&quot;notice notice--success&quot;&gt;&lt;strong&gt;Saved.&lt;/strong&gt; Your club is on the map.&lt;/div&gt;
+  &lt;div class=&quot;notice notice--warning&quot;&gt;&lt;strong&gt;Moved.&lt;/strong&gt; The meeting is on Saturday this week.&lt;/div&gt;
+  &lt;div class=&quot;notice notice--danger&quot;&gt;&lt;strong&gt;Cancelled.&lt;/strong&gt; No meeting on October 4.&lt;/div&gt;
+  &lt;div class=&quot;notice notice--info&quot;&gt;&lt;strong&gt;Tip.&lt;/strong&gt; Times are Moscow time.&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+</section><section class="doc" id="type">
+  <h2>Type</h2>
+  <p class="lede">Unbounded for headings, Golos Text for everything else. Both cover Latin and Cyrillic.</p>
+  <div class="demo"><h1 style="font-size:var(--step-3)">Heading one</h1>
+<h2 style="font-size:var(--step-2);margin-top:1rem">Heading two</h2>
+<h3 style="font-size:var(--step-1);margin-top:1rem">Heading three</h3>
+<p class="lede">A lede paragraph sits under a page title and says what the page is for.</p>
+<p style="margin-top:1rem">Body text. <a href="#">A link</a>. <span class="muted">Muted text.</span> <span class="small">Small text.</span></p></div>
+  <pre><code>&lt;h1 style=&quot;font-size:var(--step-3)&quot;&gt;Heading one&lt;/h1&gt;
+&lt;h2 style=&quot;font-size:var(--step-2);margin-top:1rem&quot;&gt;Heading two&lt;/h2&gt;
+&lt;h3 style=&quot;font-size:var(--step-1);margin-top:1rem&quot;&gt;Heading three&lt;/h3&gt;
+&lt;p class=&quot;lede&quot;&gt;A lede paragraph sits under a page title and says what the page is for.&lt;/p&gt;
+&lt;p style=&quot;margin-top:1rem&quot;&gt;Body text. &lt;a href=&quot;#&quot;&gt;A link&lt;/a&gt;. &lt;span class=&quot;muted&quot;&gt;Muted text.&lt;/span&gt; &lt;span class=&quot;small&quot;&gt;Small text.&lt;/span&gt;&lt;/p&gt;</code></pre>
+</section><section class="doc" id="topbar">
+  <h2>Top bar</h2>
+  <p class="lede">Sticky, translucent. On phones the menu moves to its own scrolling row. Mark the current page with <code>aria-current="page"</code>.</p>
+  <div class="demo"><header class="topbar" style="position:relative">
+  <div class="wrap">
+    <a class="brand" href="#">Time to Learn English</a>
+    <nav aria-label="Main">
+      <a href="#">Schedule</a>
+      <a href="#" aria-current="page">Clubs</a>
+      <a href="#">Teachers</a>
+    </nav>
+    <a class="btn btn--primary" href="#">Subscribe</a>
+  </div>
+</header></div>
+  <pre><code>&lt;header class=&quot;topbar&quot; style=&quot;position:relative&quot;&gt;
+  &lt;div class=&quot;wrap&quot;&gt;
+    &lt;a class=&quot;brand&quot; href=&quot;#&quot;&gt;Time to Learn English&lt;/a&gt;
+    &lt;nav aria-label=&quot;Main&quot;&gt;
+      &lt;a href=&quot;#&quot;&gt;Schedule&lt;/a&gt;
+      &lt;a href=&quot;#&quot; aria-current=&quot;page&quot;&gt;Clubs&lt;/a&gt;
+      &lt;a href=&quot;#&quot;&gt;Teachers&lt;/a&gt;
+    &lt;/nav&gt;
+    &lt;a class=&quot;btn btn--primary&quot; href=&quot;#&quot;&gt;Subscribe&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/header&gt;</code></pre>
+</section><section class="doc" id="intro">
+  <h2>Intro</h2>
+  <p class="lede">The opening of a page: one big title and a lede.</p>
+  <div class="demo"><section class="intro">
+  <h1>English clubs in Moscow</h1>
+  <p class="lede">Speaking clubs, board games and online groups. Times are Moscow time.</p>
+</section></div>
+  <pre><code>&lt;section class=&quot;intro&quot;&gt;
+  &lt;h1&gt;English clubs in Moscow&lt;/h1&gt;
+  &lt;p class=&quot;lede&quot;&gt;Speaking clubs, board games and online groups. Times are Moscow time.&lt;/p&gt;
+&lt;/section&gt;</code></pre>
+</section><section class="doc" id="linemap">
+  <h2>Linemap</h2>
+  <p class="lede">The week as a line of stations. metro.js fills in today's station from <code>data-date</code>. Works with any number of stations: set <code>--n</code> on the <code>ol</code> if it isn't 7.</p>
+  <div class="demo"><nav class="linemap" aria-label="Days of the week" style="margin-top:0">
+  <ol>
+    <li><a href="#day-2026-09-28" data-date="2026-09-28"><span class="dot">28</span><span class="name">Mon</span><span class="count">9 meetups</span></a></li>
+    <li><a href="#day-2026-09-29" data-date="2026-09-29"><span class="dot">29</span><span class="name">Tue</span><span class="count">12 meetups</span></a></li>
+    <li><a href="#day-2026-09-30" data-date="2026-09-30"><span class="dot">30</span><span class="name">Wed</span><span class="count">14 meetups</span></a></li>
+    <li><a href="#day-2026-10-01" data-date="2026-10-01"><span class="dot">1</span><span class="name">Thu</span><span class="count">13 meetups</span></a></li>
+    <li><a href="#day-2026-10-02" data-date="2026-10-02"><span class="dot">2</span><span class="name">Fri</span><span class="count">15 meetups</span></a></li>
+    <li><a href="#day-2026-10-03" data-date="2026-10-03"><span class="dot">3</span><span class="name">Sat</span><span class="count">17 meetups</span></a></li>
+    <li><a href="#day-2026-10-04" data-date="2026-10-04"><span class="dot">4</span><span class="name">Sun</span><span class="count">20 meetups</span></a></li>
+  </ol>
+</nav></div>
+  <pre><code>&lt;nav class=&quot;linemap&quot; aria-label=&quot;Days of the week&quot; style=&quot;margin-top:0&quot;&gt;
+  &lt;ol&gt;
+    &lt;li&gt;&lt;a href=&quot;#day-2026-09-28&quot; data-date=&quot;2026-09-28&quot;&gt;&lt;span class=&quot;dot&quot;&gt;28&lt;/span&gt;&lt;span class=&quot;name&quot;&gt;Mon&lt;/span&gt;&lt;span class=&quot;count&quot;&gt;9 meetups&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#day-2026-09-29&quot; data-date=&quot;2026-09-29&quot;&gt;&lt;span class=&quot;dot&quot;&gt;29&lt;/span&gt;&lt;span class=&quot;name&quot;&gt;Tue&lt;/span&gt;&lt;span class=&quot;count&quot;&gt;12 meetups&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#day-2026-09-30&quot; data-date=&quot;2026-09-30&quot;&gt;&lt;span class=&quot;dot&quot;&gt;30&lt;/span&gt;&lt;span class=&quot;name&quot;&gt;Wed&lt;/span&gt;&lt;span class=&quot;count&quot;&gt;14 meetups&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#day-2026-10-01&quot; data-date=&quot;2026-10-01&quot;&gt;&lt;span class=&quot;dot&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;name&quot;&gt;Thu&lt;/span&gt;&lt;span class=&quot;count&quot;&gt;13 meetups&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#day-2026-10-02&quot; data-date=&quot;2026-10-02&quot;&gt;&lt;span class=&quot;dot&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;name&quot;&gt;Fri&lt;/span&gt;&lt;span class=&quot;count&quot;&gt;15 meetups&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#day-2026-10-03&quot; data-date=&quot;2026-10-03&quot;&gt;&lt;span class=&quot;dot&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;name&quot;&gt;Sat&lt;/span&gt;&lt;span class=&quot;count&quot;&gt;17 meetups&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#day-2026-10-04&quot; data-date=&quot;2026-10-04&quot;&gt;&lt;span class=&quot;dot&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;name&quot;&gt;Sun&lt;/span&gt;&lt;span class=&quot;count&quot;&gt;20 meetups&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/nav&gt;</code></pre>
+</section><section class="doc" id="route">
+  <h2>Route</h2>
+  <p class="lede">The line schedule. Each <code>li</code> is a station: time, name, place, tags. Add <code>.route--alt</code> for the second line, and a <code>.route-label</code> above it. A single stop gets a short piece of track.</p>
+  <div class="demo"><section class="day" data-date="2026-10-04">
+  <h3>Sunday, October 4 <small>5 meetups</small></h3>
+  <ul class="route">
+    <li><time>13:00</time> <a href="#">Blah-Blah Club</a> <span class="where">Surf Coffee x Flacon</span></li>
+    <li><time>15:00</time> <a href="#">Real Talk Speaking Club</a> <span class="where">Surf Coffee</span> <b class="tag">Readers' favourite</b></li>
+    <li><time>18:00</time> <a href="#">Moscow Pals Club</a> <span class="where">Katie O'Shea's</span> <b class="tag tag--gold">Top</b></li>
+  </ul>
+  <p class="route-label">Online</p>
+  <ul class="route route--alt">
+    <li><time>11:30</time> <a href="#">Spill The Tea</a></li>
+    <li><time>20:00</time> <a href="#">Reading and Vocabulary Club</a> <b class="tag">New</b></li>
+  </ul>
+</section></div>
+  <pre><code>&lt;section class=&quot;day&quot; data-date=&quot;2026-10-04&quot;&gt;
+  &lt;h3&gt;Sunday, October 4 &lt;small&gt;5 meetups&lt;/small&gt;&lt;/h3&gt;
+  &lt;ul class=&quot;route&quot;&gt;
+    &lt;li&gt;&lt;time&gt;13:00&lt;/time&gt; &lt;a href=&quot;#&quot;&gt;Blah-Blah Club&lt;/a&gt; &lt;span class=&quot;where&quot;&gt;Surf Coffee x Flacon&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;time&gt;15:00&lt;/time&gt; &lt;a href=&quot;#&quot;&gt;Real Talk Speaking Club&lt;/a&gt; &lt;span class=&quot;where&quot;&gt;Surf Coffee&lt;/span&gt; &lt;b class=&quot;tag&quot;&gt;Readers&#x27; favourite&lt;/b&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;time&gt;18:00&lt;/time&gt; &lt;a href=&quot;#&quot;&gt;Moscow Pals Club&lt;/a&gt; &lt;span class=&quot;where&quot;&gt;Katie O&#x27;Shea&#x27;s&lt;/span&gt; &lt;b class=&quot;tag tag--gold&quot;&gt;Top&lt;/b&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;p class=&quot;route-label&quot;&gt;Online&lt;/p&gt;
+  &lt;ul class=&quot;route route--alt&quot;&gt;
+    &lt;li&gt;&lt;time&gt;11:30&lt;/time&gt; &lt;a href=&quot;#&quot;&gt;Spill The Tea&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;time&gt;20:00&lt;/time&gt; &lt;a href=&quot;#&quot;&gt;Reading and Vocabulary Club&lt;/a&gt; &lt;b class=&quot;tag&quot;&gt;New&lt;/b&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/section&gt;</code></pre>
+</section><section class="doc" id="cards">
+  <h2>Feature, cards, panels</h2>
+  <p class="lede"><code>.feature</code> is a photo with text on it. <code>.card</code> and <code>.panel</code> are white blocks; a link in a card's heading makes the whole card clickable. In a panel, put <code>&lt;a class="cover"&gt;</code> last for the same effect; other links inside the panel stay clickable on top of it.</p>
+  <div class="demo"><div class="showcase" style="margin:0">
+  <div class="feature" style="background-image:linear-gradient(135deg,#1d4e2f,#0e2a40)">
+    <div>
+      <h2>Stand-up in English</h2>
+      <p>Comedians from all over the world take the stage in Moscow every week.</p>
+      <p><a href="#">Find out more</a></p>
+    </div>
+  </div>
+  <article class="card">
+    <div class="kicker">Pub quiz</div>
+    <h3><a href="#">English Pub Quiz Night</a></h3>
+    <div class="when">Sep 27</div>
+    <p>Clever questions, a proper pub atmosphere and prizes for the winners.</p>
+  </article>
+  <section class="panel">
+    <h4>About</h4>
+    <p>A panel for the sidebar.</p>
+    <a class="cover" href="#" aria-label="Read about the site"></a>
+  </section>
+</div></div>
+  <pre><code>&lt;div class=&quot;showcase&quot; style=&quot;margin:0&quot;&gt;
+  &lt;div class=&quot;feature&quot; style=&quot;background-image:linear-gradient(135deg,#1d4e2f,#0e2a40)&quot;&gt;
+    &lt;div&gt;
+      &lt;h2&gt;Stand-up in English&lt;/h2&gt;
+      &lt;p&gt;Comedians from all over the world take the stage in Moscow every week.&lt;/p&gt;
+      &lt;p&gt;&lt;a href=&quot;#&quot;&gt;Find out more&lt;/a&gt;&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;article class=&quot;card&quot;&gt;
+    &lt;div class=&quot;kicker&quot;&gt;Pub quiz&lt;/div&gt;
+    &lt;h3&gt;&lt;a href=&quot;#&quot;&gt;English Pub Quiz Night&lt;/a&gt;&lt;/h3&gt;
+    &lt;div class=&quot;when&quot;&gt;Sep 27&lt;/div&gt;
+    &lt;p&gt;Clever questions, a proper pub atmosphere and prizes for the winners.&lt;/p&gt;
+  &lt;/article&gt;
+  &lt;section class=&quot;panel&quot;&gt;
+    &lt;h4&gt;About&lt;/h4&gt;
+    &lt;p&gt;A panel for the sidebar.&lt;/p&gt;
+    &lt;a class=&quot;cover&quot; href=&quot;#&quot; aria-label=&quot;Read about the site&quot;&gt;&lt;/a&gt;
+  &lt;/section&gt;
+&lt;/div&gt;</code></pre>
+</section><section class="doc" id="tags">
+  <h2>Tags and buttons</h2>
+  <p class="lede">Three tag colours, three button styles and a text button.</p>
+  <div class="demo"><div class="cluster">
+  <b class="tag">New</b> <b class="tag tag--alt">Online</b> <b class="tag tag--gold">Editor's pick</b>
+</div>
+<div class="cluster" style="margin-top:1rem">
+  <a class="btn btn--primary" href="#">Message on Telegram</a>
+  <a class="btn btn--alt" href="#">Join online</a>
+  <button class="btn" type="button" data-copy="+7 900 000-00-00">+7 900 000-00-00</button>
+  <button class="link-btn" type="button">Show all</button>
+  <button class="link-btn link-btn--quiet" type="button">Reset filters</button>
+</div></div>
+  <pre><code>&lt;div class=&quot;cluster&quot;&gt;
+  &lt;b class=&quot;tag&quot;&gt;New&lt;/b&gt; &lt;b class=&quot;tag tag--alt&quot;&gt;Online&lt;/b&gt; &lt;b class=&quot;tag tag--gold&quot;&gt;Editor&#x27;s pick&lt;/b&gt;
+&lt;/div&gt;
+&lt;div class=&quot;cluster&quot; style=&quot;margin-top:1rem&quot;&gt;
+  &lt;a class=&quot;btn btn--primary&quot; href=&quot;#&quot;&gt;Message on Telegram&lt;/a&gt;
+  &lt;a class=&quot;btn btn--alt&quot; href=&quot;#&quot;&gt;Join online&lt;/a&gt;
+  &lt;button class=&quot;btn&quot; type=&quot;button&quot; data-copy=&quot;+7 900 000-00-00&quot;&gt;+7 900 000-00-00&lt;/button&gt;
+  &lt;button class=&quot;link-btn&quot; type=&quot;button&quot;&gt;Show all&lt;/button&gt;
+  &lt;button class=&quot;link-btn link-btn--quiet&quot; type=&quot;button&quot;&gt;Reset filters&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+</section><section class="doc" id="entries">
+  <h2>Entries</h2>
+  <p class="lede">A list of clubs or people. Use <code>.entry__media</code> for a photo or <code>.entry__avatar</code> for a round portrait (an image or initials). <code>.week</code> shows meeting days. <code>.entry--alt</code> switches to the second colour. If the entry has a single <code>.more</code> link, the whole row is clickable.</p>
+  <div class="demo"><p class="count">2 of 51 clubs</p>
+<ul class="entries">
+  <li class="entry">
+    <img class="entry__media" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3E%3Crect width='4' height='5' fill='%23a5c8b0'/%3E%3C/svg%3E" alt="">
+    <div class="entry__head">
+      <div class="kicker">Speed meetings</div>
+      <h2>Real Talk English Club</h2>
+      <div class="entry__sub">Tue, Wed, Fri 19:00 and Sat, Sun 15:00</div>
+      <ol class="week" aria-label="Meeting days"><li>Mo</li><li class="on">Tu</li><li class="on">We</li><li>Th</li><li class="on">Fr</li><li class="on">Sa</li><li class="on">Su</li></ol>
+    </div>
+    <p class="entry__text">1-on-1 conversations, switching partners every 15 minutes, 20–35 people a night.</p>
+    <a class="more" href="#">Full details</a>
+  </li>
+  <li class="entry entry--alt">
+    <div class="entry__avatar" aria-hidden="true">DK</div>
+    <div class="entry__head">
+      <h2>Dark English Academia</h2>
+      <div class="entry__sub">Literature club, online</div>
+      <div class="tags"><b class="tag">English</b><b class="tag">Literature</b></div>
+      <ul class="facts"><li>💻 Online</li><li>💰 Free</li></ul>
+    </div>
+    <div class="entry__text" data-clamp="2">
+      <p>We read one classic short story a week and talk about it on Thursday nights.</p>
+      <p>Bring a cup of tea and an opinion. Every level above B1 is welcome, and newcomers can just listen the first time.</p>
+      <p>Stories are sent on Monday, so there is time to read.</p>
+    </div>
+    <div class="entry__actions">
+      <a class="btn btn--alt" href="#">Message on Telegram</a>
+      <button class="btn" type="button" data-copy="club@example.com">club@example.com</button>
+    </div>
+  </li>
+</ul></div>
+  <pre><code>&lt;p class=&quot;count&quot;&gt;2 of 51 clubs&lt;/p&gt;
+&lt;ul class=&quot;entries&quot;&gt;
+  &lt;li class=&quot;entry&quot;&gt;
+    &lt;img class=&quot;entry__media&quot; src=&quot;data:image/svg+xml,%3Csvg xmlns=&#x27;http://www.w3.org/2000/svg&#x27; viewBox=&#x27;0 0 4 5&#x27;%3E%3Crect width=&#x27;4&#x27; height=&#x27;5&#x27; fill=&#x27;%23a5c8b0&#x27;/%3E%3C/svg%3E&quot; alt=&quot;&quot;&gt;
+    &lt;div class=&quot;entry__head&quot;&gt;
+      &lt;div class=&quot;kicker&quot;&gt;Speed meetings&lt;/div&gt;
+      &lt;h2&gt;Real Talk English Club&lt;/h2&gt;
+      &lt;div class=&quot;entry__sub&quot;&gt;Tue, Wed, Fri 19:00 and Sat, Sun 15:00&lt;/div&gt;
+      &lt;ol class=&quot;week&quot; aria-label=&quot;Meeting days&quot;&gt;&lt;li&gt;Mo&lt;/li&gt;&lt;li class=&quot;on&quot;&gt;Tu&lt;/li&gt;&lt;li class=&quot;on&quot;&gt;We&lt;/li&gt;&lt;li&gt;Th&lt;/li&gt;&lt;li class=&quot;on&quot;&gt;Fr&lt;/li&gt;&lt;li class=&quot;on&quot;&gt;Sa&lt;/li&gt;&lt;li class=&quot;on&quot;&gt;Su&lt;/li&gt;&lt;/ol&gt;
+    &lt;/div&gt;
+    &lt;p class=&quot;entry__text&quot;&gt;1-on-1 conversations, switching partners every 15 minutes, 20–35 people a night.&lt;/p&gt;
+    &lt;a class=&quot;more&quot; href=&quot;#&quot;&gt;Full details&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;entry entry--alt&quot;&gt;
+    &lt;div class=&quot;entry__avatar&quot; aria-hidden=&quot;true&quot;&gt;DK&lt;/div&gt;
+    &lt;div class=&quot;entry__head&quot;&gt;
+      &lt;h2&gt;Dark English Academia&lt;/h2&gt;
+      &lt;div class=&quot;entry__sub&quot;&gt;Literature club, online&lt;/div&gt;
+      &lt;div class=&quot;tags&quot;&gt;&lt;b class=&quot;tag&quot;&gt;English&lt;/b&gt;&lt;b class=&quot;tag&quot;&gt;Literature&lt;/b&gt;&lt;/div&gt;
+      &lt;ul class=&quot;facts&quot;&gt;&lt;li&gt;💻 Online&lt;/li&gt;&lt;li&gt;💰 Free&lt;/li&gt;&lt;/ul&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;entry__text&quot; data-clamp=&quot;2&quot;&gt;
+      &lt;p&gt;We read one classic short story a week and talk about it on Thursday nights.&lt;/p&gt;
+      &lt;p&gt;Bring a cup of tea and an opinion. Every level above B1 is welcome, and newcomers can just listen the first time.&lt;/p&gt;
+      &lt;p&gt;Stories are sent on Monday, so there is time to read.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;entry__actions&quot;&gt;
+      &lt;a class=&quot;btn btn--alt&quot; href=&quot;#&quot;&gt;Message on Telegram&lt;/a&gt;
+      &lt;button class=&quot;btn&quot; type=&quot;button&quot; data-copy=&quot;club@example.com&quot;&gt;club@example.com&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+</section><section class="doc" id="filters">
+  <h2>Filters and chips</h2>
+  <p class="lede">Chips are real checkboxes and radios, so forms and JS work as usual. On phones the panel folds into one line; <code>data-collapse-below</code> makes it start closed there. <code>.chip--alt</code> uses the second colour.</p>
+  <div class="demo"><details class="filters panel" open data-collapse-below="60rem">
+  <summary>Filters</summary>
+  <fieldset>
+    <legend>Type</legend>
+    <div class="chips">
+      <label class="chip"><input type="checkbox" checked><span>Group meetings <span class="n">29</span></span></label>
+      <label class="chip"><input type="checkbox" checked><span>Board games <span class="n">5</span></span></label>
+      <label class="chip chip--alt"><input type="checkbox" checked><span>Online <span class="n">9</span></span></label>
+    </div>
+  </fieldset>
+  <fieldset>
+    <legend>Schedule</legend>
+    <div class="chips">
+      <label class="chip"><input type="radio" name="when" checked><span>All days</span></label>
+      <label class="chip"><input type="radio" name="when"><span>Today</span></label>
+      <label class="chip"><input type="radio" name="when"><span>This week</span></label>
+    </div>
+  </fieldset>
+  <button class="link-btn link-btn--quiet" type="button">Reset filters</button>
+</details></div>
+  <pre><code>&lt;details class=&quot;filters panel&quot; open data-collapse-below=&quot;60rem&quot;&gt;
+  &lt;summary&gt;Filters&lt;/summary&gt;
+  &lt;fieldset&gt;
+    &lt;legend&gt;Type&lt;/legend&gt;
+    &lt;div class=&quot;chips&quot;&gt;
+      &lt;label class=&quot;chip&quot;&gt;&lt;input type=&quot;checkbox&quot; checked&gt;&lt;span&gt;Group meetings &lt;span class=&quot;n&quot;&gt;29&lt;/span&gt;&lt;/span&gt;&lt;/label&gt;
+      &lt;label class=&quot;chip&quot;&gt;&lt;input type=&quot;checkbox&quot; checked&gt;&lt;span&gt;Board games &lt;span class=&quot;n&quot;&gt;5&lt;/span&gt;&lt;/span&gt;&lt;/label&gt;
+      &lt;label class=&quot;chip chip--alt&quot;&gt;&lt;input type=&quot;checkbox&quot; checked&gt;&lt;span&gt;Online &lt;span class=&quot;n&quot;&gt;9&lt;/span&gt;&lt;/span&gt;&lt;/label&gt;
+    &lt;/div&gt;
+  &lt;/fieldset&gt;
+  &lt;fieldset&gt;
+    &lt;legend&gt;Schedule&lt;/legend&gt;
+    &lt;div class=&quot;chips&quot;&gt;
+      &lt;label class=&quot;chip&quot;&gt;&lt;input type=&quot;radio&quot; name=&quot;when&quot; checked&gt;&lt;span&gt;All days&lt;/span&gt;&lt;/label&gt;
+      &lt;label class=&quot;chip&quot;&gt;&lt;input type=&quot;radio&quot; name=&quot;when&quot;&gt;&lt;span&gt;Today&lt;/span&gt;&lt;/label&gt;
+      &lt;label class=&quot;chip&quot;&gt;&lt;input type=&quot;radio&quot; name=&quot;when&quot;&gt;&lt;span&gt;This week&lt;/span&gt;&lt;/label&gt;
+    &lt;/div&gt;
+  &lt;/fieldset&gt;
+  &lt;button class=&quot;link-btn link-btn--quiet&quot; type=&quot;button&quot;&gt;Reset filters&lt;/button&gt;
+&lt;/details&gt;</code></pre>
+</section><section class="doc" id="fold">
+  <h2>Fold and empty state</h2>
+  <p class="lede"><code>.fold</code> is an accordion on <code>&lt;details&gt;</code>, no JS needed. <code>.empty</code> is what a list shows when nothing matches.</p>
+  <div class="demo"><details class="fold">
+  <summary>This week in Moscow: September 21–27</summary>
+  <p>The whole post goes here.</p>
+</details>
+<details class="fold">
+  <summary>This week in Moscow: September 14–20</summary>
+  <p>The whole post goes here.</p>
+</details>
+<ul class="entries"><li class="empty">
+  <h2>No clubs match these filters</h2>
+  <p>Turn on more types or days to see more clubs.</p>
+  <button class="btn btn--primary" type="button">Reset filters</button>
+</li></ul></div>
+  <pre><code>&lt;details class=&quot;fold&quot;&gt;
+  &lt;summary&gt;This week in Moscow: September 21–27&lt;/summary&gt;
+  &lt;p&gt;The whole post goes here.&lt;/p&gt;
+&lt;/details&gt;
+&lt;details class=&quot;fold&quot;&gt;
+  &lt;summary&gt;This week in Moscow: September 14–20&lt;/summary&gt;
+  &lt;p&gt;The whole post goes here.&lt;/p&gt;
+&lt;/details&gt;
+&lt;ul class=&quot;entries&quot;&gt;&lt;li class=&quot;empty&quot;&gt;
+  &lt;h2&gt;No clubs match these filters&lt;/h2&gt;
+  &lt;p&gt;Turn on more types or days to see more clubs.&lt;/p&gt;
+  &lt;button class=&quot;btn btn--primary&quot; type=&quot;button&quot;&gt;Reset filters&lt;/button&gt;
+&lt;/li&gt;&lt;/ul&gt;</code></pre>
+</section><section class="doc" id="layout">
+  <h2>Layout</h2>
+  <p class="lede"><code>.wrap</code> centres the content. <code>.layout</code> is a main column with a sidebar. Put filters in <code>.layout__top</code>: on phones they go above the list, on desktop at the top of the sidebar. <code>.grid</code>, <code>.cluster</code> and <code>.stack</code> are small helpers.</p>
+  
+  <pre><code>&lt;div class=&quot;layout wrap&quot;&gt;
+  &lt;details class=&quot;layout__top filters panel&quot; open data-collapse-below=&quot;60rem&quot;&gt;…&lt;/details&gt;
+  &lt;div class=&quot;layout__main&quot;&gt;…list…&lt;/div&gt;
+  &lt;aside class=&quot;layout__aside&quot;&gt;…panels…&lt;/aside&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;grid&quot; style=&quot;--min: 14rem&quot;&gt;…cards…&lt;/div&gt;
+&lt;div class=&quot;cluster&quot;&gt;…buttons…&lt;/div&gt;
+&lt;div class=&quot;stack&quot; style=&quot;--stack: 2rem&quot;&gt;…blocks…&lt;/div&gt;</code></pre>
+</section><section class="doc" id="js">
+  <h2>metro.js</h2>
+  <p class="lede">Optional. Load it in <code>&lt;head&gt;</code> without <code>defer</code>, so <code>Metro</code> is ready for your own scripts. Everything is switched on by attributes. For content you render later from JS, call <code>Metro.init(container)</code> after rendering.</p>
+  
+  <pre><code>data-date=&quot;2026-10-04&quot;        marks today&#x27;s station or day (Moscow time)
+data-clamp / data-clamp=&quot;3&quot;   folds long text and adds &quot;Read more&quot;
+data-copy=&quot;value&quot;             copies the value and shows &quot;Copied&quot;
+data-collapse-below=&quot;60rem&quot;   &lt;details&gt; starts closed below this width
+data-theme-toggle             button that switches light / dark and remembers it
+
+Metro.init(element)           run the helpers inside freshly rendered content
+Metro.copyText(&quot;text&quot;)        copy any text, returns a Promise
+Metro.today()                 today&#x27;s date in Moscow as &quot;YYYY-MM-DD&quot;</code></pre>
+</section>
+</main>
+<footer class="footer"><div class="wrap"><p>Metro CSS 1.0</p><p><a href="#">Back to top</a></p></div></footer>
+</body>
+</html>

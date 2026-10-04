@@ -1,93 +1,31 @@
 <!doctype html>
-<html lang="en" data-bs-theme="dark">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="description" content="" />
-        <meta name="author" content="Alexey Leonov, and Bootstrap contributors" />
-        <title>Clubs — Time to Learn English</title>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="" name="description"/>
+<meta content="Alexey Leonov" name="author"/>
+<link rel="stylesheet" href="metro/metro.css">
+<script src="metro/metro.js"></script>
+<meta name="theme-color" content="#18803a">
+<title>Clubs — Time to Learn English</title>
 
-        <link href="css/bootstrap.min.css" rel="stylesheet" />
-        <link rel="preload" href="fonts/playfair-700-latin.woff2" as="font" type="font/woff2" crossorigin />
-        <link href="css/blog.css" rel="stylesheet" />
-        <script src="js/bootstrap.bundle.min.js"></script>
 
-        <meta name="theme-color" content="#121212" />
 
-        <meta property="og:title" content="Time to Learn English" />
-        <meta
-            property="og:description"
-            content="Your go-to guide for live English practice in Moscow. Speaking clubs, game nights, stand-up shows, and more!"
-        />
-        <meta property="og:image" content="https://alexey0097.github.io/time-to-learn-english/img/preview.jpg" />
-        <meta property="og:url" content="https://alexey0097.github.io/time-to-learn-english/" />
-        <meta property="og:type" content="website" />
 
-        <link rel="icon" type="image/png" href="img/favicon/favicon-96x96.png" sizes="96x96" />
-        <link rel="icon" type="image/svg+xml" href="img/favicon/favicon.svg" />
-        <link rel="shortcut icon" href="img/favicon/favicon.ico" />
-        <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png" />
-        <link rel="manifest" href="img/favicon/site.webmanifest" />
+<meta content="Time to Learn English" property="og:title"/>
+<meta content="Your go-to guide for live English practice in Moscow. Speaking clubs, game nights, stand-up shows, and more!" property="og:description"/>
+<meta content="https://alexey0097.github.io/time-to-learn-english/img/preview.jpg" property="og:image"/>
+<meta content="https://alexey0097.github.io/time-to-learn-english/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<link href="img/favicon/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png"/>
+<link href="img/favicon/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="img/favicon/favicon.ico" rel="shortcut icon"/>
+<link href="img/favicon/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="img/favicon/site.webmanifest" rel="manifest"/>
 
-        <style>
-            .bd-placeholder-img {
-                font-size: 1.125rem;
-                text-anchor: middle;
-                -webkit-user-select: none;
-                -moz-user-select: none;
-                user-select: none;
-            }
-
-            @media (min-width: 768px) {
-                .bd-placeholder-img-lg {
-                    font-size: 3.5rem;
-                }
-            }
-            @keyframes bg-scroll {
-                0% {
-                    background-position: 0 center;
-                }
-                100% {
-                    background-position: -1300px center;
-                }
-            }
-
-            .animate-bg {
-                background-image: url("img/full-bg.jpg");
-                background-repeat: repeat-x;
-                background-size: auto 100%;
-                background-position: 0 center;
-                animation: bg-scroll 270s linear infinite;
-            }
-
-            .animate-bg::before {
-                content: "";
-                position: absolute;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                background: rgba(0, 0, 0, 0.55);
-                border-radius: inherit;
-            }
-
-            .club-featured {
-                background-color: rgba(255, 193, 7, 0.08);
-            }
-
-            .featured-star {
-                vertical-align: -2px;
-                filter: drop-shadow(1px 0 0 #000) drop-shadow(-1px 0 0 #000) drop-shadow(0 1px 0 #000) drop-shadow(0 -1px 0 #000);
-            }
-
-            .club-featured .club-type,
-            .club-featured .stretched-link {
-                color: var(--bs-warning);
-            }
-        </style>
-
-        <!-- Yandex.Metrika counter -->
-        <script type="text/javascript">
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
             (function (m, e, t, r, i, k, a) {
                 m[i] =
                     m[i] ||
@@ -118,180 +56,95 @@
                 trackLinks: true,
             });
         </script>
-        <noscript
-            ><div>
-                <img src="https://mc.yandex.ru/watch/108766865" style="position: absolute; left: -9999px" alt="" /></div
-        ></noscript>
-        <!-- /Yandex.Metrika counter -->
-    </head>
-    <body>
-        <div class="container">
-            <header class="blog-header py-3">
-                <div class="row flex-wrap flex-md-nowrap justify-content-between align-items-center gy-2 gy-md-0">
-                    <div class="col-auto col-md-4">
-                        <a class="btn btn-sm btn-primary" target="_blank" href="https://t.me/eng_events">Subscribe</a>
-                    </div>
-                    <div class="col-12 col-md-4 text-center order-first order-md-0">
-                        <a class="blog-header-logo header-link" href="index.html">Time to Learn English</a>
-                    </div>
-                    <div class="col-auto col-md-4 d-flex justify-content-end align-items-center">
-                        <a class="link-secondary" href="#" aria-label="Search">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="20"
-                                height="20"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                stroke-width="2"
-                                class="mx-3"
-                                role="img"
-                                viewBox="0 0 24 24"
-                            >
-                                <title>Search</title>
-                                <circle cx="10.5" cy="10.5" r="7.5" />
-                                <path d="M21 21l-5.2-5.2" />
-                            </svg>
-                        </a>
-                        <a class="btn btn-sm btn-outline-secondary" href="#">Sign up</a>
-                    </div>
-                </div>
-            </header>
+<noscript><div>
+<img alt="" src="https://mc.yandex.ru/watch/108766865" style="position: absolute; left: -9999px"/></div></noscript>
+<!-- /Yandex.Metrika counter -->
+</head>
+<body>
 
-            <div class="nav-scroller py-1 mb-2">
-                <nav class="nav d-flex justify-content-between">
-                    <a class="p-2 link-secondary" href="index.html#actual-schedule">Schedule</a>
-                    <a class="p-2 link-secondary" href="#">Clubs</a>
-                    <a class="p-2 link-secondary" href="teachers.html">Teachers</a>
-                    <a class="p-2 link-secondary" href="#contacts">Contacts</a>
-                </nav>
-            </div>
-        </div>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="index.html">Time to Learn English</a>
+    <nav aria-label="Main">
+      <a href="index.html#actual-schedule">Schedule</a>
+      <a href="clubs.html" aria-current="page">Clubs</a>
+      <a href="teachers.html">Teachers</a>
+      <a href="#contacts">Contacts</a>
+    </nav>
+    <a class="btn btn--primary" href="https://t.me/eng_events" target="_blank">Subscribe</a>
+  </div>
+</header>
 
-        <main class="container">
-            <div class="row g-5 d-flex flex-md-row" style="margin-left: 0; margin-right: 0">
-                <div id="clubsContainer" class="col-md-8 order-2 order-md-1 mt-0 mt-md-5" style="max-width: 100%">
-                    <p id="clubsCount" class="small text-body-secondary mb-3" aria-live="polite"></p>
-                    <div id="clubsEmpty" class="p-4 mb-4 border rounded text-center d-none">
-                        <p class="mb-3">No clubs match these filters. Try &ldquo;All days&rdquo; or turn on more types.</p>
-                        <button id="resetFiltersEmpty" class="btn btn-outline-secondary btn-sm" type="button">Reset Filters</button>
-                    </div>
-                    
-                    <nav class="blog-pagination" aria-label="Pagination">
-                        <a class="btn btn-outline-primary" href="#archives">Older</a>
-                        <a class="btn btn-outline-secondary disabled" href="#" tabindex="-1" aria-disabled="true"
-                            >Newer</a
-                        >
-                    </nav>
-                </div>
+<main>
+  <section class="intro wrap">
+    <h1>English clubs in Moscow</h1>
+    <p class="lede">Speaking clubs, board games, speed meetings, stand-up and online groups. Every club has its own page with photos, venues, prices and how to sign up. Times are Moscow time.</p>
+  </section>
 
-                <div class="col-md-4 order-1 order-md-2 catalog-aside">
-                    <div class="position-sticky" style="top: 2rem">
-                        <div class="p-3 p-md-4 mb-3 second-bg rounded catalog-filters">
-                            <button id="filtersToggle" class="btn btn-outline-secondary w-100 d-md-none" type="button"
-                                data-bs-toggle="collapse" data-bs-target="#filtersBody" aria-expanded="false"
-                                aria-controls="filtersBody">Filters</button>
-                            <div id="filtersBody" class="collapse d-md-block">
-                                <div class="pt-3 pt-md-0">
-                                    <h4 class="fst-italic d-none d-md-block">Filters</h4>
-                            
-                                    <div class="row">
-                                        <div class="col-md-6 mb-3">
-                                            <label class="form-label fw-bold">Type</label>
-                                            <div class="form-check">
-                                                <input class="form-check-input filter-type" type="checkbox" value="Speed Meetings" id="filterSpeed" checked>
-                                                <label class="form-check-label" for="filterSpeed">Speed Meetings</label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input filter-type" type="checkbox" value="Board Games" id="filterBoard" checked>
-                                                <label class="form-check-label" for="filterBoard">Board Games</label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input filter-type" type="checkbox" value="Group Meetings" id="filterGroup" checked>
-                                                <label class="form-check-label" for="filterGroup">Group Meetings</label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input filter-type" type="checkbox" value="Online" id="filterOnline" checked>
-                                                <label class="form-check-label" for="filterOnline">Online</label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input filter-type" type="checkbox" value="Stand-up" id="filterStandup" checked>
-                                                <label class="form-check-label" for="filterStandup">Stand-up</label>
-                                            </div>
-                                        </div>
+  <div class="layout wrap">
+    <details class="layout__top filters panel" open data-collapse-below="60rem">
+      <summary>Filters</summary>
+      <div>
+        <fieldset>
+          <legend>Type</legend>
+          <div class="chips">
+          <label class="chip"><input class="filter-type" type="checkbox" value="Speed Meetings" id="filterSpeed" checked><span>Speed Meetings</span></label>
+          <label class="chip line-yellow"><input class="filter-type" type="checkbox" value="Board Games" id="filterBoard" checked><span>Board Games</span></label>
+          <label class="chip"><input class="filter-type" type="checkbox" value="Group Meetings" id="filterGroup" checked><span>Group Meetings</span></label>
+          <label class="chip chip--alt"><input class="filter-type" type="checkbox" value="Online" id="filterOnline" checked><span>Online</span></label>
+          <label class="chip line-violet"><input class="filter-type" type="checkbox" value="Stand-up" id="filterStandup" checked><span>Stand-up</span></label>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Price</legend>
+          <div class="chips">
+          <label class="chip"><input class="filter-price" type="checkbox" value="free" id="priceFree" checked><span>Free</span></label>
+          <label class="chip"><input class="filter-price" type="checkbox" value="paid" id="pricePaid" checked><span>Paid</span></label>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Schedule</legend>
+          <div class="chips">
+          <label class="chip"><input class="" type="radio" name="scheduleFilter" value="all" id="scheduleAll" checked><span>All days</span></label>
+          <label class="chip"><input class="" type="radio" name="scheduleFilter" value="today" id="scheduleToday"><span>Today</span></label>
+          <label class="chip"><input class="" type="radio" name="scheduleFilter" value="week" id="scheduleWeek"><span>This week</span></label>
+          </div>
+        </fieldset>
+        <button id="resetFilters" class="link-btn link-btn--quiet" type="button">Reset filters</button>
+      </div>
+    </details>
 
-                                        <div class="col-md-6 mb-3">
-                                            <label class="form-label fw-bold">Price</label>
-                                            <div class="form-check">
-                                                <input class="form-check-input filter-price" type="checkbox" value="free" id="priceFree" checked>
-                                                <label class="form-check-label" for="priceFree">Free</label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input filter-price" type="checkbox" value="paid" id="pricePaid" checked>
-                                                <label class="form-check-label" for="pricePaid">Paid</label>
-                                            </div>
-                                        </div>
-                                    </div>
+    <div class="layout__main">
+      <p id="resultCount" class="count" aria-live="polite"></p>
+      <ul id="clubList" class="entries"></ul>
+    </div>
 
-                                    <div class="mb-3">
-                                        <label class="form-label fw-bold">Schedule</label>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="scheduleFilter" id="scheduleAll" value="all" checked>
-                                            <label class="form-check-label" for="scheduleAll">All days</label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="scheduleFilter" id="scheduleToday" value="today">
-                                            <label class="form-check-label" for="scheduleToday">Today</label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="scheduleFilter" id="scheduleWeek" value="week">
-                                            <label class="form-check-label" for="scheduleWeek">This week</label>
-                                        </div>
-                                    </div>
+    <aside class="layout__aside">
+      <section class="panel">
+        <h4>About</h4>
+        <p>Hi, my name is Alex! This website is your go-to guide for live English practice in Moscow. We post a daily schedule of free and paid speaking clubs, game nights, stand-up shows, and other English events. Come talk with us!</p>
+        <p>Know a club that's still missing? Write to <a href="https://t.me/eng_events" target="_blank">@eng_events</a>.</p>
+      </section>
+      <section class="panel panel--quiet" id="contacts">
+        <h4>Elsewhere</h4>
+        <ol>
+          <li>Email: <a href="mailto:alexey0097@yandex.ru" target="_blank">alexey0097@yandex.ru</a></li>
+          <li>Telegram: <a href="https://t.me/eng_events" target="_blank">@eng_events</a></li>
+          <li>QR code: <a href="qr-code.html">time-to-learn-eng</a></li>
+        </ol>
+      </section>
+    </aside>
+  </div>
+</main>
 
-                                    <button id="resetFilters" class="btn btn-outline-secondary btn-sm w-100">Reset Filters</button>
-                                </div>
-                            </div>
-                        </div>
+<footer class="footer">
+  <div class="wrap">
+    <p>Made by <a href="https://t.me/alexey_acc">@alexey_acc</a> for everyone practising English in Moscow.</p>
+    <p><a href="#">Back to top</a></p>
+  </div>
+</footer>
 
-                        <div class="p-4 mb-3 second-bg rounded d-none d-md-block">
-                            <h4 class="fst-italic">About</h4>
-                            <p class="mb-0">
-                                Hi, my name is Alex! This website is your go-to guide for live English practice in
-                                Moscow. We post a daily schedule of free and paid speaking clubs, game nights, stand-up
-                                shows, and other English events. Come talk with us!
-                            </p>
-                        </div>
-
-                        <div id="contacts" class="p-4">
-                            <h4 class="fst-italic">Elsewhere</h4>
-                            <ol class="list-unstyled">
-                                <li>
-                                    Email:
-                                    <a href="mailto:alexey0097@yandex.ru" target="_blank">alexey0097@yandex.ru</a>
-                                </li>
-                                <li>Telegram: <a href="https://t.me/eng_events" target="_blank">@eng_events</a></li>
-                                <li>QR Code: <a href="qr-code.html">time-to-learn-eng</a></li>
-                            </ol>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </main>
-
-        <footer class="blog-footer">
-            <p>
-                © 2026 Time to Learn English · Made by
-                <a href="https://t.me/alexey_acc">@alexey_acc</a> with <a href="https://getbootstrap.com/">Bootstrap</a>
-            </p>
-            <p>
-                <a href="#">Back to top</a>
-            </p>
-        </footer>
-
-
-        <script type="text/javascript">
+<script>
                     const clubs = [
                           {
                             "name": "Blah-Blah Club",
@@ -1021,72 +874,50 @@
                         return a.name.localeCompare(b.name);
                     });
 
+
                     // ========== ФУНКЦИЯ ОТРИСОВКИ ==========
+                    const TYPE_COLOR = {"Online": "alt", "Board Games": "yellow", "Stand-up": "violet"};
+                    const DAYS = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+                    const esc = s => String(s).replace(/[&<>"]/g, ch => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;'}[ch]));
+
                     function renderClubs(filteredClubs) {
-                        const clubsContainer = document.getElementById('clubsContainer');
-                        if (!clubsContainer) return;
-                        
-                        // Удаляем старые карточки (все .row.g-0, кроме пагинации)
-                        const oldCards = clubsContainer.querySelectorAll('.row.g-0');
-                        oldCards.forEach(card => card.remove());
-                        
-                        let clubsHTML = '';
-                        
-                        filteredClubs.forEach(club => {
-                            const typeString = club.type && club.type.length > 0 
-                                ? club.type[0] 
-                                : 'Speaking Club';
-                            
-                            let badgeColor = 'cat-speed';
-                            if (club.type && club.type.length > 0) {
-                                const firstType = club.type[0].toLowerCase();
-                                if (firstType.includes('board') || firstType.includes('game')) badgeColor = 'cat-games';
-                                if (firstType.includes('online')) badgeColor = 'cat-online';
-                                if (firstType.includes('group')) badgeColor = 'cat-group';
-                                if (firstType.includes('stand')) badgeColor = 'cat-standup';
-                            }
-                            
-                            const imageHTML = club.image 
-                                ? `<img src="${club.image}" alt="${club.name}" loading="lazy" class="position-absolute top-0 start-0 w-100 h-100" style="object-fit: cover; object-position: ${club.imagePosition || '50% 50%'};" />`
-                                : '';
-                            
-                            clubsHTML += `
-                                <div class="row g-0 border ${club.promoted ? 'border-2 border-warning club-featured' : ''} rounded overflow-hidden flex-md-row mb-4 shadow-sm position-relative">
-                                    <div class="col p-4 d-flex flex-column position-static">
-                                        ${club.promoted
-                                            ? `<div class="mb-2"><strong class="d-inline-block club-type">${typeString}</strong> <span class="badge rounded-pill text-bg-warning ms-1"><img src="img/star.png" alt="" width="14" height="14" class="featured-star"> Top pick</span></div>`
-                                            : `<strong class="d-inline-block mb-2 ${badgeColor}">${typeString}</strong>`}
-                                        <h3 class="mb-0">${club.name}</h3>
-                                        ${club.time ? `<div class="mb-1 text-muted">${club.time}</div>` : ''}
-                                        ${club.desc ? `<p class="card-text mb-auto">${club.desc}</p>` : ''}
-                                        ${club.link ? `<a href="${club.link}" class="stretched-link">Full details<span class="visually-hidden"> about ${club.name}</span></a>` : ''}
-                                    </div>
-                                    ${imageHTML ? `<div class="col-12 col-lg-auto order-first order-lg-last card-photo">${imageHTML}</div>` : ''}
-                                </div>
-                            `;
-                        });
-                        
-                        const paginationNav = clubsContainer.querySelector('.blog-pagination');
-                        if (paginationNav) {
-                            paginationNav.insertAdjacentHTML('beforebegin', clubsHTML);
-                        } else {
-                            clubsContainer.insertAdjacentHTML('afterbegin', clubsHTML);
+                        const list = document.getElementById('clubList');
+                        const count = document.getElementById('resultCount');
+                        if (!list) return;
+                        const n = filteredClubs.length;
+                        count.textContent = n === activeClubs.length
+                            ? `All ${n} clubs`
+                            : `${n} of ${activeClubs.length} clubs`;
+
+                        if (n === 0) {
+                            list.innerHTML = `<li class="empty"><h2>No clubs match these filters</h2>
+                                <p>Turn on more types or days to see more clubs.</p>
+                                <button class="btn btn--primary" type="button" onclick="document.getElementById('resetFilters').click()">Reset filters</button></li>`;
+                            return;
                         }
 
-                        // Счётчик результатов и пустое состояние
-                        document.getElementById('clubsCount').textContent = `Showing ${filteredClubs.length} of ${activeClubs.length} clubs`;
-                        document.getElementById('clubsEmpty').classList.toggle('d-none', filteredClubs.length > 0);
-                    }
-
-                    // Подпись кнопки фильтров на телефоне: сколько групп фильтров сужают список
-                    function updateFiltersToggle() {
-                        let active = 0;
-                        // Все типы сняты — фильтр по типу не применяется (как в applyFilters)
-                        const types = Array.from(document.querySelectorAll('.filter-type'));
-                        if (types.some(cb => !cb.checked) && types.some(cb => cb.checked)) active++;
-                        if (Array.from(document.querySelectorAll('.filter-price')).some(cb => !cb.checked)) active++;
-                        if (!document.getElementById('scheduleAll').checked) active++;
-                        document.getElementById('filtersToggle').textContent = active ? `Filters (${active} active)` : 'Filters';
+                        list.innerHTML = filteredClubs.map(club => {
+                            const kind = club.type && club.type.length > 0 ? club.type[0] : 'Speaking Club';
+                            // Цвет по типу клуба; встречи в группах остаются в основном зелёном
+                            const tone = TYPE_COLOR[kind];
+                            const time = (club.time || '').replace(/,?\s*Moscow time$/, '');
+                            const week = DAYS.map(d => `<li class="${(club.daysOfWeek || []).includes(d) ? 'on' : ''}">${d.slice(0, 2)}</li>`).join('');
+                            const img = club.image
+                                ? `<img class="entry__media" src="${esc(club.image)}" alt="" loading="lazy" style="object-position: ${esc(club.imagePosition || '50% 50%')}">`
+                                : '';
+                            return `<li class="entry${tone === 'alt' ? ' entry--alt' : tone ? ' line-' + tone : ''}">
+                                ${img}
+                                <div class="entry__head">
+                                    <div class="kicker">${esc(kind)}${club.promoted ? ' <b class="tag tag--gold">Top pick</b>' : ''}</div>
+                                    <h2>${esc(club.name)}</h2>
+                                    ${time ? `<div class="entry__sub">${esc(time)}</div>` : ''}
+                                    <ol class="week" aria-label="Meeting days">${week}</ol>
+                                </div>
+                                ${club.desc ? `<p class="entry__text">${esc(club.desc)}</p>` : ''}
+                                ${club.link ? `<a class="more" href="${esc(club.link)}">Full details</a>` : ''}
+                            </li>`;
+                        }).join('');
+                        Metro.init(list);
                     }
 
                     // ========== ФИЛЬТРАЦИЯ ==========
@@ -1126,7 +957,6 @@
                         });
                         
                         renderClubs(filtered);
-                        updateFiltersToggle();
                     }
 
                     // ========== НАВЕШИВАЕМ ОБРАБОТЧИКИ ==========
@@ -1136,17 +966,16 @@
                     document.querySelectorAll('input[name="scheduleFilter"]').forEach(radio => {
                         radio.addEventListener('change', applyFilters);
                     });
-                    function resetFilters() {
+                    document.getElementById('resetFilters').addEventListener('click', function() {
                         document.querySelectorAll('.filter-type').forEach(cb => cb.checked = true);
                         document.querySelectorAll('.filter-price').forEach(cb => cb.checked = true);
                         document.getElementById('scheduleAll').checked = true;
                         applyFilters();
-                    }
-                    document.getElementById('resetFilters').addEventListener('click', resetFilters);
-                    document.getElementById('resetFiltersEmpty').addEventListener('click', resetFilters);
+                    });
 
                     // ========== ПЕРВЫЙ РЕНДЕР ==========
                     renderClubs(activeClubs);
-        </script>
-    </body>
+
+</script>
+</body>
 </html>

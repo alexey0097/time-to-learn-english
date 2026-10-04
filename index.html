@@ -1,79 +1,31 @@
 <!doctype html>
-<html lang="en" data-bs-theme="dark">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="description" content="" />
-        <meta name="author" content="Alexey Leonov, and Bootstrap contributors" />
-        <title>Time to Learn English</title>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="Your go-to guide for live English practice in Moscow: speaking clubs, game nights, stand-up shows and language exchanges, updated every week." name="description"/>
+<meta content="Alexey Leonov" name="author"/>
+<link rel="stylesheet" href="metro/metro.css">
+<script src="metro/metro.js"></script>
+<meta name="theme-color" content="#18803a">
+<title>Time to Learn English</title>
 
-        <link href="css/bootstrap.min.css" rel="stylesheet" />
-        <link rel="preload" href="fonts/playfair-700-latin.woff2" as="font" type="font/woff2" crossorigin />
-        <link href="css/blog.css" rel="stylesheet" />
-        <script src="js/bootstrap.bundle.min.js"></script>
 
-        <meta name="theme-color" content="#121212" />
 
-        <meta property="og:title" content="Time to Learn English" />
-        <meta
-            property="og:description"
-            content="Your go-to guide for live English practice in Moscow. Speaking clubs, game nights, stand-up shows, and more!"
-        />
-        <meta property="og:image" content="https://alexey0097.github.io/time-to-learn-english/img/preview.jpg" />
-        <meta property="og:url" content="https://alexey0097.github.io/time-to-learn-english/" />
-        <meta property="og:type" content="website" />
 
-        <link rel="icon" type="image/png" href="img/favicon/favicon-96x96.png" sizes="96x96" />
-        <link rel="icon" type="image/svg+xml" href="img/favicon/favicon.svg" />
-        <link rel="shortcut icon" href="img/favicon/favicon.ico" />
-        <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png" />
-        <link rel="manifest" href="img/favicon/site.webmanifest" />
+<meta content="Time to Learn English" property="og:title"/>
+<meta content="Your go-to guide for live English practice in Moscow. Speaking clubs, game nights, stand-up shows, and more!" property="og:description"/>
+<meta content="https://alexey0097.github.io/time-to-learn-english/img/preview.jpg" property="og:image"/>
+<meta content="https://alexey0097.github.io/time-to-learn-english/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<link href="img/favicon/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png"/>
+<link href="img/favicon/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="img/favicon/favicon.ico" rel="shortcut icon"/>
+<link href="img/favicon/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="img/favicon/site.webmanifest" rel="manifest"/>
 
-        <style>
-            .bd-placeholder-img {
-                font-size: 1.125rem;
-                text-anchor: middle;
-                -webkit-user-select: none;
-                -moz-user-select: none;
-                user-select: none;
-            }
-
-            @media (min-width: 768px) {
-                .bd-placeholder-img-lg {
-                    font-size: 3.5rem;
-                }
-            }
-            @keyframes bg-scroll {
-                0% {
-                    background-position: 0 center;
-                }
-                100% {
-                    background-position: -1300px center;
-                }
-            }
-
-            .animate-bg {
-                background-image: url("img/min-2-full-bg.jpg");
-                background-repeat: repeat-x;
-                background-size: auto 100%;
-                background-position: 0 center;
-                animation: bg-scroll 270s linear infinite;
-            }
-
-            .animate-bg::before {
-                content: "";
-                position: absolute;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                background: rgba(0, 0, 0, 0.55);
-                border-radius: inherit;
-            }
-        </style>
-
-        <!-- Yandex.Metrika counter -->
-        <script type="text/javascript">
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
             (function (m, e, t, r, i, k, a) {
                 m[i] =
                     m[i] ||
@@ -104,998 +56,926 @@
                 trackLinks: true,
             });
         </script>
-        <noscript
-            ><div>
-                <img src="https://mc.yandex.ru/watch/108766865" style="position: absolute; left: -9999px" alt="" /></div
-        ></noscript>
-        <!-- /Yandex.Metrika counter -->
-    </head>
-    <body>
-        <div class="container">
-            <header class="blog-header py-3">
-                <div class="row flex-wrap flex-md-nowrap justify-content-between align-items-center gy-2 gy-md-0">
-                    <div class="col-auto col-md-4">
-                        <a class="btn btn-sm btn-primary" target="_blank" href="https://t.me/eng_events">Subscribe</a>
-                    </div>
-                    <div class="col-12 col-md-4 text-center order-first order-md-0">
-                        <a class="blog-header-logo header-link" href="#">Time to Learn English</a>
-                    </div>
-                    <div class="col-auto col-md-4 d-flex justify-content-end align-items-center">
-                        <a class="link-secondary" href="#" aria-label="Search">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="20"
-                                height="20"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                stroke-width="2"
-                                class="mx-3"
-                                role="img"
-                                viewBox="0 0 24 24"
-                            >
-                                <title>Search</title>
-                                <circle cx="10.5" cy="10.5" r="7.5" />
-                                <path d="M21 21l-5.2-5.2" />
-                            </svg>
-                        </a>
-                        <a class="btn btn-sm btn-outline-secondary" href="#">Sign up</a>
-                    </div>
-                </div>
-            </header>
+<noscript><div>
+<img alt="" src="https://mc.yandex.ru/watch/108766865" style="position: absolute; left: -9999px"/></div></noscript>
+<!-- /Yandex.Metrika counter -->
+</head>
+<body>
 
-            <div class="nav-scroller py-1 mb-2">
-                <nav class="nav d-flex justify-content-between">
-                    <a class="p-2 link-secondary" href="#actual-schedule">Schedule</a>
-                    <a class="p-2 link-secondary" href="clubs.html">Clubs</a>
-                    <a class="p-2 link-secondary" href="teachers.html">Teachers</a>
-                    <a class="p-2 link-secondary" href="#contacts">Contacts</a>
-                </nav>
-            </div>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="#">Time to Learn English</a>
+    <nav aria-label="Main">
+      <a href="#actual-schedule">Schedule</a>
+      <a href="clubs.html">Clubs</a>
+      <a href="teachers.html">Teachers</a>
+      <a href="#contacts">Contacts</a>
+    </nav>
+    <a class="btn btn--primary" href="https://t.me/eng_events" target="_blank">Subscribe</a>
+  </div>
+</header>
+
+<main>
+  <section class="intro wrap">
+    <h1>Where to speak English in Moscow this week</h1>
+    <p class="lede">100 speaking clubs, game nights, stand-up shows and language exchanges, in cafés, pubs, libraries and online. Pick a day and just show up.</p>
+    <nav class="linemap" aria-label="Days of the week">
+      <ol>
+        <li><a href="#day-2026-09-28" data-date="2026-09-28"><span class="dot">28</span><span class="name">Mon</span><span class="count">9 meetups</span></a></li>
+        <li><a href="#day-2026-09-29" data-date="2026-09-29"><span class="dot">29</span><span class="name">Tue</span><span class="count">12 meetups</span></a></li>
+        <li><a href="#day-2026-09-30" data-date="2026-09-30"><span class="dot">30</span><span class="name">Wed</span><span class="count">14 meetups</span></a></li>
+        <li><a href="#day-2026-10-01" data-date="2026-10-01"><span class="dot">1</span><span class="name">Thu</span><span class="count">13 meetups</span></a></li>
+        <li><a href="#day-2026-10-02" data-date="2026-10-02"><span class="dot">2</span><span class="name">Fri</span><span class="count">15 meetups</span></a></li>
+        <li><a href="#day-2026-10-03" data-date="2026-10-03"><span class="dot">3</span><span class="name">Sat</span><span class="count">17 meetups</span></a></li>
+        <li><a href="#day-2026-10-04" data-date="2026-10-04"><span class="dot">4</span><span class="name">Sun</span><span class="count">20 meetups</span></a></li>
+      </ol>
+    </nav>
+  </section>
+
+  <section class="showcase wrap" aria-label="Highlights">
+    <div class="feature" style="background-image: url('img/min-standup-full-bg.jpg')">
+      <div>
+        <h2>Stand-up in English 🎤</h2>
+        <p>Comedians from all over the world take the stage in Moscow every week, in English. Catch the <strong>Big Sunday Show</strong>, the <strong>Razgony</strong> riffing format or an <strong>international open mic</strong>. Free entrance, great vibes and the best way to train your ear for real, fast English.</p>
+        <p><a href="stand-up-club-in-english.html">Find out more</a></p>
+      </div>
+    </div>
+    <article class="card card--media">
+      <div>
+        <div class="kicker">Pub quiz</div>
+        <h3><a href="english-speaking-club.html">English Pub Quiz Night!</a></h3>
+        <div class="when">Sep 27</div>
+        <p>Clever questions, a proper pub atmosphere and prizes for the winners. Gather a team or come solo — English Speaking Club will find you awesome teammates!</p>
+      </div>
+      <img src="img/min_ad-esc-quiz.jpg" alt="" width="200" height="250" loading="lazy">
+    </article>
+    <article class="card card--media">
+      <div>
+        <div class="kicker">Group meetings</div>
+        <h3><a href="social-english-club.html">Social English by Leonid</a></h3>
+        <div class="when">Mondays, 19:00</div>
+        <p>Talk, smile and spend time in a cozy company at Surf Coffee on Ostozhenka. And now there's an extra meeting on Thursdays — one more day to practice!</p>
+      </div>
+      <img src="img/min_ad-social-leonid.jpg" alt="" width="200" height="250" loading="lazy" style="object-position: 50% 45%">
+    </article>
+  </section>
+
+  <div class="layout wrap">
+    <div class="layout__main">
+      <article class="prose">
+  <h2>This Week in Moscow: September 28 – October 4</h2>
+  <p class="meta">September 28, 2026 by <a href="#contacts">Alexey Leonov</a></p>
+  <p>A new week of English practice is here! Here is your weekly lineup of speaking clubs, game nights, and special events happening all over Moscow. Whether you are a beginner or an advanced speaker, there is something for you.</p>
+  <hr/>
+  <p>This week we have <strong>100+ events</strong> across the city and online. Venues range from cozy coffee shops like Coffee Bean and Stars Coffee to lively bars like Katie O'Shea's and Axiom Pub. Most clubs welcome new faces — just show up and start talking!</p>
+  <h2 id="actual-schedule">Weekly Schedule</h2>
+  <p>Here is how to plan your week. Click on any club name to visit their channel for details and registration.</p>
+  <p class="legend"><span><b class="tag">New</b> recently added</span><span><b class="tag tag--gold">Top</b> our pick</span></p>
+  <section class="day" id="day-2026-09-28" data-date="2026-09-28">
+    <h3>Monday, September 28 <small>9 meetups</small></h3>
+    <ul class="route">
+      <li><time>20:00</time> <a href="ziferblat.html" target="_blank">Ziferblat's English Club</a> <span class="where">Ziferblat on Pushkinskaya</span></li>
+      <li><time>19:00</time> <a href="blah-blah-club.html" target="_blank">Blah-Blah Club</a> <span class="where">Surf Coffee x Rock</span></li>
+      <li><time>19:00</time> <a href="ziferblat.html" target="_blank">English with Gily &amp; Masha</a> <span class="where">Ziferblat on Mayakovskaya</span> <b class="tag tag--gold">Top</b></li>
+      <li><time>19:00</time> <a href="viva-lingua-club.html" target="_blank">Viva Lingua Club</a> <span class="where">Лялин пер. 23-29с1, м. Курская</span></li>
+      <li><time>19:00</time> <a href="social-english-club.html" target="_blank">Social English Club by Leonid</a> <span class="where">Surf Coffee x Ostozhenka</span> <b class="tag">New</b></li>
+      <li><time>19:00</time> <a href="pablo-place.html" target="_blank">Pablo Place - The Art of Gatherings</a> <span class="where">Park Muzeon</span> <b class="tag">New</b></li>
+      <li><time>19:30</time> <a href="nataly-club.html" target="_blank">English Club with Nataly</a> <span class="where">Union Jack pub</span></li>
+      <li><time>19:30</time> <a href="orthodox-christian-discussion-club.html" target="_blank">Orthodox Christian Discussion Club</a> <span class="where">Valaam Monastery</span></li>
+    </ul>
+    <p class="route-label">Online</p>
+    <ul class="route route--alt">
+        <li><time>19:00</time> <a href="english-starts-today.html" target="_blank">English Starts Today!</a> <b class="tag">New</b></li>
+      </ul>
+  </section>
+  <section class="day" id="day-2026-09-29" data-date="2026-09-29">
+    <h3>Tuesday, September 29 <small>12 meetups</small></h3>
+    <ul class="route">
+      <li><time>19:00</time> <a href="viva-lingua-club.html" target="_blank">Viva Lingua Club</a> <span class="where">Лялин пер. 23-29с1, м. Курская</span></li>
+      <li><time>19:00</time> <a href="real-talk.html" target="_blank">Real Talk Speaking Club</a> <span class="where">Surf Coffee</span> <b class="tag tag--gold">Top</b></li>
+      <li><time>19:00</time> <a href="goose-club.html" target="_blank">Board games - Goose Club</a> <span class="where">Geektime Anticafe</span> <b class="tag">New</b></li>
+      <li><time>19:15</time> <a href="moscow-today-club.html" target="_blank">Moscow Today Club</a> <span class="where">Coffeeshop</span></li>
+      <li><time>19:30</time> <a href="ziferblat.html" target="_blank">Ziferblat's English Club</a> <span class="where">Ziferblat on Kuznetsky Most</span></li>
+      <li><time>19:30</time> <a href="cherrypie-club.html" target="_blank">CherryPie Club</a> <span class="where">Sytinsky lane 3/5</span></li>
+      <li><time>19:30</time> <a href="nataly-club.html" target="_blank">English Club with Nataly</a> <span class="where">Cosmic latte</span></li>
+      <li><time>19:30</time> <a href="english-speaking-club.html" target="_blank">English Speaking Club</a> <span class="where">Coffeeshop</span></li>
+      <li><time>19:30</time> <a href="triumph-lounge-english-club.html" target="_blank">English Club</a> <span class="where">Triumph Lounge Bar</span> <b class="tag tag--gold">Top</b></li>
+      <li><time>20:00</time> <a href="blah-blah-club.html" target="_blank">Blah-Blah Club</a> <span class="where">Surf Coffee x Flacon</span></li>
+    </ul>
+    <p class="route-label">Online</p>
+    <ul class="route route--alt">
+        <li><time>10:30</time> <a href="pablo-place.html" target="_blank">Pablo Place - The Art of Gatherings</a></li>
+        <li><time>19:00</time> <a href="english-starts-today.html" target="_blank">English Starts Today!</a> <b class="tag">New</b></li>
+      </ul>
+  </section>
+  <section class="day" id="day-2026-09-30" data-date="2026-09-30">
+    <h3>Wednesday, September 30 <small>14 meetups</small></h3>
+    <ul class="route">
+      <li><time>18:45</time> <a href="english-literature-club.html" target="_blank">English Literature Club</a> <span class="where">Svetlovka library</span></li>
+      <li><time>19:00</time> <a href="ziferblat.html" target="_blank">Ziferblat's English Club</a> <span class="where">Ziferblat on Mayakovskaya</span></li>
+      <li><time>19:00</time> <a href="viva-lingua-club.html" target="_blank">Viva Lingua Club</a> <span class="where">Лялин пер. 23-29с1, м. Курская</span></li>
+      <li><time>19:00</time> <a href="real-talk.html" target="_blank">Real Talk Speaking Club</a> <span class="where">Stars Coffee</span> <b class="tag tag--gold">Top</b></li>
+      <li><time>19:00</time> <a href="wednesday-english-speaking-club.html" target="_blank">Wednesday English Speaking Club</a> <span class="where">Checkpoint</span></li>
+      <li><time>19:00</time> <a href="english-games-club.html" target="_blank">English Games Club</a> <span class="where">Grabli Cafe</span></li>
+      <li><time>19:00</time> <a href="sunrise-literature-club.html" target="_blank">Sunrise Literature Club</a> <span class="where">Central Library 21</span> <b class="tag">New</b></li>
+      <li><time>19:20</time> <a href="english-at-irishman.html" target="_blank">English at IRISHMAN</a> <span class="where">Irishman Pub 1905</span> <b class="tag">New</b></li>
+      <li><time>19:30</time> <a href="nataly-club.html" target="_blank">English Club with Nataly</a> <span class="where">Cosmic latte</span></li>
+      <li><time>20:00</time> <a href="blah-blah-club.html" target="_blank">Blah-Blah Club</a> <span class="where">Rébellion The Palace of Youth</span></li>
+      <li><time>20:00</time> <a href="isn-hse-moscow.html" target="_blank">ISN HSE Moscow</a> <span class="where">Craft RePUBlic</span> <b class="tag">New</b></li>
+    </ul>
+    <p class="route-label">Online</p>
+    <ul class="route route--alt">
+        <li><time>19:00</time> <a href="english-starts-today.html" target="_blank">English Starts Today!</a> <b class="tag">New</b></li>
+        <li><time>19:10</time> <a href="linguaclub.html" target="_blank">LinguaClub</a> <b class="tag">New</b></li>
+        <li><time>20:00</time> <a href="viva-lingua-club.html" target="_blank">Viva Lingua Club</a></li>
+      </ul>
+  </section>
+  <section class="day" id="day-2026-10-01" data-date="2026-10-01">
+    <h3>Thursday, October 1 <small>13 meetups</small></h3>
+    <ul class="route">
+      <li><time>18:55</time> <a href="thursday-after-work.html" target="_blank">Thursday After Work</a> <span class="where">Debri Bar</span> <b class="tag tag--gold">Top</b></li>
+      <li><time>19:00</time> <a href="viva-lingua-club.html" target="_blank">Viva Lingua Club</a> <span class="where">Лялин пер. 23-29с1, м. Курская</span></li>
+      <li><time>19:30</time> <a href="just-talk.html" target="_blank">Just Talk English Speaking Club</a> <span class="where">Ziferblat on Mayakovskaya</span> <b class="tag">New</b></li>
+      <li><time>19:30</time> <a href="nataly-club.html" target="_blank">English Club with Nataly</a> <span class="where">Coffeeshop Company</span></li>
+      <li><time>19:30</time> <a href="english-speaking-club.html" target="_blank">English Speaking Club</a> <span class="where">YesNoMilk</span></li>
+      <li><time>19:30</time> <a href="social-english-club.html" target="_blank">Social English Club by Leonid</a> <span class="where">Surf Coffee x Ostozhenka</span> <b class="tag">New</b></li>
+      <li><time>20:00</time> <a href="blah-blah-club.html" target="_blank">Blah-Blah Club</a> <span class="where">Surf Coffee x Solyanka</span></li>
+    </ul>
+    <p class="route-label">Online</p>
+    <ul class="route route--alt">
+        <li><time>10:30</time> <a href="pablo-place.html" target="_blank">Pablo Place - The Art of Gatherings</a></li>
+        <li><time>14:00</time> <a href="linguaclub.html" target="_blank">LinguaClub</a> <b class="tag">New</b></li>
+        <li><time>18:00</time> <a href="engsider-speaking-club.html" target="_blank">Engsider Speaking Club</a> <b class="tag">New</b></li>
+        <li><time>19:00</time> <a href="english-galaxy-club.html" target="_blank">English Galaxy Speaking Club</a></li>
+        <li><time>19:00</time> <a href="english-starts-today.html" target="_blank">English Starts Today!</a> <b class="tag">New</b></li>
+        <li><time>21:00</time> <a href="dark-english-academia.html" target="_blank">Dark English Academia</a> <b class="tag">New</b></li>
+      </ul>
+  </section>
+  <section class="day" id="day-2026-10-02" data-date="2026-10-02">
+    <h3>Friday, October 2 <small>15 meetups</small></h3>
+    <ul class="route">
+      <li><time>19:00</time> <a href="ziferblat.html" target="_blank">Ziferblat's English Club</a> <span class="where">Ziferblat on Mayakovskaya</span></li>
+      <li><time>19:00</time> <a href="english-speaking-club.html" target="_blank">English Speaking Club</a> <span class="where">Coffeeshop</span></li>
+      <li><time>19:00</time> <a href="https://t.me/fridaypoint" target="_blank">Friday Point</a> <span class="where">Library</span></li>
+      <li><time>19:00</time> <a href="real-talk.html" target="_blank">Real Talk Speaking Club</a> <span class="where">Stars Coffee</span> <b class="tag tag--gold">Top</b></li>
+      <li><time>19:00</time> <a href="ziferblat.html" target="_blank">Ziferblat's English Club</a> <span class="where">Ziferblat on Mayakovskaya</span></li>
+      <li><time>19:00</time> <a href="club-de-espanol.html" target="_blank">🇪🇸💬🇷🇺Club de Español en Moscu</a> <span class="where">Bar Santa Muerte</span></li>
+      <li><time>19:15</time> <a href="nataly-club.html" target="_blank">English Club with Nataly</a> <span class="where">Cosmic latte</span></li>
+      <li><time>19:15</time> <a href="moscow-english-conversation-club.html" target="_blank">Moscow English Conversation Club</a> <span class="where">Stars Coffee</span></li>
+      <li><time>19:30</time> <a href="cherrypie-club.html" target="_blank">CherryPie Club</a> <span class="where">Sytinsky lane 3/5</span></li>
+      <li><time>19:30</time> <a href="bright-school-no1.html" target="_blank">Bright School No1</a> <span class="where">Izmailovsky Boulevard 50</span></li>
+      <li><time>19:30</time> <a href="nastushka-speaking-club.html" target="_blank">Nastushka’s Speaking Club</a> <span class="where">Library</span> <b class="tag tag--gold">Top</b></li>
+      <li><time>20:00</time> <a href="blah-blah-club.html" target="_blank">Blah-Blah Club</a> <span class="where">Surf Coffee x Solyanka</span></li>
+      <li><time>20:00</time> <a href="blah-blah-club.html" target="_blank">Blah-Blah Club</a> <span class="where">Surf Coffee x Rock</span></li>
+      <li><time>20:00</time> <a href="friday-language-exchange-club.html" target="_blank">Friday Language Exchange Club</a> <span class="where">Cafe Na Kover</span> <b class="tag tag--gold">Top</b></li>
+    </ul>
+    <p class="route-label">Online</p>
+    <ul class="route route--alt">
+        <li><time>19:00</time> <a href="english-starts-today.html" target="_blank">English Starts Today!</a> <b class="tag">New</b></li>
+      </ul>
+  </section>
+  <section class="day" id="day-2026-10-03" data-date="2026-10-03">
+    <h3>Saturday, October 3 <small>17 meetups</small></h3>
+    <ul class="route">
+      <li><time>12:00</time> <a href="viva-lingua-club.html" target="_blank">Viva Lingua Club</a> <span class="where">Лялин пер. 23-29с1, м. Курская</span></li>
+      <li><time>14:00</time> <a href="viva-lingua-club.html" target="_blank">Viva Lingua Club</a> <span class="where">Лялин пер. 23-29с1, м. Курская</span></li>
+      <li><time>15:00</time> <a href="real-talk.html" target="_blank">Real Talk Speaking Club</a> <span class="where">Stars Coffee</span> <b class="tag tag--gold">Top</b></li>
+      <li><time>16:00</time> <a href="nataly-club.html" target="_blank">English Club with Nataly</a> <span class="where">Stars Coffee</span></li>
+      <li><time>17:00</time> <a href="igroteka-kota-m.html" target="_blank">Mendeley the Cat Game Club</a> <span class="where">HvoyaLounge</span></li>
+      <li><time>17:00</time> <a href="just-talk.html" target="_blank">Just Talk English Speaking Club</a> <span class="where">Stars Coffee</span> <b class="tag">New</b></li>
+      <li><time>17:00</time> <a href="moscow-today-club.html" target="_blank">Moscow Today Club</a> <span class="where">Gorky Park</span></li>
+      <li><time>17:00</time> <a href="vk-english-speaking-club.html" target="_blank">V&amp;K English Speaking Club</a> <span class="where">Coffee Shop Here’n’now</span> <b class="tag">New</b></li>
+      <li><time>17:30</time> <a href="cherrypie-club.html" target="_blank">CherryPie Club</a> <span class="where">Sytinsky lane 3/5</span></li>
+      <li><time>18:00</time> <a href="https://t.me/fridaypoint" target="_blank">Friday Point</a> <span class="where">Library 182</span></li>
+      <li><time>18:00</time> <a href="kates-english-speaking-club.html" target="_blank">Kate's English Speaking Club☀️</a> <span class="where">StreetEat</span> <b class="tag tag--gold">Top</b></li>
+      <li><time>18:30</time> <a href="english-lounge.html" target="_blank">English Lounge</a> <span class="where">Wine Club🍷</span></li>
+      <li><time>19:00</time> <a href="blah-blah-club.html" target="_blank">Blah-Blah Club</a> <span class="where">Surf Coffee x Secret Spot</span></li>
+      <li><time>19:00</time> <a href="ziferblat.html" target="_blank">Ziferblat's English Club</a> <span class="where">Ziferblat on Kuznetsky Most</span></li>
+      <li><time>19:30</time> <a href="clean-open-mic.html" target="_blank">Clean Open Mic</a> <span class="where">Silvers Irish Pub</span> <b class="tag tag--gold">Top</b></li>
+    </ul>
+    <p class="route-label">Online</p>
+    <ul class="route route--alt">
+        <li><time>12:00</time> <a href="english-club-moscow.html" target="_blank">ENGLISH CLUB 🛩☁️ MOSCOW</a></li>
+        <li><time>17:00</time> <a href="https://simplysay.ru/speaking-club/could-we-be-friends?utm_source=telegram&amp;utm_medium=organic_listing&amp;utm_campaign=time_to_learn_english_oct_2026&amp;utm_content=could_we_be_friends" target="_blank">Simply Say | Could We Be Friends?</a> <b class="tag">New</b></li>
+      </ul>
+  </section>
+  <section class="day" id="day-2026-10-04" data-date="2026-10-04">
+    <h3>Sunday, October 4 <small>20 meetups</small></h3>
+    <ul class="route">
+      <li><time>13:00</time> <a href="blah-blah-club.html" target="_blank">Blah-Blah Club</a> <span class="where">Surf Coffee x Flacon</span></li>
+      <li><time>14:30</time> <a href="moscow-international-football.html" target="_blank">Moscow International Football</a> <span class="where">Stadium</span></li>
+      <li><time>14:30</time> <a href="dark-english-academia.html" target="_blank">Dark English Academia</a> <span class="where">Moscow-based</span> <b class="tag">New</b></li>
+      <li><time>15:00</time> <a href="english-speaking-club.html" target="_blank">English Speaking Club</a> <span class="where">Drinkit</span></li>
+      <li><time>15:00</time> <a href="real-talk.html" target="_blank">Real Talk Speaking Club</a> <span class="where">Surf Coffee</span> <b class="tag tag--gold">Top</b></li>
+      <li><time>16:00</time> <a href="ziferblat.html" target="_blank">Ziferblat's English Club</a> <span class="where">Ziferblat on Mayakovskaya</span></li>
+      <li><time>16:00</time> <a href="cherrypie-club.html" target="_blank">CherryPie Club</a> <span class="where">Gauguin Cafe</span></li>
+      <li><time>16:00</time> <a href="nataly-club.html" target="_blank">English Club with Nataly</a> <span class="where">Stars Coffee</span></li>
+      <li><time>16:00</time> <a href="chatty-chillies.html" target="_blank">Chatty Chillies</a> <span class="where">Coffee Bean</span></li>
+      <li><time>17:30</time> <a href="triumph-lounge-english-club.html" target="_blank">English Club</a> <span class="where">Triumph Lounge Bar</span> <b class="tag tag--gold">Top</b></li>
+      <li><time>18:00</time> <a href="yoteach-in-touch.html" target="_blank">Yoteach in touch</a> <span class="where">Surf Coffee® × Ostankino</span> <b class="tag">New</b></li>
+      <li><time>18:00</time> <a href="moscowlem.html" target="_blank">MoscowLEM</a> <span class="where">Green Dog</span></li>
+      <li><time>18:00</time> <a href="moscow-pals.html" target="_blank">Moscow Pals Club</a> <span class="where">Katie O&#x27;Shea&#x27;s</span> <b class="tag tag--gold">Top</b></li>
+      <li><time>19:00</time> <a href="nataly-club.html" target="_blank">English Club with Nataly</a> <span class="where">Cosmic latte</span></li>
+    </ul>
+    <p class="route-label">Online</p>
+    <ul class="route route--alt">
+        <li><time>11:30</time> <a href="spill-the-tea.html" target="_blank">Spill The Tea</a></li>
+        <li><time>12:30</time> <a href="girls-speaking-club.html" target="_blank">Intermediate | Girl's Speaking Club</a></li>
+        <li><time>14:00</time> <a href="english-galaxy-club.html" target="_blank">English Galaxy Speaking Club</a></li>
+        <li><time>14:15</time> <a href="girls-speaking-club.html" target="_blank">Beginner | Girl's Speaking Club</a></li>
+        <li><time>17:00</time> <a href="https://simplysay.ru/speaking-club/coincidence-or-destiny?utm_source=telegram&amp;utm_medium=organic_listing&amp;utm_campaign=time_to_learn_english_oct_2026&amp;utm_content=coincidence_or_destiny" target="_blank">Simply Say | Coincidence or Destiny?</a> <b class="tag">New</b></li>
+        <li><time>20:00</time> <a href="reading-vocab-club.html" target="_blank">Reading and Vocabulary Club</a> <b class="tag">New</b></li>
+      </ul>
+  </section>
+  <hr/>
+  <h3>Tips and Special Offers</h3>
+  <ul class="plain">
+<li><strong>Real Talk Speaking Club</strong> — 30% off with a multi-meeting subscription</li>
+<li><strong>Blah-Blah Club x Surf Coffee</strong> — Bring a friend, you both save 15%</li>
+<li><strong>English Club with Nataly</strong> — offers monthly subscriptions for 4, 6, and 8 sessions</li>
+<li><strong>Surf Coffee</strong> — 10% off drinks for club participants</li>
+</ul>
+  <hr/>
+  <h2>New Here?</h2>
+  <p>Most clubs are very beginner-friendly. Just come with a positive attitude and a willingness to chat. Here is what to expect at different types of events:</p>
+  <dl>
+<dt>Speaking Clubs</dt>
+<dd>Casual conversation in small groups or one-on-one. Topics are usually provided. No pressure, just talk.</dd>
+<dt>Online Clubs</dt>
+<dd>Join from anywhere via Zoom or Telegram. Perfect if you are shy or short on time.</dd>
+<dt>Game Nights</dt>
+<dd>Practice English while playing board games or Mafia. A relaxed way to learn.</dd>
+<dt>Stand-Up &amp; Open Mics</dt>
+<dd>Enjoy comedy in English. Some events are free, others require a ticket.</dd>
+</dl>
+  <p>Have a great week and happy speaking!</p>
+      </article>
+
+      <div class="gap-top"><article class="prose">
+  <h2>Big Update: 33 New Clubs on the Site!</h2>
+  <p class="meta">September 24, 2026 by <a href="#contacts">Alexey Leonov</a></p>
+  <p>Friends, the site has just had its biggest update ever! 🎉 Our <a href="clubs.html">club catalog</a> has grown from 9 to <strong>42 clubs</strong> — speaking clubs, game nights, literature circles, stand-up comedy, language exchanges and even football. Each new club has its own page with photos from real meetings, a schedule, venues, prices and how to sign up.</p>
+  <hr/>
+  <h3>What's new</h3>
+  <ul>
+<li>🗣 <strong>More speaking clubs for every level and every day of the week</strong> — from cozy Sunday meetups like <a href="chatty-chillies.html">Chatty Chillies</a> and <a href="just-talk.html">Just Talk</a> to thought-provoking debates at <a href="english-chatter-club.html">English Chatter Club</a>.</li>
+<li>🎲 <strong>Board games and Mafia in English</strong> — <a href="goose-club.html">Goose Club</a>, <a href="english-games-club.html">English Games Club</a> and <a href="vk-english-speaking-club.html">V&amp;K English Speaking Club</a>.</li>
+<li>📚 <strong>Literature and film clubs</strong> — read a short story a week at <a href="english-literature-club.html">English Literature Club</a> or <a href="long-story-short.html">Long Story Short</a>, or discuss movies at <a href="moscow-english-conversation-club.html">Moscow English Conversation Club</a>.</li>
+<li>🎤 <strong>Stand-up comedy in English</strong> — <a href="stand-up-club-in-english.html">Stand Up Club in English</a> and <a href="clean-open-mic.html">Clean Open Mic</a>.</li>
+<li>🌍 <strong>Language exchanges and international parties</strong> — <a href="moscowlem.html">MoscowLEM</a>, <a href="isn-hse-moscow.html">ISN HSE Moscow</a>, <a href="club-de-espanol.html">Club de Español en Moscú</a> and <a href="international-vip.html">International VIP</a>.</li>
+<li>💻 <strong>Online clubs</strong> — join from anywhere: <a href="english-starts-today.html">English Starts Today!</a>, <a href="linguaclub.html">LinguaClub</a> and <a href="girls-speaking-club.html">Girl's Speaking Club</a>.</li>
+<li>⚽ <strong>And something different</strong> — play football with locals and expats at <a href="moscow-international-football.html">Moscow International Football</a>.</li>
+</ul>
+  <hr/>
+  <h3>Find your club in a minute</h3>
+  <p>Open the <a href="clubs.html">Clubs</a> page and use the filters: choose the <strong>type</strong> of meeting (speed meetings, board games, group meetings or online), <strong>free or paid</strong>, and see who meets <strong>today</strong> or <strong>this week</strong>. Click any card to read the full story of the club.</p>
+  <p>Know a club that's still missing? Write to us on <a href="https://t.me/eng_events" target="_blank">@eng_events</a> — we'd be happy to add it. See you at the meetings! ✨</p>
+</article></div>
+
+      <section class="gap-top" aria-label="Earlier weeks">
+        <h2 class="label">Earlier weeks</h2>
+        <details class="fold">
+  <summary>This Week in Moscow: September 21–27</summary>
+  <article class="prose">
+  <p class="meta">September 22, 2026 by <a href="#contacts">Alexey Leonov</a></p>
+  <p>A new week of English practice is here! Here is your weekly lineup of speaking clubs, game nights, and special events happening all over Moscow. Whether you are a beginner or an advanced speaker, there is something for you.</p>
+  <hr/>
+  <p>This week we have <strong>over 98 events</strong> across the city and online. Venues range from cozy coffee shops like Coffee Bean and Stars Coffee to lively bars like Katie O'Shea's and Axiom Pub. Most clubs welcome new faces — just show up and start talking!</p>
+  <h2>Weekly Schedule</h2>
+  <p>Here is how to plan your week. Click on any club name to visit their channel for details and registration.</p>
+  <p class="legend"><span><b class="tag">New</b> recently added</span><span><b class="tag tag--gold">Top</b> our pick</span></p>
+  <section class="day" id="w2-2026-09-21" data-date="2026-09-21">
+    <h3>Monday, September 21 <small>9 meetups</small></h3>
+    <ul class="route">
+      <li><time>20:00</time> <a href="ziferblat.html" target="_blank">Ziferblat's English Club</a> <span class="where">Ziferblat on Pushkinskaya</span></li>
+      <li><time>19:00</time> <a href="blah-blah-club.html" target="_blank">Blah-Blah Club</a> <span class="where">Surf Coffee x Rock</span></li>
+      <li><time>19:00</time> <a href="ziferblat.html" target="_blank">English with Gily &amp; Masha</a> <span class="where">Ziferblat on Mayakovskaya</span> <b class="tag tag--gold">Top</b></li>
+      <li><time>19:00</time> <a href="viva-lingua-club.html" target="_blank">Viva Lingua Club</a> <span class="where">Лялин пер. 23-29с1, м. Курская</span></li>
+      <li><time>19:00</time> <a href="https://t.me/Social_Leonid" target="_blank">Social English Club by Leonid</a> <span class="where">Surf Coffee x Ostozhenka</span> <b class="tag">New</b></li>
+      <li><time>19:00</time> <a href="https://t.me/pabloplace" target="_blank">Pablo Place - The Art of Gatherings</a> <span class="where">Park Muzeon</span> <b class="tag">New</b></li>
+      <li><time>19:30</time> <a href="nataly-club.html" target="_blank">English Club with Nataly</a> <span class="where">Union Jack pub</span></li>
+      <li><time>19:30</time> <a href="https://t.me/orthodox_christian_discussions" target="_blank">Orthodox Christian Discussion Club</a> <span class="where">Valaam Monastery</span></li>
+    </ul>
+    <p class="route-label">Online</p>
+    <ul class="route route--alt">
+        <li><time>19:00</time> <a href="https://t.me/segodnyaeng" target="_blank">English Starts Today!</a> <b class="tag">New</b></li>
+      </ul>
+  </section>
+  <section class="day" id="w2-2026-09-22" data-date="2026-09-22">
+    <h3>Tuesday, September 22 <small>12 meetups</small></h3>
+    <ul class="route">
+      <li><time>19:00</time> <a href="viva-lingua-club.html" target="_blank">Viva Lingua Club</a> <span class="where">Лялин пер. 23-29с1, м. Курская</span></li>
+      <li><time>19:00</time> <a href="real-talk.html" target="_blank">Real Talk Speaking Club</a> <span class="where">Surf Coffee</span> <b class="tag tag--gold">Top</b></li>
+      <li><time>19:00</time> <a href="https://t.me/igrautkaclubmoscow" target="_blank">Board games - Goose Club</a> <span class="where">Geektime Anticafe</span> <b class="tag">New</b></li>
+      <li><time>19:15</time> <a href="https://t.me/moscowtodayhq" target="_blank">Moscow Today Club</a> <span class="where">Coffeeshop</span></li>
+      <li><time>19:30</time> <a href="ziferblat.html" target="_blank">Ziferblat's English Club</a> <span class="where">Ziferblat on Kuznetsky Most</span></li>
+      <li><time>19:30</time> <a href="https://t.me/cherrypieclub/2005" target="_blank">CherryPie Club</a> <span class="where">Hotel Sofit</span></li>
+      <li><time>19:30</time> <a href="nataly-club.html" target="_blank">English Club with Nataly</a> <span class="where">Cosmic latte</span></li>
+      <li><time>19:30</time> <a href="https://t.me/speak_english_moscow/8" target="_blank">English Speaking Club</a> <span class="where">Coffeeshop</span></li>
+      <li><time>19:30</time> <a href="https://t.me/+ViUdx9V5DOphMTUy" target="_blank">English Club</a> <span class="where">Triumph Lounge Bar</span> <b class="tag tag--gold">Top</b></li>
+      <li><time>20:00</time> <a href="blah-blah-club.html" target="_blank">Blah-Blah Club</a> <span class="where">Surf Coffee x Flacon</span></li>
+    </ul>
+    <p class="route-label">Online</p>
+    <ul class="route route--alt">
+        <li><time>10:30</time> <a href="https://t.me/pabloplace" target="_blank">Pablo Place - The Art of Gatherings</a></li>
+        <li><time>19:00</time> <a href="https://t.me/segodnyaeng" target="_blank">English Starts Today!</a> <b class="tag">New</b></li>
+      </ul>
+  </section>
+  <section class="day" id="w2-2026-09-23" data-date="2026-09-23">
+    <h3>Wednesday, September 23 <small>14 meetups</small></h3>
+    <ul class="route">
+      <li><time>18:45</time> <a href="https://t.me/short_story_of_the_week" target="_blank">English Literature Club</a> <span class="where">Svetlovka library</span></li>
+      <li><time>19:00</time> <a href="ziferblat.html" target="_blank">Ziferblat's English Club</a> <span class="where">Ziferblat on Mayakovskaya</span></li>
+      <li><time>19:00</time> <a href="viva-lingua-club.html" target="_blank">Viva Lingua Club</a> <span class="where">Лялин пер. 23-29с1, м. Курская</span></li>
+      <li><time>19:00</time> <a href="real-talk.html" target="_blank">Real Talk Speaking Club</a> <span class="where">Stars Coffee</span> <b class="tag tag--gold">Top</b></li>
+      <li><time>19:00</time> <a href="https://t.me/thewednesdayclub" target="_blank">Wednesday English Speaking Club</a> <span class="where">Checkpoint</span></li>
+      <li><time>19:00</time> <a href="https://t.me/EnglishVDNH" target="_blank">English Speaking Club at VDNH</a> <span class="where">VDNH</span> <b class="tag tag--gold">Top</b></li>
+      <li><time>19:00</time> <a href="https://t.me/engl_games" target="_blank">English Games Club</a> <span class="where">Grabli Cafe</span></li>
+      <li><time>19:00</time> <a href="https://t.me/forgetmenot2021" target="_blank">Sunrise Literature Club</a> <span class="where">Central Library 21</span> <b class="tag">New</b></li>
+      <li><time>19:20</time> <a href="https://t.me/irishmanenglish" target="_blank">English at IRISHMAN</a> <span class="where">Irishman Pub 1905</span> <b class="tag">New</b></li>
+      <li><time>19:30</time> <a href="nataly-club.html" target="_blank">English Club with Nataly</a> <span class="where">Cosmic latte</span></li>
+      <li><time>20:00</time> <a href="blah-blah-club.html" target="_blank">Blah-Blah Club</a> <span class="where">Rébellion The Palace of Youth</span></li>
+    </ul>
+    <p class="route-label">Online</p>
+    <ul class="route route--alt">
+        <li><time>19:00</time> <a href="https://t.me/segodnyaeng" target="_blank">English Starts Today!</a> <b class="tag">New</b></li>
+        <li><time>19:10</time> <a href="https://t.me/linguaachannel" target="_blank">LinguaClub</a> <b class="tag">New</b></li>
+        <li><time>20:00</time> <a href="viva-lingua-club.html" target="_blank">Viva Lingua Club</a></li>
+      </ul>
+  </section>
+  <section class="day" id="w2-2026-09-24" data-date="2026-09-24">
+    <h3>Thursday, September 24 <small>13 meetups</small></h3>
+    <ul class="route">
+      <li><time>18:55</time> <a href="https://t.me/+mjdU1p9I_QM3YjNk" target="_blank">Thursday After Work</a> <span class="where">Debri Bar</span> <b class="tag tag--gold">Top</b></li>
+      <li><time>19:00</time> <a href="viva-lingua-club.html" target="_blank">Viva Lingua Club</a> <span class="where">Лялин пер. 23-29с1, м. Курская</span></li>
+      <li><time>19:30</time> <a href="ziferblat.html" target="_blank">Just Talk English Speaking Club</a> <span class="where">Ziferblat on Mayakovskaya</span> <b class="tag">New</b></li>
+      <li><time>19:30</time> <a href="nataly-club.html" target="_blank">English Club with Nataly</a> <span class="where">Coffeeshop Company</span></li>
+      <li><time>19:30</time> <a href="https://t.me/speak_english_moscow/8" target="_blank">English Speaking Club</a> <span class="where">YesNoMilk</span></li>
+      <li><time>19:30</time> <a href="https://t.me/Social_Leonid" target="_blank">Social English Club by Leonid</a> <span class="where">Surf Coffee x Ostozhenka</span> <b class="tag">New</b></li>
+      <li><time>20:00</time> <a href="blah-blah-club.html" target="_blank">Blah-Blah Club</a> <span class="where">Surf Coffee x Solyanka</span></li>
+    </ul>
+    <p class="route-label">Online</p>
+    <ul class="route route--alt">
+        <li><time>10:30</time> <a href="https://t.me/pabloplace" target="_blank">Pablo Place - The Art of Gatherings</a></li>
+        <li><time>14:00</time> <a href="https://t.me/linguaachannel" target="_blank">LinguaClub</a> <b class="tag">New</b></li>
+        <li><time>18:00</time> <a href="https://t.me/m/EYIb2ljHYzgy" target="_blank">Engsider Speaking Club</a> <b class="tag">New</b></li>
+        <li><time>19:00</time> <a href="english-galaxy-club.html" target="_blank">English Galaxy Speaking Club</a></li>
+        <li><time>19:00</time> <a href="https://t.me/segodnyaeng" target="_blank">English Starts Today!</a> <b class="tag">New</b></li>
+        <li><time>21:00</time> <a href="https://t.me/darkenglishacademia" target="_blank">Dark English Academia</a> <b class="tag">New</b></li>
+      </ul>
+  </section>
+  <section class="day" id="w2-2026-09-25" data-date="2026-09-25">
+    <h3>Friday, September 25 <small>14 meetups</small></h3>
+    <ul class="route">
+      <li><time>19:00</time> <a href="ziferblat.html" target="_blank">Ziferblat's English Club</a> <span class="where">Ziferblat on Mayakovskaya</span></li>
+      <li><time>19:00</time> <a href="https://t.me/speak_english_moscow/8" target="_blank">English Speaking Club</a> <span class="where">Coffeeshop</span></li>
+      <li><time>19:00</time> <a href="https://t.me/fridaypoint" target="_blank">Friday Point</a> <span class="where">Library</span></li>
+      <li><time>19:00</time> <a href="real-talk.html" target="_blank">Real Talk Speaking Club</a> <span class="where">Stars Coffee</span> <b class="tag tag--gold">Top</b></li>
+      <li><time>19:00</time> <a href="ziferblat.html" target="_blank">Ziferblat's English Club</a> <span class="where">Ziferblat on Mayakovskaya</span></li>
+      <li><time>19:00</time> <a href="https://t.me/clubdeespanolenmoscu" target="_blank">🇪🇸💬🇷🇺Club de Español en Moscu</a> <span class="where">Bar Santa Muerte</span></li>
+      <li><time>19:15</time> <a href="nataly-club.html" target="_blank">English Club with Nataly</a> <span class="where">Cosmic latte</span></li>
+      <li><time>19:15</time> <a href="https://t.me/MoscowEnglishConversationClub" target="_blank">Moscow English Conversation Club</a> <span class="where">Stars Coffee</span></li>
+      <li><time>19:30</time> <a href="https://t.me/cherrypieclub/2005" target="_blank">CherryPie Club</a> <span class="where">Hotel Sofit</span></li>
+      <li><time>19:30</time> <a href="https://t.me/bright_school_no1" target="_blank">Bright School No1</a> <span class="where">Izmailovsky Boulevard 50</span></li>
+      <li><time>19:30</time> <a href="https://t.me/nastushkaspeakingclub" target="_blank">Nastushka’s Speaking Club</a> <span class="where">Library</span> <b class="tag tag--gold">Top</b></li>
+      <li><time>20:00</time> <a href="blah-blah-club.html" target="_blank">Blah-Blah Club</a> <span class="where">Surf Coffee x Solyanka</span></li>
+      <li><time>20:00</time> <a href="https://t.me/jimnjacks/2332" target="_blank">Friday Language Exchange Club</a> <span class="where">Cafe Na Kover</span> <b class="tag tag--gold">Top</b></li>
+    </ul>
+    <p class="route-label">Online</p>
+    <ul class="route route--alt">
+        <li><time>19:00</time> <a href="https://t.me/segodnyaeng" target="_blank">English Starts Today!</a> <b class="tag">New</b></li>
+      </ul>
+  </section>
+  <section class="day" id="w2-2026-09-26" data-date="2026-09-26">
+    <h3>Saturday, September 26 <small>15 meetups</small></h3>
+    <ul class="route">
+      <li><time>12:00</time> <a href="viva-lingua-club.html" target="_blank">Viva Lingua Club</a> <span class="where">Лялин пер. 23-29с1, м. Курская</span></li>
+      <li><time>14:00</time> <a href="viva-lingua-club.html" target="_blank">Viva Lingua Club</a> <span class="where">Лялин пер. 23-29с1, м. Курская</span></li>
+      <li><time>15:00</time> <a href="real-talk.html" target="_blank">Real Talk Speaking Club</a> <span class="where">Stars Coffee</span> <b class="tag tag--gold">Top</b></li>
+      <li><time>16:00</time> <a href="nataly-club.html" target="_blank">English Club with Nataly</a> <span class="where">Stars Coffee</span></li>
+      <li><time>17:00</time> <a href="igroteka-kota-m.html" target="_blank">Mendeley the Cat Game Club</a> <span class="where">HvoyaLounge</span></li>
+      <li><time>17:00</time> <a href="https://t.me/Just_talk_moscow_Eng_speaking_cl" target="_blank">Just Talk English Speaking Club</a> <span class="where">Stars Coffee</span> <b class="tag">New</b></li>
+      <li><time>17:00</time> <a href="https://t.me/moscowtodayhq" target="_blank">Moscow Today Club</a> <span class="where">Gorky Park</span></li>
+      <li><time>17:00</time> <a href="https://t.me/EnglishTogetherVK" target="_blank">V&amp;K English Speaking Club</a> <span class="where">Coffee Shop Here’n’now</span> <b class="tag">New</b></li>
+      <li><time>17:30</time> <a href="https://t.me/cherrypieclub/2005" target="_blank">CherryPie Club</a> <span class="where">Hotel Sofit</span></li>
+      <li><time>18:00</time> <a href="https://t.me/fridaypoint" target="_blank">Friday Point</a> <span class="where">Library 182</span></li>
+      <li><time>18:00</time> <a href="https://t.me/+DxqLMjv1pGBmYmNi" target="_blank">Kate's English Speaking Club☀️</a> <span class="where">StreetEat</span> <b class="tag tag--gold">Top</b></li>
+      <li><time>18:30</time> <a href="https://t.me/irenesta_ispeak" target="_blank">English Lounge</a> <span class="where">Wine Club🍷</span></li>
+      <li><time>19:00</time> <a href="blah-blah-club.html" target="_blank">Blah-Blah Club</a> <span class="where">Surf Coffee x Secret Spot</span></li>
+      <li><time>19:00</time> <a href="ziferblat.html" target="_blank">Ziferblat's English Club</a> <span class="where">Ziferblat on Kuznetsky Most</span></li>
+    </ul>
+    <p class="route-label">Online</p>
+    <ul class="route route--alt">
+        <li><time>12:00</time> <a href="https://t.me/+o3r3cUpJY_RmNmFi" target="_blank">ENGLISH CLUB 🛩☁️ MOSCOW</a></li>
+      </ul>
+  </section>
+  <section class="day" id="w2-2026-09-27" data-date="2026-09-27">
+    <h3>Sunday, September 27 <small>21 meetups</small></h3>
+    <ul class="route">
+      <li><time>13:00</time> <a href="blah-blah-club.html" target="_blank">Blah-Blah Club</a> <span class="where">Surf Coffee x Flacon</span></li>
+      <li><time>14:30</time> <a href="https://t.me/moscowsoccer" target="_blank">Moscow International Football</a> <span class="where">Stadium</span></li>
+      <li><time>14:30</time> <a href="https://t.me/darkenglishacademia" target="_blank">Dark English Academia</a> <span class="where">Moscow-based</span> <b class="tag">New</b></li>
+      <li><time>15:00</time> <a href="https://t.me/speak_english_moscow/8" target="_blank">English Speaking Club</a> <span class="where">Drinkit</span></li>
+      <li><time>15:00</time> <a href="real-talk.html" target="_blank">Real Talk Speaking Club</a> <span class="where">Surf Coffee</span> <b class="tag tag--gold">Top</b></li>
+      <li><time>16:00</time> <a href="ziferblat.html" target="_blank">Ziferblat's English Club</a> <span class="where">Ziferblat on Mayakovskaya</span></li>
+      <li><time>16:00</time> <a href="nataly-club.html" target="_blank">English Club with Nataly</a> <span class="where">Stars Coffee</span></li>
+      <li><time>16:00</time> <a href="https://t.me/walkandtalkclub" target="_blank">Chatty Chillies</a> <span class="where">Coffee Bean</span></li>
+      <li><time>16:00</time> <a href="https://t.me/englishchatterclub" target="_blank">English Chatter Club</a> <span class="where">Axiom Pub</span> <b class="tag">New</b></li>
+      <li><time>17:30</time> <a href="https://t.me/+ViUdx9V5DOphMTUy" target="_blank">English Club</a> <span class="where">Triumph Lounge Bar</span> <b class="tag tag--gold">Top</b></li>
+      <li><time>18:00</time> <a href="https://t.me/speak_english_moscow/558" target="_blank">English Speaking Club</a> <span class="where">PUB QUIZ · Yonks Bar</span> <b class="tag">New</b></li>
+      <li><time>18:00</time> <a href="https://t.me/yoteachme/106" target="_blank">Yoteach in touch</a> <span class="where">Surf Coffee® × Ostankino</span> <b class="tag">New</b></li>
+      <li><time>18:00</time> <a href="https://t.me/MoscowLEM/403" target="_blank">MoscowLEM</a> <span class="where">Green Dog</span></li>
+      <li><time>18:00</time> <a href="https://t.me/MoscowPals" target="_blank">Moscow Pals Club</a> <span class="where">Katie O&#x27;Shea&#x27;s</span> <b class="tag tag--gold">Top</b></li>
+      <li><time>19:00</time> <a href="nataly-club.html" target="_blank">English Club with Nataly</a> <span class="where">Cosmic latte</span></li>
+      <li><time>20:00</time> <a href="ziferblat.html" target="_blank">Ziferblat's English Club</a> <span class="where">Ziferblat on Mayakovskaya</span></li>
+    </ul>
+    <p class="route-label">Online</p>
+    <ul class="route route--alt">
+        <li><time>11:30</time> <a href="https://t.me/SpeakingClubSpillTheTea" target="_blank">Spill The Tea</a></li>
+        <li><time>12:30</time> <a href="https://t.me/sayitsimple" target="_blank">Intermediate | Girl's Speaking Club</a></li>
+        <li><time>14:00</time> <a href="english-galaxy-club.html" target="_blank">English Galaxy Speaking Club</a></li>
+        <li><time>14:15</time> <a href="https://t.me/sayitsimple" target="_blank">Beginner | Girl's Speaking Club</a></li>
+        <li><time>20:00</time> <a href="reading-vocab-club.html" target="_blank">Reading and Vocabulary Club</a> <b class="tag">New</b></li>
+      </ul>
+  </section>
+  <hr/>
+  <h3>Tips and Special Offers</h3>
+  <ul class="plain">
+<li><strong>Real Talk Speaking Club</strong> — 30% off with a multi-meeting subscription</li>
+<li><strong>Blah-Blah Club x Surf Coffee</strong> — Bring a friend, you both save 15%</li>
+<li><strong>English Club with Nataly</strong> — offers monthly subscriptions for 4, 6, and 8 sessions</li>
+<li><strong>Surf Coffee</strong> — 10% off drinks for club participants</li>
+</ul>
+  <hr/>
+  <h2>New Here?</h2>
+  <p>Most clubs are very beginner-friendly. Just come with a positive attitude and a willingness to chat. Here is what to expect at different types of events:</p>
+  <dl>
+<dt>Speaking Clubs</dt>
+<dd>Casual conversation in small groups or one-on-one. Topics are usually provided. No pressure, just talk.</dd>
+<dt>Online Clubs</dt>
+<dd>Join from anywhere via Zoom or Telegram. Perfect if you are shy or short on time.</dd>
+<dt>Game Nights</dt>
+<dd>Practice English while playing board games or Mafia. A relaxed way to learn.</dd>
+<dt>Stand-Up &amp; Open Mics</dt>
+<dd>Enjoy comedy in English. Some events are free, others require a ticket.</dd>
+</dl>
+  <p>Have a great week and happy speaking!</p>
+  </article>
+</details><details class="fold">
+  <summary>This Week in Moscow: September 14–20</summary>
+  <article class="prose">
+  <p class="meta">September 14, 2026 by <a href="#contacts">Alexey Leonov</a></p>
+  <p>Autumn is here and so is your English practice! Here is your weekly lineup of speaking clubs, game nights, and special events happening all over Moscow. Whether you are a beginner or an advanced speaker, there is something for you.</p>
+  <hr/>
+  <p>This week we have <strong>over 98 events</strong> across the city and online. Venues range from cozy coffee shops like Coffee Bean and Stars Coffee to lively bars like Katie O'Shea's and Axiom Pub. Most clubs welcome new faces — just show up and start talking!</p>
+  <h2>Weekly Schedule</h2>
+  <p>Here is how to plan your week. Click on any club name to visit their channel for details and registration.</p>
+  <p class="legend"><span><b class="tag">New</b> recently added</span><span><b class="tag tag--gold">Top</b> our pick</span></p>
+  <section class="day" id="w3-2026-09-14" data-date="2026-09-14">
+    <h3>Monday, September 14 <small>10 meetups</small></h3>
+    <ul class="route">
+      <li><time>19:00</time> <a href="blah-blah-club.html" target="_blank">Blah-Blah Club</a> <span class="where">Surf Coffee x Rock</span></li>
+      <li><time>19:00</time> <a href="ziferblat.html" target="_blank">English with Gily &amp; Masha</a> <span class="where">Ziferblat on Mayakovskaya</span> <b class="tag tag--gold">Top</b></li>
+      <li><time>19:00</time> <a href="viva-lingua-club.html" target="_blank">Viva Lingua Club</a> <span class="where">Лялин пер. 23-29с1, м. Курская</span></li>
+      <li><time>19:00</time> <a href="https://t.me/Social_Leonid" target="_blank">Social English Club by Leonid</a> <span class="where">Surf Coffee x Ostozhenka</span> <b class="tag">New</b></li>
+      <li><time>19:00</time> <a href="https://t.me/pabloplace" target="_blank">Pablo Place - The Art of Gatherings</a> <span class="where">Park Muzeon</span> <b class="tag">New</b></li>
+      <li><time>19:15</time> <a href="ziferblat.html" target="_blank">Ziferblat's English Club</a> <span class="where">Ziferblat on Mayakovskaya</span></li>
+      <li><time>19:30</time> <a href="nataly-club.html" target="_blank">English Club with Nataly</a> <span class="where">Union Jack pub</span></li>
+      <li><time>19:30</time> <a href="https://t.me/orthodox_christian_discussions" target="_blank">Orthodox Christian Discussion Club</a> <span class="where">Valaam Monastery</span></li>
+      <li><time>20:00</time> <a href="ziferblat.html" target="_blank">Ziferblat's English Club</a> <span class="where">Ziferblat on Pushkinskaya</span></li>
+    </ul>
+    <p class="route-label">Online</p>
+    <ul class="route route--alt">
+        <li><time>19:00</time> <a href="https://t.me/segodnyaeng" target="_blank">English Starts Today!</a> <b class="tag">New</b></li>
+      </ul>
+  </section>
+  <section class="day" id="w3-2026-09-15" data-date="2026-09-15">
+    <h3>Tuesday, September 15 <small>12 meetups</small></h3>
+    <ul class="route">
+      <li><time>19:00</time> <a href="viva-lingua-club.html" target="_blank">Viva Lingua Club</a> <span class="where">Лялин пер. 23-29с1, м. Курская</span></li>
+      <li><time>19:00</time> <a href="real-talk.html" target="_blank">Real Talk Speaking Club</a> <span class="where">Surf Coffee</span> <b class="tag tag--gold">Top</b></li>
+      <li><time>19:00</time> <a href="https://t.me/igrautkaclubmoscow" target="_blank">Board games - Goose Club</a> <span class="where">Geektime Anticafe</span> <b class="tag">New</b></li>
+      <li><time>19:15</time> <a href="https://t.me/moscowtodayhq" target="_blank">Moscow Today Club</a> <span class="where">Coffeeshop</span></li>
+      <li><time>19:30</time> <a href="ziferblat.html" target="_blank">Ziferblat's English Club</a> <span class="where">Ziferblat on Kuznetsky Most</span></li>
+      <li><time>19:30</time> <a href="https://t.me/cherrypieclub/2005" target="_blank">CherryPie Club</a> <span class="where">Hotel Sofit</span></li>
+      <li><time>19:30</time> <a href="nataly-club.html" target="_blank">English Club with Nataly</a> <span class="where">Cosmic latte</span></li>
+      <li><time>19:30</time> <a href="https://t.me/english_club_moscow/11384" target="_blank">English Speaking Club</a> <span class="where">Coffeeshop</span></li>
+      <li><time>19:30</time> <a href="https://t.me/+ViUdx9V5DOphMTUy" target="_blank">English Club</a> <span class="where">Triumph Lounge Bar</span> <b class="tag tag--gold">Top</b></li>
+      <li><time>20:00</time> <a href="blah-blah-club.html" target="_blank">Blah-Blah Club</a> <span class="where">Surf Coffee x Flacon</span></li>
+    </ul>
+    <p class="route-label">Online</p>
+    <ul class="route route--alt">
+        <li><time>10:30</time> <a href="https://t.me/pabloplace" target="_blank">Pablo Place - The Art of Gatherings</a></li>
+        <li><time>19:00</time> <a href="https://t.me/segodnyaeng" target="_blank">English Starts Today!</a> <b class="tag">New</b></li>
+      </ul>
+  </section>
+  <section class="day" id="w3-2026-09-16" data-date="2026-09-16">
+    <h3>Wednesday, September 16 <small>14 meetups</small></h3>
+    <ul class="route">
+      <li><time>18:45</time> <a href="https://t.me/short_story_of_the_week" target="_blank">English Literature Club</a> <span class="where">Svetlovka library</span></li>
+      <li><time>19:00</time> <a href="ziferblat.html" target="_blank">Ziferblat's English Club</a> <span class="where">Ziferblat on Mayakovskaya</span></li>
+      <li><time>19:00</time> <a href="viva-lingua-club.html" target="_blank">Viva Lingua Club</a> <span class="where">Лялин пер. 23-29с1, м. Курская</span></li>
+      <li><time>19:00</time> <a href="real-talk.html" target="_blank">Real Talk Speaking Club</a> <span class="where">Stars Coffee</span> <b class="tag tag--gold">Top</b></li>
+      <li><time>19:00</time> <a href="https://t.me/thewednesdayclub" target="_blank">Wednesday English Speaking Club</a> <span class="where">Checkpoint</span></li>
+      <li><time>19:00</time> <a href="https://t.me/EnglishVDNH" target="_blank">English Speaking Club at VDNH</a> <span class="where">VDNH</span> <b class="tag tag--gold">Top</b></li>
+      <li><time>19:00</time> <a href="https://t.me/engl_games" target="_blank">English Games Club</a> <span class="where">Grabli Cafe</span></li>
+      <li><time>19:00</time> <a href="https://t.me/forgetmenot2021" target="_blank">Sunrise Literature Club</a> <span class="where">Central Library 21</span> <b class="tag">New</b></li>
+      <li><time>19:20</time> <a href="https://t.me/irishmanenglish" target="_blank">English at IRISHMAN</a> <span class="where">Irishman Pub 1905</span> <b class="tag">New</b></li>
+      <li><time>19:30</time> <a href="nataly-club.html" target="_blank">English Club with Nataly</a> <span class="where">Cosmic latte</span></li>
+      <li><time>20:00</time> <a href="blah-blah-club.html" target="_blank">Blah-Blah Club</a> <span class="where">Rébellion The Palace of Youth</span></li>
+    </ul>
+    <p class="route-label">Online</p>
+    <ul class="route route--alt">
+        <li><time>19:00</time> <a href="https://t.me/segodnyaeng" target="_blank">English Starts Today!</a> <b class="tag">New</b></li>
+        <li><time>19:10</time> <a href="https://t.me/linguaachannel" target="_blank">LinguaClub</a> <b class="tag">New</b></li>
+        <li><time>20:00</time> <a href="viva-lingua-club.html" target="_blank">Viva Lingua Club</a></li>
+      </ul>
+  </section>
+  <section class="day" id="w3-2026-09-17" data-date="2026-09-17">
+    <h3>Thursday, September 17 <small>13 meetups</small></h3>
+    <ul class="route">
+      <li><time>18:55</time> <a href="https://t.me/+mjdU1p9I_QM3YjNk" target="_blank">Thursday After Work</a> <span class="where">Debri Bar</span> <b class="tag tag--gold">Top</b></li>
+      <li><time>19:00</time> <a href="viva-lingua-club.html" target="_blank">Viva Lingua Club</a> <span class="where">Лялин пер. 23-29с1, м. Курская</span></li>
+      <li><time>19:30</time> <a href="ziferblat.html" target="_blank">Just Talk English Speaking Club</a> <span class="where">Ziferblat on Mayakovskaya</span> <b class="tag">New</b></li>
+      <li><time>19:30</time> <a href="nataly-club.html" target="_blank">English Club with Nataly</a> <span class="where">Coffeeshop Company</span></li>
+      <li><time>19:30</time> <a href="https://t.me/english_club_moscow/11384" target="_blank">English Speaking Club</a> <span class="where">YesNoMilk</span></li>
+      <li><time>19:30</time> <a href="https://t.me/Social_Leonid" target="_blank">Social English Club by Leonid</a> <span class="where">Surf Coffee x Ostozhenka</span> <b class="tag">New</b></li>
+      <li><time>20:00</time> <a href="blah-blah-club.html" target="_blank">Blah-Blah Club</a> <span class="where">Surf Coffee x Solyanka</span></li>
+    </ul>
+    <p class="route-label">Online</p>
+    <ul class="route route--alt">
+        <li><time>10:30</time> <a href="https://t.me/pabloplace" target="_blank">Pablo Place - The Art of Gatherings</a></li>
+        <li><time>14:00</time> <a href="https://t.me/linguaachannel" target="_blank">LinguaClub</a> <b class="tag">New</b></li>
+        <li><time>18:00</time> <a href="https://t.me/m/EYIb2ljHYzgy" target="_blank">Engsider Speaking Club</a> <b class="tag">New</b></li>
+        <li><time>19:00</time> <a href="english-galaxy-club.html" target="_blank">English Galaxy Speaking Club</a></li>
+        <li><time>19:00</time> <a href="https://t.me/segodnyaeng" target="_blank">English Starts Today!</a> <b class="tag">New</b></li>
+        <li><time>21:00</time> <a href="https://t.me/darkenglishacademia" target="_blank">Dark English Academia</a> <b class="tag">New</b></li>
+      </ul>
+  </section>
+  <section class="day" id="w3-2026-09-18" data-date="2026-09-18">
+    <h3>Friday, September 18 <small>15 meetups</small></h3>
+    <ul class="route">
+      <li><time>19:00</time> <a href="ziferblat.html" target="_blank">Ziferblat's English Club</a> <span class="where">Ziferblat on Mayakovskaya</span></li>
+      <li><time>19:00</time> <a href="https://t.me/english_club_moscow/11384" target="_blank">English Speaking Club</a> <span class="where">Coffeeshop</span></li>
+      <li><time>19:00</time> <a href="https://t.me/fridaypoint" target="_blank">Friday Point</a> <span class="where">Library</span></li>
+      <li><time>19:00</time> <a href="real-talk.html" target="_blank">Real Talk Speaking Club</a> <span class="where">Stars Coffee</span> <b class="tag tag--gold">Top</b></li>
+      <li><time>19:00</time> <a href="ziferblat.html" target="_blank">Ziferblat's English Club</a> <span class="where">Ziferblat on Mayakovskaya</span></li>
+      <li><time>19:00</time> <a href="https://t.me/clubdeespanolenmoscu" target="_blank">🇪🇸💬🇷🇺Club de Español en Moscu</a> <span class="where">Bar Santa Muerte</span></li>
+      <li><time>19:15</time> <a href="nataly-club.html" target="_blank">English Club with Nataly</a> <span class="where">Cosmic latte</span></li>
+      <li><time>19:15</time> <a href="https://t.me/MoscowEnglishConversationClub" target="_blank">Moscow English Conversation Club</a> <span class="where">Stars Coffee</span></li>
+      <li><time>19:30</time> <a href="https://t.me/cherrypieclub/2005" target="_blank">CherryPie Club</a> <span class="where">Sytinsky lane 3/5</span></li>
+      <li><time>19:30</time> <a href="https://t.me/bright_school_no1" target="_blank">Bright School No1</a> <span class="where">Izmailovsky Boulevard 50</span></li>
+      <li><time>19:30</time> <a href="https://t.me/nastushkaspeakingclub" target="_blank">Nastushka’s Speaking Club</a> <span class="where">Library</span> <b class="tag tag--gold">Top</b></li>
+      <li><time>20:00</time> <a href="blah-blah-club.html" target="_blank">Blah-Blah Club</a> <span class="where">Surf Coffee x Rock</span></li>
+      <li><time>20:00</time> <a href="blah-blah-club.html" target="_blank">Blah-Blah Club</a> <span class="where">Surf Coffee x Solyanka</span></li>
+      <li><time>20:00</time> <a href="https://t.me/jimnjacks/2332" target="_blank">Friday Language Exchange Club</a> <span class="where">Cafe Na Kover</span> <b class="tag tag--gold">Top</b></li>
+    </ul>
+    <p class="route-label">Online</p>
+    <ul class="route route--alt">
+        <li><time>19:00</time> <a href="https://t.me/segodnyaeng" target="_blank">English Starts Today!</a> <b class="tag">New</b></li>
+      </ul>
+  </section>
+  <section class="day" id="w3-2026-09-19" data-date="2026-09-19">
+    <h3>Saturday, September 19 <small>16 meetups</small></h3>
+    <ul class="route">
+      <li><time>12:00</time> <a href="viva-lingua-club.html" target="_blank">Viva Lingua Club</a> <span class="where">Лялин пер. 23-29с1, м. Курская</span></li>
+      <li><time>14:00</time> <a href="viva-lingua-club.html" target="_blank">Viva Lingua Club</a> <span class="where">Лялин пер. 23-29с1, м. Курская</span></li>
+      <li><time>14:30</time> <a href="ziferblat.html" target="_blank">Ziferblat's English Club</a> <span class="where">Ziferblat on Kuznetsky Most</span></li>
+      <li><time>15:00</time> <a href="real-talk.html" target="_blank">Real Talk Speaking Club</a> <span class="where">Stars Coffee</span> <b class="tag tag--gold">Top</b></li>
+      <li><time>16:00</time> <a href="nataly-club.html" target="_blank">English Club with Nataly</a> <span class="where">Stars Coffee</span></li>
+      <li><time>17:00</time> <a href="igroteka-kota-m.html" target="_blank">Mendeley the Cat Game Club</a> <span class="where">HvoyaLounge</span></li>
+      <li><time>17:00</time> <a href="https://t.me/Just_talk_moscow_Eng_speaking_cl" target="_blank">Just Talk English Speaking Club</a> <span class="where">Stars Coffee</span> <b class="tag">New</b></li>
+      <li><time>17:00</time> <a href="https://t.me/moscowtodayhq" target="_blank">Moscow Today Club</a> <span class="where">Gorky Park</span></li>
+      <li><time>17:30</time> <a href="https://t.me/cherrypieclub/2005" target="_blank">CherryPie Club</a> <span class="where">Hotel Sofit</span></li>
+      <li><time>18:00</time> <a href="blah-blah-club.html" target="_blank">Blah-Blah Club</a> <span class="where">Surf Coffee x Secret Spot</span></li>
+      <li><time>18:00</time> <a href="https://t.me/fridaypoint" target="_blank">Friday Point</a> <span class="where">Library 182</span></li>
+      <li><time>18:00</time> <a href="https://t.me/+DxqLMjv1pGBmYmNi" target="_blank">Kate's English Speaking Club☀️</a> <span class="where">StreetEat</span> <b class="tag tag--gold">Top</b></li>
+      <li><time>18:30</time> <a href="https://t.me/irenesta_ispeak" target="_blank">English Lounge</a> <span class="where">Wine Club🍷</span></li>
+      <li><time>18:30</time> <a href="https://t.me/englishstandupinmoscow" target="_blank">Clean Open Mic</a> <span class="where">Cafe Na Kover</span></li>
+      <li><time>19:00</time> <a href="ziferblat.html" target="_blank">Ziferblat's English Club</a> <span class="where">Ziferblat on Kuznetsky Most</span></li>
+    </ul>
+    <p class="route-label">Online</p>
+    <ul class="route route--alt">
+        <li><time>12:00</time> <a href="https://t.me/+o3r3cUpJY_RmNmFi" target="_blank">ENGLISH CLUB 🛩☁️ MOSCOW</a></li>
+      </ul>
+  </section>
+  <section class="day" id="w3-2026-09-20" data-date="2026-09-20">
+    <h3>Sunday, September 20 <small>19 meetups</small></h3>
+    <ul class="route">
+      <li><time>13:00</time> <a href="blah-blah-club.html" target="_blank">Blah-Blah Club</a> <span class="where">Surf Coffee x Flacon</span></li>
+      <li><time>14:30</time> <a href="https://t.me/moscowsoccer" target="_blank">Moscow International Football</a> <span class="where">Stadium</span></li>
+      <li><time>14:30</time> <a href="https://t.me/darkenglishacademia" target="_blank">Dark English Academia</a> <span class="where">Moscow-based</span> <b class="tag">New</b></li>
+      <li><time>15:00</time> <a href="https://t.me/english_club_moscow/11384" target="_blank">English Speaking Club</a> <span class="where">Drinkit</span></li>
+      <li><time>15:00</time> <a href="real-talk.html" target="_blank">Real Talk Speaking Club</a> <span class="where">Surf Coffee</span> <b class="tag tag--gold">Top</b></li>
+      <li><time>16:00</time> <a href="ziferblat.html" target="_blank">Ziferblat's English Club</a> <span class="where">Ziferblat on Mayakovskaya</span></li>
+      <li><time>16:00</time> <a href="nataly-club.html" target="_blank">English Club with Nataly</a> <span class="where">Stars Coffee</span></li>
+      <li><time>16:00</time> <a href="https://t.me/walkandtalkclub" target="_blank">Chatty Chillies</a> <span class="where">Coffee Bean</span></li>
+      <li><time>17:30</time> <a href="https://t.me/+ViUdx9V5DOphMTUy" target="_blank">English Club</a> <span class="where">Triumph Lounge Bar</span> <b class="tag tag--gold">Top</b></li>
+      <li><time>18:00</time> <a href="https://t.me/yoteachme/106" target="_blank">Yoteach in touch</a> <span class="where">Surf Coffee® × Ostankino</span> <b class="tag">New</b></li>
+      <li><time>18:00</time> <a href="https://t.me/MoscowLEM/403" target="_blank">MoscowLEM</a> <span class="where">Green Dog</span></li>
+      <li><time>18:00</time> <a href="https://t.me/MoscowPals" target="_blank">Moscow Pals Club</a> <span class="where">Katie O&#x27;Shea&#x27;s</span> <b class="tag tag--gold">Top</b></li>
+      <li><time>19:00</time> <a href="nataly-club.html" target="_blank">English Club with Nataly</a> <span class="where">Cosmic latte</span></li>
+      <li><time>19:30</time> <a href="ziferblat.html" target="_blank">Ziferblat's English Club</a> <span class="where">Ziferblat on Mayakovskaya</span></li>
+    </ul>
+    <p class="route-label">Online</p>
+    <ul class="route route--alt">
+        <li><time>11:30</time> <a href="https://t.me/SpeakingClubSpillTheTea" target="_blank">Spill The Tea</a></li>
+        <li><time>12:30</time> <a href="https://t.me/sayitsimple" target="_blank">Intermediate | Girl's Speaking Club</a></li>
+        <li><time>14:00</time> <a href="english-galaxy-club.html" target="_blank">English Galaxy Speaking Club</a></li>
+        <li><time>14:15</time> <a href="https://t.me/sayitsimple" target="_blank">Beginner | Girl's Speaking Club</a></li>
+        <li><time>20:00</time> <a href="reading-vocab-club.html" target="_blank">Reading and Vocabulary Club</a> <b class="tag">New</b></li>
+      </ul>
+  </section>
+  <hr/>
+  <h3>Tips and Special Offers</h3>
+  <ul class="plain">
+<li><strong>Real Talk Speaking Club</strong> — 30% off with a multi-meeting subscription</li>
+<li><strong>Blah-Blah Club x Surf Coffee</strong> — Bring a friend, you both save 15%</li>
+<li><strong>English Club with Nataly</strong> — offers monthly subscriptions for 4, 6, and 8 sessions</li>
+<li><strong>Surf Coffee</strong> — 10% off drinks for club participants</li>
+</ul>
+  <hr/>
+  <h2>New Here?</h2>
+  <p>Most clubs are very beginner-friendly. Just come with a positive attitude and a willingness to chat. Here is what to expect at different types of events:</p>
+  <dl>
+<dt>Speaking Clubs</dt>
+<dd>Casual conversation in small groups or one-on-one. Topics are usually provided. No pressure, just talk.</dd>
+<dt>Online Clubs</dt>
+<dd>Join from anywhere via Zoom or Telegram. Perfect if you are shy or short on time.</dd>
+<dt>Game Nights</dt>
+<dd>Practice English while playing board games or Mafia. A relaxed way to learn.</dd>
+<dt>Stand-Up &amp; Open Mics</dt>
+<dd>Enjoy comedy in English. Some events are free, others require a ticket.</dd>
+</dl>
+  <p>Have a great week and happy speaking!</p>
+  </article>
+</details><details class="fold">
+  <summary>This Week in Moscow: September 7–13</summary>
+  <article class="prose">
+  <p class="meta">September 7, 2026 by <a href="#contacts">Alexey Leonov</a></p>
+  <p>A new week of English practice is here! Here is your weekly lineup of speaking clubs, game nights, and special events happening all over Moscow. Whether you are a beginner or an advanced speaker, there is something for you.</p>
+  <hr/>
+  <p>This week we have <strong>over 95 events</strong> across the city and online. Venues range from cozy coffee shops like Coffee Bean and Stars Coffee to lively bars like Katie O'Shea's and Axiom Pub. Most clubs welcome new faces — just show up and start talking!</p>
+  <h2>Weekly Schedule</h2>
+  <p>Here is how to plan your week. Click on any club name to visit their channel for details and registration.</p>
+  <p class="legend"><span><b class="tag">New</b> recently added</span><span><b class="tag tag--gold">Top</b> our pick</span></p>
+  <section class="day" id="w4-2026-09-07" data-date="2026-09-07">
+    <h3>Monday, September 7 <small>9 meetups</small></h3>
+    <ul class="route">
+      <li><time>19:00</time> <a href="blah-blah-club.html" target="_blank">Blah-Blah Club</a> <span class="where">Surf Coffee x Rock</span></li>
+      <li><time>19:00</time> <a href="ziferblat.html" target="_blank">English with Gily &amp; Masha</a> <span class="where">Ziferblat on Mayakovskaya</span> <b class="tag tag--gold">Top</b></li>
+      <li><time>19:00</time> <a href="viva-lingua-club.html" target="_blank">Viva Lingua Club</a> <span class="where">Лялин пер. 23-29с1, м. Курская</span></li>
+      <li><time>19:00</time> <a href="https://t.me/Social_Leonid" target="_blank">Social English Club by Leonid</a> <span class="where">Surf Coffee x Ostozhenka</span> <b class="tag">New</b></li>
+      <li><time>19:00</time> <a href="https://t.me/pabloplace" target="_blank">Pablo Place - The Art of Gatherings</a> <span class="where">Park Muzeon</span> <b class="tag">New</b></li>
+      <li><time>19:30</time> <a href="nataly-club.html" target="_blank">English Club with Nataly</a> <span class="where">Union Jack pub</span></li>
+      <li><time>19:30</time> <a href="https://t.me/orthodox_christian_discussions" target="_blank">Orthodox Christian Discussion Club</a> <span class="where">Valaam Monastery</span></li>
+      <li><time>20:00</time> <a href="ziferblat.html" target="_blank">Ziferblat's English Club</a> <span class="where">Ziferblat on Pushkinskaya</span></li>
+    </ul>
+    <p class="route-label">Online</p>
+    <ul class="route route--alt">
+        <li><time>19:00</time> <a href="https://t.me/segodnyaeng" target="_blank">English Starts Today!</a> <b class="tag">New</b></li>
+      </ul>
+  </section>
+  <section class="day" id="w4-2026-09-08" data-date="2026-09-08">
+    <h3>Tuesday, September 8 <small>12 meetups</small></h3>
+    <ul class="route">
+      <li><time>19:00</time> <a href="viva-lingua-club.html" target="_blank">Viva Lingua Club</a> <span class="where">Лялин пер. 23-29с1, м. Курская</span></li>
+      <li><time>19:00</time> <a href="real-talk.html" target="_blank">Real Talk Speaking Club</a> <span class="where">Surf Coffee</span> <b class="tag tag--gold">Top</b></li>
+      <li><time>19:00</time> <a href="https://t.me/igrautkaclubmoscow" target="_blank">Board games - Goose Club</a> <span class="where">Geektime Anticafe</span> <b class="tag">New</b></li>
+      <li><time>19:15</time> <a href="https://t.me/moscowtodayhq" target="_blank">Moscow Today Club</a> <span class="where">Coffeeshop</span></li>
+      <li><time>19:30</time> <a href="ziferblat.html" target="_blank">Ziferblat's English Club</a> <span class="where">Ziferblat on Kuznetsky Most</span></li>
+      <li><time>19:30</time> <a href="https://t.me/cherrypieclub/2005" target="_blank">CherryPie Club</a> <span class="where">Sytinsky lane 3/5</span></li>
+      <li><time>19:30</time> <a href="nataly-club.html" target="_blank">English Club with Nataly</a> <span class="where">Cosmic latte</span></li>
+      <li><time>19:30</time> <a href="https://t.me/english_club_moscow/11384" target="_blank">English Speaking Club</a> <span class="where">Coffeeshop</span></li>
+      <li><time>19:30</time> <a href="https://t.me/+ViUdx9V5DOphMTUy" target="_blank">English Club</a> <span class="where">Triumph Lounge Bar</span> <b class="tag tag--gold">Top</b></li>
+      <li><time>20:00</time> <a href="blah-blah-club.html" target="_blank">Blah-Blah Club</a> <span class="where">Surf Coffee x Flacon</span></li>
+    </ul>
+    <p class="route-label">Online</p>
+    <ul class="route route--alt">
+        <li><time>10:30</time> <a href="https://t.me/pabloplace" target="_blank">Pablo Place - The Art of Gatherings</a></li>
+        <li><time>19:00</time> <a href="https://t.me/segodnyaeng" target="_blank">English Starts Today!</a> <b class="tag">New</b></li>
+      </ul>
+  </section>
+  <section class="day" id="w4-2026-09-09" data-date="2026-09-09">
+    <h3>Wednesday, September 9 <small>14 meetups</small></h3>
+    <ul class="route">
+      <li><time>18:45</time> <a href="https://t.me/short_story_of_the_week" target="_blank">English Literature Club</a> <span class="where">Svetlovka library</span></li>
+      <li><time>19:00</time> <a href="ziferblat.html" target="_blank">Ziferblat's English Club</a> <span class="where">Ziferblat on Mayakovskaya</span></li>
+      <li><time>19:00</time> <a href="viva-lingua-club.html" target="_blank">Viva Lingua Club</a> <span class="where">Лялин пер. 23-29с1, м. Курская</span></li>
+      <li><time>19:00</time> <a href="real-talk.html" target="_blank">Real Talk Speaking Club</a> <span class="where">Stars Coffee</span> <b class="tag tag--gold">Top</b></li>
+      <li><time>19:00</time> <a href="https://t.me/thewednesdayclub" target="_blank">Wednesday English Speaking Club</a> <span class="where">Checkpoint</span></li>
+      <li><time>19:00</time> <a href="https://t.me/EnglishVDNH" target="_blank">English Speaking Club at VDNH</a> <span class="where">VDNH</span> <b class="tag tag--gold">Top</b></li>
+      <li><time>19:00</time> <a href="https://t.me/engl_games" target="_blank">English Games Club</a> <span class="where">Grabli Cafe</span></li>
+      <li><time>19:00</time> <a href="https://t.me/forgetmenot2021" target="_blank">Sunrise Literature Club</a> <span class="where">Central Library 21</span> <b class="tag">New</b></li>
+      <li><time>19:20</time> <a href="https://t.me/irishmanenglish" target="_blank">English at IRISHMAN</a> <span class="where">Irishman Pub 1905</span> <b class="tag">New</b></li>
+      <li><time>19:30</time> <a href="nataly-club.html" target="_blank">English Club with Nataly</a> <span class="where">Cosmic latte</span></li>
+      <li><time>20:00</time> <a href="blah-blah-club.html" target="_blank">Blah-Blah Club</a> <span class="where">Rébellion The Palace of Youth</span></li>
+    </ul>
+    <p class="route-label">Online</p>
+    <ul class="route route--alt">
+        <li><time>19:00</time> <a href="https://t.me/segodnyaeng" target="_blank">English Starts Today!</a> <b class="tag">New</b></li>
+        <li><time>19:10</time> <a href="https://t.me/linguaachannel" target="_blank">LinguaClub</a> <b class="tag">New</b></li>
+        <li><time>20:00</time> <a href="viva-lingua-club.html" target="_blank">Viva Lingua Club</a></li>
+      </ul>
+  </section>
+  <section class="day" id="w4-2026-09-10" data-date="2026-09-10">
+    <h3>Thursday, September 10 <small>12 meetups</small></h3>
+    <ul class="route">
+      <li><time>18:55</time> <a href="https://t.me/+mjdU1p9I_QM3YjNk" target="_blank">Thursday After Work</a> <span class="where">Debri Bar</span> <b class="tag tag--gold">Top</b></li>
+      <li><time>19:00</time> <a href="viva-lingua-club.html" target="_blank">Viva Lingua Club</a> <span class="where">Лялин пер. 23-29с1, м. Курская</span></li>
+      <li><time>19:30</time> <a href="ziferblat.html" target="_blank">Just Talk English Speaking Club</a> <span class="where">Ziferblat on Mayakovskaya</span> <b class="tag">New</b></li>
+      <li><time>19:30</time> <a href="https://t.me/english_club_moscow/11384" target="_blank">English Speaking Club</a> <span class="where">YesNoMilk</span></li>
+      <li><time>19:30</time> <a href="https://t.me/Social_Leonid" target="_blank">Social English Club by Leonid</a> <span class="where">Surf Coffee x Ostozhenka</span> <b class="tag">New</b></li>
+      <li><time>20:00</time> <a href="blah-blah-club.html" target="_blank">Blah-Blah Club</a> <span class="where">Surf Coffee x Solyanka</span></li>
+    </ul>
+    <p class="route-label">Online</p>
+    <ul class="route route--alt">
+        <li><time>10:30</time> <a href="https://t.me/pabloplace" target="_blank">Pablo Place - The Art of Gatherings</a></li>
+        <li><time>14:00</time> <a href="https://t.me/linguaachannel" target="_blank">LinguaClub</a> <b class="tag">New</b></li>
+        <li><time>18:00</time> <a href="https://t.me/m/EYIb2ljHYzgy" target="_blank">Engsider Speaking Club</a> <b class="tag">New</b></li>
+        <li><time>19:00</time> <a href="english-galaxy-club.html" target="_blank">English Galaxy Speaking Club</a></li>
+        <li><time>19:00</time> <a href="https://t.me/segodnyaeng" target="_blank">English Starts Today!</a> <b class="tag">New</b></li>
+        <li><time>21:00</time> <a href="https://t.me/darkenglishacademia" target="_blank">Dark English Academia</a> <b class="tag">New</b></li>
+      </ul>
+  </section>
+  <section class="day" id="w4-2026-09-11" data-date="2026-09-11">
+    <h3>Friday, September 11 <small>14 meetups</small></h3>
+    <ul class="route">
+      <li><time>19:00</time> <a href="ziferblat.html" target="_blank">Ziferblat's English Club</a> <span class="where">Ziferblat on Mayakovskaya</span></li>
+      <li><time>19:00</time> <a href="https://t.me/english_club_moscow/11384" target="_blank">English Speaking Club</a> <span class="where">Coffeeshop</span></li>
+      <li><time>19:00</time> <a href="https://t.me/fridaypoint" target="_blank">Friday Point</a> <span class="where">Library</span></li>
+      <li><time>19:00</time> <a href="real-talk.html" target="_blank">Real Talk Speaking Club</a> <span class="where">Stars Coffee</span> <b class="tag tag--gold">Top</b></li>
+      <li><time>19:00</time> <a href="ziferblat.html" target="_blank">Ziferblat's English Club</a> <span class="where">Ziferblat on Mayakovskaya</span></li>
+      <li><time>19:00</time> <a href="https://t.me/clubdeespanolenmoscu" target="_blank">🇪🇸💬🇷🇺Club de Español en Moscu</a> <span class="where">Casa Agave</span></li>
+      <li><time>19:15</time> <a href="nataly-club.html" target="_blank">English Club with Nataly</a> <span class="where">Cosmic latte</span></li>
+      <li><time>19:15</time> <a href="https://t.me/MoscowEnglishConversationClub" target="_blank">Moscow English Conversation Club</a> <span class="where">Stars Coffee</span></li>
+      <li><time>19:30</time> <a href="https://t.me/cherrypieclub/2005" target="_blank">CherryPie Club</a> <span class="where">Sytinsky lane 3/5</span></li>
+      <li><time>19:30</time> <a href="https://t.me/bright_school_no1" target="_blank">Bright School No1</a> <span class="where">Izmailovsky Boulevard 50</span></li>
+      <li><time>19:30</time> <a href="https://t.me/nastushkaspeakingclub" target="_blank">Nastushka’s Speaking Club</a> <span class="where">Library</span> <b class="tag tag--gold">Top</b></li>
+      <li><time>20:00</time> <a href="blah-blah-club.html" target="_blank">Blah-Blah Club</a> <span class="where">Surf Coffee x Solyanka</span></li>
+      <li><time>20:00</time> <a href="https://t.me/jimnjacks/2332" target="_blank">Friday Language Exchange Club</a> <span class="where">Cafe Na Kover</span> <b class="tag tag--gold">Top</b></li>
+    </ul>
+    <p class="route-label">Online</p>
+    <ul class="route route--alt">
+        <li><time>19:00</time> <a href="https://t.me/segodnyaeng" target="_blank">English Starts Today!</a> <b class="tag">New</b></li>
+      </ul>
+  </section>
+  <section class="day" id="w4-2026-09-12" data-date="2026-09-12">
+    <h3>Saturday, September 12 <small>15 meetups</small></h3>
+    <ul class="route">
+      <li><time>12:00</time> <a href="viva-lingua-club.html" target="_blank">Viva Lingua Club</a> <span class="where">Лялин пер. 23-29с1, м. Курская</span></li>
+      <li><time>14:00</time> <a href="viva-lingua-club.html" target="_blank">Viva Lingua Club</a> <span class="where">Лялин пер. 23-29с1, м. Курская</span></li>
+      <li><time>15:00</time> <a href="real-talk.html" target="_blank">Real Talk Speaking Club</a> <span class="where">Stars Coffee</span> <b class="tag tag--gold">Top</b></li>
+      <li><time>16:00</time> <a href="nataly-club.html" target="_blank">English Club with Nataly</a> <span class="where">Stars Coffee</span></li>
+      <li><time>17:00</time> <a href="igroteka-kota-m.html" target="_blank">Mendeley the Cat Game Club</a> <span class="where">HvoyaLounge</span></li>
+      <li><time>17:00</time> <a href="https://t.me/Just_talk_moscow_Eng_speaking_cl" target="_blank">Just Talk English Speaking Club</a> <span class="where">Stars Coffee</span> <b class="tag">New</b></li>
+      <li><time>17:00</time> <a href="https://t.me/moscowtodayhq" target="_blank">Moscow Today Club</a> <span class="where">Gorky Park</span></li>
+      <li><time>17:30</time> <a href="https://t.me/cherrypieclub/2005" target="_blank">CherryPie Club</a> <span class="where">Sytinsky lane 3/5</span></li>
+      <li><time>18:00</time> <a href="https://t.me/fridaypoint" target="_blank">Friday Point</a> <span class="where">Library 182</span></li>
+      <li><time>18:00</time> <a href="https://t.me/+DxqLMjv1pGBmYmNi" target="_blank">Kate's English Speaking Club☀️</a> <span class="where">StreetEat</span> <b class="tag tag--gold">Top</b></li>
+      <li><time>18:30</time> <a href="https://t.me/irenesta_ispeak" target="_blank">English Lounge</a> <span class="where">Wine Club🍷</span></li>
+      <li><time>19:00</time> <a href="blah-blah-club.html" target="_blank">Blah-Blah Club</a> <span class="where">Surf Coffee x Secret Spot</span></li>
+      <li><time>19:00</time> <a href="ziferblat.html" target="_blank">Ziferblat's English Club</a> <span class="where">Ziferblat on Kuznetsky Most</span></li>
+    </ul>
+    <p class="route-label">Online</p>
+    <ul class="route route--alt">
+        <li><time>12:00</time> <a href="https://t.me/+o3r3cUpJY_RmNmFi" target="_blank">ENGLISH CLUB 🛩☁️ MOSCOW</a></li>
+        <li><time>12:00</time> <a href="real-talk.html" target="_blank">Real Talk Speaking Club</a> <b class="tag tag--gold">Top</b></li>
+      </ul>
+  </section>
+  <section class="day" id="w4-2026-09-13" data-date="2026-09-13">
+    <h3>Sunday, September 13 <small>19 meetups</small></h3>
+    <ul class="route">
+      <li><time>13:00</time> <a href="blah-blah-club.html" target="_blank">Blah-Blah Club</a> <span class="where">Surf Coffee x Flacon</span></li>
+      <li><time>14:30</time> <a href="https://t.me/moscowsoccer" target="_blank">Moscow International Football</a> <span class="where">Stadium</span></li>
+      <li><time>14:30</time> <a href="https://t.me/darkenglishacademia" target="_blank">Dark English Academia</a> <span class="where">Moscow-based</span> <b class="tag">New</b></li>
+      <li><time>15:00</time> <a href="https://t.me/english_club_moscow/11384" target="_blank">English Speaking Club</a> <span class="where">Drinkit</span></li>
+      <li><time>15:00</time> <a href="real-talk.html" target="_blank">Real Talk Speaking Club</a> <span class="where">Grabli</span> <b class="tag tag--gold">Top</b></li>
+      <li><time>16:00</time> <a href="ziferblat.html" target="_blank">Ziferblat's English Club</a> <span class="where">Ziferblat on Mayakovskaya</span></li>
+      <li><time>16:00</time> <a href="https://t.me/cherrypieclub/2005" target="_blank">CherryPie Club</a> <span class="where">Sytinsky lane 3/5</span></li>
+      <li><time>16:00</time> <a href="nataly-club.html" target="_blank">English Club with Nataly</a> <span class="where">Stars Coffee</span></li>
+      <li><time>16:00</time> <a href="https://t.me/walkandtalkclub" target="_blank">Chatty Chillies</a> <span class="where">Coffee Bean</span></li>
+      <li><time>17:30</time> <a href="https://t.me/+ViUdx9V5DOphMTUy" target="_blank">English Club</a> <span class="where">Triumph Lounge Bar</span> <b class="tag tag--gold">Top</b></li>
+      <li><time>18:00</time> <a href="https://t.me/yoteachme/106" target="_blank">Yoteach in touch</a> <span class="where">Surf Coffee® × Ostankino</span> <b class="tag">New</b></li>
+      <li><time>18:00</time> <a href="https://t.me/MoscowLEM/403" target="_blank">MoscowLEM</a> <span class="where">Green Dog</span></li>
+      <li><time>18:00</time> <a href="https://t.me/MoscowPals" target="_blank">Moscow Pals Club</a> <span class="where">Katie O&#x27;Shea&#x27;s</span> <b class="tag tag--gold">Top</b></li>
+      <li><time>19:00</time> <a href="nataly-club.html" target="_blank">English Club with Nataly</a> <span class="where">Cosmic latte</span></li>
+    </ul>
+    <p class="route-label">Online</p>
+    <ul class="route route--alt">
+        <li><time>11:30</time> <a href="https://t.me/SpeakingClubSpillTheTea" target="_blank">Spill The Tea</a></li>
+        <li><time>12:30</time> <a href="https://t.me/sayitsimple" target="_blank">Intermediate | Girl's Speaking Club</a></li>
+        <li><time>14:00</time> <a href="english-galaxy-club.html" target="_blank">English Galaxy Speaking Club</a></li>
+        <li><time>14:15</time> <a href="https://t.me/sayitsimple" target="_blank">Beginner | Girl's Speaking Club</a></li>
+        <li><time>20:00</time> <a href="reading-vocab-club.html" target="_blank">Reading and Vocabulary Club</a> <b class="tag">New</b></li>
+      </ul>
+  </section>
+  <hr/>
+  <h3>Tips and Special Offers</h3>
+  <ul class="plain">
+<li><strong>Real Talk Speaking Club</strong> — 30% off with a multi-meeting subscription</li>
+<li><strong>Blah-Blah Club x Surf Coffee</strong> — Bring a friend, you both save 15%</li>
+<li><strong>English Club with Nataly</strong> — Every 7th visit is free</li>
+<li><strong>Surf Coffee</strong> — 10% off drinks for club participants</li>
+</ul>
+  <hr/>
+  <h2>New Here?</h2>
+  <p>Most clubs are very beginner-friendly. Just come with a positive attitude and a willingness to chat. Here is what to expect at different types of events:</p>
+  <dl>
+<dt>Speaking Clubs</dt>
+<dd>Casual conversation in small groups or one-on-one. Topics are usually provided. No pressure, just talk.</dd>
+<dt>Online Clubs</dt>
+<dd>Join from anywhere via Zoom or Telegram. Perfect if you are shy or short on time.</dd>
+<dt>Game Nights</dt>
+<dd>Practice English while playing board games or Mafia. A relaxed way to learn.</dd>
+<dt>Stand-Up &amp; Open Mics</dt>
+<dd>Enjoy comedy in English. Some events are free, others require a ticket.</dd>
+</dl>
+  <p>Have a great week and happy speaking!</p>
+  </article>
+</details>
+      </section>
+    </div>
+
+    <aside class="layout__aside">
+      <section class="panel">
+        <h4>About</h4>
+        <p>Hi, my name is Alex! This website is your go-to guide for live English practice in Moscow. We post a daily schedule of free and paid speaking clubs, game nights, stand-up shows, and other English events. Come talk with us!</p>
+      </section>
+
+      <section class="panel">
+        <h4>Book of the month</h4>
+        <div class="media">
+          <img src="img/61l68JN18vL._SL1000_.jpg" alt="Cover of Why Don't Russians Smile?" loading="lazy">
+          <div>
+            <h5>Why Don't Russians Smile?</h5>
+            <p>⭐️ 4/5, Travis Lee Bailey et al., paperback, 108 pages</p>
+            <p>💰 EUR 59.57 on Amazon.com (free 30-day returns)</p>
+          </div>
         </div>
-
-        <main class="container">
-            <div class="p-4 p-md-5 mb-4 text-white rounded second-bg animate-bg position-relative" style="background-image: url('img/min-standup-full-bg.jpg')">
-                <div class="col-md-6 px-0 position-relative">
-                    <h1 class="display-4 fst-italic">Stand-up in English!🎤</h1>
-                    <p class="lead my-3">
-                        Comedians from all over the world take the stage in Moscow — every week, in English. Catch
-                        the <strong>Big Sunday Show</strong>, the <strong>Razgony</strong> riffing format or an
-                        <strong>international open mic</strong>. Free entrance, great vibes and the best way to
-                        train your ear for real, fast English.
-                    </p>
-                    <p class="lead mb-0">
-                        <a href="stand-up-club-in-english.html" class="text-white fw-bold">Find out more →</a>
-                    </p>
-                </div>
-            </div>
-
-            <div class="row mb-2">
-                <div class="col-md-6">
-                    <div
-                        class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-lg-250 position-relative"
-                    >
-                        <div class="col p-4 d-flex flex-column position-static">
-                            <strong class="d-inline-block mb-2 cat-games">Pub Quiz</strong>
-                            <h3 class="mb-0">English Pub Quiz Night!</h3>
-                            <div class="mb-1 text-muted">Sep 27</div>
-                            <p class="card-text mb-auto">
-                                Clever questions, a proper pub atmosphere and prizes for the winners. Gather a team
-                                or come solo — English Speaking Club will find you awesome teammates!
-                            </p>
-                            <a href="english-speaking-club.html" class="stretched-link">Continue reading<span class="visually-hidden"> about English Pub Quiz Night!</span></a>
-                        </div>
-                        <div class="col-12 col-lg-auto order-first order-lg-last card-photo">
-                            <img
-                                class="position-absolute top-0 start-0 w-100 h-100"
-                                loading="lazy"
-                                src="img/min_ad-esc-quiz.jpg"
-                                alt="English Pub Quiz"
-                                width="200"
-                                height="250"
-                                style="object-fit: cover; object-position: 50% 50%"
-                            />
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div
-                        class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-lg-250 position-relative"
-                    >
-                        <div class="col p-4 d-flex flex-column position-static">
-                            <strong class="d-inline-block mb-2 cat-group">Group Meetings</strong>
-                            <h3 class="mb-0">Social English by Leonid</h3>
-                            <div class="mb-1 text-muted">Mondays, 19:00</div>
-                            <p class="mb-auto">
-                                Talk, smile and spend time in a cozy company at Surf Coffee on Ostozhenka. And now
-                                there's an extra meeting on Thursdays — one more day to practice!
-                            </p>
-                            <a href="social-english-club.html" class="stretched-link">Continue reading<span class="visually-hidden"> about Social English by Leonid</span></a>
-                        </div>
-                        <div class="col-12 col-lg-auto order-first order-lg-last card-photo">
-                            <img
-                                class="position-absolute top-0 start-0 w-100 h-100"
-                                loading="lazy"
-                                src="img/min_ad-social-leonid.jpg"
-                                alt="Social English by Leonid"
-                                width="200"
-                                height="250"
-                                style="object-fit: cover; object-position: 50% 45%"
-                            />
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row g-5" style="margin-left: 0; margin-right: 0">
-                <div class="col-md-8" style="max-width: 100%">
-                    <h3 class="pb-4 mb-4 fst-italic border-bottom">Latest posts</h3>
-					
-<article class="blog-post">
-	<h2 class="blog-post-title">This Week in Moscow: September 28 – October 4</h2>
-	<p class="blog-post-meta">September 28, 2026 by <a href="#contacts">Alexey Leonov</a></p>
-
-	<p>A new week of English practice is here! Here is your weekly lineup of speaking clubs, game nights, and special events happening all over Moscow. Whether you are a beginner or an advanced speaker, there is something for you.</p>
-
-	<hr>
-
-	<p>This week we have <strong>100+ events</strong> across the city and online. Venues range from cozy coffee shops like Coffee Bean and Stars Coffee to lively bars like Katie O'Shea's and Axiom Pub. Most clubs welcome new faces — just show up and start talking!</p>
-
-	<h2 id="actual-schedule">📋 Weekly Schedule</h2>
-	<p>Here is how to plan your week. Click on any club name to visit their channel for details and registration.</p>
-	<p class="small text-body-secondary"><span class="badge rounded-pill text-bg-success">New</span> recently added &nbsp;&middot;&nbsp; <span class="badge rounded-pill text-bg-warning">Top</span> our pick</p>
-
-	<h3>Monday, September 28</h3>
-	<ul class="schedule">
-		<li><strong>19:00</strong> <a href="blah-blah-club.html" target="_blank">Blah-Blah Club</a> <span class="place">Surf Coffee x Rock</span></li>
-		<li><strong>19:00</strong> <a href="ziferblat.html" target="_blank">English with Gily & Masha</a> <span class="badge rounded-pill text-bg-warning">Top</span> <span class="place">Ziferblat on Mayakovskaya</span></li>
-		<li><strong>19:00</strong> <a href="viva-lingua-club.html" target="_blank">Viva Lingua Club</a> <span class="place"><span lang="ru">Лялин пер. 23-29с1, м. Курская</span></span></li>
-		<li><strong>19:00</strong> <a href="social-english-club.html" target="_blank">Social English Club by Leonid</a> <span class="badge rounded-pill text-bg-success">New</span> <span class="place">Surf Coffee x Ostozhenka</span></li>
-		<li><strong>19:00</strong> <a href="pablo-place.html" target="_blank">Pablo Place - The Art of Gatherings</a> <span class="badge rounded-pill text-bg-success">New</span> <span class="place">Park Muzeon</span></li>
-		<li><strong>19:00</strong> <a href="english-starts-today.html" target="_blank">English Starts Today!</a> <span class="badge rounded-pill text-bg-success">New</span> <span class="place"><em>Online</em></span></li>
-		<li><strong>19:30</strong> <a href="nataly-club.html" target="_blank">English Club with Nataly</a> <span class="place">Union Jack pub</span></li>
-		<li><strong>19:30</strong> <a href="orthodox-christian-discussion-club.html" target="_blank">Orthodox Christian Discussion Club</a> <span class="place">Valaam Monastery</span></li>
-		<li><strong>20:00</strong> <a href="ziferblat.html" target="_blank">Ziferblat's English Club</a> <span class="place">Ziferblat on Pushkinskaya</span></li>
-	</ul>
-
-	<h3>Tuesday, September 29</h3>
-	<ul class="schedule">
-		<li><strong>10:30</strong> <a href="pablo-place.html" target="_blank">Pablo Place - The Art of Gatherings</a> <span class="place"><em>Online</em></span></li>
-		<li><strong>19:00</strong> <a href="viva-lingua-club.html" target="_blank">Viva Lingua Club</a> <span class="place"><span lang="ru">Лялин пер. 23-29с1, м. Курская</span></span></li>
-		<li><strong>19:00</strong> <a href="real-talk.html" target="_blank">Real Talk Speaking Club</a> <span class="badge rounded-pill text-bg-warning">Top</span> <span class="place">Surf Coffee</span></li>
-		<li><strong>19:00</strong> <a href="english-starts-today.html" target="_blank">English Starts Today!</a> <span class="badge rounded-pill text-bg-success">New</span> <span class="place"><em>Online</em></span></li>
-		<li><strong>19:00</strong> <a href="goose-club.html" target="_blank">Board games - Goose Club</a> <span class="badge rounded-pill text-bg-success">New</span> <span class="place">Geektime Anticafe</span></li>
-		<li><strong>19:15</strong> <a href="moscow-today-club.html" target="_blank">Moscow Today Club</a> <span class="place">Coffeeshop</span></li>
-		<li><strong>19:30</strong> <a href="ziferblat.html" target="_blank">Ziferblat's English Club</a> <span class="place">Ziferblat on Kuznetsky Most</span></li>
-		<li><strong>19:30</strong> <a href="cherrypie-club.html" target="_blank">CherryPie Club</a> <span class="place">Sytinsky lane 3/5</span></li>
-		<li><strong>19:30</strong> <a href="nataly-club.html" target="_blank">English Club with Nataly</a> <span class="place">Cosmic latte</span></li>
-		<li><strong>19:30</strong> <a href="english-speaking-club.html" target="_blank">English Speaking Club</a> <span class="place">Coffeeshop</span></li>
-		<li><strong>19:30</strong> <a href="triumph-lounge-english-club.html" target="_blank">English Club</a> <span class="badge rounded-pill text-bg-warning">Top</span> <span class="place">Triumph Lounge Bar</span></li>
-		<li><strong>20:00</strong> <a href="blah-blah-club.html" target="_blank">Blah-Blah Club</a> <span class="place">Surf Coffee x Flacon</span></li>
-	</ul>
-
-	<h3>Wednesday, September 30</h3>
-	<ul class="schedule">
-		<li><strong>18:45</strong> <a href="english-literature-club.html" target="_blank">English Literature Club</a> <span class="place">Svetlovka library</span></li>
-		<li><strong>19:00</strong> <a href="ziferblat.html" target="_blank">Ziferblat's English Club</a> <span class="place">Ziferblat on Mayakovskaya</span></li>
-		<li><strong>19:00</strong> <a href="viva-lingua-club.html" target="_blank">Viva Lingua Club</a> <span class="place"><span lang="ru">Лялин пер. 23-29с1, м. Курская</span></span></li>
-		<li><strong>19:00</strong> <a href="real-talk.html" target="_blank">Real Talk Speaking Club</a> <span class="badge rounded-pill text-bg-warning">Top</span> <span class="place">Stars Coffee</span></li>
-		<li><strong>19:00</strong> <a href="wednesday-english-speaking-club.html" target="_blank">Wednesday English Speaking Club</a> <span class="place">Checkpoint</span></li>
-		<li><strong>19:00</strong> <a href="english-games-club.html" target="_blank">English Games Club</a> <span class="place">Grabli Cafe</span></li>
-		<li><strong>19:00</strong> <a href="sunrise-literature-club.html" target="_blank">Sunrise Literature Club</a> <span class="badge rounded-pill text-bg-success">New</span> <span class="place">Central Library 21</span></li>
-		<li><strong>19:00</strong> <a href="english-starts-today.html" target="_blank">English Starts Today!</a> <span class="badge rounded-pill text-bg-success">New</span> <span class="place"><em>Online</em></span></li>
-		<li><strong>19:10</strong> <a href="linguaclub.html" target="_blank">LinguaClub</a> <span class="badge rounded-pill text-bg-success">New</span> <span class="place"><em>Online</em></span></li>
-		<li><strong>19:20</strong> <a href="english-at-irishman.html" target="_blank">English at IRISHMAN</a> <span class="badge rounded-pill text-bg-success">New</span> <span class="place">Irishman Pub 1905</span></li>
-		<li><strong>19:30</strong> <a href="nataly-club.html" target="_blank">English Club with Nataly</a> <span class="place">Cosmic latte</span></li>
-		<li><strong>20:00</strong> <a href="blah-blah-club.html" target="_blank">Blah-Blah Club</a> <span class="place">Rébellion The Palace of Youth</span></li>
-		<li><strong>20:00</strong> <a href="viva-lingua-club.html" target="_blank">Viva Lingua Club</a> <span class="place"><em>Online</em></span></li>
-		<li><strong>20:00</strong> <a href="isn-hse-moscow.html" target="_blank">ISN HSE Moscow</a> <span class="badge rounded-pill text-bg-success">New</span> <span class="place">Craft RePUBlic</span></li>
-	</ul>
-
-	<h3>Thursday, October 1</h3>
-	<ul class="schedule">
-		<li><strong>10:30</strong> <a href="pablo-place.html" target="_blank">Pablo Place - The Art of Gatherings</a> <span class="place"><em>Online</em></span></li>
-		<li><strong>14:00</strong> <a href="linguaclub.html" target="_blank">LinguaClub</a> <span class="badge rounded-pill text-bg-success">New</span> <span class="place"><em>Online</em></span></li>
-		<li><strong>18:00</strong> <a href="engsider-speaking-club.html" target="_blank">Engsider Speaking Club</a> <span class="badge rounded-pill text-bg-success">New</span> <span class="place"><em>Online</em></span></li>
-		<li><strong>18:55</strong> <a href="thursday-after-work.html" target="_blank">Thursday After Work</a> <span class="badge rounded-pill text-bg-warning">Top</span> <span class="place">Debri Bar</span></li>
-		<li><strong>19:00</strong> <a href="viva-lingua-club.html" target="_blank">Viva Lingua Club</a> <span class="place"><span lang="ru">Лялин пер. 23-29с1, м. Курская</span></span></li>
-		<li><strong>19:00</strong> <a href="english-galaxy-club.html" target="_blank">English Galaxy Speaking Club</a> <span class="place"><em>Online</em></span></li>
-		<li><strong>19:00</strong> <a href="english-starts-today.html" target="_blank">English Starts Today!</a> <span class="badge rounded-pill text-bg-success">New</span> <span class="place"><em>Online</em></span></li>
-		<li><strong>19:30</strong> <a href="just-talk.html" target="_blank">Just Talk English Speaking Club</a> <span class="badge rounded-pill text-bg-success">New</span> <span class="place">Ziferblat on Mayakovskaya</span></li>
-		<li><strong>19:30</strong> <a href="nataly-club.html" target="_blank">English Club with Nataly</a> <span class="place">Coffeeshop Company</span></li>
-		<li><strong>19:30</strong> <a href="english-speaking-club.html" target="_blank">English Speaking Club</a> <span class="place">YesNoMilk</span></li>
-		<li><strong>19:30</strong> <a href="social-english-club.html" target="_blank">Social English Club by Leonid</a> <span class="badge rounded-pill text-bg-success">New</span> <span class="place">Surf Coffee x Ostozhenka</span></li>
-		<li><strong>20:00</strong> <a href="blah-blah-club.html" target="_blank">Blah-Blah Club</a> <span class="place">Surf Coffee x Solyanka</span></li>
-		<li><strong>21:00</strong> <a href="dark-english-academia.html" target="_blank">Dark English Academia</a> <span class="badge rounded-pill text-bg-success">New</span> <span class="place"><em>Online</em></span></li>
-	</ul>
-
-	<h3>Friday, October 2</h3>
-	<ul class="schedule">
-		<li><strong>19:00</strong> <a href="ziferblat.html" target="_blank">Ziferblat's English Club</a> <span class="place">Ziferblat on Mayakovskaya</span></li>
-		<li><strong>19:00</strong> <a href="english-speaking-club.html" target="_blank">English Speaking Club</a> <span class="place">Coffeeshop</span></li>
-		<li><strong>19:00</strong> <a href="https://t.me/fridaypoint" target="_blank">Friday Point</a> <span class="place">Library</span></li>
-		<li><strong>19:00</strong> <a href="real-talk.html" target="_blank">Real Talk Speaking Club</a> <span class="badge rounded-pill text-bg-warning">Top</span> <span class="place">Stars Coffee</span></li>
-		<li><strong>19:00</strong> <a href="ziferblat.html" target="_blank">Ziferblat's English Club</a> <span class="place">Ziferblat on Mayakovskaya</span></li>
-		<li><strong>19:00</strong> <a href="club-de-espanol.html" target="_blank">🇪🇸💬🇷🇺Club de Español en Moscu</a> <span class="place">Bar Santa Muerte</span></li>
-		<li><strong>19:00</strong> <a href="english-starts-today.html" target="_blank">English Starts Today!</a> <span class="badge rounded-pill text-bg-success">New</span> <span class="place"><em>Online</em></span></li>
-		<li><strong>19:15</strong> <a href="nataly-club.html" target="_blank">English Club with Nataly</a> <span class="place">Cosmic latte</span></li>
-		<li><strong>19:15</strong> <a href="moscow-english-conversation-club.html" target="_blank">Moscow English Conversation Club</a> <span class="place">Stars Coffee</span></li>
-		<li><strong>19:30</strong> <a href="cherrypie-club.html" target="_blank">CherryPie Club</a> <span class="place">Sytinsky lane 3/5</span></li>
-		<li><strong>19:30</strong> <a href="bright-school-no1.html" target="_blank">Bright School No1</a> <span class="place">Izmailovsky Boulevard 50</span></li>
-		<li><strong>19:30</strong> <a href="nastushka-speaking-club.html" target="_blank">Nastushka’s Speaking Club</a> <span class="badge rounded-pill text-bg-warning">Top</span> <span class="place">Library</span></li>
-		<li><strong>20:00</strong> <a href="blah-blah-club.html" target="_blank">Blah-Blah Club</a> <span class="place">Surf Coffee x Solyanka</span></li>
-		<li><strong>20:00</strong> <a href="blah-blah-club.html" target="_blank">Blah-Blah Club</a> <span class="place">Surf Coffee x Rock</span></li>
-		<li><strong>20:00</strong> <a href="friday-language-exchange-club.html" target="_blank">Friday Language Exchange Club</a> <span class="badge rounded-pill text-bg-warning">Top</span> <span class="place">Cafe Na Kover</span></li>
-	</ul>
-
-	<h3>Saturday, October 3</h3>
-	<ul class="schedule">
-		<li><strong>12:00</strong> <a href="viva-lingua-club.html" target="_blank">Viva Lingua Club</a> <span class="place"><span lang="ru">Лялин пер. 23-29с1, м. Курская</span></span></li>
-		<li><strong>12:00</strong> <a href="english-club-moscow.html" target="_blank">ENGLISH CLUB 🛩☁️ MOSCOW</a> <span class="place"><em>Online</em></span></li>
-		<li><strong>14:00</strong> <a href="viva-lingua-club.html" target="_blank">Viva Lingua Club</a> <span class="place"><span lang="ru">Лялин пер. 23-29с1, м. Курская</span></span></li>
-		<li><strong>15:00</strong> <a href="real-talk.html" target="_blank">Real Talk Speaking Club</a> <span class="badge rounded-pill text-bg-warning">Top</span> <span class="place">Stars Coffee</span></li>
-		<li><strong>16:00</strong> <a href="nataly-club.html" target="_blank">English Club with Nataly</a> <span class="place">Stars Coffee</span></li>
-		<li><strong>17:00</strong> <a href="igroteka-kota-m.html" target="_blank">Mendeley the Cat Game Club</a> <span class="place">HvoyaLounge</span></li>
-		<li><strong>17:00</strong> <a href="just-talk.html" target="_blank">Just Talk English Speaking Club</a> <span class="badge rounded-pill text-bg-success">New</span> <span class="place">Stars Coffee</span></li>
-		<li><strong>17:00</strong> <a href="moscow-today-club.html" target="_blank">Moscow Today Club</a> <span class="place">Gorky Park</span></li>
-		<li><strong>17:00</strong> <a href="vk-english-speaking-club.html" target="_blank">V&K English Speaking Club</a> <span class="badge rounded-pill text-bg-success">New</span> <span class="place">Coffee Shop Here’n’now</span></li>
-		<li><strong>17:00</strong> <a href="https://simplysay.ru/speaking-club/could-we-be-friends?utm_source=telegram&utm_medium=organic_listing&utm_campaign=time_to_learn_english_oct_2026&utm_content=could_we_be_friends" target="_blank">Simply Say | Could We Be Friends?</a> <span class="badge rounded-pill text-bg-success">New</span> <span class="place"><em>Online</em></span></li>
-		<li><strong>17:30</strong> <a href="cherrypie-club.html" target="_blank">CherryPie Club</a> <span class="place">Sytinsky lane 3/5</span></li>
-		<li><strong>18:00</strong> <a href="https://t.me/fridaypoint" target="_blank">Friday Point</a> <span class="place">Library 182</span></li>
-		<li><strong>18:00</strong> <a href="kates-english-speaking-club.html" target="_blank">Kate's English Speaking Club☀️</a> <span class="badge rounded-pill text-bg-warning">Top</span> <span class="place">StreetEat</span></li>
-		<li><strong>18:30</strong> <a href="english-lounge.html" target="_blank">English Lounge</a> <span class="place">Wine Club🍷</span></li>
-		<li><strong>19:00</strong> <a href="blah-blah-club.html" target="_blank">Blah-Blah Club</a> <span class="place">Surf Coffee x Secret Spot</span></li>
-		<li><strong>19:00</strong> <a href="ziferblat.html" target="_blank">Ziferblat's English Club</a> <span class="place">Ziferblat on Kuznetsky Most</span></li>
-		<li><strong>19:30</strong> <a href="clean-open-mic.html" target="_blank">Clean Open Mic</a> <span class="badge rounded-pill text-bg-warning">Top</span> <span class="place">Silvers Irish Pub</span></li>
-	</ul>
-
-	<h3>Sunday, October 4</h3>
-	<ul class="schedule">
-		<li><strong>11:30</strong> <a href="spill-the-tea.html" target="_blank">Spill The Tea</a> <span class="place"><em>Online</em></span></li>
-		<li><strong>12:30</strong> <a href="girls-speaking-club.html" target="_blank">Intermediate | Girl's Speaking Club</a> <span class="place"><em>Online</em></span></li>
-		<li><strong>13:00</strong> <a href="blah-blah-club.html" target="_blank">Blah-Blah Club</a> <span class="place">Surf Coffee x Flacon</span></li>
-		<li><strong>14:00</strong> <a href="english-galaxy-club.html" target="_blank">English Galaxy Speaking Club</a> <span class="place"><em>Online</em></span></li>
-		<li><strong>14:15</strong> <a href="girls-speaking-club.html" target="_blank">Beginner | Girl's Speaking Club</a> <span class="place"><em>Online</em></span></li>
-		<li><strong>14:30</strong> <a href="moscow-international-football.html" target="_blank">Moscow International Football</a> <span class="place">Stadium</span></li>
-		<li><strong>14:30</strong> <a href="dark-english-academia.html" target="_blank">Dark English Academia</a> <span class="badge rounded-pill text-bg-success">New</span> <span class="place">Moscow-based</span></li>
-		<li><strong>15:00</strong> <a href="english-speaking-club.html" target="_blank">English Speaking Club</a> <span class="place">Drinkit</span></li>
-		<li><strong>15:00</strong> <a href="real-talk.html" target="_blank">Real Talk Speaking Club</a> <span class="badge rounded-pill text-bg-warning">Top</span> <span class="place">Surf Coffee</span></li>
-		<li><strong>16:00</strong> <a href="ziferblat.html" target="_blank">Ziferblat's English Club</a> <span class="place">Ziferblat on Mayakovskaya</span></li>
-		<li><strong>16:00</strong> <a href="cherrypie-club.html" target="_blank">CherryPie Club</a> <span class="place">Gauguin Cafe</span></li>
-		<li><strong>16:00</strong> <a href="nataly-club.html" target="_blank">English Club with Nataly</a> <span class="place">Stars Coffee</span></li>
-		<li><strong>16:00</strong> <a href="chatty-chillies.html" target="_blank">Chatty Chillies</a> <span class="place">Coffee Bean</span></li>
-		<li><strong>17:00</strong> <a href="https://simplysay.ru/speaking-club/coincidence-or-destiny?utm_source=telegram&utm_medium=organic_listing&utm_campaign=time_to_learn_english_oct_2026&utm_content=coincidence_or_destiny" target="_blank">Simply Say | Coincidence or Destiny?</a> <span class="badge rounded-pill text-bg-success">New</span> <span class="place"><em>Online</em></span></li>
-		<li><strong>17:30</strong> <a href="triumph-lounge-english-club.html" target="_blank">English Club</a> <span class="badge rounded-pill text-bg-warning">Top</span> <span class="place">Triumph Lounge Bar</span></li>
-		<li><strong>18:00</strong> <a href="yoteach-in-touch.html" target="_blank">Yoteach in touch</a> <span class="badge rounded-pill text-bg-success">New</span> <span class="place">Surf Coffee® × Ostankino</span></li>
-		<li><strong>18:00</strong> <a href="moscowlem.html" target="_blank">MoscowLEM</a> <span class="place">Green Dog</span></li>
-		<li><strong>18:00</strong> <a href="moscow-pals.html" target="_blank">Moscow Pals Club</a> <span class="badge rounded-pill text-bg-warning">Top</span> <span class="place">Katie O'Shea's</span></li>
-		<li><strong>19:00</strong> <a href="nataly-club.html" target="_blank">English Club with Nataly</a> <span class="place">Cosmic latte</span></li>
-		<li><strong>20:00</strong> <a href="reading-vocab-club.html" target="_blank">Reading and Vocabulary Club</a> <span class="badge rounded-pill text-bg-success">New</span> <span class="place"><em>Online</em></span></li>
-	</ul>
-
-	<hr>
-
-	<h3 style="font-size: 1.1rem; margin-bottom: 0.75rem;">Tips and Special Offers</h3>
-	<ul style="list-style: none; padding-left: 0;">
-		<li style="margin-bottom: 0.5rem;"><strong>Real Talk Speaking Club</strong> — 30% off with a multi-meeting subscription</li>
-		<li style="margin-bottom: 0.5rem;"><strong>Blah-Blah Club x Surf Coffee</strong> — Bring a friend, you both save 15%</li>
-		<li style="margin-bottom: 0.5rem;"><strong>English Club with Nataly</strong> — offers monthly subscriptions for 4, 6, and 8 sessions</li>
-		<li><strong>Surf Coffee</strong> — 10% off drinks for club participants</li>
-	</ul>
-
-	<hr>
-
-	<h2>New Here?</h2>
-	<p>Most clubs are very beginner-friendly. Just come with a positive attitude and a willingness to chat. Here is what to expect at different types of events:</p>
-
-	<dl>
-		<dt>Speaking Clubs</dt>
-		<dd>Casual conversation in small groups or one-on-one. Topics are usually provided. No pressure, just talk.</dd>
-		<dt>Online Clubs</dt>
-		<dd>Join from anywhere via Zoom or Telegram. Perfect if you are shy or short on time.</dd>
-		<dt>Game Nights</dt>
-		<dd>Practice English while playing board games or Mafia. A relaxed way to learn.</dd>
-		<dt>Stand-Up & Open Mics</dt>
-		<dd>Enjoy comedy in English. Some events are free, others require a ticket.</dd>
-	</dl>
-
-	<p>Have a great week and happy speaking!</p>
-</article>
-
-
-<article class="blog-post">
-	<h2 class="blog-post-title">Big Update: 33 New Clubs on the Site!</h2>
-	<p class="blog-post-meta">September 24, 2026 by <a href="#contacts">Alexey Leonov</a></p>
-
-	<p>Friends, the site has just had its biggest update ever! 🎉 Our <a href="clubs.html">club catalog</a> has grown from 9 to <strong>42 clubs</strong> — speaking clubs, game nights, literature circles, stand-up comedy, language exchanges and even football. Each new club has its own page with photos from real meetings, a schedule, venues, prices and how to sign up.</p>
-
-	<hr>
-
-	<h3>What's new</h3>
-	<ul>
-		<li>🗣 <strong>More speaking clubs for every level and every day of the week</strong> — from cozy Sunday meetups like <a href="chatty-chillies.html">Chatty Chillies</a> and <a href="just-talk.html">Just Talk</a> to thought-provoking debates at <a href="english-chatter-club.html">English Chatter Club</a>.</li>
-		<li>🎲 <strong>Board games and Mafia in English</strong> — <a href="goose-club.html">Goose Club</a>, <a href="english-games-club.html">English Games Club</a> and <a href="vk-english-speaking-club.html">V&amp;K English Speaking Club</a>.</li>
-		<li>📚 <strong>Literature and film clubs</strong> — read a short story a week at <a href="english-literature-club.html">English Literature Club</a> or <a href="long-story-short.html">Long Story Short</a>, or discuss movies at <a href="moscow-english-conversation-club.html">Moscow English Conversation Club</a>.</li>
-		<li>🎤 <strong>Stand-up comedy in English</strong> — <a href="stand-up-club-in-english.html">Stand Up Club in English</a> and <a href="clean-open-mic.html">Clean Open Mic</a>.</li>
-		<li>🌍 <strong>Language exchanges and international parties</strong> — <a href="moscowlem.html">MoscowLEM</a>, <a href="isn-hse-moscow.html">ISN HSE Moscow</a>, <a href="club-de-espanol.html">Club de Español en Moscú</a> and <a href="international-vip.html">International VIP</a>.</li>
-		<li>💻 <strong>Online clubs</strong> — join from anywhere: <a href="english-starts-today.html">English Starts Today!</a>, <a href="linguaclub.html">LinguaClub</a> and <a href="girls-speaking-club.html">Girl's Speaking Club</a>.</li>
-		<li>⚽ <strong>And something different</strong> — play football with locals and expats at <a href="moscow-international-football.html">Moscow International Football</a>.</li>
-	</ul>
-
-	<hr>
-
-	<h3>Find your club in a minute</h3>
-	<p>Open the <a href="clubs.html">Clubs</a> page and use the filters: choose the <strong>type</strong> of meeting (speed meetings, board games, group meetings or online), <strong>free or paid</strong>, and see who meets <strong>today</strong> or <strong>this week</strong>. Click any card to read the full story of the club.</p>
-	<p>Know a club that's still missing? Write to us on <a href="https://t.me/eng_events" target="_blank">@eng_events</a> — we'd be happy to add it. See you at the meetings! ✨</p>
-</article>
-
-<article class="blog-post">
-	<h2 class="blog-post-title">This Week in Moscow: September 21–27</h2>
-	<p class="blog-post-meta">September 22, 2026 by <a href="#contacts">Alexey Leonov</a></p>
-
-	<p>A new week of English practice is here! Here is your weekly lineup of speaking clubs, game nights, and special events happening all over Moscow. Whether you are a beginner or an advanced speaker, there is something for you.</p>
-
-	<hr>
-
-	<p>This week we have <strong>over 98 events</strong> across the city and online. Venues range from cozy coffee shops like Coffee Bean and Stars Coffee to lively bars like Katie O'Shea's and Axiom Pub. Most clubs welcome new faces — just show up and start talking!</p>
-
-	<h2 id="actual-schedule">📋 Weekly Schedule</h2>
-	<p>Here is how to plan your week. Click on any club name to visit their channel for details and registration.</p>
-	<p class="small text-body-secondary"><span class="badge rounded-pill text-bg-success">New</span> recently added &nbsp;&middot;&nbsp; <span class="badge rounded-pill text-bg-warning">Top</span> our pick</p>
-
-	<h3>Monday, September 21</h3>
-	<ul class="schedule">
-		<li><strong>19:00</strong> <a href="blah-blah-club.html" target="_blank">Blah-Blah Club</a> <span class="place">Surf Coffee x Rock</span></li>
-		<li><strong>19:00</strong> <a href="ziferblat.html" target="_blank">English with Gily & Masha</a> <span class="badge rounded-pill text-bg-warning">Top</span> <span class="place">Ziferblat on Mayakovskaya</span></li>
-		<li><strong>19:00</strong> <a href="viva-lingua-club.html" target="_blank">Viva Lingua Club</a> <span class="place"><span lang="ru">Лялин пер. 23-29с1, м. Курская</span></span></li>
-		<li><strong>19:00</strong> <a href="https://t.me/Social_Leonid" target="_blank">Social English Club by Leonid</a> <span class="badge rounded-pill text-bg-success">New</span> <span class="place">Surf Coffee x Ostozhenka</span></li>
-		<li><strong>19:00</strong> <a href="https://t.me/pabloplace" target="_blank">Pablo Place - The Art of Gatherings</a> <span class="badge rounded-pill text-bg-success">New</span> <span class="place">Park Muzeon</span></li>
-		<li><strong>19:00</strong> <a href="https://t.me/segodnyaeng" target="_blank">English Starts Today!</a> <span class="badge rounded-pill text-bg-success">New</span> <span class="place"><em>Online</em></span></li>
-		<li><strong>19:30</strong> <a href="nataly-club.html" target="_blank">English Club with Nataly</a> <span class="place">Union Jack pub</span></li>
-		<li><strong>19:30</strong> <a href="https://t.me/orthodox_christian_discussions" target="_blank">Orthodox Christian Discussion Club</a> <span class="place">Valaam Monastery</span></li>
-		<li><strong>20:00</strong> <a href="ziferblat.html" target="_blank">Ziferblat's English Club</a> <span class="place">Ziferblat on Pushkinskaya</span></li>
-	</ul>
-
-	<h3>Tuesday, September 22</h3>
-	<ul class="schedule">
-		<li><strong>10:30</strong> <a href="https://t.me/pabloplace" target="_blank">Pablo Place - The Art of Gatherings</a> <span class="place"><em>Online</em></span></li>
-		<li><strong>19:00</strong> <a href="viva-lingua-club.html" target="_blank">Viva Lingua Club</a> <span class="place"><span lang="ru">Лялин пер. 23-29с1, м. Курская</span></span></li>
-		<li><strong>19:00</strong> <a href="real-talk.html" target="_blank">Real Talk Speaking Club</a> <span class="badge rounded-pill text-bg-warning">Top</span> <span class="place">Surf Coffee</span></li>
-		<li><strong>19:00</strong> <a href="https://t.me/segodnyaeng" target="_blank">English Starts Today!</a> <span class="badge rounded-pill text-bg-success">New</span> <span class="place"><em>Online</em></span></li>
-		<li><strong>19:00</strong> <a href="https://t.me/igrautkaclubmoscow" target="_blank">Board games - Goose Club</a> <span class="badge rounded-pill text-bg-success">New</span> <span class="place">Geektime Anticafe</span></li>
-		<li><strong>19:15</strong> <a href="https://t.me/moscowtodayhq" target="_blank">Moscow Today Club</a> <span class="place">Coffeeshop</span></li>
-		<li><strong>19:30</strong> <a href="ziferblat.html" target="_blank">Ziferblat's English Club</a> <span class="place">Ziferblat on Kuznetsky Most</span></li>
-		<li><strong>19:30</strong> <a href="https://t.me/cherrypieclub/2005" target="_blank">CherryPie Club</a> <span class="place">Hotel Sofit</span></li>
-		<li><strong>19:30</strong> <a href="nataly-club.html" target="_blank">English Club with Nataly</a> <span class="place">Cosmic latte</span></li>
-		<li><strong>19:30</strong> <a href="https://t.me/speak_english_moscow/8" target="_blank">English Speaking Club</a> <span class="place">Coffeeshop</span></li>
-		<li><strong>19:30</strong> <a href="https://t.me/+ViUdx9V5DOphMTUy" target="_blank">English Club</a> <span class="badge rounded-pill text-bg-warning">Top</span> <span class="place">Triumph Lounge Bar</span></li>
-		<li><strong>20:00</strong> <a href="blah-blah-club.html" target="_blank">Blah-Blah Club</a> <span class="place">Surf Coffee x Flacon</span></li>
-	</ul>
-
-	<h3>Wednesday, September 23</h3>
-	<ul class="schedule">
-		<li><strong>18:45</strong> <a href="https://t.me/short_story_of_the_week" target="_blank">English Literature Club</a> <span class="place">Svetlovka library</span></li>
-		<li><strong>19:00</strong> <a href="ziferblat.html" target="_blank">Ziferblat's English Club</a> <span class="place">Ziferblat on Mayakovskaya</span></li>
-		<li><strong>19:00</strong> <a href="viva-lingua-club.html" target="_blank">Viva Lingua Club</a> <span class="place"><span lang="ru">Лялин пер. 23-29с1, м. Курская</span></span></li>
-		<li><strong>19:00</strong> <a href="real-talk.html" target="_blank">Real Talk Speaking Club</a> <span class="badge rounded-pill text-bg-warning">Top</span> <span class="place">Stars Coffee</span></li>
-		<li><strong>19:00</strong> <a href="https://t.me/thewednesdayclub" target="_blank">Wednesday English Speaking Club</a> <span class="place">Checkpoint</span></li>
-		<li><strong>19:00</strong> <a href="https://t.me/EnglishVDNH" target="_blank">English Speaking Club at VDNH</a> <span class="badge rounded-pill text-bg-warning">Top</span> <span class="place">VDNH</span></li>
-		<li><strong>19:00</strong> <a href="https://t.me/engl_games" target="_blank">English Games Club</a> <span class="place">Grabli Cafe</span></li>
-		<li><strong>19:00</strong> <a href="https://t.me/forgetmenot2021" target="_blank">Sunrise Literature Club</a> <span class="badge rounded-pill text-bg-success">New</span> <span class="place">Central Library 21</span></li>
-		<li><strong>19:00</strong> <a href="https://t.me/segodnyaeng" target="_blank">English Starts Today!</a> <span class="badge rounded-pill text-bg-success">New</span> <span class="place"><em>Online</em></span></li>
-		<li><strong>19:10</strong> <a href="https://t.me/linguaachannel" target="_blank">LinguaClub</a> <span class="badge rounded-pill text-bg-success">New</span> <span class="place"><em>Online</em></span></li>
-		<li><strong>19:20</strong> <a href="https://t.me/irishmanenglish" target="_blank">English at IRISHMAN</a> <span class="badge rounded-pill text-bg-success">New</span> <span class="place">Irishman Pub 1905</span></li>
-		<li><strong>19:30</strong> <a href="nataly-club.html" target="_blank">English Club with Nataly</a> <span class="place">Cosmic latte</span></li>
-		<li><strong>20:00</strong> <a href="blah-blah-club.html" target="_blank">Blah-Blah Club</a> <span class="place">Rébellion The Palace of Youth</span></li>
-		<li><strong>20:00</strong> <a href="viva-lingua-club.html" target="_blank">Viva Lingua Club</a> <span class="place"><em>Online</em></span></li>
-	</ul>
-
-	<h3>Thursday, September 24</h3>
-	<ul class="schedule">
-		<li><strong>10:30</strong> <a href="https://t.me/pabloplace" target="_blank">Pablo Place - The Art of Gatherings</a> <span class="place"><em>Online</em></span></li>
-		<li><strong>14:00</strong> <a href="https://t.me/linguaachannel" target="_blank">LinguaClub</a> <span class="badge rounded-pill text-bg-success">New</span> <span class="place"><em>Online</em></span></li>
-		<li><strong>18:00</strong> <a href="https://t.me/m/EYIb2ljHYzgy" target="_blank">Engsider Speaking Club</a> <span class="badge rounded-pill text-bg-success">New</span> <span class="place"><em>Online</em></span></li>
-		<li><strong>18:55</strong> <a href="https://t.me/+mjdU1p9I_QM3YjNk" target="_blank">Thursday After Work</a> <span class="badge rounded-pill text-bg-warning">Top</span> <span class="place">Debri Bar</span></li>
-		<li><strong>19:00</strong> <a href="viva-lingua-club.html" target="_blank">Viva Lingua Club</a> <span class="place"><span lang="ru">Лялин пер. 23-29с1, м. Курская</span></span></li>
-		<li><strong>19:00</strong> <a href="english-galaxy-club.html" target="_blank">English Galaxy Speaking Club</a> <span class="place"><em>Online</em></span></li>
-		<li><strong>19:00</strong> <a href="https://t.me/segodnyaeng" target="_blank">English Starts Today!</a> <span class="badge rounded-pill text-bg-success">New</span> <span class="place"><em>Online</em></span></li>
-		<li><strong>19:30</strong> <a href="ziferblat.html" target="_blank">Just Talk English Speaking Club</a> <span class="badge rounded-pill text-bg-success">New</span> <span class="place">Ziferblat on Mayakovskaya</span></li>
-		<li><strong>19:30</strong> <a href="nataly-club.html" target="_blank">English Club with Nataly</a> <span class="place">Coffeeshop Company</span></li>
-		<li><strong>19:30</strong> <a href="https://t.me/speak_english_moscow/8" target="_blank">English Speaking Club</a> <span class="place">YesNoMilk</span></li>
-		<li><strong>19:30</strong> <a href="https://t.me/Social_Leonid" target="_blank">Social English Club by Leonid</a> <span class="badge rounded-pill text-bg-success">New</span> <span class="place">Surf Coffee x Ostozhenka</span></li>
-		<li><strong>20:00</strong> <a href="blah-blah-club.html" target="_blank">Blah-Blah Club</a> <span class="place">Surf Coffee x Solyanka</span></li>
-		<li><strong>21:00</strong> <a href="https://t.me/darkenglishacademia" target="_blank">Dark English Academia</a> <span class="badge rounded-pill text-bg-success">New</span> <span class="place"><em>Online</em></span></li>
-	</ul>
-
-	<h3>Friday, September 25</h3>
-	<ul class="schedule">
-		<li><strong>19:00</strong> <a href="ziferblat.html" target="_blank">Ziferblat's English Club</a> <span class="place">Ziferblat on Mayakovskaya</span></li>
-		<li><strong>19:00</strong> <a href="https://t.me/speak_english_moscow/8" target="_blank">English Speaking Club</a> <span class="place">Coffeeshop</span></li>
-		<li><strong>19:00</strong> <a href="https://t.me/fridaypoint" target="_blank">Friday Point</a> <span class="place">Library</span></li>
-		<li><strong>19:00</strong> <a href="real-talk.html" target="_blank">Real Talk Speaking Club</a> <span class="badge rounded-pill text-bg-warning">Top</span> <span class="place">Stars Coffee</span></li>
-		<li><strong>19:00</strong> <a href="ziferblat.html" target="_blank">Ziferblat's English Club</a> <span class="place">Ziferblat on Mayakovskaya</span></li>
-		<li><strong>19:00</strong> <a href="https://t.me/clubdeespanolenmoscu" target="_blank">🇪🇸💬🇷🇺Club de Español en Moscu</a> <span class="place">Bar Santa Muerte</span></li>
-		<li><strong>19:00</strong> <a href="https://t.me/segodnyaeng" target="_blank">English Starts Today!</a> <span class="badge rounded-pill text-bg-success">New</span> <span class="place"><em>Online</em></span></li>
-		<li><strong>19:15</strong> <a href="nataly-club.html" target="_blank">English Club with Nataly</a> <span class="place">Cosmic latte</span></li>
-		<li><strong>19:15</strong> <a href="https://t.me/MoscowEnglishConversationClub" target="_blank">Moscow English Conversation Club</a> <span class="place">Stars Coffee</span></li>
-		<li><strong>19:30</strong> <a href="https://t.me/cherrypieclub/2005" target="_blank">CherryPie Club</a> <span class="place">Hotel Sofit</span></li>
-		<li><strong>19:30</strong> <a href="https://t.me/bright_school_no1" target="_blank">Bright School No1</a> <span class="place">Izmailovsky Boulevard 50</span></li>
-		<li><strong>19:30</strong> <a href="https://t.me/nastushkaspeakingclub" target="_blank">Nastushka’s Speaking Club</a> <span class="badge rounded-pill text-bg-warning">Top</span> <span class="place">Library</span></li>
-		<li><strong>20:00</strong> <a href="blah-blah-club.html" target="_blank">Blah-Blah Club</a> <span class="place">Surf Coffee x Solyanka</span></li>
-		<li><strong>20:00</strong> <a href="https://t.me/jimnjacks/2332" target="_blank">Friday Language Exchange Club</a> <span class="badge rounded-pill text-bg-warning">Top</span> <span class="place">Cafe Na Kover</span></li>
-	</ul>
-
-	<h3>Saturday, September 26</h3>
-	<ul class="schedule">
-		<li><strong>12:00</strong> <a href="viva-lingua-club.html" target="_blank">Viva Lingua Club</a> <span class="place"><span lang="ru">Лялин пер. 23-29с1, м. Курская</span></span></li>
-		<li><strong>12:00</strong> <a href="https://t.me/+o3r3cUpJY_RmNmFi" target="_blank">ENGLISH CLUB 🛩☁️ MOSCOW</a> <span class="place"><em>Online</em></span></li>
-		<li><strong>14:00</strong> <a href="viva-lingua-club.html" target="_blank">Viva Lingua Club</a> <span class="place"><span lang="ru">Лялин пер. 23-29с1, м. Курская</span></span></li>
-		<li><strong>15:00</strong> <a href="real-talk.html" target="_blank">Real Talk Speaking Club</a> <span class="badge rounded-pill text-bg-warning">Top</span> <span class="place">Stars Coffee</span></li>
-		<li><strong>16:00</strong> <a href="nataly-club.html" target="_blank">English Club with Nataly</a> <span class="place">Stars Coffee</span></li>
-		<li><strong>17:00</strong> <a href="igroteka-kota-m.html" target="_blank">Mendeley the Cat Game Club</a> <span class="place">HvoyaLounge</span></li>
-		<li><strong>17:00</strong> <a href="https://t.me/Just_talk_moscow_Eng_speaking_cl" target="_blank">Just Talk English Speaking Club</a> <span class="badge rounded-pill text-bg-success">New</span> <span class="place">Stars Coffee</span></li>
-		<li><strong>17:00</strong> <a href="https://t.me/moscowtodayhq" target="_blank">Moscow Today Club</a> <span class="place">Gorky Park</span></li>
-		<li><strong>17:00</strong> <a href="https://t.me/EnglishTogetherVK" target="_blank">V&K English Speaking Club</a> <span class="badge rounded-pill text-bg-success">New</span> <span class="place">Coffee Shop Here’n’now</span></li>
-		<li><strong>17:30</strong> <a href="https://t.me/cherrypieclub/2005" target="_blank">CherryPie Club</a> <span class="place">Hotel Sofit</span></li>
-		<li><strong>18:00</strong> <a href="https://t.me/fridaypoint" target="_blank">Friday Point</a> <span class="place">Library 182</span></li>
-		<li><strong>18:00</strong> <a href="https://t.me/+DxqLMjv1pGBmYmNi" target="_blank">Kate's English Speaking Club☀️</a> <span class="badge rounded-pill text-bg-warning">Top</span> <span class="place">StreetEat</span></li>
-		<li><strong>18:30</strong> <a href="https://t.me/irenesta_ispeak" target="_blank">English Lounge</a> <span class="place">Wine Club🍷</span></li>
-		<li><strong>19:00</strong> <a href="blah-blah-club.html" target="_blank">Blah-Blah Club</a> <span class="place">Surf Coffee x Secret Spot</span></li>
-		<li><strong>19:00</strong> <a href="ziferblat.html" target="_blank">Ziferblat's English Club</a> <span class="place">Ziferblat on Kuznetsky Most</span></li>
-	</ul>
-
-	<h3>Sunday, September 27</h3>
-	<ul class="schedule">
-		<li><strong>11:30</strong> <a href="https://t.me/SpeakingClubSpillTheTea" target="_blank">Spill The Tea</a> <span class="place"><em>Online</em></span></li>
-		<li><strong>12:30</strong> <a href="https://t.me/sayitsimple" target="_blank">Intermediate | Girl's Speaking Club</a> <span class="place"><em>Online</em></span></li>
-		<li><strong>13:00</strong> <a href="blah-blah-club.html" target="_blank">Blah-Blah Club</a> <span class="place">Surf Coffee x Flacon</span></li>
-		<li><strong>14:00</strong> <a href="english-galaxy-club.html" target="_blank">English Galaxy Speaking Club</a> <span class="place"><em>Online</em></span></li>
-		<li><strong>14:15</strong> <a href="https://t.me/sayitsimple" target="_blank">Beginner | Girl's Speaking Club</a> <span class="place"><em>Online</em></span></li>
-		<li><strong>14:30</strong> <a href="https://t.me/moscowsoccer" target="_blank">Moscow International Football</a> <span class="place">Stadium</span></li>
-		<li><strong>14:30</strong> <a href="https://t.me/darkenglishacademia" target="_blank">Dark English Academia</a> <span class="badge rounded-pill text-bg-success">New</span> <span class="place">Moscow-based</span></li>
-		<li><strong>15:00</strong> <a href="https://t.me/speak_english_moscow/8" target="_blank">English Speaking Club</a> <span class="place">Drinkit</span></li>
-		<li><strong>15:00</strong> <a href="real-talk.html" target="_blank">Real Talk Speaking Club</a> <span class="badge rounded-pill text-bg-warning">Top</span> <span class="place">Surf Coffee</span></li>
-		<li><strong>16:00</strong> <a href="ziferblat.html" target="_blank">Ziferblat's English Club</a> <span class="place">Ziferblat on Mayakovskaya</span></li>
-		<li><strong>16:00</strong> <a href="nataly-club.html" target="_blank">English Club with Nataly</a> <span class="place">Stars Coffee</span></li>
-		<li><strong>16:00</strong> <a href="https://t.me/walkandtalkclub" target="_blank">Chatty Chillies</a> <span class="place">Coffee Bean</span></li>
-		<li><strong>16:00</strong> <a href="https://t.me/englishchatterclub" target="_blank">English Chatter Club</a> <span class="badge rounded-pill text-bg-success">New</span> <span class="place">Axiom Pub</span></li>
-		<li><strong>17:30</strong> <a href="https://t.me/+ViUdx9V5DOphMTUy" target="_blank">English Club</a> <span class="badge rounded-pill text-bg-warning">Top</span> <span class="place">Triumph Lounge Bar</span></li>
-		<li><strong>18:00</strong> <a href="https://t.me/speak_english_moscow/558" target="_blank">English Speaking Club</a> <span class="badge rounded-pill text-bg-success">New</span> <span class="place">PUB QUIZ · Yonks Bar</span></li>
-		<li><strong>18:00</strong> <a href="https://t.me/yoteachme/106" target="_blank">Yoteach in touch</a> <span class="badge rounded-pill text-bg-success">New</span> <span class="place">Surf Coffee® × Ostankino</span></li>
-		<li><strong>18:00</strong> <a href="https://t.me/MoscowLEM/403" target="_blank">MoscowLEM</a> <span class="place">Green Dog</span></li>
-		<li><strong>18:00</strong> <a href="https://t.me/MoscowPals" target="_blank">Moscow Pals Club</a> <span class="badge rounded-pill text-bg-warning">Top</span> <span class="place">Katie O'Shea's</span></li>
-		<li><strong>19:00</strong> <a href="nataly-club.html" target="_blank">English Club with Nataly</a> <span class="place">Cosmic latte</span></li>
-		<li><strong>20:00</strong> <a href="ziferblat.html" target="_blank">Ziferblat's English Club</a> <span class="place">Ziferblat on Mayakovskaya</span></li>
-		<li><strong>20:00</strong> <a href="reading-vocab-club.html" target="_blank">Reading and Vocabulary Club</a> <span class="badge rounded-pill text-bg-success">New</span> <span class="place"><em>Online</em></span></li>
-	</ul>
-
-	<hr>
-
-	<h3 style="font-size: 1.1rem; margin-bottom: 0.75rem;">Tips and Special Offers</h3>
-	<ul style="list-style: none; padding-left: 0;">
-		<li style="margin-bottom: 0.5rem;"><strong>Real Talk Speaking Club</strong> — 30% off with a multi-meeting subscription</li>
-		<li style="margin-bottom: 0.5rem;"><strong>Blah-Blah Club x Surf Coffee</strong> — Bring a friend, you both save 15%</li>
-		<li style="margin-bottom: 0.5rem;"><strong>English Club with Nataly</strong> — offers monthly subscriptions for 4, 6, and 8 sessions</li>
-		<li><strong>Surf Coffee</strong> — 10% off drinks for club participants</li>
-	</ul>
-
-	<hr>
-
-	<h2>New Here?</h2>
-	<p>Most clubs are very beginner-friendly. Just come with a positive attitude and a willingness to chat. Here is what to expect at different types of events:</p>
-
-	<dl>
-		<dt>Speaking Clubs</dt>
-		<dd>Casual conversation in small groups or one-on-one. Topics are usually provided. No pressure, just talk.</dd>
-		<dt>Online Clubs</dt>
-		<dd>Join from anywhere via Zoom or Telegram. Perfect if you are shy or short on time.</dd>
-		<dt>Game Nights</dt>
-		<dd>Practice English while playing board games or Mafia. A relaxed way to learn.</dd>
-		<dt>Stand-Up & Open Mics</dt>
-		<dd>Enjoy comedy in English. Some events are free, others require a ticket.</dd>
-	</dl>
-
-	<p>Have a great week and happy speaking!</p>
-</article>
-
-<article class="blog-post">
-	<h2 class="blog-post-title">This Week in Moscow: September 14–20</h2>
-	<p class="blog-post-meta">September 14, 2026 by <a href="#contacts">Alexey Leonov</a></p>
-
-	<p>Autumn is here and so is your English practice! Here is your weekly lineup of speaking clubs, game nights, and special events happening all over Moscow. Whether you are a beginner or an advanced speaker, there is something for you.</p>
-
-	<hr>
-
-	<p>This week we have <strong>over 98 events</strong> across the city and online. Venues range from cozy coffee shops like Coffee Bean and Stars Coffee to lively bars like Katie O'Shea's and Axiom Pub. Most clubs welcome new faces — just show up and start talking!</p>
-
-	<h2 id="actual-schedule">📋 Weekly Schedule</h2>
-	<p>Here is how to plan your week. Click on any club name to visit their channel for details and registration.</p>
-	<p class="small text-body-secondary"><span class="badge rounded-pill text-bg-success">New</span> recently added &nbsp;&middot;&nbsp; <span class="badge rounded-pill text-bg-warning">Top</span> our pick</p>
-
-	<h3>Monday, September 14</h3>
-	<ul class="schedule">
-		<li><strong>19:00</strong> <a href="blah-blah-club.html" target="_blank">Blah-Blah Club</a> <span class="place">Surf Coffee x Rock</span></li>
-		<li><strong>19:00</strong> <a href="ziferblat.html" target="_blank">English with Gily & Masha</a> <span class="badge rounded-pill text-bg-warning">Top</span> <span class="place">Ziferblat on Mayakovskaya</span></li>
-		<li><strong>19:00</strong> <a href="viva-lingua-club.html" target="_blank">Viva Lingua Club</a> <span class="place"><span lang="ru">Лялин пер. 23-29с1, м. Курская</span></span></li>
-		<li><strong>19:00</strong> <a href="https://t.me/Social_Leonid" target="_blank">Social English Club by Leonid</a> <span class="badge rounded-pill text-bg-success">New</span> <span class="place">Surf Coffee x Ostozhenka</span></li>
-		<li><strong>19:00</strong> <a href="https://t.me/pabloplace" target="_blank">Pablo Place - The Art of Gatherings</a> <span class="badge rounded-pill text-bg-success">New</span> <span class="place">Park Muzeon</span></li>
-		<li><strong>19:00</strong> <a href="https://t.me/segodnyaeng" target="_blank">English Starts Today!</a> <span class="badge rounded-pill text-bg-success">New</span> <span class="place"><em>Online</em></span></li>
-		<li><strong>19:15</strong> <a href="ziferblat.html" target="_blank">Ziferblat's English Club</a> <span class="place">Ziferblat on Mayakovskaya</span></li>
-		<li><strong>19:30</strong> <a href="nataly-club.html" target="_blank">English Club with Nataly</a> <span class="place">Union Jack pub</span></li>
-		<li><strong>19:30</strong> <a href="https://t.me/orthodox_christian_discussions" target="_blank">Orthodox Christian Discussion Club</a> <span class="place">Valaam Monastery</span></li>
-		<li><strong>20:00</strong> <a href="ziferblat.html" target="_blank">Ziferblat's English Club</a> <span class="place">Ziferblat on Pushkinskaya</span></li>
-	</ul>
-
-	<h3>Tuesday, September 15</h3>
-	<ul class="schedule">
-		<li><strong>10:30</strong> <a href="https://t.me/pabloplace" target="_blank">Pablo Place - The Art of Gatherings</a> <span class="place"><em>Online</em></span></li>
-		<li><strong>19:00</strong> <a href="viva-lingua-club.html" target="_blank">Viva Lingua Club</a> <span class="place"><span lang="ru">Лялин пер. 23-29с1, м. Курская</span></span></li>
-		<li><strong>19:00</strong> <a href="real-talk.html" target="_blank">Real Talk Speaking Club</a> <span class="badge rounded-pill text-bg-warning">Top</span> <span class="place">Surf Coffee</span></li>
-		<li><strong>19:00</strong> <a href="https://t.me/segodnyaeng" target="_blank">English Starts Today!</a> <span class="badge rounded-pill text-bg-success">New</span> <span class="place"><em>Online</em></span></li>
-		<li><strong>19:00</strong> <a href="https://t.me/igrautkaclubmoscow" target="_blank">Board games - Goose Club</a> <span class="badge rounded-pill text-bg-success">New</span> <span class="place">Geektime Anticafe</span></li>
-		<li><strong>19:15</strong> <a href="https://t.me/moscowtodayhq" target="_blank">Moscow Today Club</a> <span class="place">Coffeeshop</span></li>
-		<li><strong>19:30</strong> <a href="ziferblat.html" target="_blank">Ziferblat's English Club</a> <span class="place">Ziferblat on Kuznetsky Most</span></li>
-		<li><strong>19:30</strong> <a href="https://t.me/cherrypieclub/2005" target="_blank">CherryPie Club</a> <span class="place">Hotel Sofit</span></li>
-		<li><strong>19:30</strong> <a href="nataly-club.html" target="_blank">English Club with Nataly</a> <span class="place">Cosmic latte</span></li>
-		<li><strong>19:30</strong> <a href="https://t.me/english_club_moscow/11384" target="_blank">English Speaking Club</a> <span class="place">Coffeeshop</span></li>
-		<li><strong>19:30</strong> <a href="https://t.me/+ViUdx9V5DOphMTUy" target="_blank">English Club</a> <span class="badge rounded-pill text-bg-warning">Top</span> <span class="place">Triumph Lounge Bar</span></li>
-		<li><strong>20:00</strong> <a href="blah-blah-club.html" target="_blank">Blah-Blah Club</a> <span class="place">Surf Coffee x Flacon</span></li>
-	</ul>
-
-	<h3>Wednesday, September 16</h3>
-	<ul class="schedule">
-		<li><strong>18:45</strong> <a href="https://t.me/short_story_of_the_week" target="_blank">English Literature Club</a> <span class="place">Svetlovka library</span></li>
-		<li><strong>19:00</strong> <a href="ziferblat.html" target="_blank">Ziferblat's English Club</a> <span class="place">Ziferblat on Mayakovskaya</span></li>
-		<li><strong>19:00</strong> <a href="viva-lingua-club.html" target="_blank">Viva Lingua Club</a> <span class="place"><span lang="ru">Лялин пер. 23-29с1, м. Курская</span></span></li>
-		<li><strong>19:00</strong> <a href="real-talk.html" target="_blank">Real Talk Speaking Club</a> <span class="badge rounded-pill text-bg-warning">Top</span> <span class="place">Stars Coffee</span></li>
-		<li><strong>19:00</strong> <a href="https://t.me/thewednesdayclub" target="_blank">Wednesday English Speaking Club</a> <span class="place">Checkpoint</span></li>
-		<li><strong>19:00</strong> <a href="https://t.me/EnglishVDNH" target="_blank">English Speaking Club at VDNH</a> <span class="badge rounded-pill text-bg-warning">Top</span> <span class="place">VDNH</span></li>
-		<li><strong>19:00</strong> <a href="https://t.me/engl_games" target="_blank">English Games Club</a> <span class="place">Grabli Cafe</span></li>
-		<li><strong>19:00</strong> <a href="https://t.me/forgetmenot2021" target="_blank">Sunrise Literature Club</a> <span class="badge rounded-pill text-bg-success">New</span> <span class="place">Central Library 21</span></li>
-		<li><strong>19:00</strong> <a href="https://t.me/segodnyaeng" target="_blank">English Starts Today!</a> <span class="badge rounded-pill text-bg-success">New</span> <span class="place"><em>Online</em></span></li>
-		<li><strong>19:10</strong> <a href="https://t.me/linguaachannel" target="_blank">LinguaClub</a> <span class="badge rounded-pill text-bg-success">New</span> <span class="place"><em>Online</em></span></li>
-		<li><strong>19:20</strong> <a href="https://t.me/irishmanenglish" target="_blank">English at IRISHMAN</a> <span class="badge rounded-pill text-bg-success">New</span> <span class="place">Irishman Pub 1905</span></li>
-		<li><strong>19:30</strong> <a href="nataly-club.html" target="_blank">English Club with Nataly</a> <span class="place">Cosmic latte</span></li>
-		<li><strong>20:00</strong> <a href="blah-blah-club.html" target="_blank">Blah-Blah Club</a> <span class="place">Rébellion The Palace of Youth</span></li>
-		<li><strong>20:00</strong> <a href="viva-lingua-club.html" target="_blank">Viva Lingua Club</a> <span class="place"><em>Online</em></span></li>
-	</ul>
-
-	<h3>Thursday, September 17</h3>
-	<ul class="schedule">
-		<li><strong>10:30</strong> <a href="https://t.me/pabloplace" target="_blank">Pablo Place - The Art of Gatherings</a> <span class="place"><em>Online</em></span></li>
-		<li><strong>14:00</strong> <a href="https://t.me/linguaachannel" target="_blank">LinguaClub</a> <span class="badge rounded-pill text-bg-success">New</span> <span class="place"><em>Online</em></span></li>
-		<li><strong>18:00</strong> <a href="https://t.me/m/EYIb2ljHYzgy" target="_blank">Engsider Speaking Club</a> <span class="badge rounded-pill text-bg-success">New</span> <span class="place"><em>Online</em></span></li>
-		<li><strong>18:55</strong> <a href="https://t.me/+mjdU1p9I_QM3YjNk" target="_blank">Thursday After Work</a> <span class="badge rounded-pill text-bg-warning">Top</span> <span class="place">Debri Bar</span></li>
-		<li><strong>19:00</strong> <a href="viva-lingua-club.html" target="_blank">Viva Lingua Club</a> <span class="place"><span lang="ru">Лялин пер. 23-29с1, м. Курская</span></span></li>
-		<li><strong>19:00</strong> <a href="english-galaxy-club.html" target="_blank">English Galaxy Speaking Club</a> <span class="place"><em>Online</em></span></li>
-		<li><strong>19:00</strong> <a href="https://t.me/segodnyaeng" target="_blank">English Starts Today!</a> <span class="badge rounded-pill text-bg-success">New</span> <span class="place"><em>Online</em></span></li>
-		<li><strong>19:30</strong> <a href="ziferblat.html" target="_blank">Just Talk English Speaking Club</a> <span class="badge rounded-pill text-bg-success">New</span> <span class="place">Ziferblat on Mayakovskaya</span></li>
-		<li><strong>19:30</strong> <a href="nataly-club.html" target="_blank">English Club with Nataly</a> <span class="place">Coffeeshop Company</span></li>
-		<li><strong>19:30</strong> <a href="https://t.me/english_club_moscow/11384" target="_blank">English Speaking Club</a> <span class="place">YesNoMilk</span></li>
-		<li><strong>19:30</strong> <a href="https://t.me/Social_Leonid" target="_blank">Social English Club by Leonid</a> <span class="badge rounded-pill text-bg-success">New</span> <span class="place">Surf Coffee x Ostozhenka</span></li>
-		<li><strong>20:00</strong> <a href="blah-blah-club.html" target="_blank">Blah-Blah Club</a> <span class="place">Surf Coffee x Solyanka</span></li>
-		<li><strong>21:00</strong> <a href="https://t.me/darkenglishacademia" target="_blank">Dark English Academia</a> <span class="badge rounded-pill text-bg-success">New</span> <span class="place"><em>Online</em></span></li>
-	</ul>
-
-	<h3>Friday, September 18</h3>
-	<ul class="schedule">
-		<li><strong>19:00</strong> <a href="ziferblat.html" target="_blank">Ziferblat's English Club</a> <span class="place">Ziferblat on Mayakovskaya</span></li>
-		<li><strong>19:00</strong> <a href="https://t.me/english_club_moscow/11384" target="_blank">English Speaking Club</a> <span class="place">Coffeeshop</span></li>
-		<li><strong>19:00</strong> <a href="https://t.me/fridaypoint" target="_blank">Friday Point</a> <span class="place">Library</span></li>
-		<li><strong>19:00</strong> <a href="real-talk.html" target="_blank">Real Talk Speaking Club</a> <span class="badge rounded-pill text-bg-warning">Top</span> <span class="place">Stars Coffee</span></li>
-		<li><strong>19:00</strong> <a href="ziferblat.html" target="_blank">Ziferblat's English Club</a> <span class="place">Ziferblat on Mayakovskaya</span></li>
-		<li><strong>19:00</strong> <a href="https://t.me/clubdeespanolenmoscu" target="_blank">🇪🇸💬🇷🇺Club de Español en Moscu</a> <span class="place">Bar Santa Muerte</span></li>
-		<li><strong>19:00</strong> <a href="https://t.me/segodnyaeng" target="_blank">English Starts Today!</a> <span class="badge rounded-pill text-bg-success">New</span> <span class="place"><em>Online</em></span></li>
-		<li><strong>19:15</strong> <a href="nataly-club.html" target="_blank">English Club with Nataly</a> <span class="place">Cosmic latte</span></li>
-		<li><strong>19:15</strong> <a href="https://t.me/MoscowEnglishConversationClub" target="_blank">Moscow English Conversation Club</a> <span class="place">Stars Coffee</span></li>
-		<li><strong>19:30</strong> <a href="https://t.me/cherrypieclub/2005" target="_blank">CherryPie Club</a> <span class="place">Sytinsky lane 3/5</span></li>
-		<li><strong>19:30</strong> <a href="https://t.me/bright_school_no1" target="_blank">Bright School No1</a> <span class="place">Izmailovsky Boulevard 50</span></li>
-		<li><strong>19:30</strong> <a href="https://t.me/nastushkaspeakingclub" target="_blank">Nastushka’s Speaking Club</a> <span class="badge rounded-pill text-bg-warning">Top</span> <span class="place">Library</span></li>
-		<li><strong>20:00</strong> <a href="blah-blah-club.html" target="_blank">Blah-Blah Club</a> <span class="place">Surf Coffee x Rock</span></li>
-		<li><strong>20:00</strong> <a href="blah-blah-club.html" target="_blank">Blah-Blah Club</a> <span class="place">Surf Coffee x Solyanka</span></li>
-		<li><strong>20:00</strong> <a href="https://t.me/jimnjacks/2332" target="_blank">Friday Language Exchange Club</a> <span class="badge rounded-pill text-bg-warning">Top</span> <span class="place">Cafe Na Kover</span></li>
-	</ul>
-
-	<h3>Saturday, September 19</h3>
-	<ul class="schedule">
-		<li><strong>12:00</strong> <a href="viva-lingua-club.html" target="_blank">Viva Lingua Club</a> <span class="place"><span lang="ru">Лялин пер. 23-29с1, м. Курская</span></span></li>
-		<li><strong>12:00</strong> <a href="https://t.me/+o3r3cUpJY_RmNmFi" target="_blank">ENGLISH CLUB 🛩☁️ MOSCOW</a> <span class="place"><em>Online</em></span></li>
-		<li><strong>14:00</strong> <a href="viva-lingua-club.html" target="_blank">Viva Lingua Club</a> <span class="place"><span lang="ru">Лялин пер. 23-29с1, м. Курская</span></span></li>
-		<li><strong>14:30</strong> <a href="ziferblat.html" target="_blank">Ziferblat's English Club</a> <span class="place">Ziferblat on Kuznetsky Most</span></li>
-		<li><strong>15:00</strong> <a href="real-talk.html" target="_blank">Real Talk Speaking Club</a> <span class="badge rounded-pill text-bg-warning">Top</span> <span class="place">Stars Coffee</span></li>
-		<li><strong>16:00</strong> <a href="nataly-club.html" target="_blank">English Club with Nataly</a> <span class="place">Stars Coffee</span></li>
-		<li><strong>17:00</strong> <a href="igroteka-kota-m.html" target="_blank">Mendeley the Cat Game Club</a> <span class="place">HvoyaLounge</span></li>
-		<li><strong>17:00</strong> <a href="https://t.me/Just_talk_moscow_Eng_speaking_cl" target="_blank">Just Talk English Speaking Club</a> <span class="badge rounded-pill text-bg-success">New</span> <span class="place">Stars Coffee</span></li>
-		<li><strong>17:00</strong> <a href="https://t.me/moscowtodayhq" target="_blank">Moscow Today Club</a> <span class="place">Gorky Park</span></li>
-		<li><strong>17:30</strong> <a href="https://t.me/cherrypieclub/2005" target="_blank">CherryPie Club</a> <span class="place">Hotel Sofit</span></li>
-		<li><strong>18:00</strong> <a href="blah-blah-club.html" target="_blank">Blah-Blah Club</a> <span class="place">Surf Coffee x Secret Spot</span></li>
-		<li><strong>18:00</strong> <a href="https://t.me/fridaypoint" target="_blank">Friday Point</a> <span class="place">Library 182</span></li>
-		<li><strong>18:00</strong> <a href="https://t.me/+DxqLMjv1pGBmYmNi" target="_blank">Kate's English Speaking Club☀️</a> <span class="badge rounded-pill text-bg-warning">Top</span> <span class="place">StreetEat</span></li>
-		<li><strong>18:30</strong> <a href="https://t.me/irenesta_ispeak" target="_blank">English Lounge</a> <span class="place">Wine Club🍷</span></li>
-		<li><strong>18:30</strong> <a href="https://t.me/englishstandupinmoscow" target="_blank">Clean Open Mic</a> <span class="place">Cafe Na Kover</span></li>
-		<li><strong>19:00</strong> <a href="ziferblat.html" target="_blank">Ziferblat's English Club</a> <span class="place">Ziferblat on Kuznetsky Most</span></li>
-	</ul>
-
-	<h3>Sunday, September 20</h3>
-	<ul class="schedule">
-		<li><strong>11:30</strong> <a href="https://t.me/SpeakingClubSpillTheTea" target="_blank">Spill The Tea</a> <span class="place"><em>Online</em></span></li>
-		<li><strong>12:30</strong> <a href="https://t.me/sayitsimple" target="_blank">Intermediate | Girl's Speaking Club</a> <span class="place"><em>Online</em></span></li>
-		<li><strong>13:00</strong> <a href="blah-blah-club.html" target="_blank">Blah-Blah Club</a> <span class="place">Surf Coffee x Flacon</span></li>
-		<li><strong>14:00</strong> <a href="english-galaxy-club.html" target="_blank">English Galaxy Speaking Club</a> <span class="place"><em>Online</em></span></li>
-		<li><strong>14:15</strong> <a href="https://t.me/sayitsimple" target="_blank">Beginner | Girl's Speaking Club</a> <span class="place"><em>Online</em></span></li>
-		<li><strong>14:30</strong> <a href="https://t.me/moscowsoccer" target="_blank">Moscow International Football</a> <span class="place">Stadium</span></li>
-		<li><strong>14:30</strong> <a href="https://t.me/darkenglishacademia" target="_blank">Dark English Academia</a> <span class="badge rounded-pill text-bg-success">New</span> <span class="place">Moscow-based</span></li>
-		<li><strong>15:00</strong> <a href="https://t.me/english_club_moscow/11384" target="_blank">English Speaking Club</a> <span class="place">Drinkit</span></li>
-		<li><strong>15:00</strong> <a href="real-talk.html" target="_blank">Real Talk Speaking Club</a> <span class="badge rounded-pill text-bg-warning">Top</span> <span class="place">Surf Coffee</span></li>
-		<li><strong>16:00</strong> <a href="ziferblat.html" target="_blank">Ziferblat's English Club</a> <span class="place">Ziferblat on Mayakovskaya</span></li>
-		<li><strong>16:00</strong> <a href="nataly-club.html" target="_blank">English Club with Nataly</a> <span class="place">Stars Coffee</span></li>
-		<li><strong>16:00</strong> <a href="https://t.me/walkandtalkclub" target="_blank">Chatty Chillies</a> <span class="place">Coffee Bean</span></li>
-		<li><strong>17:30</strong> <a href="https://t.me/+ViUdx9V5DOphMTUy" target="_blank">English Club</a> <span class="badge rounded-pill text-bg-warning">Top</span> <span class="place">Triumph Lounge Bar</span></li>
-		<li><strong>18:00</strong> <a href="https://t.me/yoteachme/106" target="_blank">Yoteach in touch</a> <span class="badge rounded-pill text-bg-success">New</span> <span class="place">Surf Coffee® × Ostankino</span></li>
-		<li><strong>18:00</strong> <a href="https://t.me/MoscowLEM/403" target="_blank">MoscowLEM</a> <span class="place">Green Dog</span></li>
-		<li><strong>18:00</strong> <a href="https://t.me/MoscowPals" target="_blank">Moscow Pals Club</a> <span class="badge rounded-pill text-bg-warning">Top</span> <span class="place">Katie O'Shea's</span></li>
-		<li><strong>19:00</strong> <a href="nataly-club.html" target="_blank">English Club with Nataly</a> <span class="place">Cosmic latte</span></li>
-		<li><strong>19:30</strong> <a href="ziferblat.html" target="_blank">Ziferblat's English Club</a> <span class="place">Ziferblat on Mayakovskaya</span></li>
-		<li><strong>20:00</strong> <a href="reading-vocab-club.html" target="_blank">Reading and Vocabulary Club</a> <span class="badge rounded-pill text-bg-success">New</span> <span class="place"><em>Online</em></span></li>
-	</ul>
-
-	<hr>
-
-	<h3 style="font-size: 1.1rem; margin-bottom: 0.75rem;">Tips and Special Offers</h3>
-	<ul style="list-style: none; padding-left: 0;">
-		<li style="margin-bottom: 0.5rem;"><strong>Real Talk Speaking Club</strong> — 30% off with a multi-meeting subscription</li>
-		<li style="margin-bottom: 0.5rem;"><strong>Blah-Blah Club x Surf Coffee</strong> — Bring a friend, you both save 15%</li>
-		<li style="margin-bottom: 0.5rem;"><strong>English Club with Nataly</strong> — offers monthly subscriptions for 4, 6, and 8 sessions</li>
-		<li><strong>Surf Coffee</strong> — 10% off drinks for club participants</li>
-	</ul>
-
-	<hr>
-
-	<h2>New Here?</h2>
-	<p>Most clubs are very beginner-friendly. Just come with a positive attitude and a willingness to chat. Here is what to expect at different types of events:</p>
-
-	<dl>
-		<dt>Speaking Clubs</dt>
-		<dd>Casual conversation in small groups or one-on-one. Topics are usually provided. No pressure, just talk.</dd>
-		<dt>Online Clubs</dt>
-		<dd>Join from anywhere via Zoom or Telegram. Perfect if you are shy or short on time.</dd>
-		<dt>Game Nights</dt>
-		<dd>Practice English while playing board games or Mafia. A relaxed way to learn.</dd>
-		<dt>Stand-Up & Open Mics</dt>
-		<dd>Enjoy comedy in English. Some events are free, others require a ticket.</dd>
-	</dl>
-
-	<p>Have a great week and happy speaking!</p>
-</article>
-
-<article class="blog-post">
-    <h2 class="blog-post-title">This Week in Moscow: September 7–13</h2>
-    <p class="blog-post-meta">September 7, 2026 by <a href="#contacts">Alexey Leonov</a></p>
-
-    <p>A new week of English practice is here! Here is your weekly lineup of speaking clubs, game nights, and special events happening all over Moscow. Whether you are a beginner or an advanced speaker, there is something for you.</p>
-
-    <hr>
-
-    <p>This week we have <strong>over 95 events</strong> across the city and online. Venues range from cozy coffee shops like Coffee Bean and Stars Coffee to lively bars like Katie O'Shea's and Axiom Pub. Most clubs welcome new faces — just show up and start talking!</p>
-
-    <h2 id="actual-schedule">📋 Weekly Schedule</h2>
-    <p>Here is how to plan your week. Click on any club name to visit their channel for details and registration.</p>
-    <p class="small text-body-secondary"><span class="badge rounded-pill text-bg-success">New</span> recently added &nbsp;&middot;&nbsp; <span class="badge rounded-pill text-bg-warning">Top</span> our pick</p>
-
-    <h3>Monday, September 7</h3>
-    <ul class="schedule">
-        <li><strong>19:00</strong> <a href="blah-blah-club.html" target="_blank">Blah-Blah Club</a> <span class="place">Surf Coffee x Rock</span></li>
-        <li><strong>19:00</strong> <a href="ziferblat.html" target="_blank">English with Gily & Masha</a> <span class="badge rounded-pill text-bg-warning">Top</span> <span class="place">Ziferblat on Mayakovskaya</span></li>
-        <li><strong>19:00</strong> <a href="viva-lingua-club.html" target="_blank">Viva Lingua Club</a> <span class="place"><span lang="ru">Лялин пер. 23-29с1, м. Курская</span></span></li>
-        <li><strong>19:00</strong> <a href="https://t.me/Social_Leonid" target="_blank">Social English Club by Leonid</a> <span class="badge rounded-pill text-bg-success">New</span> <span class="place">Surf Coffee x Ostozhenka</span></li>
-        <li><strong>19:00</strong> <a href="https://t.me/pabloplace" target="_blank">Pablo Place - The Art of Gatherings</a> <span class="badge rounded-pill text-bg-success">New</span> <span class="place">Park Muzeon</span></li>
-        <li><strong>19:00</strong> <a href="https://t.me/segodnyaeng" target="_blank">English Starts Today!</a> <span class="badge rounded-pill text-bg-success">New</span> <span class="place"><em>Online</em></span></li>
-        <li><strong>19:30</strong> <a href="nataly-club.html" target="_blank">English Club with Nataly</a> <span class="place">Union Jack pub</span></li>
-        <li><strong>19:30</strong> <a href="https://t.me/orthodox_christian_discussions" target="_blank">Orthodox Christian Discussion Club</a> <span class="place">Valaam Monastery</span></li>
-        <li><strong>20:00</strong> <a href="ziferblat.html" target="_blank">Ziferblat's English Club</a> <span class="place">Ziferblat on Pushkinskaya</span></li>
-    </ul>
-
-    <h3>Tuesday, September 8</h3>
-    <ul class="schedule">
-        <li><strong>10:30</strong> <a href="https://t.me/pabloplace" target="_blank">Pablo Place - The Art of Gatherings</a> <span class="place"><em>Online</em></span></li>
-        <li><strong>19:00</strong> <a href="viva-lingua-club.html" target="_blank">Viva Lingua Club</a> <span class="place"><span lang="ru">Лялин пер. 23-29с1, м. Курская</span></span></li>
-        <li><strong>19:00</strong> <a href="real-talk.html" target="_blank">Real Talk Speaking Club</a> <span class="badge rounded-pill text-bg-warning">Top</span> <span class="place">Surf Coffee</span></li>
-        <li><strong>19:00</strong> <a href="https://t.me/segodnyaeng" target="_blank">English Starts Today!</a> <span class="badge rounded-pill text-bg-success">New</span> <span class="place"><em>Online</em></span></li>
-        <li><strong>19:00</strong> <a href="https://t.me/igrautkaclubmoscow" target="_blank">Board games - Goose Club</a> <span class="badge rounded-pill text-bg-success">New</span> <span class="place">Geektime Anticafe</span></li>
-        <li><strong>19:15</strong> <a href="https://t.me/moscowtodayhq" target="_blank">Moscow Today Club</a> <span class="place">Coffeeshop</span></li>
-        <li><strong>19:30</strong> <a href="ziferblat.html" target="_blank">Ziferblat's English Club</a> <span class="place">Ziferblat on Kuznetsky Most</span></li>
-        <li><strong>19:30</strong> <a href="https://t.me/cherrypieclub/2005" target="_blank">CherryPie Club</a> <span class="place">Sytinsky lane 3/5</span></li>
-        <li><strong>19:30</strong> <a href="nataly-club.html" target="_blank">English Club with Nataly</a> <span class="place">Cosmic latte</span></li>
-        <li><strong>19:30</strong> <a href="https://t.me/english_club_moscow/11384" target="_blank">English Speaking Club</a> <span class="place">Coffeeshop</span></li>
-        <li><strong>19:30</strong> <a href="https://t.me/+ViUdx9V5DOphMTUy" target="_blank">English Club</a> <span class="badge rounded-pill text-bg-warning">Top</span> <span class="place">Triumph Lounge Bar</span></li>
-        <li><strong>20:00</strong> <a href="blah-blah-club.html" target="_blank">Blah-Blah Club</a> <span class="place">Surf Coffee x Flacon</span></li>
-    </ul>
-
-    <h3>Wednesday, September 9</h3>
-    <ul class="schedule">
-        <li><strong>18:45</strong> <a href="https://t.me/short_story_of_the_week" target="_blank">English Literature Club</a> <span class="place">Svetlovka library</span></li>
-        <li><strong>19:00</strong> <a href="ziferblat.html" target="_blank">Ziferblat's English Club</a> <span class="place">Ziferblat on Mayakovskaya</span></li>
-        <li><strong>19:00</strong> <a href="viva-lingua-club.html" target="_blank">Viva Lingua Club</a> <span class="place"><span lang="ru">Лялин пер. 23-29с1, м. Курская</span></span></li>
-        <li><strong>19:00</strong> <a href="real-talk.html" target="_blank">Real Talk Speaking Club</a> <span class="badge rounded-pill text-bg-warning">Top</span> <span class="place">Stars Coffee</span></li>
-        <li><strong>19:00</strong> <a href="https://t.me/thewednesdayclub" target="_blank">Wednesday English Speaking Club</a> <span class="place">Checkpoint</span></li>
-        <li><strong>19:00</strong> <a href="https://t.me/EnglishVDNH" target="_blank">English Speaking Club at VDNH</a> <span class="badge rounded-pill text-bg-warning">Top</span> <span class="place">VDNH</span></li>
-        <li><strong>19:00</strong> <a href="https://t.me/engl_games" target="_blank">English Games Club</a> <span class="place">Grabli Cafe</span></li>
-        <li><strong>19:00</strong> <a href="https://t.me/forgetmenot2021" target="_blank">Sunrise Literature Club</a> <span class="badge rounded-pill text-bg-success">New</span> <span class="place">Central Library 21</span></li>
-        <li><strong>19:00</strong> <a href="https://t.me/segodnyaeng" target="_blank">English Starts Today!</a> <span class="badge rounded-pill text-bg-success">New</span> <span class="place"><em>Online</em></span></li>
-        <li><strong>19:10</strong> <a href="https://t.me/linguaachannel" target="_blank">LinguaClub</a> <span class="badge rounded-pill text-bg-success">New</span> <span class="place"><em>Online</em></span></li>
-        <li><strong>19:20</strong> <a href="https://t.me/irishmanenglish" target="_blank">English at IRISHMAN</a> <span class="badge rounded-pill text-bg-success">New</span> <span class="place">Irishman Pub 1905</span></li>
-        <li><strong>19:30</strong> <a href="nataly-club.html" target="_blank">English Club with Nataly</a> <span class="place">Cosmic latte</span></li>
-        <li><strong>20:00</strong> <a href="blah-blah-club.html" target="_blank">Blah-Blah Club</a> <span class="place">Rébellion The Palace of Youth</span></li>
-        <li><strong>20:00</strong> <a href="viva-lingua-club.html" target="_blank">Viva Lingua Club</a> <span class="place"><em>Online</em></span></li>
-    </ul>
-
-    <h3>Thursday, September 10</h3>
-    <ul class="schedule">
-        <li><strong>10:30</strong> <a href="https://t.me/pabloplace" target="_blank">Pablo Place - The Art of Gatherings</a> <span class="place"><em>Online</em></span></li>
-        <li><strong>14:00</strong> <a href="https://t.me/linguaachannel" target="_blank">LinguaClub</a> <span class="badge rounded-pill text-bg-success">New</span> <span class="place"><em>Online</em></span></li>
-        <li><strong>18:00</strong> <a href="https://t.me/m/EYIb2ljHYzgy" target="_blank">Engsider Speaking Club</a> <span class="badge rounded-pill text-bg-success">New</span> <span class="place"><em>Online</em></span></li>
-        <li><strong>18:55</strong> <a href="https://t.me/+mjdU1p9I_QM3YjNk" target="_blank">Thursday After Work</a> <span class="badge rounded-pill text-bg-warning">Top</span> <span class="place">Debri Bar</span></li>
-        <li><strong>19:00</strong> <a href="viva-lingua-club.html" target="_blank">Viva Lingua Club</a> <span class="place"><span lang="ru">Лялин пер. 23-29с1, м. Курская</span></span></li>
-        <li><strong>19:00</strong> <a href="english-galaxy-club.html" target="_blank">English Galaxy Speaking Club</a> <span class="place"><em>Online</em></span></li>
-        <li><strong>19:00</strong> <a href="https://t.me/segodnyaeng" target="_blank">English Starts Today!</a> <span class="badge rounded-pill text-bg-success">New</span> <span class="place"><em>Online</em></span></li>
-        <li><strong>19:30</strong> <a href="ziferblat.html" target="_blank">Just Talk English Speaking Club</a> <span class="badge rounded-pill text-bg-success">New</span> <span class="place">Ziferblat on Mayakovskaya</span></li>
-        <li><strong>19:30</strong> <a href="https://t.me/english_club_moscow/11384" target="_blank">English Speaking Club</a> <span class="place">YesNoMilk</span></li>
-        <li><strong>19:30</strong> <a href="https://t.me/Social_Leonid" target="_blank">Social English Club by Leonid</a> <span class="badge rounded-pill text-bg-success">New</span> <span class="place">Surf Coffee x Ostozhenka</span></li>
-        <li><strong>20:00</strong> <a href="blah-blah-club.html" target="_blank">Blah-Blah Club</a> <span class="place">Surf Coffee x Solyanka</span></li>
-        <li><strong>21:00</strong> <a href="https://t.me/darkenglishacademia" target="_blank">Dark English Academia</a> <span class="badge rounded-pill text-bg-success">New</span> <span class="place"><em>Online</em></span></li>
-    </ul>
-
-    <h3>Friday, September 11</h3>
-    <ul class="schedule">
-        <li><strong>19:00</strong> <a href="ziferblat.html" target="_blank">Ziferblat's English Club</a> <span class="place">Ziferblat on Mayakovskaya</span></li>
-        <li><strong>19:00</strong> <a href="https://t.me/english_club_moscow/11384" target="_blank">English Speaking Club</a> <span class="place">Coffeeshop</span></li>
-        <li><strong>19:00</strong> <a href="https://t.me/fridaypoint" target="_blank">Friday Point</a> <span class="place">Library</span></li>
-        <li><strong>19:00</strong> <a href="real-talk.html" target="_blank">Real Talk Speaking Club</a> <span class="badge rounded-pill text-bg-warning">Top</span> <span class="place">Stars Coffee</span></li>
-        <li><strong>19:00</strong> <a href="ziferblat.html" target="_blank">Ziferblat's English Club</a> <span class="place">Ziferblat on Mayakovskaya</span></li>
-        <li><strong>19:00</strong> <a href="https://t.me/clubdeespanolenmoscu" target="_blank">🇪🇸💬🇷🇺Club de Español en Moscu</a> <span class="place">Casa Agave</span></li>
-        <li><strong>19:00</strong> <a href="https://t.me/segodnyaeng" target="_blank">English Starts Today!</a> <span class="badge rounded-pill text-bg-success">New</span> <span class="place"><em>Online</em></span></li>
-        <li><strong>19:15</strong> <a href="nataly-club.html" target="_blank">English Club with Nataly</a> <span class="place">Cosmic latte</span></li>
-        <li><strong>19:15</strong> <a href="https://t.me/MoscowEnglishConversationClub" target="_blank">Moscow English Conversation Club</a> <span class="place">Stars Coffee</span></li>
-        <li><strong>19:30</strong> <a href="https://t.me/cherrypieclub/2005" target="_blank">CherryPie Club</a> <span class="place">Sytinsky lane 3/5</span></li>
-        <li><strong>19:30</strong> <a href="https://t.me/bright_school_no1" target="_blank">Bright School No1</a> <span class="place">Izmailovsky Boulevard 50</span></li>
-        <li><strong>19:30</strong> <a href="https://t.me/nastushkaspeakingclub" target="_blank">Nastushka’s Speaking Club</a> <span class="badge rounded-pill text-bg-warning">Top</span> <span class="place">Library</span></li>
-        <li><strong>20:00</strong> <a href="blah-blah-club.html" target="_blank">Blah-Blah Club</a> <span class="place">Surf Coffee x Solyanka</span></li>
-        <li><strong>20:00</strong> <a href="https://t.me/jimnjacks/2332" target="_blank">Friday Language Exchange Club</a> <span class="badge rounded-pill text-bg-warning">Top</span> <span class="place">Cafe Na Kover</span></li>
-    </ul>
-
-    <h3>Saturday, September 12</h3>
-    <ul class="schedule">
-        <li><strong>12:00</strong> <a href="viva-lingua-club.html" target="_blank">Viva Lingua Club</a> <span class="place"><span lang="ru">Лялин пер. 23-29с1, м. Курская</span></span></li>
-        <li><strong>12:00</strong> <a href="https://t.me/+o3r3cUpJY_RmNmFi" target="_blank">ENGLISH CLUB 🛩☁️ MOSCOW</a> <span class="place"><em>Online</em></span></li>
-        <li><strong>12:00</strong> <a href="real-talk.html" target="_blank">Real Talk Speaking Club</a> <span class="badge rounded-pill text-bg-warning">Top</span> <span class="place"><em>Online</em></span></li>
-        <li><strong>14:00</strong> <a href="viva-lingua-club.html" target="_blank">Viva Lingua Club</a> <span class="place"><span lang="ru">Лялин пер. 23-29с1, м. Курская</span></span></li>
-        <li><strong>15:00</strong> <a href="real-talk.html" target="_blank">Real Talk Speaking Club</a> <span class="badge rounded-pill text-bg-warning">Top</span> <span class="place">Stars Coffee</span></li>
-        <li><strong>16:00</strong> <a href="nataly-club.html" target="_blank">English Club with Nataly</a> <span class="place">Stars Coffee</span></li>
-        <li><strong>17:00</strong> <a href="igroteka-kota-m.html" target="_blank">Mendeley the Cat Game Club</a> <span class="place">HvoyaLounge</span></li>
-        <li><strong>17:00</strong> <a href="https://t.me/Just_talk_moscow_Eng_speaking_cl" target="_blank">Just Talk English Speaking Club</a> <span class="badge rounded-pill text-bg-success">New</span> <span class="place">Stars Coffee</span></li>
-        <li><strong>17:00</strong> <a href="https://t.me/moscowtodayhq" target="_blank">Moscow Today Club</a> <span class="place">Gorky Park</span></li>
-        <li><strong>17:30</strong> <a href="https://t.me/cherrypieclub/2005" target="_blank">CherryPie Club</a> <span class="place">Sytinsky lane 3/5</span></li>
-        <li><strong>18:00</strong> <a href="https://t.me/fridaypoint" target="_blank">Friday Point</a> <span class="place">Library 182</span></li>
-        <li><strong>18:00</strong> <a href="https://t.me/+DxqLMjv1pGBmYmNi" target="_blank">Kate's English Speaking Club☀️</a> <span class="badge rounded-pill text-bg-warning">Top</span> <span class="place">StreetEat</span></li>
-        <li><strong>18:30</strong> <a href="https://t.me/irenesta_ispeak" target="_blank">English Lounge</a> <span class="place">Wine Club🍷</span></li>
-        <li><strong>19:00</strong> <a href="blah-blah-club.html" target="_blank">Blah-Blah Club</a> <span class="place">Surf Coffee x Secret Spot</span></li>
-        <li><strong>19:00</strong> <a href="ziferblat.html" target="_blank">Ziferblat's English Club</a> <span class="place">Ziferblat on Kuznetsky Most</span></li>
-    </ul>
-
-    <h3>Sunday, September 13</h3>
-    <ul class="schedule">
-        <li><strong>11:30</strong> <a href="https://t.me/SpeakingClubSpillTheTea" target="_blank">Spill The Tea</a> <span class="place"><em>Online</em></span></li>
-        <li><strong>12:30</strong> <a href="https://t.me/sayitsimple" target="_blank">Intermediate | Girl's Speaking Club</a> <span class="place"><em>Online</em></span></li>
-        <li><strong>13:00</strong> <a href="blah-blah-club.html" target="_blank">Blah-Blah Club</a> <span class="place">Surf Coffee x Flacon</span></li>
-        <li><strong>14:00</strong> <a href="english-galaxy-club.html" target="_blank">English Galaxy Speaking Club</a> <span class="place"><em>Online</em></span></li>
-        <li><strong>14:15</strong> <a href="https://t.me/sayitsimple" target="_blank">Beginner | Girl's Speaking Club</a> <span class="place"><em>Online</em></span></li>
-        <li><strong>14:30</strong> <a href="https://t.me/moscowsoccer" target="_blank">Moscow International Football</a> <span class="place">Stadium</span></li>
-        <li><strong>14:30</strong> <a href="https://t.me/darkenglishacademia" target="_blank">Dark English Academia</a> <span class="badge rounded-pill text-bg-success">New</span> <span class="place">Moscow-based</span></li>
-        <li><strong>15:00</strong> <a href="https://t.me/english_club_moscow/11384" target="_blank">English Speaking Club</a> <span class="place">Drinkit</span></li>
-        <li><strong>15:00</strong> <a href="real-talk.html" target="_blank">Real Talk Speaking Club</a> <span class="badge rounded-pill text-bg-warning">Top</span> <span class="place">Grabli</span></li>
-        <li><strong>16:00</strong> <a href="ziferblat.html" target="_blank">Ziferblat's English Club</a> <span class="place">Ziferblat on Mayakovskaya</span></li>
-        <li><strong>16:00</strong> <a href="https://t.me/cherrypieclub/2005" target="_blank">CherryPie Club</a> <span class="place">Sytinsky lane 3/5</span></li>
-        <li><strong>16:00</strong> <a href="nataly-club.html" target="_blank">English Club with Nataly</a> <span class="place">Stars Coffee</span></li>
-        <li><strong>16:00</strong> <a href="https://t.me/walkandtalkclub" target="_blank">Chatty Chillies</a> <span class="place">Coffee Bean</span></li>
-        <li><strong>17:30</strong> <a href="https://t.me/+ViUdx9V5DOphMTUy" target="_blank">English Club</a> <span class="badge rounded-pill text-bg-warning">Top</span> <span class="place">Triumph Lounge Bar</span></li>
-        <li><strong>18:00</strong> <a href="https://t.me/yoteachme/106" target="_blank">Yoteach in touch</a> <span class="badge rounded-pill text-bg-success">New</span> <span class="place">Surf Coffee® × Ostankino</span></li>
-        <li><strong>18:00</strong> <a href="https://t.me/MoscowLEM/403" target="_blank">MoscowLEM</a> <span class="place">Green Dog</span></li>
-        <li><strong>18:00</strong> <a href="https://t.me/MoscowPals" target="_blank">Moscow Pals Club</a> <span class="badge rounded-pill text-bg-warning">Top</span> <span class="place">Katie O'Shea's</span></li>
-        <li><strong>19:00</strong> <a href="nataly-club.html" target="_blank">English Club with Nataly</a> <span class="place">Cosmic latte</span></li>
-        <li><strong>20:00</strong> <a href="reading-vocab-club.html" target="_blank">Reading and Vocabulary Club</a> <span class="badge rounded-pill text-bg-success">New</span> <span class="place"><em>Online</em></span></li>
-    </ul>
-
-    <hr>
-
-    <h3 style="font-size: 1.1rem; margin-bottom: 0.75rem;">Tips and Special Offers</h3>
-    <ul style="list-style: none; padding-left: 0;">
-        <li style="margin-bottom: 0.5rem;"><strong>Real Talk Speaking Club</strong> — 30% off with a multi-meeting subscription</li>
-        <li style="margin-bottom: 0.5rem;"><strong>Blah-Blah Club x Surf Coffee</strong> — Bring a friend, you both save 15%</li>
-        <li style="margin-bottom: 0.5rem;"><strong>English Club with Nataly</strong> — Every 7th visit is free</li>
-        <li><strong>Surf Coffee</strong> — 10% off drinks for club participants</li>
-    </ul>
-
-    <hr>
-
-    <h2>New Here?</h2>
-    <p>Most clubs are very beginner-friendly. Just come with a positive attitude and a willingness to chat. Here is what to expect at different types of events:</p>
-
-    <dl>
-        <dt>Speaking Clubs</dt>
-        <dd>Casual conversation in small groups or one-on-one. Topics are usually provided. No pressure, just talk.</dd>
-        <dt>Online Clubs</dt>
-        <dd>Join from anywhere via Zoom or Telegram. Perfect if you are shy or short on time.</dd>
-        <dt>Game Nights</dt>
-        <dd>Practice English while playing board games or Mafia. A relaxed way to learn.</dd>
-        <dt>Stand-Up & Open Mics</dt>
-        <dd>Enjoy comedy in English. Some events are free, others require a ticket.</dd>
-    </dl>
-
-    <p>Have a great week and happy speaking!</p>
-</article>
-
-
-
-                    <nav class="blog-pagination" aria-label="Pagination">
-                        <a class="btn btn-outline-primary" href="#archives">Older</a>
-                        <a class="btn btn-outline-secondary disabled" href="#" tabindex="-1" aria-disabled="true"
-                            >Newer</a
-                        >
-                    </nav>
-                </div>
-
-                <div class="col-md-4">
-                    <div>
-                        <div class="p-4 mb-3 second-bg rounded">
-                            <h4 class="fst-italic">About</h4>
-                            <p class="mb-0">
-                                Hi, my name is Alex! This website is your go-to guide for live English practice in
-                                Moscow. We post a daily schedule of free and paid speaking clubs, game nights, stand-up
-                                shows, and other English events. Come talk with us!
-                            </p>
-                        </div>
-                        <div class="p-4 mb-3 second-bg rounded position-relative">
-                            <h4 class="fst-italic mb-3">Book of the Month</h4>
-                            <div class="d-flex align-items-start mt-2">
-                                <img
-                                    src="img/61l68JN18vL._SL1000_.jpg"
-                                    class="rounded me-3"
-                                    alt="Why Don't Russians Smile?"
-                                    style="width: 121px; object-fit: cover"
-                                />
-                                <div>
-                                    <h5 class="mb-1">Why Don't Russians Smile?</h5>
-                                    <p class="mb-0 mt-2">⭐️ 4/5 · Travis Lee Bailey et al. · Paperback · 108 pages</p>
-                                    <p class="mb-0 mt-2">
-                                        💰 EUR 59.57 on
-                                        <a
-                                            href="https://www.amazon.com/Why-Dont-Russians-Smile-differences/dp/6138959035"
-                                            target="_blank"
-                                            class="text-decoration-none"
-                                            >Amazon.com</a
-                                        >
-                                        <em class="d-none d-lg-inline">(free 30-day returns)</em>
-                                    </p>
-                                </div>
-                            </div>
-                            <p class="mb-0 mt-2">
-                                The definitive guide to the differences between Russians and Americans. If you've ever
-                                been baffled by cultural misunderstandings — or just want to laugh at how others see us
-                                — this book is a must-read.
-                            </p>
-                            <a
-                                href="https://www.amazon.com/Why-Dont-Russians-Smile-differences/dp/6138959035"
-                                target="_blank"
-                                class="stretched-link" aria-label="Why Don&#x27;t Russians Smile? on Amazon (opens in new tab)"
-                            ></a>
-                        </div>
-                        <div class="p-4 mb-3 second-bg rounded position-relative sponsored">
-                            <div class="small text-uppercase text-body-secondary mb-1">Sponsored</div>
-                            <h4 class="fst-italic mb-3">Better Call Braiden</h4>
-                            <div class="d-flex align-items-start mt-2">
-                                <img
-                                    src="img/braiden-logo.jpg"
-                                    class="rounded me-3"
-                                    alt="Braiden Services"
-                                    style="width: 121px; object-fit: cover"
-                                />
-                                <div>
-                                    <h5 class="mb-1">Legal Support</h5>
-                                    <p class="mb-0 mt-2">⭐ 5/5 · 200+ cases · Since 2018 · Free consultation</p>
-                                    <p class="mb-0 mt-2">
-                                        <a
-                                            href="https://t.me/braiden_channel"
-                                            target="_blank"
-                                            class="text-decoration-none d-none d-lg-inline"
-                                            >📲 Join the channel</a
-                                        >
-                                    </p>
-                                </div>
-                            </div>
-                            <p class="mb-0 mt-2">
-                                Personal step-by-step guide for your case. TRP, PR, citizenship, Talent Visa, archival
-                                search — full legal support from document prep to passport in hand. Your case, our
-                                reputation.
-                                <a
-                                    href="https://t.me/braiden_channel"
-                                    target="_blank"
-                                    class="text-decoration-none d-inline d-lg-none"
-                                    >📲 Join the channel</a
-                                >
-                            </p>
-                            <a href="https://t.me/braiden_channel" target="_blank" class="stretched-link" aria-label="Braiden legal support on Telegram (opens in new tab)"></a>
-                        </div>
-                        <div class="p-4 mb-3 second-bg rounded position-relative sponsored">
-                            <div class="small text-uppercase text-body-secondary mb-1">Sponsored</div>
-                            <h4 class="fst-italic mb-3">ChatGPT Premium</h4>
-                            <div class="d-flex align-items-start mt-2">
-                                <img
-                                    src="img/620-1.jpg"
-                                    class="rounded me-3"
-                                    alt="ChatGPT Premium"
-                                    style="width: 121px; object-fit: cover"
-                                />
-                                <div>
-                                    <p class="mb-2">
-                                        ⭐ 5/5 · Fast setup · Individual account<em class="d-none d-lg-inline">
-                                            · All features included</em
-                                        >
-                                    </p>
-                                    <p class="mb-0">
-                                        ☎️ Contact
-                                        <a
-                                            href="https://t.me/ChtGptaccounts"
-                                            target="_blank"
-                                            class="text-decoration-none"
-                                            >@Mike</a
-                                        >
-                                    </p>
-                                </div>
-                            </div>
-                            <p class="mb-0 mt-2">
-                                Need ChatGPT for research, work, or study? Get a personal premium account with access to
-                                the latest models, image and video generation. Setup takes minutes.
-                            </p>
-                            <a href="https://t.me/Michael_nashed_66" target="_blank" class="stretched-link" aria-label="Order ChatGPT Premium on Telegram (opens in new tab)"></a>
-                        </div>
-                    </div>
-                    <div class="position-sticky" style="top: 1rem">
-                        <div id="archives" class="p-4">
-                            <h4 class="fst-italic">Archives</h4>
-                            <ol class="list-unstyled mb-0">
-                                <li><a href="#">September 2026</a></li>
-                                <li><a href="august2026.html">August 2026</a></li>
-                                <li><a href="july2026.html">July 2026</a></li>
-                                <li><a href="june2026.html">June 2026</a></li>
-                                <li><a href="may2026.html">May 2026</a></li>
-                                <li><a href="april2026.html">April 2026</a></li>
-                            </ol>
-                        </div>
-
-                        <div id="contacts" class="p-4">
-                            <h4 class="fst-italic">Elsewhere</h4>
-                            <ol class="list-unstyled">
-                                <li>
-                                    Email:
-                                    <a href="mailto:alexey0097@yandex.ru" target="_blank">alexey0097@yandex.ru</a>
-                                </li>
-                                <li>Telegram: <a href="https://t.me/eng_events" target="_blank">@eng_events</a></li>
-                                <li>QR Code: <a href="qr-code.html">time-to-learn-eng</a></li>
-                            </ol>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </main>
-
-        <footer class="blog-footer">
-            <p>
-                © 2026 Time to Learn English · Made by
-                <a href="https://t.me/alexey_acc">@alexey_acc</a> with <a href="https://getbootstrap.com/">Bootstrap</a>
-            </p>
-            <p>
-                <a href="#">Back to top</a>
-            </p>
-        </footer>
-    </body>
+        <p>The definitive guide to the differences between Russians and Americans. If you've ever been baffled by cultural misunderstandings — or just want to laugh at how others see us — this book is a must-read.</p>
+        <a class="cover" href="https://www.amazon.com/Why-Dont-Russians-Smile-differences/dp/6138959035" target="_blank" aria-label="Why Don't Russians Smile? on Amazon"></a>
+      </section>
+
+      <p class="label">Sponsored</p>
+
+      <section class="panel">
+        <h4>Better Call Braiden</h4>
+        <div class="media">
+          <img src="img/braiden-logo.jpg" alt="Braiden Services logo" loading="lazy">
+          <div>
+            <h5>Legal support</h5>
+            <p>⭐ 5/5, 200+ cases, since 2018, free consultation</p>
+          </div>
+        </div>
+        <p>Personal step-by-step guide for your case. TRP, PR, citizenship, Talent Visa, archival search — full legal support from document prep to passport in hand. Your case, our reputation.</p>
+        <a class="cover" href="https://t.me/braiden_channel" target="_blank" aria-label="Braiden channel on Telegram"></a>
+      </section>
+
+      <section class="panel">
+        <h4>ChatGPT Premium</h4>
+        <div class="media">
+          <img src="img/620-1.jpg" alt="" loading="lazy">
+          <div>
+            <p>⭐ 5/5, fast setup, individual account, all features included</p>
+            <p>☎️ Contact <a href="https://t.me/ChtGptaccounts" target="_blank">@Mike</a></p>
+          </div>
+        </div>
+        <p>Need ChatGPT for research, work, or study? Get a personal premium account with access to the latest models, image and video generation. Setup takes minutes.</p>
+        <a class="cover" href="https://t.me/Michael_nashed_66" target="_blank" aria-label="Contact Mike on Telegram"></a>
+      </section>
+
+      <div class="sticky">
+        <section class="panel panel--quiet" id="archives">
+          <h4>Archives</h4>
+          <ol>
+            <li><a href="#">September 2026</a></li>
+            <li><a href="august2026.html">August 2026</a></li>
+            <li><a href="july2026.html">July 2026</a></li>
+            <li><a href="june2026.html">June 2026</a></li>
+            <li><a href="may2026.html">May 2026</a></li>
+            <li><a href="april2026.html">April 2026</a></li>
+          </ol>
+        </section>
+        <section class="panel panel--quiet" id="contacts">
+          <h4>Elsewhere</h4>
+          <ol>
+            <li>Email: <a href="mailto:alexey0097@yandex.ru" target="_blank">alexey0097@yandex.ru</a></li>
+            <li>Telegram: <a href="https://t.me/eng_events" target="_blank">@eng_events</a></li>
+            <li>QR code: <a href="qr-code.html">time-to-learn-eng</a></li>
+          </ol>
+        </section>
+      </div>
+    </aside>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <p>Made by <a href="https://t.me/alexey_acc">@alexey_acc</a> for everyone practising English in Moscow.</p>
+    <p><a href="#">Back to top</a></p>
+  </div>
+</footer>
+
+</body>
 </html>

@@ -1,0 +1,647 @@
+/*!
+ * Metro CSS 1.0 — a small design system for Time to Learn English
+ * No build step, no dependencies. Works with metro.js (optional).
+ *
+ * Contents
+ *   1. Fonts            9. Tags and buttons
+ *   2. Tokens          10. Route (the line schedule)
+ *   3. Base            11. Linemap (the week)
+ *   4. Layout          12. Entries (lists of clubs, people)
+ *   5. Top bar         13. Week (mini line)
+ *   6. Intro           14. Filters and chips
+ *   7. Prose           15. Fold, clamp, empty state
+ *   8. Cards, panels   16. Footer and utilities
+ *                      17. Colour classes (.line-red, .line-orange …)
+ *
+ * Customise the whole look with the tokens in section 2:
+ * --line is the main line colour, --alt is the second line (online).
+ * Thirteen more colours come from the Moscow metro lines: add .line-red, .line-orange, .line-violet …
+ * to any element to recolour it.
+ */
+
+@layer metro.reset, metro.tokens, metro.base, metro.layout, metro.components, metro.utilities;
+
+/* ------------------------------------------------------------------ 1. Fonts */
+@font-face {
+  font-family: "Unbounded";
+  src: url("fonts/unbounded.woff") format("woff");
+  font-weight: 200 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Golos Text";
+  src: url("fonts/golos-text.woff") format("woff");
+  font-weight: 400 900;
+  font-display: swap;
+}
+
+/* ------------------------------------------------------------------ 2. Tokens */
+@layer metro.tokens {
+  :root {
+    color-scheme: light dark;
+
+    /* colour */
+    --paper:   light-dark(#f3f4f6, #121418);   /* page background */
+    --surface: light-dark(#ffffff, #1b1e24);   /* cards and panels */
+    --ink:     light-dark(#16181d, #eceef2);   /* text */
+    --muted:   light-dark(#5d6470, #9aa1ad);   /* secondary text */
+    --rule:    light-dark(#dfe2e7, #2b2f37);   /* hairlines */
+    --line:    light-dark(#00712b, #4cc764);   /* the main line: links, accents, buttons */
+    --on-line: light-dark(#ffffff, #0e1a12);   /* text on --line */
+    --alt:     light-dark(#0063ad, #4aa8ff);   /* the second line: online */
+    --on-alt:  light-dark(#ffffff, #0b1724);
+    --gold:    light-dark(#a05c00, #f5b73b);   /* editor's pick, top */
+    --gold-bg: light-dark(#fbefd6, #3a2c10);
+
+    /* Moscow metro palette — one colour per line.
+       --name       text-safe colour (links, labels): 4.5:1 on the page in both themes
+       --name-fill  the line's own colour, for tracks, stations, buttons and badges
+       --name-on    text on top of --name-fill
+       Use them through the .line-* classes below, or directly. */
+    --red: light-dark(#c50000, #fe4c38);       --red-fill: #e42313; --red-on: #ffffff;   /* Sokolnicheskaya */
+    --green: light-dark(#217627, #4baf4f);     --green-fill: #4baf4f; --green-on: #16181d;   /* Zamoskvoretskaya */
+    --blue: light-dark(#0065ac, #4195db);      --blue-fill: #0072ba; --blue-on: #ffffff;   /* Arbatsko-Pokrovskaya */
+    --sky: light-dark(#007096, #1ebcef);       --sky-fill: #1ebcef; --sky-on: #16181d;   /* Filyovskaya */
+    --brown: light-dark(#915133, #bd8064);     --brown-fill: #915133; --brown-on: #ffffff;   /* Koltsevaya */
+    --orange: light-dark(#a64c00, #f07e24);    --orange-fill: #f07e24; --orange-on: #16181d;   /* Kaluzhsko-Rizhskaya */
+    --violet: light-dark(#943e90, #c171bc);    --violet-fill: #943e90; --violet-on: #ffffff;   /* Tagansko-Krasnopresnenskaya */
+    --yellow: light-dark(#886700, #ffcd1c);    --yellow-fill: #ffcd1c; --yellow-on: #16181d;   /* Kalininskaya */
+    --grey: light-dark(#696868, #adacac);      --grey-fill: #adacac; --grey-on: #16181d;   /* Serpukhovsko-Timiryazevskaya */
+    --lime: light-dark(#667100, #bed12c);      --lime-fill: #bed12c; --lime-on: #16181d;   /* Lyublinsko-Dmitrovskaya */
+    --teal: light-dark(#457172, #82c0c0);      --teal-fill: #82c0c0; --teal-on: #16181d;   /* Bolshaya Koltsevaya */
+    --lavender: light-dark(#5d6a82, #a1b3d4);  --lavender-fill: #a1b3d4; --lavender-on: #16181d;   /* Butovskaya */
+    --pink: light-dark(#a73f75, #e46aa7);      --pink-fill: #de64a1; --pink-on: #16181d;   /* Nekrasovskaya */
+
+    /* meaning */
+    --success: var(--green);
+    --warning: var(--orange);
+    --danger:  var(--red);
+    --info:    var(--blue);
+
+    /* type */
+    --display: "Unbounded", "Arial Black", sans-serif;
+    --text:    "Golos Text", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --step--1: 0.875rem;
+    --step-0:  1.0625rem;
+    --step-1:  1.25rem;
+    --step-2:  clamp(1.4rem, 1.2rem + 0.8vw, 1.75rem);
+    --step-3:  clamp(1.9rem, 1.4rem + 2.2vw, 3.1rem);
+
+    /* space and shape */
+    --gutter: clamp(1rem, 3vw, 2rem);
+    --max:    76rem;
+    --radius: 14px;
+    --radius-sm: 6px;
+
+    /* route geometry */
+    --stop: 14px;          /* station size */
+    --track: 4px;          /* line width */
+    --time-col: 4.4rem;    /* where the line runs */
+  }
+  :root[data-theme="light"] { color-scheme: light; }
+  :root[data-theme="dark"]  { color-scheme: dark; }
+}
+
+/* ------------------------------------------------------------------ 3. Base */
+@layer metro.reset {
+  *, *::before, *::after { box-sizing: border-box; }
+  * { margin: 0; }
+  img, svg, video { display: block; max-width: 100%; height: auto; }
+  input, button, select, textarea { font: inherit; color: inherit; }
+}
+
+@layer metro.base {
+  html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { transition-duration: 0ms !important; animation-duration: 0ms !important; }
+  }
+  body {
+    background: var(--paper); color: var(--ink);
+    font: 400 var(--step-0)/1.6 var(--text);
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration-color: color-mix(in srgb, currentColor 35%, transparent); text-underline-offset: 0.18em; }
+  a:hover { color: var(--line); text-decoration-color: currentColor; }
+  :focus-visible { outline: 2px solid var(--line); outline-offset: 3px; border-radius: 4px; }
+  h1, h2, h3, h4 { font-family: var(--display); font-weight: 600; line-height: 1.15; letter-spacing: -0.01em; text-wrap: balance; }
+  h5, h6 { font: 600 1rem/1.3 var(--text); }
+  p { text-wrap: pretty; }
+  hr { border: 0; border-top: 1px solid var(--rule); margin-block: 2rem; }
+  ::selection { background: color-mix(in srgb, var(--line) 25%, transparent); }
+}
+
+/* ------------------------------------------------------------------ 4. Layout */
+@layer metro.layout {
+  .wrap { width: min(100% - 2 * var(--gutter), var(--max)); margin-inline: auto; }
+
+  /* main column + aside.  Children: .layout__main, .layout__aside, optional .layout__top
+     .layout__top sits above the list on phones and at the top of the aside on desktop */
+  .layout {
+    display: grid; gap: clamp(2rem, 5vw, 4rem); padding-bottom: 4rem;
+    grid-template-areas: "top" "main" "aside";
+  }
+  .layout__top   { grid-area: top; }
+  .layout__main  { grid-area: main; min-width: 0; }
+  .layout__aside { grid-area: aside; display: grid; gap: 1rem; align-content: start; }
+  @media (min-width: 60rem) {
+    .layout { grid-template-columns: minmax(0, 1fr) 21rem; grid-template-areas: "main top" "main aside"; grid-template-rows: auto 1fr; row-gap: 1rem; }
+    .layout:not(:has(> .layout__top)) { grid-template-areas: "main aside"; grid-template-rows: auto; }
+  }
+  .layout__aside > .sticky { display: grid; gap: 1rem; align-content: start; }
+  @media (min-width: 60rem) { .sticky { position: sticky; top: 5rem; } }
+
+  .showcase { display: grid; gap: 1rem; margin-block: 1.5rem clamp(2.5rem, 6vw, 4rem); }
+  @media (min-width: 60rem) {
+    .showcase { grid-template-columns: 1.4fr 1fr; }
+    .showcase > .feature { grid-row: span 2; }
+  }
+
+  .stack > * + * { margin-top: var(--stack, 1rem); }
+  .cluster { display: flex; flex-wrap: wrap; align-items: center; gap: var(--gap, 0.5rem); }
+  .grid { display: grid; gap: var(--gap, 1rem); grid-template-columns: repeat(auto-fit, minmax(min(var(--min, 16rem), 100%), 1fr)); }
+}
+
+@layer metro.components {
+
+/* ------------------------------------------------------------------ 5. Top bar */
+  .topbar {
+    position: sticky; top: 0; z-index: 20;
+    background: color-mix(in srgb, var(--paper) 88%, transparent);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--rule);
+  }
+  .topbar > .wrap { display: flex; align-items: center; gap: 1.5rem; min-height: 4rem; }
+  .brand {
+    display: flex; align-items: center; gap: 0.6rem;
+    font: 700 1rem/1 var(--display); text-decoration: none; white-space: nowrap;
+  }
+  .brand::before {
+    content: ""; width: 1.1rem; height: 1.1rem; border-radius: 50%;
+    border: 4px solid var(--line-fill, var(--line)); background: var(--paper);
+  }
+  .topbar nav { display: flex; gap: 0.25rem; margin-left: auto; }
+  .topbar nav a { padding: 0.4rem 0.7rem; border-radius: var(--radius-sm); text-decoration: none; color: var(--muted); font-weight: 500; white-space: nowrap; }
+  .topbar nav a:hover, .topbar nav a[aria-current="page"] { color: var(--ink); background: var(--surface); }
+  .topbar nav + * { margin-left: 0.5rem; }
+  .topbar > .wrap > .btn { padding: 0.55rem 1rem; font-size: var(--step-0); line-height: 1.5; }   /* Subscribe: body-size text */
+  @media (max-width: 46rem) {
+    .topbar > .wrap { flex-wrap: wrap; gap: 0; padding-top: 0.75rem; }
+    .topbar nav { order: 3; width: 100%; margin-left: 0; overflow-x: auto; padding-block: 0.5rem; scrollbar-width: none; }
+    .topbar nav a:first-child { padding-left: 0; }
+    .topbar nav + * { margin-left: auto; }
+    .topbar nav a[aria-current="page"] { background: none; }
+  }
+
+/* ------------------------------------------------------------------ 6. Intro */
+  .intro { padding-block: clamp(2.5rem, 6vw, 4.5rem) 2rem; }
+  .intro h1 { font-size: var(--step-3); max-width: 18ch; }
+  .lede { margin-top: 1rem; max-width: 52ch; color: var(--muted); font-size: var(--step-1); }
+
+/* ------------------------------------------------------------------ 7. Prose (posts) */
+  .prose + .prose { margin-top: 4rem; }
+  .prose > h2 { font-size: var(--step-2); }
+  .prose > h2:not(:first-child) { margin-top: 3rem; font-size: var(--step-1); }
+  .prose > h3 { margin-top: 2rem; font-size: var(--step-1); }
+  .prose > h4 { margin-top: 1.75rem; }
+  .prose > p, .prose > ul, .prose > ol, .prose > dl { margin-top: 1rem; max-width: 66ch; }
+  .prose > ul, .prose > ol { padding-left: 1.2rem; }
+  .prose > ul > li + li, .prose > ol > li + li { margin-top: 0.5rem; }
+  .prose dt { font-weight: 600; margin-top: 1rem; }
+  .prose dd { margin-left: 0; color: var(--muted); }
+  .meta { margin-top: 0.4rem; color: var(--muted); font-size: var(--step--1); }
+  .prose > .meta + * { margin-top: 1.5rem; }
+
+/* ------------------------------------------------------------------ 8. Cards and panels */
+  /* photo card with text on a dark fade */
+  .feature {
+    position: relative; overflow: hidden;
+    border-radius: var(--radius); min-height: 22rem;
+    display: flex; align-items: flex-end;
+    color: #fff; background: #222 center / cover no-repeat;
+  }
+  .feature::before { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgb(0 0 0 / 0.82), rgb(0 0 0 / 0.15) 70%); }
+  .feature > div { position: relative; padding: clamp(1.25rem, 3vw, 2rem); max-width: 40rem; }
+  .feature h2 { font-size: var(--step-2); }
+  .feature p { margin-top: 0.6rem; color: rgb(255 255 255 / 0.85); }
+  .feature a { color: #fff; font-weight: 600; }
+  .feature a:last-child::after { content: ""; position: absolute; inset: 0; }
+
+  .card {
+    position: relative; padding: 1.25rem;
+    border-radius: var(--radius); background: var(--surface);
+  }
+  .card h3 { font-size: var(--step-1); margin-top: 0.2rem; }
+  .card p { margin-top: 0.6rem; font-size: 0.95rem; }
+  .card h3 a { text-decoration: none; }
+  .card h3 a::after { content: ""; position: absolute; inset: 0; }
+  .card:has(h3 a:hover) h3 { color: var(--line); }
+  .card--media { display: grid; grid-template-columns: 1fr 7.5rem; gap: 1rem; align-items: start; }
+  .card--media > img { width: 7.5rem; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 8px; }
+  .kicker { font-size: var(--step--1); color: var(--line); font-weight: 600; }
+  .kicker.is-alt { color: var(--alt); }
+  .when { font-size: var(--step--1); color: var(--muted); margin-top: 0.2rem; }
+
+  .panel { position: relative; padding: 1.25rem; border-radius: var(--radius); background: var(--surface); }
+  .panel h4 { font-size: 1rem; }
+  .panel p { margin-top: 0.6rem; font-size: 0.95rem; }
+  .panel--quiet { background: none; padding-block: 0.5rem; }
+  .panel--quiet ol, .panel--quiet ul { list-style: none; padding: 0; margin-top: 0.5rem; }
+  .panel--quiet li + li { margin-top: 0.25rem; }
+  .panel .media { display: grid; grid-template-columns: 5.5rem 1fr; gap: 1rem; margin-top: 0.9rem; align-items: start; }
+  .panel .media img { border-radius: var(--radius-sm); width: 5.5rem; }
+  .panel .media p { margin-top: 0.3rem; color: var(--muted); font-size: var(--step--1); }
+  .note { color: var(--muted); font-size: var(--step--1); }
+  .label { font-size: var(--step--1); color: var(--muted); }
+
+  /* make a whole card clickable: put <a class="cover"> as its last child */
+  .cover { position: absolute; inset: 0; border-radius: inherit; }
+  .cover:focus-visible { outline-offset: -2px; }
+  :has(> .cover) a:not(.cover) { position: relative; z-index: 1; }   /* other links in the card stay clickable */
+  :has(> .cover:hover) > h4 { color: var(--line); }
+
+/* ------------------------------------------------------------------ 9. Tags and buttons */
+  .tag {
+    display: inline-block; vertical-align: 0.1em; white-space: nowrap;
+    font: 600 0.75rem/1 var(--text);
+    padding: 0.25rem 0.45rem; border-radius: 4px;
+    color: var(--line); background: color-mix(in srgb, var(--line-fill, var(--line)) 14%, transparent);
+  }
+  .tag--alt  { color: var(--alt); background: color-mix(in srgb, var(--alt) 14%, transparent); }
+  .tag--gold { color: var(--gold); background: var(--gold-bg); }
+  .tag--plain { color: var(--muted); background: color-mix(in srgb, var(--muted) 12%, transparent); }
+
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+    min-height: 2.5rem; padding: 0 1rem; border-radius: var(--radius-sm);
+    border: 1px solid var(--rule); background: var(--surface); color: var(--ink);
+    font: 500 0.95rem var(--text); text-decoration: none; white-space: nowrap; cursor: pointer;
+    transition: border-color 120ms ease, color 120ms ease, filter 120ms ease;
+  }
+  .btn:hover { border-color: var(--line); color: var(--line); }
+  .btn--primary { background: var(--line-fill, var(--line)); border-color: var(--line-fill, var(--line)); color: var(--on-line); font-weight: 600; }
+  .btn--primary:hover { color: var(--on-line); filter: brightness(1.08); }
+  .btn--alt { background: var(--alt); border-color: var(--alt); color: var(--on-alt); font-weight: 600; }
+  .btn--alt:hover { color: var(--on-alt); filter: brightness(1.08); }
+  .btn.is-done { border-color: var(--line); color: var(--line); }
+
+  .link-btn {
+    padding: 0; border: 0; background: none; cursor: pointer;
+    font: 600 0.95rem var(--text); color: var(--line);
+  }
+  .link-btn--quiet { font-weight: 400; font-size: var(--step--1); color: var(--muted); text-decoration: underline; text-underline-offset: 0.18em; }
+  .link-btn--quiet:hover { color: var(--ink); }
+  .more { display: inline-block; margin-top: 0.75rem; font-weight: 600; text-decoration: none; color: var(--line); }
+
+/* ------------------------------------------------------------------ 10. Route: the line schedule
+   <ul class="route">
+     <li><time>19:00</time> <a href="…">Club</a> <span class="where">Venue</span> <b class="tag">New</b></li>
+   </ul>
+   .route--alt paints it in the second colour (online). */
+  .day { margin-top: 2.75rem; }
+  .day > h3 { display: flex; align-items: baseline; gap: 0.75rem; flex-wrap: wrap; font-size: var(--step-1); }
+  .day > h3 small { font: 400 var(--step--1) var(--text); color: var(--muted); }
+  .day.is-today > h3::after {
+    content: "Today"; font: 600 0.8rem/1 var(--text);
+    padding: 0.3rem 0.55rem; border-radius: 99px; background: var(--line-fill, var(--line)); color: var(--on-line);
+  }
+
+  .route { list-style: none; padding: 0; margin-top: 0.75rem; }
+  .route > li {
+    --y: 1.15rem;
+    position: relative;
+    padding: 0.55rem 0 0.55rem calc(var(--time-col) + 1.6rem);
+  }
+  .route > li::before {
+    content: ""; position: absolute; top: 0; bottom: 0;
+    left: calc(var(--time-col) - var(--track) / 2); width: var(--track); background: var(--line-fill, var(--line));
+  }
+  .route > li:first-child::before { top: var(--y); }
+  .route > li:last-child::before  { bottom: calc(100% - var(--y)); }
+  .route > li:only-child::before  { top: calc(var(--y) - 1rem); bottom: auto; height: 2rem; border-radius: 2px; }
+  .route > li::after {
+    content: ""; position: absolute; z-index: 1;
+    left: calc(var(--time-col) - var(--stop) / 2); top: calc(var(--y) - var(--stop) / 2);
+    width: var(--stop); height: var(--stop); border-radius: 50%;
+    background: var(--paper); border: 3px solid var(--line-fill, var(--line));
+  }
+  .route time { position: absolute; left: 0; top: 0.55rem; font-weight: 600; font-variant-numeric: tabular-nums; }
+  .route a { font-weight: 600; text-decoration: none; margin-right: 0.6rem; transition: color 120ms ease; }
+  .route a:hover { color: var(--line); }
+  .route .where { color: var(--muted); font-size: 0.95rem; margin-right: 0.6rem; }
+  .route-label { margin-top: 1.25rem; padding-left: calc(var(--time-col) + 1.6rem); font-size: var(--step--1); color: var(--muted); }
+  .route-label + .route { margin-top: 0.25rem; }
+
+  .legend { display: flex; flex-wrap: wrap; gap: 1.25rem; margin-top: 1rem; font-size: var(--step--1); color: var(--muted); }
+  .legend span { display: inline-flex; align-items: center; gap: 0.45rem; }
+  .legend i { width: 12px; height: 12px; border-radius: 50%; border: 3px solid var(--line-fill, var(--line)); }
+  .legend i.is-alt { border-color: var(--alt); }
+
+  @media (max-width: 30rem) {
+    :root { --time-col: 3.9rem; }
+    .route > li { padding-left: calc(var(--time-col) + 1.2rem); }
+    .route .where { display: block; }
+    .route-label { padding-left: calc(var(--time-col) + 1.2rem); }
+  }
+
+/* ------------------------------------------------------------------ 11. Linemap: the week as stations
+   <nav class="linemap"><ol>
+     <li><a href="#mon" data-date="2026-09-28"><span class="dot">28</span><span class="name">Mon</span><span class="count">9 meetups</span></a></li>
+   </ol></nav>   — metro.js marks today's station. */
+  .linemap { margin-top: clamp(2rem, 5vw, 3.25rem); }
+  .linemap ol { list-style: none; padding: 0; display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; position: relative; }
+  .linemap ol::before {
+    content: ""; position: absolute; left: calc(100% / var(--n, 7) / 2); right: calc(100% / var(--n, 7) / 2);
+    top: calc(1.4rem - 3px); height: 6px; border-radius: 3px; background: var(--line-fill, var(--line));
+  }
+  .linemap a { position: relative; display: grid; justify-items: center; gap: 0.35rem; text-decoration: none; padding-bottom: 0.25rem; }
+  .linemap .dot {
+    width: 2.8rem; height: 2.8rem; border-radius: 50%; display: grid; place-items: center;
+    background: var(--paper); border: 5px solid var(--line-fill, var(--line));
+    font: 600 0.95rem/1 var(--display); transition: transform 160ms ease;
+  }
+  .linemap .name { font-weight: 600; }
+  .linemap .count { font-size: var(--step--1); color: var(--muted); padding: 0; border: 0; }   /* not the list counter below */
+  .linemap a:hover { color: var(--ink); }
+  .linemap a:hover .dot { transform: scale(1.08); }
+  .linemap [aria-current="date"] .dot { background: var(--line-fill, var(--line)); color: var(--on-line); }
+  .linemap [aria-current="date"] .name::after { content: ", today"; color: var(--line); }
+  @media (max-width: 40rem) {
+    .linemap .dot { width: 2.3rem; height: 2.3rem; border-width: 4px; font-size: 0.8rem; }
+    .linemap ol::before { top: calc(1.15rem - 3px); }
+    .linemap .count { display: none; }
+    .linemap [aria-current="date"] .name::after { content: ""; }
+  }
+
+/* ------------------------------------------------------------------ 12. Entries: lists of clubs, people, places
+   <ul class="entries">
+     <li class="entry">
+       <img class="entry__media" src="…" alt="">           (or .entry__avatar)
+       <div class="entry__head">kicker, h2, .entry__sub, .week …</div>
+       <p class="entry__text">…</p>
+       <div class="entry__actions">…</div>
+     </li>
+   </ul>      .entry--alt switches accents to the second colour. */
+  .count { color: var(--muted); font-size: var(--step--1); padding-bottom: 0.75rem; border-bottom: 1px solid var(--rule); }
+  .entries { list-style: none; padding: 0; }
+  .entry {
+    --media: 9.5rem;
+    position: relative;
+    display: grid; grid-template-columns: var(--media) minmax(0, 1fr); column-gap: 1.5rem;
+    grid-template-rows: auto auto auto 1fr; align-content: start;
+    padding-block: 1.75rem; border-bottom: 1px solid var(--rule);
+  }
+  .entry > :not(.entry__media, .entry__avatar) { grid-column: 2; }
+  .entry:not(:has(> .entry__media, > .entry__avatar)) { grid-template-columns: minmax(0, 1fr); }
+  .entry:not(:has(> .entry__media, > .entry__avatar)) > * { grid-column: 1; }
+  .entry__media { grid-row: 1 / span 4; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 8px; background: var(--surface); }
+  .entry__avatar {
+    grid-row: 1 / span 4; width: 100%; aspect-ratio: 1; border-radius: 50%; object-fit: cover;
+    display: grid; place-items: center; align-self: start;
+    background: var(--surface); color: var(--muted); font: 600 1.1rem/1 var(--display);
+  }
+  .entry:has(.entry__avatar) { --media: 4.5rem; column-gap: 1.25rem; }
+  .entry h2 { font-size: var(--step-1); margin-top: 0.2rem; }
+  .entry__sub { margin-top: 0.3rem; color: var(--muted); font-size: 0.95rem; }
+  .entry__text { margin-top: 0.75rem; max-width: 64ch; }
+  .entry__text > * + * { margin-top: 0.6rem; }
+  .entry__text ul { list-style: none; padding: 0; }
+  .entry__actions { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
+  .entry .tags { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: 0.6rem; }
+  .entry .facts { list-style: none; padding: 0; margin-top: 0.6rem; display: flex; flex-wrap: wrap; column-gap: 1.25rem; row-gap: 0.2rem; font-size: 0.95rem; color: var(--muted); }
+  .entry .more { justify-self: start; }
+  .entry .more:only-of-type::after { content: ""; position: absolute; inset: 0; }   /* whole row clickable when it has one link */
+  .entry:has(.more:hover) h2 { color: var(--line); }
+  .flag { display: inline-block; width: 1.3em; height: 0.9em; object-fit: cover; border-radius: 2px; vertical-align: -0.1em; box-shadow: 0 0 0 1px var(--rule); }
+  @media (max-width: 40rem) {
+    .entry { --media: 5.5rem; column-gap: 1rem; grid-template-rows: auto; }
+    .entry:has(.entry__avatar) { --media: 3.5rem; column-gap: 1rem; }
+    .entry__media, .entry__avatar { grid-row: 1; }
+    .entry > :not(.entry__media, .entry__avatar, .entry__head) { grid-column: 1 / -1; }
+  }
+
+/* ------------------------------------------------------------------ 13. Week: seven small stations, .on = meets that day
+   <ol class="week"><li class="on">Mo</li><li>Tu</li>…</ol> */
+  .week {
+    --col: 2.1rem;
+    list-style: none; padding: 0; margin-top: 0.9rem;
+    display: grid; grid-template-columns: repeat(7, var(--col));
+    position: relative; width: max-content;
+  }
+  .week::before { content: ""; position: absolute; top: 5px; left: calc(var(--col) / 2); right: calc(var(--col) / 2); height: 2px; background: var(--rule); }
+  /* the route: consecutive meeting days are joined by the line, a gap breaks it;
+     a lone day gets a short piece of track, like a single stop in the schedule */
+  .week li.on:has(+ li.on)::after {
+    content: ""; position: absolute; z-index: -1; top: 4px; height: 4px;
+    left: 50%; width: var(--col);
+    background: var(--line-fill, var(--line));
+  }
+  .week li.on:not(:has(+ li.on)):not(li.on + li)::after {
+    content: ""; position: absolute; z-index: -1; top: 4px; height: 4px; border-radius: 2px;
+    left: calc(50% - 0.875rem); width: 1.75rem;
+    background: var(--line-fill, var(--line));
+  }
+  .week li { position: relative; z-index: 1; display: grid; justify-items: center; gap: 0.2rem; font-size: 0.72rem; color: var(--muted); }
+  .week li::before { content: ""; width: 12px; height: 12px; border-radius: 50%; background: var(--paper); border: 2px solid var(--rule); }
+  .week li.on { color: var(--ink); font-weight: 600; }
+  .week li.on::before { background: var(--line-fill, var(--line)); border-color: var(--line-fill, var(--line)); }
+
+/* ------------------------------------------------------------------ 14. Filters and chips
+   <details class="filters panel" open data-collapse-below="60rem">
+     <summary>Filters</summary>
+     <fieldset><legend>Type</legend>
+       <div class="chips"><label class="chip"><input type="checkbox" checked><span>Board games</span></label></div>
+     </fieldset>
+   </details> */
+  .filters > summary { display: none; }
+  .filters fieldset { border: 0; padding: 0; margin: 0 0 1.25rem; min-width: 0; }
+  .filters legend { font-weight: 600; font-size: var(--step--1); color: var(--muted); padding: 0; margin-bottom: 0.5rem; }
+  @media (max-width: 59.99rem) {
+    .filters { padding-block: 0.9rem; }
+    .filters > summary { display: flex; justify-content: space-between; align-items: center; cursor: pointer; list-style: none; font-weight: 600; }
+    .filters > summary::-webkit-details-marker { display: none; }
+    .filters > summary::after { content: "+"; color: var(--line); font-size: 1.25rem; line-height: 1; }
+    .filters[open] > summary::after { content: "–"; }
+    .filters[open] > summary { margin-bottom: 1rem; }
+  }
+
+  .chips { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .chip { position: relative; }
+  .chip > input { position: absolute; opacity: 0; inset: 0; margin: 0; cursor: pointer; }
+  .chip > span {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    padding: 0.4rem 0.8rem; border-radius: 99px;
+    border: 1px solid var(--rule); background: var(--surface);
+    font-size: 0.95rem; color: var(--muted);
+    transition: background 120ms ease, color 120ms ease, border-color 120ms ease;
+  }
+  .chip:hover > span { border-color: color-mix(in srgb, var(--line-fill, var(--line)) 50%, var(--rule)); }
+  .chip > input:checked + span {
+    background: color-mix(in srgb, var(--line-fill, var(--line)) 13%, var(--surface));
+    border-color: color-mix(in srgb, var(--line-fill, var(--line)) 55%, transparent);
+    color: var(--ink);
+  }
+  .chip > input:checked + span::before { content: ""; width: 0.5rem; height: 0.5rem; border-radius: 50%; background: var(--line-fill, var(--line)); }
+  .chip > input:focus-visible + span { outline: 2px solid var(--line); outline-offset: 2px; }
+  .chip .n { color: var(--muted); font-size: 0.85em; }
+  .chip--plain { --line: var(--muted); --line-fill: var(--muted); }
+  /* neutral accents: dark buttons, grey links — for things that have no colour of their own */
+  .is-neutral { --line: var(--muted); --line-fill: var(--ink); --on-line: var(--paper); }
+
+/* ------------------------------------------------------------------ 15. Fold, clamp, empty state */
+  /* accordion built on <details class="fold"> */
+  .fold { border-top: 1px solid var(--rule); }
+  .fold:last-of-type { border-bottom: 1px solid var(--rule); }
+  .fold > summary {
+    cursor: pointer; padding: 1.1rem 0; list-style: none;
+    display: flex; justify-content: space-between; gap: 1rem;
+    font: 600 var(--step-1)/1.3 var(--display);
+  }
+  .fold > summary::-webkit-details-marker { display: none; }
+  .fold > summary::after { content: "+"; color: var(--line); }
+  .fold[open] > summary::after { content: "–"; }
+  .fold > :not(summary) { padding-bottom: 2rem; }
+
+  /* long text that folds to a few lines: add data-clamp, metro.js adds the button */
+  [data-clamp].is-clamped { max-height: calc(var(--lines, 4) * 1.6em + 0.8em); overflow: hidden; mask-image: linear-gradient(to bottom, #000 55%, transparent); }
+  .clamp-toggle { display: block; width: fit-content; justify-self: start; margin-top: 0.4rem; text-align: left; }
+
+  .empty { padding: 2.5rem 0; list-style: none; }
+  .empty h2 { font-size: var(--step-1); }
+  .empty p { margin-top: 0.5rem; color: var(--muted); }
+  .empty .btn { margin-top: 1rem; }
+
+/* ------------------------------------------------------------------ 15b. Station mark: a line sign like on the metro map
+   <span class="mark line-red">1</span>  <span class="mark mark--sm line-sky">4</span> */
+  .mark {
+    display: inline-grid; place-items: center; flex: none;
+    min-width: 1.6rem; height: 1.6rem; padding: 0 0.35rem; border-radius: 99px;
+    background: var(--line-fill, var(--line)); color: var(--on-line);
+    font: 700 0.8rem/1 var(--display); vertical-align: -0.2em;
+  }
+  .mark--sm { min-width: 1.25rem; height: 1.25rem; font-size: 0.68rem; padding: 0 0.25rem; }
+  .mark--ring { background: var(--paper); color: var(--ink); border: 3px solid var(--line-fill, var(--line)); }
+
+/* ------------------------------------------------------------------ 15c. Notice: a message in one of the colours
+   <div class="notice line-orange"><strong>Heads up.</strong> The club moved to Saturday.</div> */
+  .notice {
+    padding: 0.9rem 1.1rem; border-radius: 10px;
+    border-left: 4px solid var(--line-fill, var(--line));
+    border-radius: 0 10px 10px 0;
+    background: color-mix(in srgb, var(--line-fill, var(--line)) 10%, var(--surface));
+  }
+  .notice strong { color: var(--line); }
+  .notice--success { --line: var(--success); --line-fill: var(--green-fill); }
+  .notice--warning { --line: var(--warning); --line-fill: var(--orange-fill); }
+  .notice--danger  { --line: var(--danger);  --line-fill: var(--red-fill); }
+  .notice--info    { --line: var(--info);    --line-fill: var(--blue-fill); }
+
+/* ------------------------------------------------------------------ 15d. Gallery: photos you swipe or scroll
+   <div class="gallery" data-gallery>
+     <div class="gallery__track"><img src="…" alt="…"><img src="…" alt="…"></div>
+   </div>     metro.js adds the arrows and the counter; without JS it still scrolls. */
+  .gallery { position: relative; border-radius: var(--radius); overflow: hidden; background: var(--surface); }
+  .gallery__track {
+    display: grid; grid-auto-flow: column; grid-auto-columns: 100%;
+    overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; scrollbar-width: none;
+  }
+  .gallery__track::-webkit-scrollbar { display: none; }
+  .gallery__track > img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; scroll-snap-align: start; }
+  .gallery__nav {
+    position: absolute; top: 50%; translate: 0 -50%;
+    width: 2.6rem; height: 2.6rem; border-radius: 50%; border: 0; cursor: pointer;
+    display: grid; place-items: center;
+    background: rgb(255 255 255 / 0.9); color: #16181d; box-shadow: 0 2px 8px rgb(0 0 0 / 0.2);
+    transition: opacity 150ms ease;
+  }
+  .gallery__nav svg { width: 1.1rem; height: 1.1rem; }
+  .gallery__nav--prev { left: 0.75rem; }
+  .gallery__nav--next { right: 0.75rem; }
+  .gallery__nav:disabled { opacity: 0; pointer-events: none; }
+  .gallery__count {
+    position: absolute; right: 0.75rem; bottom: 0.75rem;
+    padding: 0.2rem 0.55rem; border-radius: 99px;
+    background: rgb(0 0 0 / 0.6); color: #fff; font: 600 0.8rem/1.4 var(--text); font-variant-numeric: tabular-nums;
+  }
+  @media (hover: none) { .gallery__nav { display: none; } }
+
+/* ------------------------------------------------------------------ 15e. Facts: a short list of label → value
+   <dl class="facts-list"><div><dt>When</dt><dd>Tue 19:00</dd></div></dl> */
+  .facts-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr)); gap: 0.9rem 1rem; margin-top: 1rem; }
+  .facts-list > div:has(.week) { grid-column: 1 / -1; }
+  .facts-list dt { font-size: var(--step--1); color: var(--muted); }
+  .facts-list dd { margin: 0.1rem 0 0; font-weight: 500; }
+  .facts-list .week { margin-top: 0.4rem; }
+  .back { display: inline-block; margin-bottom: 1rem; font-size: var(--step--1); color: var(--muted); text-decoration: none; }
+  .back:hover { color: var(--line); }
+
+/* ------------------------------------------------------------------ 15f. Rich article content: tables, quotes, photos, people
+   Used inside .prose */
+  .table-wrap { overflow-x: auto; margin-top: 1rem; border-radius: var(--radius); background: var(--surface); }
+  .prose table, .table-wrap table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+  .prose th { text-align: left; font-weight: 600; font-size: var(--step--1); color: var(--muted); padding: 0.75rem 1rem; border-bottom: 1px solid var(--rule); }
+  .prose td { padding: 0.75rem 1rem; vertical-align: top; border-bottom: 1px solid var(--rule); }
+  .prose tr:last-child td { border-bottom: 0; }
+  .prose > blockquote, .prose blockquote {
+    margin: 1rem 0 0; padding: 0.9rem 1.1rem; max-width: 66ch;
+    border-left: 4px solid var(--line-fill, var(--line)); border-radius: 0 10px 10px 0;
+    background: var(--surface);
+  }
+  .prose blockquote footer, .prose blockquote cite { display: block; margin-top: 0.5rem; color: var(--muted); font-size: var(--step--1); font-style: normal; }
+  .prose > .photo, .prose .photo { width: 100%; margin-top: 1.5rem; border-radius: var(--radius); object-fit: cover; }
+  .prose > .grid, .prose > .panel, .prose > .gallery, .prose > .table-wrap, .prose > figure { margin-top: 1.25rem; }
+  .prose figure figcaption { margin-top: 0.5rem; color: var(--muted); font-size: var(--step--1); }
+  .prose .panel > * + *, .prose .card > * + * { margin-top: 0.5rem; }
+  .prose .panel h4, .prose .card h4, .prose .card h5 { font-size: 1rem; }
+  .prose .panel ul, .prose .card ul { padding-left: 1.1rem; }
+  .prose hr { margin-block: 2.5rem; }
+  .prose > h3 + *, .prose > h4 + * { margin-top: 0.75rem; }
+  .avatar { width: 3.5rem; height: 3.5rem; border-radius: 50%; object-fit: cover; flex: none; }
+  .prose .grid > div > .photo:only-child, .prose .grid > div > .photo:first-child { margin-top: 0; aspect-ratio: 4 / 3; }
+  .prose .grid > .panel > .photo { margin-top: 0; }
+  /* a person: portrait, name, role, links */
+  .person { display: grid; gap: 0.2rem; align-content: start; justify-items: start; }
+  .person .avatar { width: 5.5rem; height: 5.5rem; margin-bottom: 0.5rem; }
+  .person h4, .person h5, .person h6 { font: 600 1rem/1.3 var(--text); }
+  .person .role { color: var(--muted); font-size: var(--step--1); margin-bottom: 0.3rem; }
+  .person a { font-size: 0.95rem; }
+  .media-row { display: flex; gap: 1rem; align-items: flex-start; }
+  .media-row > div { min-width: 0; }
+
+/* ------------------------------------------------------------------ 16. Footer */
+  .footer { border-top: 1px solid var(--rule); padding-block: 2rem; color: var(--muted); font-size: var(--step--1); }
+  .footer > .wrap { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+}
+
+/* ------------------------------------------------------------------ 17. Colour classes
+   Put .line-* on anything — a tag, a button, a route, an entry, a whole page (<html class="line-orange">) —
+   and every accent inside it takes that line's colour. */
+@layer metro.utilities {
+  .line-red { --line: var(--red); --line-fill: var(--red-fill); --on-line: var(--red-on); }
+  .line-green { --line: var(--green); --line-fill: var(--green-fill); --on-line: var(--green-on); }
+  .line-blue { --line: var(--blue); --line-fill: var(--blue-fill); --on-line: var(--blue-on); }
+  .line-sky { --line: var(--sky); --line-fill: var(--sky-fill); --on-line: var(--sky-on); }
+  .line-brown { --line: var(--brown); --line-fill: var(--brown-fill); --on-line: var(--brown-on); }
+  .line-orange { --line: var(--orange); --line-fill: var(--orange-fill); --on-line: var(--orange-on); }
+  .line-violet { --line: var(--violet); --line-fill: var(--violet-fill); --on-line: var(--violet-on); }
+  .line-yellow { --line: var(--yellow); --line-fill: var(--yellow-fill); --on-line: var(--yellow-on); }
+  .line-grey { --line: var(--grey); --line-fill: var(--grey-fill); --on-line: var(--grey-on); }
+  .line-lime { --line: var(--lime); --line-fill: var(--lime-fill); --on-line: var(--lime-on); }
+  .line-teal { --line: var(--teal); --line-fill: var(--teal-fill); --on-line: var(--teal-on); }
+  .line-lavender { --line: var(--lavender); --line-fill: var(--lavender-fill); --on-line: var(--lavender-on); }
+  .line-pink { --line: var(--pink); --line-fill: var(--pink-fill); --on-line: var(--pink-on); }
+  .route--alt, .entry--alt, .chip--alt, .is-alt { --line: var(--alt); --line-fill: var(--alt); --on-line: var(--on-alt); }
+}
+
+/* ------------------------------------------------------------------ 16. Utilities */
+@layer metro.utilities {
+  .muted { color: var(--muted); }
+  .small { font-size: var(--step--1); }
+  .gap-top { margin-top: 4rem; }
+  .gap-top-sm { margin-top: 2rem; }
+  .visually-hidden {
+    position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+  }
+  [hidden] { display: none !important; }
+}
