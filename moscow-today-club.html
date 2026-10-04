@@ -1,73 +1,28 @@
-
 <!doctype html>
-<html lang="en" data-bs-theme="dark">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="Alexey Leonov, and Bootstrap contributors">
-    <title>Moscow Today Club — Time to Learn English</title>   
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="" name="description"/>
+<meta content="Alexey Leonov" name="author"/>
+<link rel="stylesheet" href="metro/metro.css">
+<script src="metro/metro.js"></script>
+<meta name="theme-color" content="#18803a">
+<title>Moscow Today Club — Time to Learn English</title>
 
-	<link href="css/bootstrap.min.css" rel="stylesheet">
-    <link rel="preload" href="fonts/playfair-700-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link href="css/blog.css" rel="stylesheet">
-	<script src="js/bootstrap.bundle.min.js"></script>
+<meta content="Time to Learn English" property="og:title"/>
+<meta content="Your go-to guide for live English practice in Moscow. Speaking clubs, game nights, stand-up shows, and more!" property="og:description"/>
+<meta content="https://alexey0097.github.io/time-to-learn-english/img/preview.jpg" property="og:image"/>
+<meta content="https://alexey0097.github.io/time-to-learn-english/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<link href="img/favicon/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png"/>
+<link href="img/favicon/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="img/favicon/favicon.ico" rel="shortcut icon"/>
+<link href="img/favicon/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="img/favicon/site.webmanifest" rel="manifest"/>
 
-	<meta name="theme-color" content="#121212">
-	
-	<meta property="og:title" content="Time to Learn English">
-	<meta property="og:description" content="Your go-to guide for live English practice in Moscow. Speaking clubs, game nights, stand-up shows, and more!">
-	<meta property="og:image" content="https://alexey0097.github.io/time-to-learn-english/img/preview.jpg">
-	<meta property="og:url" content="https://alexey0097.github.io/time-to-learn-english/">
-	<meta property="og:type" content="website">
-
-	<link rel="icon" type="image/png" href="img/favicon/favicon-96x96.png" sizes="96x96" />
-	<link rel="icon" type="image/svg+xml" href="img/favicon/favicon.svg" />
-	<link rel="shortcut icon" href="img/favicon/favicon.ico" />
-	<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png" />
-	<link rel="manifest" href="img/favicon/site.webmanifest" />
-
-	<style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        user-select: none;
-      }
-
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-	  @keyframes bg-scroll {
-			0% { background-position: 0 center; }
-			100% { background-position: -1300px center; }
-		}
-
-		.animate-bg {
-			background-image: url('img/full-bg.jpg');
-			background-repeat: repeat-x;
-			background-size: auto 100%;
-			background-position: 0 center;
-			animation: bg-scroll 270s linear infinite;
-		}
-
-		.animate-bg::before {
-			content: '';
-			position: absolute;
-			top: 0;
-			left: 0;
-			right: 0;
-			bottom: 0;
-			background: rgba(0, 0, 0, 0.55);
-			border-radius: inherit;
-		}
-    </style>
-	
-	<!-- Yandex.Metrika counter -->
-	<script type="text/javascript">
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
 		(function(m,e,t,r,i,k,a){
 			m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
 			m[i].l=1*new Date();
@@ -77,271 +32,187 @@
 
 		ym(108766865, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
 	</script>
-	<noscript><div><img src="https://mc.yandex.ru/watch/108766865" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-	<!-- /Yandex.Metrika counter -->
+<noscript><div><img alt="" src="https://mc.yandex.ru/watch/108766865" style="position:absolute; left:-9999px;"/></div></noscript>
+<!-- /Yandex.Metrika counter -->
+</head>
+<body>
 
-  </head>
-  <body>
-    
-<div class="container">
-  <header class="blog-header py-3">
-    <div class="row flex-wrap flex-md-nowrap justify-content-between align-items-center gy-2 gy-md-0">
-      <div class="col-auto col-md-4">
-        <a class="btn btn-sm btn-primary" target="_blank" href="https://t.me/eng_events">Subscribe</a>
-      </div>
-      <div class="col-12 col-md-4 text-center order-first order-md-0">
-        <a class="blog-header-logo header-link" href="index.html">Time to Learn English</a>
-      </div>
-      <div class="col-auto col-md-4 d-flex justify-content-end align-items-center">
-        <a class="link-secondary" href="#" aria-label="Search">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="mx-3" role="img" viewBox="0 0 24 24"><title>Search</title><circle cx="10.5" cy="10.5" r="7.5"/><path d="M21 21l-5.2-5.2"/></svg>
-        </a>
-        <a class="btn btn-sm btn-outline-secondary" href="#">Sign up</a>
-      </div>
-    </div>
-  </header>
-
-  <div class="nav-scroller py-1 mb-2">
-    <nav class="nav d-flex justify-content-between">
-      <a class="p-2 link-secondary" href="index.html#actual-schedule">Schedule</a>
-      <a class="p-2 link-secondary" href="clubs.html">Clubs</a>
-      <a class="p-2 link-secondary" href="teachers.html">Teachers</a>
-      <a class="p-2 link-secondary" href="#contacts">Contacts</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="index.html">Time to Learn English</a>
+    <nav aria-label="Main">
+      <a href="index.html">Schedule</a>
+      <a href="clubs.html" aria-current="page">Clubs</a>
+      <a href="teachers.html">Teachers</a>
+      <a href="#contacts">Contacts</a>
     </nav>
+    <a class="btn btn--primary" href="https://t.me/eng_events" target="_blank">Subscribe</a>
   </div>
+</header>
+
+<main>
+  <section class="intro intro--compact wrap">
+    <a class="back" href="clubs.html">All clubs</a>
+    <div class="kicker">Speed Meetings</div>
+    <h1>Moscow Today Club</h1>
+  </section>
+
+  <div class="layout wrap">
+    <div class="layout__main">
+      <div aria-label="Photos of Moscow Today Club" class="gallery" data-gallery="" role="region" tabindex="0"><div class="gallery__track"><img alt="Moscow Today Club, photo 1" loading="eager" src="img/min_moscow-today-01.jpg"/><img alt="Moscow Today Club, photo 2" loading="lazy" src="img/min_moscow-today-02.jpg"/><img alt="Moscow Today Club, photo 3" loading="lazy" src="img/min_moscow-today-03.jpg"/><img alt="Moscow Today Club, photo 4" loading="lazy" src="img/min_moscow-today-04.jpg"/><img alt="Moscow Today Club, photo 5" loading="lazy" src="img/min_moscow-today-05.jpg"/><img alt="Moscow Today Club, photo 6" loading="lazy" src="img/min_moscow-today-06.jpg"/></div></div>
+      <article class="prose gap-top-sm">
+<p><strong>Moscow Today</strong> has been getting people together to speak English since <strong>August 2023</strong> — first as Saturday board game nights, now as a speaking club that meets <strong>twice a week</strong>. It is run by Dima, an American living in Moscow, so the room is in English from the first minute, and other native speakers from the community often come along too.</p>
+<p>The idea is simple, and the club repeats it in every announcement: on a course you listen for 90% of the time and speak for minutes. Here you speak from the moment you sit down. <strong>You get a new conversation partner every 15 minutes</strong> — no teacher, no textbook, no homework, and nobody correcting every word. Say "he go" instead of "he goes" and the table will laugh with you and carry on.</p>
+<p>Turning up is the whole procedure: come to Surf Coffee on Ostozhenka, order your drink at the counter, say you're with the club, and someone will sit you down next to a friendly person who was also nervous once. Just come a little early — there aren't many tables and they fill up fast. 🙌</p>
+<hr/>
+<h3>Our Format</h3>
+<p><strong>Format:</strong> a rotating speaking club in a café. You talk in pairs and small groups, and swap partners every 15 minutes, so you never get stuck in one conversation and everyone gets the same amount of speaking time.</p>
+<ul>
+<li>🗣️ <strong>A new partner every 15 minutes</strong> — an hourglass on the table keeps everyone honest</li>
+<li>☕ <strong>No teacher, no textbook, no homework</strong> — just conversation from the first minute</li>
+<li>🇺🇸 <strong>Native speakers in the room</strong> — the host is American, and other native speakers come along too</li>
+<li>🤍 <strong>Any level is fine</strong> — when there are enough people the groups get split roughly into A2 and B2+</li>
+<li>🎲 <strong>Games turn up too</strong> — a card or word game often lands on the table alongside the talking</li>
+<li>⏰ <strong>Come early</strong> — the café has a limited number of tables and they go quickly</li>
+</ul>
+<p>Ordinary club evenings from the end of August to the end of September 2026 — most of them finish with everyone squeezing in for one photo.</p>
+<div class="grid" style="--min: 12rem">
+<div>
+<img alt="Members lined up behind the cafe's leather couch after a meeting" class="photo" loading="lazy" src="img/min_moscow-today-club-02.jpg" style="aspect-ratio: 4 / 3;"/>
 </div>
+<div>
+<img alt="Members talking in small groups around the cafe tables" class="photo" loading="lazy" src="img/min_moscow-today-club-04.jpg" style="aspect-ratio: 4 / 3;"/>
+</div>
+<div>
+<img alt="A crowded evening, hands up for the camera" class="photo" loading="lazy" src="img/min_moscow-today-club-05.jpg" style="aspect-ratio: 4 / 3;"/>
+</div>
+</div>
+<hr/>
+<h3>Where we meet</h3>
+<div class="table-wrap">
+<table>
+<thead>
+<tr>
+<th>Day</th>
+<th>Venue</th>
+<th>Address</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Monday, 19:30</strong></td>
+<td>Surf Coffee x Ostozhenka ☕</td>
+<td>Ostozhenka 40/1, m. Park Kultury</td>
+</tr>
+<tr>
+<td><strong>Thursday, 19:30</strong></td>
+<td>Surf Coffee x Ostozhenka ☕</td>
+<td>Ostozhenka 40/1, m. Park Kultury</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The club moved to Ostozhenka in August 2026 — before that it spent years around Mendeleevskaya and, over the summer, in Gorky Park. Every meeting is still announced in the chat a day or two ahead, so it's worth a quick look before you set out.</p>
+<hr/>
+<h3>Special Formats</h3>
+<div class="grid" style="--min: 12rem">
+<div>
+<div class="panel">
+<h4>🎲 Board game nights</h4>
+<p>The club's original format, and the one the regulars still talk about: a long table, a stack of games and four hours of English until the café asks everyone to leave. 🥹 Codenames, Bunker, Harry Potter Monopoly, Cards Against Humanity, Taboo, Alias, Spyfall, Who Am I?, Imaginarium and Scrabble all make the rounds. Through the winter these ran on <strong>Saturday evenings at Karavaev Brothers</strong> (Sushchevskaya 25s1, m. Mendeleevskaya, exit 4) — 500 ₽ cash or transfer, with 30% off the food through the café's own app. In the warm months they moved outdoors to <strong>Gorky Park</strong>, at Surf Coffee on the Pushkinskaya Embankment, with badminton and table tennis alongside the games. Watch the chat for the next one.</p>
+</div>
+</div>
+</div>
+<p>Saturday game nights — the long table at Karavaev Brothers through autumn and winter, and the first tables outdoors in May.</p>
+<div class="grid" style="--min: 12rem">
+<div>
+<img alt="The long table at Karavaev Brothers under the cafe's neon sign" class="photo" loading="lazy" src="img/min_moscow-today-games-01.jpg" style="aspect-ratio: 4 / 3;"/>
+</div>
+<div>
+<img alt="Three members talking across the table between games" class="photo" loading="lazy" src="img/min_moscow-today-games-02.jpg" style="aspect-ratio: 4 / 3;"/>
+</div>
+<div>
+<img alt="Players thinking over picture cards laid out on the table" class="photo" loading="lazy" src="img/min_moscow-today-games-03.jpg" style="aspect-ratio: 4 / 3;"/>
+</div>
+<div>
+<img alt="A packed table of players on a Saturday night" class="photo" loading="lazy" src="img/min_moscow-today-games-04.jpg" style="aspect-ratio: 4 / 3;"/>
+</div>
+<div>
+<img alt="Hands and cards in the middle of a round" class="photo" loading="lazy" src="img/min_moscow-today-games-05.jpg" style="aspect-ratio: 4 / 3;"/>
+</div>
+<div>
+<img alt="Imaginarium cards spread across the table" class="photo" loading="lazy" src="img/min_moscow-today-games-06.jpg" style="aspect-ratio: 4 / 3;"/>
+</div>
+<div>
+<img alt="A board game in progress around the table" class="photo" loading="lazy" src="img/min_moscow-today-games-07.jpg" style="aspect-ratio: 4 / 3;"/>
+</div>
+<div>
+<img alt="Board games outdoors at a long wooden table in May" class="photo" loading="lazy" src="img/min_moscow-today-games-08.jpg" style="aspect-ratio: 4 / 3;"/>
+</div>
+<div>
+<img alt="The same outdoor table from the other end, cards everywhere" class="photo" loading="lazy" src="img/min_moscow-today-games-09.jpg" style="aspect-ratio: 4 / 3;"/>
+</div>
+</div>
+<hr/>
+<h3>Price</h3>
+<p><strong>Monday:</strong> free. Buy yourself a coffee and that's it.</p>
+<p><strong>Thursday:</strong> 500 ₽ for the evening — and your <strong>first visit is free</strong>, so you can try it before paying for anything.</p>
+<p><strong>Board game nights:</strong> 500 ₽, cash or transfer.</p>
+<hr/>
+<h3>What people say</h3>
+<div id="reviewsContainer">
+<blockquote>
 
-<main class="container">
+<p>Dima, it was a cute meeting! I really enjoyed the atmosphere ✨ Will try to come every week! Thank you! 👍🤝</p>
+<footer>Katerina · 🇷🇺 Russia · November 15, 2025 · ⭐️⭐️⭐️⭐️⭐️</footer></blockquote>
+<blockquote>
 
-  <div class="row g-5" style="margin-left: 0; margin-right: 0;">
-    <div class="col-md-8" style="max-width: 100%;">
-		<article id="moscow-today-club" class="blog-post">
-			<h2 class="blog-post-title mt-2">Moscow Today Club</h2>
-			<p class="blog-post-meta">September 27, 2026 by <a href="#contacts">Alexey Leonov</a></p>
+<p>Thanks everyone for this evening. Thanks for our conversations and for your stories! See you next time!)</p>
+<footer>Ilia · 🇷🇺 Russia · November 22, 2025 · ⭐️⭐️⭐️⭐️⭐️</footer></blockquote>
+<blockquote>
 
-			<div id="clubCarousel" class="carousel slide mb-4 rounded overflow-hidden shadow-sm">
-				<div class="carousel-indicators">
-					<button type="button" data-bs-target="#clubCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-					<button type="button" data-bs-target="#clubCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-					<button type="button" data-bs-target="#clubCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-					<button type="button" data-bs-target="#clubCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
-					<button type="button" data-bs-target="#clubCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
-					<button type="button" data-bs-target="#clubCarousel" data-bs-slide-to="5" aria-label="Slide 6"></button>
-				</div>
-				<div class="carousel-inner">
-					<div class="carousel-item active">
-						<img src="img/min_moscow-today-01.jpg" class="d-block w-100 object-fit-cover" style="aspect-ratio: 16 / 9;" alt="Club photo 1">
-					</div>
-					<div class="carousel-item">
-						<img src="img/min_moscow-today-02.jpg" class="d-block w-100 object-fit-cover" style="aspect-ratio: 16 / 9;" alt="Club photo 2">
-					</div>
-					<div class="carousel-item">
-						<img src="img/min_moscow-today-03.jpg" class="d-block w-100 object-fit-cover" style="aspect-ratio: 16 / 9;" alt="Club photo 3">
-					</div>
-					<div class="carousel-item">
-						<img src="img/min_moscow-today-04.jpg" class="d-block w-100 object-fit-cover" style="aspect-ratio: 16 / 9;" alt="Club photo 4">
-					</div>
-					<div class="carousel-item">
-						<img src="img/min_moscow-today-05.jpg" class="d-block w-100 object-fit-cover" style="aspect-ratio: 16 / 9;" alt="Club photo 5">
-					</div>
-					<div class="carousel-item">
-						<img src="img/min_moscow-today-06.jpg" class="d-block w-100 object-fit-cover" style="aspect-ratio: 16 / 9;" alt="Club photo 6">
-					</div>
-				</div>
-				<button class="carousel-control-prev" type="button" data-bs-target="#clubCarousel" data-bs-slide="prev">
-					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-					<span class="visually-hidden">Previous</span>
-				</button>
-				<button class="carousel-control-next" type="button" data-bs-target="#clubCarousel" data-bs-slide="next">
-					<span class="carousel-control-next-icon" aria-hidden="true"></span>
-					<span class="visually-hidden">Next</span>
-				</button>
-			</div>
-
-			<p><strong>Moscow Today</strong> has been getting people together to speak English since <strong>August 2023</strong> — first as Saturday board game nights, now as a speaking club that meets <strong>twice a week</strong>. It is run by Dima, an American living in Moscow, so the room is in English from the first minute, and other native speakers from the community often come along too.</p>
-			<p>The idea is simple, and the club repeats it in every announcement: on a course you listen for 90% of the time and speak for minutes. Here you speak from the moment you sit down. <strong>You get a new conversation partner every 15 minutes</strong> — no teacher, no textbook, no homework, and nobody correcting every word. Say "he go" instead of "he goes" and the table will laugh with you and carry on.</p>
-			<p>Turning up is the whole procedure: come to Surf Coffee on Ostozhenka, order your drink at the counter, say you're with the club, and someone will sit you down next to a friendly person who was also nervous once. Just come a little early — there aren't many tables and they fill up fast. 🙌</p>
-			<hr>
-			<h3>Our Format</h3>
-			<p><strong>Format:</strong> a rotating speaking club in a café. You talk in pairs and small groups, and swap partners every 15 minutes, so you never get stuck in one conversation and everyone gets the same amount of speaking time.</p>
-			<ul>
-			  <li>🗣️ <strong>A new partner every 15 minutes</strong> — an hourglass on the table keeps everyone honest</li>
-			  <li>☕ <strong>No teacher, no textbook, no homework</strong> — just conversation from the first minute</li>
-			  <li>🇺🇸 <strong>Native speakers in the room</strong> — the host is American, and other native speakers come along too</li>
-			  <li>🤍 <strong>Any level is fine</strong> — when there are enough people the groups get split roughly into A2 and B2+</li>
-			  <li>🎲 <strong>Games turn up too</strong> — a card or word game often lands on the table alongside the talking</li>
-			  <li>⏰ <strong>Come early</strong> — the café has a limited number of tables and they go quickly</li>
-			</ul>
-			<p>Ordinary club evenings from the end of August to the end of September 2026 — most of them finish with everyone squeezing in for one photo.</p>
-			<div class="row g-2 mb-4">
-				<div class="col-6 col-md-4">
-					<img src="img/min_moscow-today-club-02.jpg" class="d-block w-100 object-fit-cover rounded" style="aspect-ratio: 4 / 3;" alt="Members lined up behind the cafe's leather couch after a meeting">
-				</div>
-				<div class="col-6 col-md-4">
-					<img src="img/min_moscow-today-club-04.jpg" class="d-block w-100 object-fit-cover rounded" style="aspect-ratio: 4 / 3;" alt="Members talking in small groups around the cafe tables">
-				</div>
-				<div class="col-6 col-md-4">
-					<img src="img/min_moscow-today-club-05.jpg" class="d-block w-100 object-fit-cover rounded" style="aspect-ratio: 4 / 3;" alt="A crowded evening, hands up for the camera">
-				</div>
-			</div>
-			<hr>
-			<h3>Where we meet</h3>
-			<div class="table-responsive mb-3">
-			<table class="table align-middle mb-0">
-			  <thead>
-				<tr>
-				  <th>Day</th>
-				  <th>Venue</th>
-				  <th>Address</th>
-				</tr>
-			  </thead>
-			  <tbody>
-				<tr>
-				  <td><strong>Monday, 19:30</strong></td>
-				  <td>Surf Coffee x Ostozhenka ☕</td>
-				  <td>Ostozhenka 40/1, m. Park Kultury</td>
-				</tr>
-				<tr>
-				  <td><strong>Thursday, 19:30</strong></td>
-				  <td>Surf Coffee x Ostozhenka ☕</td>
-				  <td>Ostozhenka 40/1, m. Park Kultury</td>
-				</tr>
-			  </tbody>
-			</table>
-			</div>
-			<p>The club moved to Ostozhenka in August 2026 — before that it spent years around Mendeleevskaya and, over the summer, in Gorky Park. Every meeting is still announced in the chat a day or two ahead, so it's worth a quick look before you set out.</p>
-			<hr>
-			<h3>Special Formats</h3>
-			<div class="row g-3 mb-4">
-				<div class="col-12">
-					<div class="second-bg rounded p-3 h-100">
-						<h4 class="mb-2">🎲 Board game nights</h4>
-						<p class="mb-0">The club's original format, and the one the regulars still talk about: a long table, a stack of games and four hours of English until the café asks everyone to leave. 🥹 Codenames, Bunker, Harry Potter Monopoly, Cards Against Humanity, Taboo, Alias, Spyfall, Who Am I?, Imaginarium and Scrabble all make the rounds. Through the winter these ran on <strong>Saturday evenings at Karavaev Brothers</strong> (Sushchevskaya 25s1, m. Mendeleevskaya, exit 4) — 500 ₽ cash or transfer, with 30% off the food through the café's own app. In the warm months they moved outdoors to <strong>Gorky Park</strong>, at Surf Coffee on the Pushkinskaya Embankment, with badminton and table tennis alongside the games. Watch the chat for the next one.</p>
-					</div>
-				</div>
-			</div>
-			<p>Saturday game nights — the long table at Karavaev Brothers through autumn and winter, and the first tables outdoors in May.</p>
-			<div class="row g-2 mb-4">
-				<div class="col-6 col-md-4">
-					<img src="img/min_moscow-today-games-01.jpg" class="d-block w-100 object-fit-cover rounded" style="aspect-ratio: 4 / 3;" alt="The long table at Karavaev Brothers under the cafe's neon sign">
-				</div>
-				<div class="col-6 col-md-4">
-					<img src="img/min_moscow-today-games-02.jpg" class="d-block w-100 object-fit-cover rounded" style="aspect-ratio: 4 / 3;" alt="Three members talking across the table between games">
-				</div>
-				<div class="col-6 col-md-4">
-					<img src="img/min_moscow-today-games-03.jpg" class="d-block w-100 object-fit-cover rounded" style="aspect-ratio: 4 / 3;" alt="Players thinking over picture cards laid out on the table">
-				</div>
-				<div class="col-6 col-md-4">
-					<img src="img/min_moscow-today-games-04.jpg" class="d-block w-100 object-fit-cover rounded" style="aspect-ratio: 4 / 3;" alt="A packed table of players on a Saturday night">
-				</div>
-				<div class="col-6 col-md-4">
-					<img src="img/min_moscow-today-games-05.jpg" class="d-block w-100 object-fit-cover rounded" style="aspect-ratio: 4 / 3;" alt="Hands and cards in the middle of a round">
-				</div>
-				<div class="col-6 col-md-4">
-					<img src="img/min_moscow-today-games-06.jpg" class="d-block w-100 object-fit-cover rounded" style="aspect-ratio: 4 / 3;" alt="Imaginarium cards spread across the table">
-				</div>
-				<div class="col-6 col-md-4">
-					<img src="img/min_moscow-today-games-07.jpg" class="d-block w-100 object-fit-cover rounded" style="aspect-ratio: 4 / 3;" alt="A board game in progress around the table">
-				</div>
-				<div class="col-6 col-md-4">
-					<img src="img/min_moscow-today-games-08.jpg" class="d-block w-100 object-fit-cover rounded" style="aspect-ratio: 4 / 3;" alt="Board games outdoors at a long wooden table in May">
-				</div>
-				<div class="col-6 col-md-4">
-					<img src="img/min_moscow-today-games-09.jpg" class="d-block w-100 object-fit-cover rounded" style="aspect-ratio: 4 / 3;" alt="The same outdoor table from the other end, cards everywhere">
-				</div>
-			</div>
-			<hr>
-			<h3>Price</h3>
-			<p><strong>Monday:</strong> free. Buy yourself a coffee and that's it.</p>
-			<p><strong>Thursday:</strong> 500 ₽ for the evening — and your <strong>first visit is free</strong>, so you can try it before paying for anything.</p>
-			<p><strong>Board game nights:</strong> 500 ₽, cash or transfer.</p>
-			<hr>
-			<h3>What people say</h3>
-
-			<div id="reviewsContainer" class="mb-4">
-			  <div class="mb-3 p-3 bg-dark bg-opacity-25 rounded">
-			    <div class="d-flex align-items-start justify-content-between mb-2">
-			      <div class="d-flex align-items-center">
-			        <img src="img/favicon/apple-touch-icon.png" class="rounded-circle me-3" width="48" height="48" style="object-fit: cover;" alt="Katerina">
-			        <div>
-			          <strong>Katerina</strong><br>
-			          <small class="text-muted">🇷🇺 Russia · November 15, 2025</small>
-			        </div>
-			      </div>
-			      <span>⭐️⭐️⭐️⭐️⭐️</span>
-			    </div>
-					<p class="mb-0">Dima, it was a cute meeting! I really enjoyed the atmosphere ✨ Will try to come every week! Thank you! 👍🤝</p>
-			  </div>
-			  <div class="mb-3 p-3 bg-dark bg-opacity-25 rounded">
-			    <div class="d-flex align-items-start justify-content-between mb-2">
-			      <div class="d-flex align-items-center">
-			        <img src="img/favicon/apple-touch-icon.png" class="rounded-circle me-3" width="48" height="48" style="object-fit: cover;" alt="Ilia">
-			        <div>
-			          <strong>Ilia</strong><br>
-			          <small class="text-muted">🇷🇺 Russia · November 22, 2025</small>
-			        </div>
-			      </div>
-			      <span>⭐️⭐️⭐️⭐️⭐️</span>
-			    </div>
-					<p class="mb-0">Thanks everyone for this evening. Thanks for our conversations and for your stories! See you next time!)</p>
-			  </div>
-			  <div class="mb-3 p-3 bg-dark bg-opacity-25 rounded">
-			    <div class="d-flex align-items-start justify-content-between mb-2">
-			      <div class="d-flex align-items-center">
-			        <img src="img/favicon/apple-touch-icon.png" class="rounded-circle me-3" width="48" height="48" style="object-fit: cover;" alt="Svetlana">
-			        <div>
-			          <strong>Svetlana</strong><br>
-			          <small class="text-muted">🇷🇺 Russia · May 23, 2026</small>
-			        </div>
-			      </div>
-			      <span>⭐️⭐️⭐️⭐️⭐️</span>
-			    </div>
-					<p class="mb-0">Thanks for the meeting guys! It was great fun, I really enjoyed 🤗</p>
-			  </div>
-			</div>
-			<hr>
-			<h3>Registration</h3>
-			<p>There is no ticket and no booking — just show up. If you're planning to come, the host asks you to write a "+" in the chat so he knows how many chairs to keep. 👋</p>
-			<ul>
-			  <li><strong>Club channel:</strong> <a href="https://t.me/moscowtodayhq" target="_blank">@moscowtodayhq</a></li>
-			</ul>
-			<p>The same chat is also where Moscow Today posts free things to do around the city — festivals, free museum days, new parks — so it's a decent follow even on the weeks you can't make it.</p>
-		  </article>
-		<nav class="blog-pagination" aria-label="Pagination">
-        <a class="btn btn-outline-primary" href="#archives">Older</a>
-        <a class="btn btn-outline-secondary disabled" href="#" tabindex="-1" aria-disabled="true">Newer</a>
-      </nav>
-
+<p>Thanks for the meeting guys! It was great fun, I really enjoyed 🤗</p>
+<footer>Svetlana · 🇷🇺 Russia · May 23, 2026 · ⭐️⭐️⭐️⭐️⭐️</footer></blockquote>
+</div>
+<hr/>
+<h3>Registration</h3>
+<p>There is no ticket and no booking — just show up. If you're planning to come, the host asks you to write a "+" in the chat so he knows how many chairs to keep. 👋</p>
+<ul>
+<li><strong>Club channel:</strong> <a href="https://t.me/moscowtodayhq" target="_blank">@moscowtodayhq</a></li>
+</ul>
+<p>The same chat is also where Moscow Today posts free things to do around the city — festivals, free museum days, new parks — so it's a decent follow even on the weeks you can't make it.</p>
+      </article>
     </div>
 
-    <div class="col-md-4">
-      <div class="position-sticky" style="top: 2rem;">
-        <div class="p-4 mb-3 second-bg rounded">
-          <h4 class="fst-italic">About</h4>
-          <p class="mb-0">Hi, my name is Alex! This website is your go-to guide for live English practice in Moscow. We post a daily schedule of free and paid speaking clubs, game nights, stand-up shows, and other English events. Come talk with us!</p>
-        </div>
+    <section class="layout__top panel">
+      <h4>At a glance</h4>
+      <dl class="facts-list">
+          <div><dt>When</dt><dd>Tue 19:15 &amp; Sat 17:00</dd></div>
+          <div><dt>Days</dt><dd><ol class="week" aria-label="Meeting days"><li class="">Mo</li><li class="on">Tu</li><li class="">We</li><li class="">Th</li><li class="">Fr</li><li class="on">Sa</li><li class="">Su</li></ol></dd></div>
+          <div><dt>Type</dt><dd>Speed Meetings</dd></div>
+          <div><dt>Price</dt><dd>Paid</dd></div>
+        </dl>
+      <div style="margin-top:1.25rem"><a class="btn btn--primary btn--block" href="https://t.me/moscowtodayhq" target="_blank" rel="noopener">Open in Telegram</a></div>
+    </section>
 
-        <div id="contacts" class="p-4">
-          <h4 class="fst-italic">Elsewhere</h4>
-          <ol class="list-unstyled">
-            <li>Email: <a href="mailto:alexey0097@yandex.ru" target="_blank">alexey0097@yandex.ru</a></li>
-            <li>Telegram: <a href="https://t.me/eng_events" target="_blank">@eng_events</a></li>
-            <li>QR Code: <a href="qr-code.html">time-to-learn-eng</a></li>
-          </ol>
-        </div>
-      </div>
-    </div>
+    <aside class="layout__aside">
+      <section class="panel panel--quiet" id="contacts">
+        <h4>Elsewhere</h4>
+        <ol>
+          <li>Email: <a href="mailto:alexey0097@yandex.ru" target="_blank">alexey0097@yandex.ru</a></li>
+          <li>Telegram: <a href="https://t.me/eng_events" target="_blank">@eng_events</a></li>
+          <li>QR code: <a href="qr-code.html">time-to-learn-eng</a></li>
+        </ol>
+      </section>
+    </aside>
   </div>
-
 </main>
 
-<footer class="blog-footer">
-  <p>© 2026 Time to Learn English · Made by <a href="https://t.me/alexey_acc">@alexey_acc</a> with <a href="https://getbootstrap.com/">Bootstrap</a></p>
-  <p>
-    <a href="#">Back to top</a>
-  </p>
+<footer class="footer">
+  <div class="wrap">
+    <p>Made by <a href="https://t.me/alexey_acc">@alexey_acc</a> for everyone practising English in Moscow.</p>
+    <p><a href="#">Back to top</a></p>
+  </div>
 </footer>
-
-    
-  </body>
+</body>
 </html>

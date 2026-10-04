@@ -1,79 +1,28 @@
 <!doctype html>
-<html lang="en" data-bs-theme="dark">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="description" content="" />
-        <meta name="author" content="Alexey Leonov, and Bootstrap contributors" />
-        <title>Reading and Vocabulary Club — Time to Learn English</title>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="" name="description"/>
+<meta content="Alexey Leonov" name="author"/>
+<link rel="stylesheet" href="metro/metro.css">
+<script src="metro/metro.js"></script>
+<meta name="theme-color" content="#18803a">
+<title>Reading and Vocabulary Club — Time to Learn English</title>
 
-        <link href="css/bootstrap.min.css" rel="stylesheet" />
-        <link rel="preload" href="fonts/playfair-700-latin.woff2" as="font" type="font/woff2" crossorigin />
-        <link href="css/blog.css" rel="stylesheet" />
-        <script src="js/bootstrap.bundle.min.js"></script>
+<meta content="Time to Learn English" property="og:title"/>
+<meta content="Your go-to guide for live English practice in Moscow. Speaking clubs, game nights, stand-up shows, and more!" property="og:description"/>
+<meta content="https://alexey0097.github.io/time-to-learn-english/img/preview.jpg" property="og:image"/>
+<meta content="https://alexey0097.github.io/time-to-learn-english/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<link href="img/favicon/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png"/>
+<link href="img/favicon/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="img/favicon/favicon.ico" rel="shortcut icon"/>
+<link href="img/favicon/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="img/favicon/site.webmanifest" rel="manifest"/>
 
-        <meta name="theme-color" content="#121212" />
-
-        <meta property="og:title" content="Time to Learn English" />
-        <meta
-            property="og:description"
-            content="Your go-to guide for live English practice in Moscow. Speaking clubs, game nights, stand-up shows, and more!"
-        />
-        <meta property="og:image" content="https://alexey0097.github.io/time-to-learn-english/img/preview.jpg" />
-        <meta property="og:url" content="https://alexey0097.github.io/time-to-learn-english/" />
-        <meta property="og:type" content="website" />
-
-        <link rel="icon" type="image/png" href="img/favicon/favicon-96x96.png" sizes="96x96" />
-        <link rel="icon" type="image/svg+xml" href="img/favicon/favicon.svg" />
-        <link rel="shortcut icon" href="img/favicon/favicon.ico" />
-        <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png" />
-        <link rel="manifest" href="img/favicon/site.webmanifest" />
-
-        <style>
-            .bd-placeholder-img {
-                font-size: 1.125rem;
-                text-anchor: middle;
-                -webkit-user-select: none;
-                -moz-user-select: none;
-                user-select: none;
-            }
-
-            @media (min-width: 768px) {
-                .bd-placeholder-img-lg {
-                    font-size: 3.5rem;
-                }
-            }
-            @keyframes bg-scroll {
-                0% {
-                    background-position: 0 center;
-                }
-                100% {
-                    background-position: -1300px center;
-                }
-            }
-
-            .animate-bg {
-                background-image: url("img/full-bg.jpg");
-                background-repeat: repeat-x;
-                background-size: auto 100%;
-                background-position: 0 center;
-                animation: bg-scroll 270s linear infinite;
-            }
-
-            .animate-bg::before {
-                content: "";
-                position: absolute;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                background: rgba(0, 0, 0, 0.55);
-                border-radius: inherit;
-            }
-        </style>
-
-        <!-- Yandex.Metrika counter -->
-        <script type="text/javascript">
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
             (function (m, e, t, r, i, k, a) {
                 m[i] =
                     m[i] ||
@@ -104,336 +53,215 @@
                 trackLinks: true,
             });
         </script>
-        <noscript
-            ><div>
-                <img src="https://mc.yandex.ru/watch/108766865" style="position: absolute; left: -9999px" alt="" /></div
-        ></noscript>
-        <!-- /Yandex.Metrika counter -->
-    </head>
-    <body>
-        <div class="container">
-            <header class="blog-header py-3">
-                <div class="row flex-wrap flex-md-nowrap justify-content-between align-items-center gy-2 gy-md-0">
-                    <div class="col-auto col-md-4">
-                        <a class="btn btn-sm btn-primary" target="_blank" href="https://t.me/eng_events">Subscribe</a>
-                    </div>
-                    <div class="col-12 col-md-4 text-center order-first order-md-0">
-                        <a class="blog-header-logo header-link" href="index.html">Time to Learn English</a>
-                    </div>
-                    <div class="col-auto col-md-4 d-flex justify-content-end align-items-center">
-                        <a class="link-secondary" href="#" aria-label="Search">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="20"
-                                height="20"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                stroke-width="2"
-                                class="mx-3"
-                                role="img"
-                                viewBox="0 0 24 24"
-                            >
-                                <title>Search</title>
-                                <circle cx="10.5" cy="10.5" r="7.5" />
-                                <path d="M21 21l-5.2-5.2" />
-                            </svg>
-                        </a>
-                        <a class="btn btn-sm btn-outline-secondary" href="#">Sign up</a>
-                    </div>
-                </div>
-            </header>
+<noscript><div>
+<img alt="" src="https://mc.yandex.ru/watch/108766865" style="position: absolute; left: -9999px"/></div></noscript>
+<!-- /Yandex.Metrika counter -->
+</head>
+<body>
 
-            <div class="nav-scroller py-1 mb-2">
-                <nav class="nav d-flex justify-content-between">
-                    <a class="p-2 link-secondary" href="index.html#actual-schedule">Schedule</a>
-                    <a class="p-2 link-secondary" href="clubs.html">Clubs</a>
-                    <a class="p-2 link-secondary" href="teachers.html">Teachers</a>
-                    <a class="p-2 link-secondary" href="#contacts">Contacts</a>
-                </nav>
-            </div>
-        </div>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="index.html">Time to Learn English</a>
+    <nav aria-label="Main">
+      <a href="index.html">Schedule</a>
+      <a href="clubs.html" aria-current="page">Clubs</a>
+      <a href="teachers.html">Teachers</a>
+      <a href="#contacts">Contacts</a>
+    </nav>
+    <a class="btn btn--primary" href="https://t.me/eng_events" target="_blank">Subscribe</a>
+  </div>
+</header>
 
-        <main class="container">
-            <div class="row g-5" style="margin-left: 0; margin-right: 0">
-                <div class="col-md-8" style="max-width: 100%">
-                    <article class="blog-post">
+<main class="is-alt">
+  <section class="intro intro--compact wrap">
+    <a class="back" href="clubs.html">All clubs</a>
+    <div class="kicker">Online</div>
+    <h1>Reading and Vocabulary Club</h1>
+  </section>
 
-                      <h2 class="blog-post-title">Reading and Vocabulary Club</h2>
-
-                      <p class="blog-post-meta">May 21, 2026 by <a href="#contacts">Alexey Leonov</a></p>
-
-                      <img
-                            src="img/min_IMG_1840.JPG"
-                            class="rounded mb-4 img-fluid"
-                            alt="Reading and Vocabulary Club"
-                            style="max-height: 400px; max-width: 100%; object-fit: cover"
-                        />
-
-                      <p>
+  <div class="layout wrap">
+    <div class="layout__main">
+      <div aria-label="Photos of Reading and Vocabulary Club" class="gallery" data-gallery="" role="region" tabindex="0"><div class="gallery__track"><img alt="Reading and Vocabulary Club" loading="eager" src="img/min_IMG_1840.JPG"/></div></div>
+      <article class="prose gap-top-sm">
+<p>
                           You know enough English to get by — but somewhere between the textbook and
                           real life, something gets lost.
                         </p>
-
-                        <p>The Reading & Vocabulary Club is where that gap closes.</p>
-
-                        <p>
+<p>The Reading &amp; Vocabulary Club is where that gap closes.</p>
+<p>
                           Every Sunday, a small group of adults meets on Zoom to read original texts,
                           discover vocabulary worth using, and talk about things that genuinely interest
                           them. Real books. Real topics. Real conversation.
                         </p>
-
-                        <p>
+<p>
                           No homework, no grammar tests, no pressure to be perfect — just a warm,
                           curious group of people who show up every week because it actually feels good
                           to learn this way.
                         </p>
-                    <hr />
-
-                      <h3>How it works 📚</h3>
-
-                      <p>
+<hr/>
+<h3>How it works 📚</h3>
+<p>
                         Each Sunday evening, a small group of participants gathers on Zoom to
                         explore a text together — a passage from a book, a news article, or a short
                         story — all in the <strong>original English</strong>. Here's what a typical
                         meeting looks like:
                       </p>
-
-                      <ul>
-                        <li>
+<ul>
+<li>
                           📖 Read a carefully chosen excerpt aloud
                           together
                         </li>
-                        <li>
+<li>
                           🔍 Pick out useful phrases and new vocabulary
                         </li>
-                        <li>
+<li>
                           🗣️ Discuss the topic using the new language
                           in real conversation
                         </li>
-                        <li>
+<li>
                           🎯 Work on <strong>correct
                             pronunciation</strong> along the way
                         </li>
-                      </ul>
-
-                      <p>
-                        <strong>Level:</strong> B1–B2 (Intermediate). Not sure about your level? Elena explains
+</ul>
+<p>
+<strong>Level:</strong> B1–B2 (Intermediate). Not sure about your level? Elena explains
                         it simply: you can chat on everyday topics, understand most news and fiction, and actively
                         express your opinion. If that sounds like you — come join!
                     </p>
-                    <p>
-                        <strong>Group size:</strong> 4 to 12 people. Registration is required so everyone feels
+<p>
+<strong>Group size:</strong> 4 to 12 people. Registration is required so everyone feels
                         comfortable. If your plans change, just let Elena know — no hard feelings.
                     </p>
-
-
-                    <p>
-                        <strong>What we read:</strong> Authentic, non-adapted materials — book excerpts,
+<p>
+<strong>What we read:</strong> Authentic, non-adapted materials — book excerpts,
                         articles, short stories. Past topics include the psychology of color and light from
                         <em>Joyful</em> by Ingrid Fetell Lee, fake news detection, sleep science from Matthew
                         Walker's <em>Why We Sleep</em>, and even a special Women's Day session with Gloria Gaynor's
                         lyrics. 🎶
                     </p>
-
-                    <hr />
-
-                      <h3>Where we meet 🖥️</h3>
-
-                              <img
-                                    src="img/min_photo_5192763788019570893_w.jpg"
-                                    class="rounded mb-3 mt-2 img-fluid"
-                                    alt="Reading and Vocabulary Club"
-                                    style="max-height: 400px; max-width: 100%; object-fit: cover"
-                                />
-
-                      <table class="table">
-                        <thead>
-                          <tr>
-                            <th>Format</th>
-                            <th>Platform</th>
-                            <th>Day & Time</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td><em>Online</em></td>
-                            <td>Zoom (camera on)</td>
-                            <td>Sundays at 20:00 MSK</td>
-                          </tr>
-                        </tbody>
-                      </table>
-
-                      <p>
+<hr/>
+<h3>Where we meet 🖥️</h3>
+<img alt="Reading and Vocabulary Club" class="photo" loading="lazy" src="img/min_photo_5192763788019570893_w.jpg"/>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Format</th>
+<th>Platform</th>
+<th>Day &amp; Time</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Online</em></td>
+<td>Zoom (camera on)</td>
+<td>Sundays at 20:00 MSK</td>
+</tr>
+</tbody>
+</table></div>
+<p>
                         Meetings last around <strong>60 minutes</strong> with a short break. No
                         homework, no preparation required — just show up and practise. It's
                         completely fine to make mistakes. That's the whole point.
                       </p>
-
-                      <p>All you need is a stable internet connection and a willingness to speak.</p>
-
-                    <hr />
-                      <h3>Pricing 💛</h3>
-
-                      <p>
+<p>All you need is a stable internet connection and a willingness to speak.</p>
+<hr/>
+<h3>Pricing 💛</h3>
+<p>
                         All sessions throughout <strong>2026 are completely free</strong> 🎉 — no
                         subscriptions, no trial periods, just genuine practice. Registration is
                         still required so that everyone has a comfortable spot. Pricing for 2027 and
                         beyond will be announced later.
                       </p>
-
-                      <figure class="blockquote">
-                          <blockquote>Motivation is the main currency here. 😊</blockquote>
-                          <figcaption class="blockquote-footer">Helen</figcaption>
-                        </figure>
-
-                    <hr />
-
-                      <h3>Your host 🌟</h3>
-
-                      <img
-                                    src="img/photo_5228892954129274144_y.jpg"
-                                    class="rounded mb-3 mt-2 img-fluid"
-                                    alt="Reading and Vocabulary Club"
-                                    style="max-height: 400px; max-width: 100%; object-fit: cover"
-                                />
-
-                      <p>
-                        <strong>Helen</strong> — linguist, Cambridge CELTA-certified English teacher, and a genuine language enthusiast. She holds a Master's in Linguistics and has been teaching English for over 10 years — to children, students, and adults across all levels and backgrounds.
+<figure>
+<blockquote>Motivation is the main currency here. 😊</blockquote>
+<footer>Helen</footer>
+</figure>
+<hr/>
+<h3>Your host 🌟</h3>
+<img alt="Reading and Vocabulary Club" class="photo" loading="lazy" src="img/photo_5228892954129274144_y.jpg"/>
+<p>
+<strong>Helen</strong> — linguist, Cambridge CELTA-certified English teacher, and a genuine language enthusiast. She holds a Master's in Linguistics and has been teaching English for over 10 years — to children, students, and adults across all levels and backgrounds.
 
                       </p>
-                      <p>
+<p>
                           She learned grammar at school and spoken English in the US, where she spent a year on a scholarship she won at 16. Later she completed a training placement in the UK. That mix of rigour and real-life fluency is exactly what she brings to every session.
                       </p>
-
-                      <p>
+<p>
                           
                             Her students have gone on to join international conferences, business trips abroad, and global teams. Among them: employees of General Motors, Club Med, BNP Paribas, Cartier, and other well-known companies. She combines grammar, pronunciation, and authentic materials — because for Helen, language only makes sense when it's actually spoken.
                       </p>
-
-                      
-                    <hr />
-
-                      <h3>Join the club 🚀</h3>
-
-                      <p>Ready to practise your English in good company?</p>
-
-                      <p>
+<hr/>
+<h3>Join the club 🚀</h3>
+<p>Ready to practise your English in good company?</p>
+<p>
                         🔗 <strong>Telegram:</strong>
-                        <a href="https://t.me/readingandvocabularyclub" target="_blank">t.me/readingandvocabularyclub</a>
-                      </p>
-                      <p>
+<a href="https://t.me/readingandvocabularyclub" target="_blank">t.me/readingandvocabularyclub</a>
+</p>
+<p>
                         🔗 <strong>VK:</strong>
-                        <a href="https://vk.ru/lovelyeng" target="_blank">vk.ru/lovelyeng</a>
-                      </p>
-
-                      <p>
+<a href="https://vk.ru/lovelyeng" target="_blank">vk.ru/lovelyeng</a>
+</p>
+<p>
                         ✍️ <strong>To register for a session:</strong> message <a href="https://t.me/helen_9119@helen_9119" target="_blank">@helen_9119</a> on
                         Telegram or leave a comment in the channel
                       </p>
-
-                      <p>
+<p>
                         Schedules and upcoming topics are posted in the channel in advance. Once
                         you've signed up for a session, just show up on time — and if your plans
                         change, a quick message is all it takes. 🙌
                       </p>
+<hr/>
+<h3>What people say</h3>
+<div id="reviewsContainer">
+<blockquote>
 
-                      <hr>
+<p>I found this speaking club completely by chance, and I'm so happy I did. Elena is a fantastic professional. After just one hour, you leave the lesson having learned something new.  And the class itself is always relaxed and friendly. I recommended the club to a friend of mine, and she joined too, moreover, she loves it too.</p>
+<footer>Tatiana Sirichenko · 🇷🇺 Russia · May 15, 2026 · ⭐️⭐️⭐️⭐️⭐️</footer></blockquote>
+<blockquote>
 
-                        <h3 class="mb-3">What people say</h3>
+<p>It was perfect. Everybody had a chance to speak in small groups.  It had also interesting topic and this reason why it easy be involved in discuss.</p>
+<footer>Vitalii · 🇷🇺 Russia · May 3, 2026 · ⭐️⭐️⭐️⭐️⭐️</footer></blockquote>
+<blockquote>
 
-                        <div id="reviewsContainer" class="mb-4">
-                            <div class="mb-3 p-3 bg-dark bg-opacity-25 rounded">
-                                <div class="d-flex align-items-start justify-content-between mb-2">
-                                  <div class="d-flex align-items-center">
-                                    <img src="img/favicon/apple-touch-icon.png" class="rounded-circle me-3" width="48" height="48" style="object-fit: cover;" alt="">
-                                    <div>
-                                      <strong>Tatiana Sirichenko</strong><br>
-                                      <small class="text-muted">🇷🇺 Russia · May 15, 2026</small>
-                                    </div>
-                                  </div>
-                                  <span>⭐️⭐️⭐️⭐️⭐️</span>
-                                </div>
-                                <p class="mb-3">I found this speaking club completely by chance, and I'm so happy I did. Elena is a fantastic professional. After just one hour, you leave the lesson having learned something new.  And the class itself is always relaxed and friendly. I recommended the club to a friend of mine, and she joined too, moreover, she loves it too.</p>
-                              </div>
-                          <div class="mb-3 p-3 bg-dark bg-opacity-25 rounded">
-                            <div class="d-flex align-items-start justify-content-between mb-2">
-                              <div class="d-flex align-items-center">
-                                <img src="img/favicon/apple-touch-icon.png" class="rounded-circle me-3" width="48" height="48" style="object-fit: cover;" alt="Vera U.">
-                                <div>
-                                  <strong>Vitalii</strong><br>
-                                  <small class="text-muted">🇷🇺 Russia · May 3, 2026</small>
-                                </div>
-                              </div>
-                              <span>⭐️⭐️⭐️⭐️⭐️</span>
-                            </div>
-                            <p class="mb-3">It was perfect. Everybody had a chance to speak in small groups.  It had also interesting topic and this reason why it easy be involved in discuss.</p>
-                          </div>
-                          <div class="mb-3 p-3 bg-dark bg-opacity-25 rounded">
-                            <div class="d-flex align-items-start justify-content-between mb-2">
-                              <div class="d-flex align-items-center">
-                                <img src="img/favicon/apple-touch-icon.png" class="rounded-circle me-3" width="48" height="48" style="object-fit: cover;" alt="Vera U.">
-                                <div>
-                                  <strong>Elena Golotenko</strong><br>
-                                  <small class="text-muted">🇷🇺 Russia · May 3, 2026</small>
-                                </div>
-                              </div>
-                              <span>⭐️⭐️⭐️⭐️⭐️</span>
-                            </div>
-                            <p class="mb-3">We had a wonderful time — just over an hour of fun, warmth, and real learning.</p>
-                            <p class="mb-3">Helen explains a few expressions from her prepared material, then steers us through some excellently chosen excerpts from real, unadapted texts. We read them aloud, paying close attention to correct pronunciation.</p>
-                            <p class="mb-3">Going back over the new vocabulary through explanation rather than translation, Helen sets up mini-discussions and guided Q&A to put the expressions into active use.
+<p>We had a wonderful time — just over an hour of fun, warmth, and real learning.</p>
+<p>Helen explains a few expressions from her prepared material, then steers us through some excellently chosen excerpts from real, unadapted texts. We read them aloud, paying close attention to correct pronunciation.</p>
+<p>Going back over the new vocabulary through explanation rather than translation, Helen sets up mini-discussions and guided Q&amp;A to put the expressions into active use.
                             </p>
-                            <p class="mb-3">To sum it up: a fun, low-pressure boost to your vocabulary, pronunciation, and reading skills, in a warm and welcoming atmosphere.</p>
+<p>To sum it up: a fun, low-pressure boost to your vocabulary, pronunciation, and reading skills, in a warm and welcoming atmosphere.</p>
+<footer>Elena Golotenko · 🇷🇺 Russia · May 3, 2026 · ⭐️⭐️⭐️⭐️⭐️</footer></blockquote>
+</div>
+      </article>
+    </div>
 
-                          </div>
-                        </div>
+    <section class="layout__top panel">
+      <h4>At a glance</h4>
+      <dl class="facts-list">
+          <div><dt>When</dt><dd>Sun 20:00</dd></div>
+          <div><dt>Days</dt><dd><ol class="week" aria-label="Meeting days"><li class="">Mo</li><li class="">Tu</li><li class="">We</li><li class="">Th</li><li class="">Fr</li><li class="">Sa</li><li class="on">Su</li></ol></dd></div>
+          <div><dt>Type</dt><dd>Online</dd></div>
+          <div><dt>Price</dt><dd>Free</dd></div>
+        </dl>
+      <div style="margin-top:1.25rem"><a class="btn btn--primary btn--block" href="https://t.me/readingandvocabularyclub" target="_blank" rel="noopener">Open in Telegram</a></div>
+    </section>
 
-                    </article>
-                    <nav class="blog-pagination" aria-label="Pagination">
-                        <a class="btn btn-outline-primary" href="#archives">Older</a>
-                        <a class="btn btn-outline-secondary disabled" href="#" tabindex="-1" aria-disabled="true"
-                            >Newer</a
-                        >
-                    </nav>
-                </div>
+    <aside class="layout__aside">
+      <section class="panel panel--quiet" id="contacts">
+        <h4>Elsewhere</h4>
+        <ol>
+          <li>Email: <a href="mailto:alexey0097@yandex.ru" target="_blank">alexey0097@yandex.ru</a></li>
+          <li>Telegram: <a href="https://t.me/eng_events" target="_blank">@eng_events</a></li>
+          <li>QR code: <a href="qr-code.html">time-to-learn-eng</a></li>
+        </ol>
+      </section>
+    </aside>
+  </div>
+</main>
 
-                <div class="col-md-4">
-                    <div class="position-sticky" style="top: 2rem">
-                        <div class="p-4 mb-3 second-bg rounded">
-                            <h4 class="fst-italic">About</h4>
-                            <p class="mb-0">
-                                Hi, my name is Alex! This website is your go-to guide for live English practice in
-                                Moscow. We post a daily schedule of free and paid speaking clubs, game nights, stand-up
-                                shows, and other English events. Come talk with us!
-                            </p>
-                        </div>
-
-                        <div id="contacts" class="p-4">
-                            <h4 class="fst-italic">Elsewhere</h4>
-                            <ol class="list-unstyled">
-                                <li>
-                                    Email:
-                                    <a href="mailto:alexey0097@yandex.ru" target="_blank">alexey0097@yandex.ru</a>
-                                </li>
-                                <li>Telegram: <a href="https://t.me/eng_events" target="_blank">@eng_events</a></li>
-                                <li>QR Code: <a href="qr-code.html">time-to-learn-eng</a></li>
-                            </ol>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </main>
-
-        <footer class="blog-footer">
-            <p>
-                © 2026 Time to Learn English · Made by
-                <a href="https://t.me/alexey_acc">@alexey_acc</a> with <a href="https://getbootstrap.com/">Bootstrap</a>
-            </p>
-            <p>
-                <a href="#">Back to top</a>
-            </p>
-        </footer>
-    </body>
+<footer class="footer">
+  <div class="wrap">
+    <p>Made by <a href="https://t.me/alexey_acc">@alexey_acc</a> for everyone practising English in Moscow.</p>
+    <p><a href="#">Back to top</a></p>
+  </div>
+</footer>
+</body>
 </html>

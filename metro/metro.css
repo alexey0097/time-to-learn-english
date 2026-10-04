@@ -185,20 +185,29 @@
   .topbar nav a:hover, .topbar nav a[aria-current="page"] { color: var(--ink); background: var(--surface); }
   .topbar nav + * { margin-left: 0.5rem; }
   .topbar > .wrap > .btn { padding: 0.55rem 1rem; font-size: var(--step-0); line-height: 1.5; }   /* Subscribe: body-size text */
-  @media (max-width: 46rem) {
+  @media (max-width: 53rem) {   /* the one-line header (full name + menu + Subscribe) needs ~838px */
     .topbar > .wrap { flex-wrap: wrap; gap: 0; padding-top: 0.75rem; }
-    .topbar nav { order: 3; width: 100%; margin-left: 0; overflow-x: auto; padding-block: 0.5rem; scrollbar-width: none; }
+    .topbar nav { order: 3; width: 100%; margin-left: 0; padding-block: 0.5rem; flex-wrap: wrap; justify-content: space-between; gap: 0; }   /* every item visible, none cut at the edge */
+    .topbar nav a { padding-inline: 0.4rem; }
     .topbar nav a:first-child { padding-left: 0; }
+    .topbar nav a:last-child { padding-right: 0; }
     .topbar nav + * { margin-left: auto; }
     .topbar nav a[aria-current="page"] { background: none; }
+    .brand { white-space: normal; line-height: 1.15; flex: 1 1 0; min-width: 0; margin-right: 0.75rem; }   /* the name wraps instead of pushing Subscribe down */
+    .brand::before { flex: none; }
+    .topbar > .wrap > .btn { flex: none; }
   }
 
 /* ------------------------------------------------------------------ 6. Intro */
   .intro { padding-block: clamp(2.5rem, 6vw, 4.5rem) 2rem; }
   .intro h1 { font-size: var(--step-3); max-width: 18ch; }
+  /* inner pages (a club, a teacher): get to the content quickly */
+  .intro--compact { padding-block: 1.25rem 1.5rem; }
+  .intro--compact h1 { font-size: clamp(1.6rem, 1.25rem + 1.5vw, 2.5rem); max-width: 28ch; margin-top: 0.15rem; }
   .lede { margin-top: 1rem; max-width: 52ch; color: var(--muted); font-size: var(--step-1); }
 
 /* ------------------------------------------------------------------ 7. Prose (posts) */
+  .prose { overflow-wrap: break-word; }   /* long links and addresses wrap on phones */
   .prose + .prose { margin-top: 4rem; }
   .prose > h2 { font-size: var(--step-2); }
   .prose > h2:not(:first-child) { margin-top: 3rem; font-size: var(--step-1); }
@@ -284,6 +293,7 @@
   .btn--alt { background: var(--alt); border-color: var(--alt); color: var(--on-alt); font-weight: 600; }
   .btn--alt:hover { color: var(--on-alt); filter: brightness(1.08); }
   .btn.is-done { border-color: var(--line); color: var(--line); }
+  .btn--block { display: flex; width: 100%; }
 
   .link-btn {
     padding: 0; border: 0; background: none; cursor: pointer;
@@ -400,7 +410,15 @@
     display: grid; place-items: center; align-self: start;
     background: var(--surface); color: var(--muted); font: 600 1.1rem/1 var(--display);
   }
-  .entry:has(.entry__avatar) { --media: 4.5rem; column-gap: 1.25rem; }
+  .entry:has(.entry__avatar) { --media: 4.5rem; column-gap: 1.25rem; grid-template-rows: auto; }
+  /* people: only the head sits next to the portrait, the text and buttons use the full width */
+  .entry:has(> .entry__avatar) > .entry__avatar { grid-row: 1 / span 3; }
+  .entry:has(> .entry__avatar):not(:has(.entry__sub)) > .entry__avatar { grid-row: 1 / span 2; }
+  .entry:has(> .entry__avatar) > :not(.entry__avatar, .entry__head) { grid-column: 1 / -1; }
+  .entry:has(> .entry__avatar) > .entry__head { display: contents; }   /* name, role and tags beside the portrait */
+  .entry:has(> .entry__avatar) > .entry__head > * { grid-column: 2; }
+  .entry:has(> .entry__avatar) > .entry__head > .facts { grid-column: 1 / -1; }   /* facts start at the left edge */
+  .entry:has(> .entry__avatar) > .entry__text { margin-top: 1rem; max-width: none; }   /* text uses the full card width */
   .entry h2 { font-size: var(--step-1); margin-top: 0.2rem; }
   .entry__sub { margin-top: 0.3rem; color: var(--muted); font-size: 0.95rem; }
   .entry__text { margin-top: 0.75rem; max-width: 64ch; }
@@ -412,37 +430,54 @@
   .entry .more { justify-self: start; }
   .entry .more:only-of-type::after { content: ""; position: absolute; inset: 0; }   /* whole row clickable when it has one link */
   .entry:has(.more:hover) h2 { color: var(--line); }
-  .flag { display: inline-block; width: 1.3em; height: 0.9em; object-fit: cover; border-radius: 2px; vertical-align: -0.1em; box-shadow: 0 0 0 1px var(--rule); }
+  .flag { display: inline-block; width: 1.3em; height: 0.9em; object-fit: cover; border-radius: 2px; vertical-align: -0.1em; box-shadow: 0 0 0 1px var(--rule); margin-right: 0.25em; }   /* a little air before the text */
+  .flag + .flag { margin-left: 0.05em; }   /* flags in a row: 0.3em apart in total */
   @media (max-width: 40rem) {
     .entry { --media: 5.5rem; column-gap: 1rem; grid-template-rows: auto; }
     .entry:has(.entry__avatar) { --media: 3.5rem; column-gap: 1rem; }
     .entry__media, .entry__avatar { grid-row: 1; }
     .entry > :not(.entry__media, .entry__avatar, .entry__head) { grid-column: 1 / -1; }
+    /* people on phones: name and role next to the portrait, tags and facts below at full width */
+    .entry:has(> .entry__avatar) > .entry__head { display: contents; }
+    .entry:has(> .entry__avatar) > .entry__head > * { grid-column: 2; }
+    .entry:has(> .entry__avatar) > .entry__head > :is(.tags, .facts, .week) { grid-column: 1 / -1; }
+    .entry:has(> .entry__avatar) > .entry__avatar { grid-row: 1 / span 2; align-self: center; }
+    .entry:has(> .entry__avatar) h2 { margin-top: 0; }
+    .entry:has(> .entry__avatar) .tags { margin-top: 0.9rem; }
   }
 
 /* ------------------------------------------------------------------ 13. Week: seven small stations, .on = meets that day
    <ol class="week"><li class="on">Mo</li><li>Tu</li>…</ol> */
   .week {
     --col: 2.1rem;
+    --dot: 12px;          /* station size */
+    --day: 0.72rem;       /* day label size */
+    --link: 4px;          /* thickness of the line between days */
     list-style: none; padding: 0; margin-top: 0.9rem;
     display: grid; grid-template-columns: repeat(7, var(--col));
     position: relative; width: max-content;
   }
-  .week::before { content: ""; position: absolute; top: 5px; left: calc(var(--col) / 2); right: calc(var(--col) / 2); height: 2px; background: var(--rule); }
+  .week::before {
+    content: ""; position: absolute; top: calc(var(--dot) / 2 - 1px); left: calc(100% / 14); right: calc(100% / 14);
+    height: 2px; background: var(--rule);
+  }
   /* the route: consecutive meeting days are joined by the line, a gap breaks it;
      a lone day gets a short piece of track, like a single stop in the schedule */
   .week li.on:has(+ li.on)::after {
-    content: ""; position: absolute; z-index: -1; top: 4px; height: 4px;
-    left: 50%; width: var(--col);
+    content: ""; position: absolute; z-index: -1; top: calc(var(--dot) / 2 - var(--link) / 2); height: var(--link);
+    left: 50%; width: 100%;
     background: var(--line-fill, var(--line));
   }
   .week li.on:not(:has(+ li.on)):not(li.on + li)::after {
-    content: ""; position: absolute; z-index: -1; top: 4px; height: 4px; border-radius: 2px;
-    left: calc(50% - 0.875rem); width: 1.75rem;
+    content: ""; position: absolute; z-index: -1; top: calc(var(--dot) / 2 - var(--link) / 2); height: var(--link); border-radius: 2px;
+    left: calc(50% - var(--dot) * 1.25); width: calc(var(--dot) * 2.5);
     background: var(--line-fill, var(--line));
   }
-  .week li { position: relative; z-index: 1; display: grid; justify-items: center; gap: 0.2rem; font-size: 0.72rem; color: var(--muted); }
-  .week li::before { content: ""; width: 12px; height: 12px; border-radius: 50%; background: var(--paper); border: 2px solid var(--rule); }
+  .week li { position: relative; z-index: 1; display: grid; justify-items: center; gap: 0.25rem; font-size: var(--day); color: var(--muted); }
+  .week li::before {
+    content: ""; width: var(--dot); height: var(--dot); border-radius: 50%; box-sizing: border-box;
+    background: var(--paper); border: 2px solid color-mix(in srgb, var(--muted) 45%, var(--paper));
+  }
   .week li.on { color: var(--ink); font-weight: 600; }
   .week li.on::before { background: var(--line-fill, var(--line)); border-color: var(--line-fill, var(--line)); }
 
@@ -568,11 +603,14 @@
 /* ------------------------------------------------------------------ 15e. Facts: a short list of label → value
    <dl class="facts-list"><div><dt>When</dt><dd>Tue 19:00</dd></div></dl> */
   .facts-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr)); gap: 0.9rem 1rem; margin-top: 1rem; }
-  .facts-list > div:has(.week) { grid-column: 1 / -1; }
+  .facts-list > div:has(.week), .facts-list > div:first-child { grid-column: 1 / -1; }
   .facts-list dt { font-size: var(--step--1); color: var(--muted); }
   .facts-list dd { margin: 0.1rem 0 0; font-weight: 500; }
-  .facts-list .week { margin-top: 0.4rem; }
-  .back { display: inline-block; margin-bottom: 1rem; font-size: var(--step--1); color: var(--muted); text-decoration: none; }
+  .facts-list .week { --dot: 16px; --day: 0.85rem; --link: 5px; margin-top: 0.5rem; width: 100%; grid-template-columns: repeat(7, 1fr); }
+  .panel .week li:not(.on)::before { background: var(--surface); }
+  @media (max-width: 40rem) { .facts-list .week { --dot: 18px; --day: 0.9rem; --link: 5px; } }
+  .back { display: inline-flex; align-items: center; gap: 0.3rem; margin-bottom: 0.6rem; font-size: var(--step--1); color: var(--muted); text-decoration: none; }
+  .back::before { content: "←"; }
   .back:hover { color: var(--line); }
 
 /* ------------------------------------------------------------------ 15f. Rich article content: tables, quotes, photos, people

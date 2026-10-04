@@ -64,9 +64,9 @@
 
 <header class="topbar">
   <div class="wrap">
-    <a class="brand" href="index.html">Time to Learn Eng</a>
+    <a class="brand" href="index.html">Time to Learn English</a>
     <nav aria-label="Main">
-      <a href="index.html#actual-schedule">Schedule</a>
+      <a href="index.html">Schedule</a>
       <a href="clubs.html" aria-current="page">Clubs</a>
       <a href="teachers.html">Teachers</a>
       <a href="#contacts">Contacts</a>
@@ -88,18 +88,18 @@
         <fieldset>
           <legend>Type</legend>
           <div class="chips">
-          <label class="chip"><input class="filter-type" type="checkbox" value="Speed Meetings" id="filterSpeed" checked><span>Speed Meetings</span></label>
-          <label class="chip line-yellow"><input class="filter-type" type="checkbox" value="Board Games" id="filterBoard" checked><span>Board Games</span></label>
-          <label class="chip"><input class="filter-type" type="checkbox" value="Group Meetings" id="filterGroup" checked><span>Group Meetings</span></label>
-          <label class="chip chip--alt"><input class="filter-type" type="checkbox" value="Online" id="filterOnline" checked><span>Online</span></label>
-          <label class="chip line-violet"><input class="filter-type" type="checkbox" value="Stand-up" id="filterStandup" checked><span>Stand-up</span></label>
+          <label class="chip"><input class="filter-type" type="checkbox" value="Speed Meetings" id="filterSpeed" checked><span>Speed Meetings <span class="n" data-count="Speed Meetings"></span></span></label>
+          <label class="chip line-yellow"><input class="filter-type" type="checkbox" value="Board Games" id="filterBoard" checked><span>Board Games <span class="n" data-count="Board Games"></span></span></label>
+          <label class="chip"><input class="filter-type" type="checkbox" value="Group Meetings" id="filterGroup" checked><span>Group Meetings <span class="n" data-count="Group Meetings"></span></span></label>
+          <label class="chip chip--alt"><input class="filter-type" type="checkbox" value="Online" id="filterOnline" checked><span>Online <span class="n" data-count="Online"></span></span></label>
+          <label class="chip line-violet"><input class="filter-type" type="checkbox" value="Stand-up" id="filterStandup" checked><span>Stand-up <span class="n" data-count="Stand-up"></span></span></label>
           </div>
         </fieldset>
         <fieldset>
           <legend>Price</legend>
           <div class="chips">
-          <label class="chip"><input class="filter-price" type="checkbox" value="free" id="priceFree" checked><span>Free</span></label>
-          <label class="chip"><input class="filter-price" type="checkbox" value="paid" id="pricePaid" checked><span>Paid</span></label>
+          <label class="chip"><input class="filter-price" type="checkbox" value="free" id="priceFree" checked><span>Free <span class="n" data-count-price="free"></span></span></label>
+          <label class="chip"><input class="filter-price" type="checkbox" value="paid" id="pricePaid" checked><span>Paid <span class="n" data-count-price="paid"></span></span></label>
           </div>
         </fieldset>
         <fieldset>
@@ -971,6 +971,16 @@
                         document.querySelectorAll('.filter-price').forEach(cb => cb.checked = true);
                         document.getElementById('scheduleAll').checked = true;
                         applyFilters();
+                    });
+
+                    // Количество клубов рядом с каждым типом
+                    document.querySelectorAll('[data-count]').forEach(el => {
+                        el.textContent = activeClubs.filter(club => club.type.includes(el.dataset.count)).length;
+                    });
+                    // и рядом с ценой: как в фильтре, бесплатные — cost 0, остальные платные
+                    document.querySelectorAll('[data-count-price]').forEach(el => {
+                        const free = el.dataset.countPrice === 'free';
+                        el.textContent = activeClubs.filter(club => (club.cost === 0) === free).length;
                     });
 
                     // ========== ПЕРВЫЙ РЕНДЕР ==========
