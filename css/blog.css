@@ -99,6 +99,21 @@
     text-decoration-color: var(--bs-body-color) !important;
 }
 
+/* Ссылки с target="_blank": скринридер дочитает «(opens in new tab)» (WCAG, техника G201).
+   Текст визуально скрыт; у .stretched-link ::after занят, им предупреждение дано в aria-label */
+a[target="_blank"]:not(.stretched-link)::after {
+    content: " (opens in new tab)";
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
 /* Бегущий фон героя (.animate-bg задан во встроенном <style> страниц) — без движения,
    если в системе включено уменьшение анимации. html повышает специфичность над встроенным стилем */
 @media (prefers-reduced-motion: reduce) {
