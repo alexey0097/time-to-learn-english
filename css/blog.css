@@ -155,6 +155,33 @@ a[target="_blank"]:not(.stretched-link)::after {
   text-decoration: none;
 }
 
+/* Кнопки шапки: «Subscribe» — главное действие (btn-primary), обе не ниже 32px */
+.blog-header .btn {
+  min-height: 2rem;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* «Sign up» — второстепенная кнопка; дефолтный серый #6c757d не проходит контраст 4,5:1 */
+.blog-header .btn-outline-secondary {
+  --bs-btn-color: var(--bs-secondary-color);
+  --bs-btn-border-color: var(--bs-border-color);
+  --bs-btn-hover-color: var(--bs-body-color);
+  --bs-btn-hover-bg: var(--bs-tertiary-bg);
+  --bs-btn-hover-border-color: var(--bs-border-color);
+  --bs-btn-active-color: var(--bs-body-color);
+  --bs-btn-active-bg: var(--bs-tertiary-bg);
+  --bs-btn-active-border-color: var(--bs-border-color);
+}
+
+/* Телефон и узкий планшет: логотип отдельной строкой без переносов, под ним Subscribe · поиск · Sign up */
+@media (max-width: 767.98px) {
+  .blog-header-logo {
+    font-size: 1.5rem;
+    white-space: nowrap;
+  }
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-family: "Playfair Display", "Playfair Display Fallback", Georgia, "Times New Roman", serif/*rtl:Amiri, Georgia, "Times New Roman", serif*/;
 }
