@@ -977,5 +977,31 @@
   </div>
 </footer>
 
+<script>
+  // The week line always shows the current week (Moscow time), published or not.
+  // Counts and links come from that day's schedule, or from the latest published day with the same weekday.
+  (function () {
+    var links = document.querySelectorAll('.linemap a');
+    if (links.length !== 7) return;
+    var today = new Intl.DateTimeFormat('en-CA', { timeZone: 'Europe/Moscow' }).format(new Date());
+    var t = today.split('-').map(Number);
+    var base = Date.UTC(t[0], t[1] - 1, t[2]);
+    var monday = base - ((new Date(base).getUTCDay() + 6) % 7) * 864e5;
+    var days = Array.prototype.slice.call(document.querySelectorAll('section.day[data-date]'));
+    function weekday(iso) { var d = iso.split('-').map(Number); return (new Date(Date.UTC(d[0], d[1] - 1, d[2])).getUTCDay() + 6) % 7; }
+    links.forEach(function (a, i) {
+      var date = new Date(monday + i * 864e5);
+      var iso = date.toISOString().slice(0, 10);
+      a.dataset.date = iso;
+      a.querySelector('.dot').textContent = date.getUTCDate();
+      var day = days.filter(function (s) { return s.dataset.date === iso; })[0] ||
+                days.filter(function (s) { return weekday(s.dataset.date) === i; })[0];   // the newest week comes first on the page
+      if (!day) return;
+      a.setAttribute('href', '#' + day.id);
+      var n = day.querySelector('h3 small');
+      if (n) a.querySelector('.count').textContent = n.textContent;
+    });
+  })();
+</script>
 </body>
 </html>

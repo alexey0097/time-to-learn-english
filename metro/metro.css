@@ -468,7 +468,10 @@
     left: 50%; width: 100%;
     background: var(--line-fill, var(--line));
   }
-  .week li.on:not(:has(+ li.on)):not(li.on + li)::after {
+  /* a lone day: no meeting the day before (or it is Monday) and none the day after.
+     Written without a complex :not() — WebKit (every iPhone browser) treated Sunday as lone and drew a tail */
+  .week li:not(.on) + li.on:not(:has(+ li.on))::after,
+  .week li.on:first-child:not(:has(+ li.on))::after {
     content: ""; position: absolute; z-index: -1; top: calc(var(--dot) / 2 - var(--link) / 2); height: var(--link); border-radius: 2px;
     left: calc(50% - var(--dot) * 1.25); width: calc(var(--dot) * 2.5);
     background: var(--line-fill, var(--line));
