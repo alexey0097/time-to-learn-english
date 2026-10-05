@@ -715,15 +715,6 @@ const schedule_2026_40 = {
       "online" : false,
       "emoji" : "🆕"
     }, {
-      "time" : "17:00",
-      "dateTime" : "2026-10-10T17:00",
-      "club" : "Simply Say",
-      "link" : "https://simplysay.ru/speaking-club?utm_source=telegram&utm_medium=paid_post&utm_campaign=time_to_learn_english_oct_2026&utm_content=weekend_post#meetings",
-      "telegramLink" : "https://simplysay.ru/speaking-club?utm_source=telegram&utm_medium=paid_post&utm_campaign=time_to_learn_english_oct_2026&utm_content=weekend_post#meetings",
-      "place" : "Online",
-      "online" : true,
-      "emoji" : "🆕"
-    }, {
       "time" : "17:30",
       "dateTime" : "2026-10-10T17:30",
       "club" : "CherryPie Club",
@@ -897,15 +888,6 @@ const schedule_2026_40 = {
       "place" : "Coffee Bean",
       "online" : false,
       "emoji" : null
-    }, {
-      "time" : "17:00",
-      "dateTime" : "2026-10-11T17:00",
-      "club" : "Simply Say",
-      "link" : "https://simplysay.ru/speaking-club?utm_source=telegram&utm_medium=paid_post&utm_campaign=time_to_learn_english_oct_2026&utm_content=weekend_post#meetings",
-      "telegramLink" : "https://simplysay.ru/speaking-club?utm_source=telegram&utm_medium=paid_post&utm_campaign=time_to_learn_english_oct_2026&utm_content=weekend_post#meetings",
-      "place" : "Online",
-      "online" : true,
-      "emoji" : "🆕"
     }, {
       "time" : "17:30",
       "dateTime" : "2026-10-11T17:30",
