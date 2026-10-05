@@ -3,6 +3,7 @@
  * Everything is driven by data-attributes; nothing runs unless the attribute is on the page.
  *
  *   data-date="2026-10-04"      on a .linemap link or a .day — today's one gets marked
+ *                               (the mini week .week gets .is-today on today's day without any attribute)
  *   data-clamp                  folds long text to a few lines and adds "Read more"
  *   data-clamp="3"              … to 3 lines
  *   data-copy="+7 900 000-00-00" a button that copies its value and says "Copied"
@@ -30,6 +31,13 @@
             if (el.dataset.date !== today) return;
             if (el.tagName === 'A') el.setAttribute('aria-current', 'date');
             el.classList.add('is-today');
+        });
+        // the mini week (.week, seven days Mon..Sun): mark today's day
+        var weekday = new Intl.DateTimeFormat('en-US', { weekday: 'short', timeZone: TIME_ZONE }).format(new Date());
+        var index = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'].indexOf(weekday);
+        root.querySelectorAll('.week').forEach(function (week) {
+            var day = week.children[index];
+            if (day) day.classList.add('is-today');
         });
     }
 

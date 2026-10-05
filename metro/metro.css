@@ -496,7 +496,7 @@
     background: var(--paper); border: 2px solid color-mix(in srgb, var(--muted) 45%, var(--paper));
   }
   .week li.on { color: var(--ink); font-weight: 600; }
-  .week li.on::before { background: var(--line-fill, var(--line)); border-color: var(--line-fill, var(--line)); }
+  .week li.on::before { border-color: var(--line-fill, var(--line)); }   /* meeting days are rings on the line */
 
 /* ------------------------------------------------------------------ 14. Filters and chips
    <details class="filters panel" open data-collapse-below="60rem">
@@ -624,7 +624,9 @@
   .facts-list dt { font-size: var(--step--1); color: var(--muted); }
   .facts-list dd { margin: 0.1rem 0 0; font-weight: 500; }
   .facts-list .week { --dot: 16px; --day: 0.85rem; --link: 5px; margin-top: 0.5rem; width: 100%; grid-template-columns: repeat(7, 1fr); }
-  .panel .week li:not(.on)::before { background: var(--surface); }
+  .panel .week li::before { background: var(--surface); }
+  /* only a meeting day that is today gets filled (metro.js adds .is-today by the Moscow weekday) */
+  .week li.on.is-today::before { background: var(--line-fill, var(--line)); }
   @media (max-width: 40rem) { .facts-list .week { --dot: 18px; --day: 0.9rem; --link: 5px; } }
   .back { display: inline-flex; align-items: center; gap: 0.3rem; margin-bottom: 0.6rem; font-size: var(--step--1); color: var(--muted); text-decoration: none; }
   .back::before { content: "←"; }
