@@ -767,6 +767,15 @@ const schedule_2026_40 = {
       "place" : "Online",
       "online" : true,
       "emoji" : "🆕"
+    }, {
+      "time" : "19:00",
+      "dateTime" : "2026-10-10T19:00",
+      "club" : "Clean Open Mic",
+      "link" : "clubs/clean-open-mic.html",
+      "telegramLink" : "https://t.me/englishstandupinmoscow",
+      "place" : "Silvers Irish Pub",
+      "online" : false,
+      "emoji" : "🆕"
     } ]
   }, {
     "day" : "SUNDAY",
