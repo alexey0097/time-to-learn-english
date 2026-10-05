@@ -14,8 +14,6 @@
 <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png" />
 <link rel="manifest" href="img/favicon/site.webmanifest" />
 <style>
-  /* each schedule row already starts with "• " */
-  #post ul { list-style: none; padding-left: 0; }
   #post { margin-bottom: 3rem; }
 </style>
 </head>
@@ -105,30 +103,37 @@
     return /^https?:\/\//.test(url) ? url : SITE + url;   // a site page when the file has no Telegram link
   }
 
+  // The post is plain lines joined by <br>, like a Telegram message: Telegram keeps <br> when pasting,
+  // while paragraph and heading boundaries get lost. An empty line between blocks is <br><br>.
+  var BR = '<br>', GAP = '<br><br>';
+
   function row(e) {
     var place = e.online || /^online/i.test(e.place || '') ? '<em>Online</em>' : esc(e.place);
-    return '<li>• ' + esc(e.time) + ' | <strong><a href="' + esc(link(e)) + '">' + esc(e.club) + '</a></strong> | ' +
-      place + (e.emoji ? ' ' + esc(e.emoji) : '') + '</li>';
+    return '• ' + esc(e.time) + ' | <strong><a href="' + esc(link(e)) + '">' + esc(e.club) + '</a></strong> | ' +
+      place + (e.emoji ? ' ' + esc(e.emoji) : '');
   }
 
   function day(d) {
     var events = (d.events || []).slice().sort(function (a, b) { return a.dateTime < b.dateTime ? -1 : a.dateTime > b.dateTime ? 1 : 0; });
     if (!events.length) return '';
-    return '<h3>' + fmt(d.date, { weekday: 'long', month: 'long', day: 'numeric' }) + '</h3><ul>' + events.map(row).join('') + '</ul>';
+    return '<strong>' + fmt(d.date, { weekday: 'long', month: 'long', day: 'numeric' }) + '</strong>' + BR +
+      events.map(row).join(BR) + GAP;
   }
 
   function post(week) {
     var total = week.days.reduce(function (n, d) { return n + (d.events || []).length; }, 0);
-    return '<h2>This Week in Moscow: ' + esc(week.weekRange) + '</h2>' +
-      '<p>A new week of English practice is here! Here is your weekly lineup of speaking clubs, game nights, and special events happening all over Moscow. Whether you are a beginner or an advanced speaker, there is something for you.</p>' +
-      '<p>This week we have <strong>over ' + total + ' events</strong> across the city and online. Venues range from cozy coffee shops like Coffee Bean and Stars Coffee to lively bars like Katie O\'Shea\'s and Axiom Pub. Most clubs welcome new faces — just show up and start talking!</p>' +
-      '<p>Here is how to plan your week. Click on any club name to visit their channel for details and registration.</p>' +
+    return '<p>' +
+      '<strong>This Week in Moscow: ' + esc(week.weekRange) + '</strong>' + GAP +
+      'A new week of English practice is here! Here is your weekly lineup of speaking clubs, game nights, and special events happening all over Moscow. Whether you are a beginner or an advanced speaker, there is something for you.' + GAP +
+      'This week we have <strong>over ' + total + ' events</strong> across the city and online. Venues range from cozy coffee shops like Coffee Bean and Stars Coffee to lively bars like Katie O\'Shea\'s and Axiom Pub. Most clubs welcome new faces — just show up and start talking!' + GAP +
+      'Here is how to plan your week. Click on any club name to visit their channel for details and registration.' + GAP +
       week.days.map(day).join('') +
-      '<p>Real Talk Speaking Club offers a 30% discount when buying a subscription for several meetings</p>' +
-      '<p>Blah-Blah Club x Surf Coffee run the program «Bring a Friend» and you will both save 15%</p>' +
-      '<p>English Club with Nataly offers monthly subscriptions for 4, 6, and 8 sessions.</p>' +
-      '<p>💥 Surf Coffee gives all participants a 10% discount on any drinks</p>' +
-      '<p><a href="' + SITE + '">READ THE SCHEDULE WITHOUT VPN</a></p>';
+      'Real Talk Speaking Club offers a 30% discount when buying a subscription for several meetings' + GAP +
+      'Blah-Blah Club x Surf Coffee run the program «Bring a Friend» and you will both save 15%' + GAP +
+      'English Club with Nataly offers monthly subscriptions for 4, 6, and 8 sessions.' + GAP +
+      '💥 Surf Coffee gives all participants a 10% discount on any drinks' + GAP +
+      '<strong><a href="' + SITE + '">READ THE SCHEDULE WITHOUT VPN</a></strong>' +
+      '</p>';
   }
 
   var box = document.getElementById('post');
