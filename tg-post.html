@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<link rel="stylesheet" href="metro/metro.css">
+<script src="metro/metro.js"></script>
+<meta name="theme-color" content="#18803a">
+<title>Telegram post</title>
+<link rel="icon" type="image/png" href="img/favicon/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="img/favicon/favicon.svg" />
+<link rel="shortcut icon" href="img/favicon/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png" />
+<link rel="manifest" href="img/favicon/site.webmanifest" />
+<style>
+  /* each schedule row already starts with "• " */
+  #post ul { list-style: none; padding-left: 0; }
+  #post { margin-bottom: 3rem; }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+<div class="wrap">
+<a class="brand" href="index.html">Time to Learn English</a>
+<nav aria-label="Main">
+<a href="index.html">Schedule</a>
+<a href="clubs.html">Clubs</a>
+<a href="teachers.html">Teachers</a>
+<a href="#contacts">Contacts</a>
+</nav>
+<a class="btn btn--primary" href="https://t.me/eng_events" target="_blank">Subscribe</a>
+</div>
+</header>
+
+<main class="wrap">
+  <article id="post" class="prose gap-top-sm"></article>
+</main>
+
+<footer class="footer">
+<div class="wrap">
+<p>Made by <a href="https://t.me/alexey_acc">@alexey_acc</a> for everyone practising English in Moscow.</p>
+<p><a href="#">Back to top</a></p>
+</div>
+</footer>
+
+<script>
+// Telegram post (the "design 2" of createMessageByTemplateForHtml) built from the newest week file in js/schedule/.
+(function () {
+  var DIR = 'js/schedule/';
+  var SITE = 'https://alexey0097.github.io/time-to-learn-english/';
+  var DAY = 864e5;
+
+  var param = /[?&]today=(\d{4}-\d{2}-\d{2})/.exec(location.search);
+  var today = param ? param[1] : new Intl.DateTimeFormat('en-CA', { timeZone: 'Europe/Moscow' }).format(new Date());
+
+  function utc(iso) { var p = iso.split('-').map(Number); return Date.UTC(p[0], p[1] - 1, p[2]); }
+  function esc(s) {
+    return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+    });
+  }
+  function fmt(iso, opts) { opts.timeZone = 'UTC'; return new Date(utc(iso)).toLocaleDateString('en-US', opts); }
+
+  // ISO week number and year of a Monday
+  function isoWeek(ms) {
+    var d = new Date(ms), thursday = ms + (3 - ((d.getUTCDay() + 6) % 7)) * DAY;
+    var year = new Date(thursday).getUTCFullYear();
+    return { year: year, week: Math.floor((thursday - Date.UTC(year, 0, 1)) / DAY / 7) + 1 };
+  }
+
+  // The newest week is usually the coming one, so look from next week back a month.
+  // Week numbers: ISO (the generator) and the older count from 1 January; a file is accepted by its content.
+  function candidates() {
+    var t = utc(today), monday = t - ((new Date(t).getUTCDay() + 6) % 7) * DAY, names = {};
+    for (var m = monday + 7 * DAY; m >= monday - 28 * DAY; m -= 7 * DAY) {
+      var iso = isoWeek(m), year = new Date(m).getUTCFullYear();
+      var est = Math.floor((m - Date.UTC(year, 0, 1)) / DAY / 7) + 1;
+      [[iso.year, iso.week], [year, est], [year, est - 1], [year, est + 1]].forEach(function (c) {
+        if (c[1] >= 1) names[c[0] + '_' + c[1]] = c;
+      });
+    }
+    return Object.keys(names).map(function (k) { return names[k]; });
+  }
+
+  function load(year, week) {
+    var name = 'schedule_' + year + '_' + week;
+    return new Promise(function (resolve) {
+      var s = document.createElement('script');
+      s.src = DIR + year + '_' + week + '.js';
+      s.onload = function () {
+        var data = null;
+        try { data = (0, eval)('typeof ' + name + ' !== "undefined" ? ' + name + ' : null'); } catch (e) { /* broken file */ }
+        resolve(data && data.days && data.days.length ? { data: data, file: year + '_' + week + '.js' } : null);
+      };
+      s.onerror = function () { resolve(null); };
+      document.head.appendChild(s);
+    });
+  }
+
+  function link(e) {
+    var url = e.telegramLink || e.link || '';
+    if (/^[\w\-]+\.html$/.test(url)) url = 'clubs/' + url;   // bare page name from the export: club pages live in clubs/
+    return /^https?:\/\//.test(url) ? url : SITE + url;   // a site page when the file has no Telegram link
+  }
+
+  function row(e) {
+    var place = e.online || /^online/i.test(e.place || '') ? '<em>Online</em>' : esc(e.place);
+    return '<li>• ' + esc(e.time) + ' | <strong><a href="' + esc(link(e)) + '">' + esc(e.club) + '</a></strong> | ' +
+      place + (e.emoji ? ' ' + esc(e.emoji) : '') + '</li>';
+  }
+
+  function day(d) {
+    var events = (d.events || []).slice().sort(function (a, b) { return a.dateTime < b.dateTime ? -1 : a.dateTime > b.dateTime ? 1 : 0; });
+    if (!events.length) return '';
+    return '<h3>' + fmt(d.date, { weekday: 'long', month: 'long', day: 'numeric' }) + '</h3><ul>' + events.map(row).join('') + '</ul>';
+  }
+
+  function post(week) {
+    var total = week.days.reduce(function (n, d) { return n + (d.events || []).length; }, 0);
+    return '<h2>This Week in Moscow: ' + esc(week.weekRange) + '</h2>' +
+      '<p>A new week of English practice is here! Here is your weekly lineup of speaking clubs, game nights, and special events happening all over Moscow. Whether you are a beginner or an advanced speaker, there is something for you.</p>' +
+      '<p>This week we have <strong>over ' + total + ' events</strong> across the city and online. Venues range from cozy coffee shops like Coffee Bean and Stars Coffee to lively bars like Katie O\'Shea\'s and Axiom Pub. Most clubs welcome new faces — just show up and start talking!</p>' +
+      '<p>Here is how to plan your week. Click on any club name to visit their channel for details and registration.</p>' +
+      week.days.map(day).join('') +
+      '<p>Real Talk Speaking Club offers a 30% discount when buying a subscription for several meetings</p>' +
+      '<p>Blah-Blah Club x Surf Coffee run the program «Bring a Friend» and you will both save 15%</p>' +
+      '<p>English Club with Nataly offers monthly subscriptions for 4, 6, and 8 sessions.</p>' +
+      '<p>💥 Surf Coffee gives all participants a 10% discount on any drinks</p>' +
+      '<p><a href="' + SITE + '">READ THE SCHEDULE WITHOUT VPN</a></p>';
+  }
+
+  var box = document.getElementById('post');
+
+  Promise.all(candidates().map(function (c) { return load(c[0], c[1]); })).then(function (all) {
+    var found = all.filter(Boolean).sort(function (a, b) { return a.data.days[0].date < b.data.days[0].date ? 1 : -1; })[0];
+    box.innerHTML = found ? post(found.data) : '<p>No schedule for this week yet.</p>';
+  });
+})();
+</script>
+</body>
+</html>
