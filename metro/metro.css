@@ -248,8 +248,18 @@
   .card h3 a { text-decoration: none; }
   .card h3 a::after { content: ""; position: absolute; inset: 0; }
   .card:has(h3 a:hover) h3 { color: var(--line); }
-  .card--media { display: grid; grid-template-columns: 1fr 7.5rem; gap: 1rem; align-items: start; }
-  .card--media > img { width: 7.5rem; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 8px; }
+  .card--media { --card-img: 7rem; display: grid; grid-template-columns: 1fr var(--card-img); gap: 1rem; align-items: start; }
+  @media (min-width: 60rem) { .card--media { --card-img: 9.5rem; } }   /* the photo keeps 4:5 and is sized to match the text height */
+  @media (min-width: 80rem) { .card--media { --card-img: 9rem; } }
+  .card--media > img { width: var(--card-img); height: auto; aspect-ratio: 4 / 5; align-self: center; object-fit: cover; border-radius: 8px; }   /* any leftover space is split above and below */
+  /* phones: a thumbnail next to the title, the description below at full width */
+  @media (max-width: 40rem) {
+    .card--media { grid-template-columns: 4.5rem minmax(0, 1fr); column-gap: 0.9rem; row-gap: 0; align-items: center; }
+    .card--media > div { display: contents; }
+    .card--media > img { grid-column: 1; grid-row: 1 / span 3; width: 4.5rem; aspect-ratio: 1; align-self: center; }
+    .card--media > div > * { grid-column: 2; }
+    .card--media > div > p { grid-column: 1 / -1; margin-top: 0.9rem; }
+  }
   .kicker { font-size: var(--step--1); color: var(--line); font-weight: 600; }
   .kicker.is-alt { color: var(--alt); }
   .when { font-size: var(--step--1); color: var(--muted); margin-top: 0.2rem; }
