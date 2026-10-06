@@ -179,10 +179,16 @@
     display: flex; align-items: center; gap: 0.6rem;
     font: 700 1rem/1 var(--display); text-decoration: none; white-space: nowrap;
   }
+  /* the station clock logo, one file per theme. A background image, not a mask:
+     browsers block mask images on pages opened from disk (file://), background images are fine */
   .brand::before {
-    content: ""; width: 1.1rem; height: 1.1rem; border-radius: 50%;
-    border: 4px solid var(--line-fill, var(--line)); background: var(--paper);
+    content: ""; flex: none; width: calc(4px / 0.12); height: calc(4px / 0.12);   /* ring line = 4px, as the old station ring */
+    background: url("../img/logo/station-clock-light.svg") center / contain no-repeat;
   }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .brand::before { background-image: url("../img/logo/station-clock-dark.svg"); }
+  }
+  :root[data-theme="dark"] .brand::before { background-image: url("../img/logo/station-clock-dark.svg"); }
   .topbar nav { display: flex; gap: 0.25rem; margin-left: auto; }
   .topbar nav a { padding: 0.4rem 0.7rem; border-radius: var(--radius-sm); text-decoration: none; color: var(--muted); font-weight: 500; white-space: nowrap; }
   .topbar nav a:hover, .topbar nav a[aria-current="page"] { color: var(--ink); background: var(--surface); }
@@ -348,6 +354,7 @@
     width: var(--stop); height: var(--stop); border-radius: 50%;
     background: var(--paper); border: 3px solid var(--line-fill, var(--line));
   }
+  .route > li.is-now::after { background: var(--line-fill, var(--line)); }   /* the meetup on right now (metro.js) */
   .route time { position: absolute; left: 0; top: 0.55rem; font-weight: 600; font-variant-numeric: tabular-nums; }
   .route a { font-weight: 600; text-decoration: none; margin-right: 0.6rem; transition: color 120ms ease; }
   .route a:hover { color: var(--line); }
@@ -490,13 +497,16 @@
     left: calc(50% - var(--dot) * 1.25); width: calc(var(--dot) * 2.5);
     background: var(--line-fill, var(--line));
   }
+  /* a lone Monday has nothing to its left, a lone Sunday nothing to its right: keep only the inner half */
+  .week li.on:first-child:not(:has(+ li.on))::after { left: 50%; width: calc(var(--dot) * 1.25); }
+  .week li:not(.on) + li.on:last-child:not(:has(+ li.on))::after { left: calc(50% - var(--dot) * 1.25); width: calc(var(--dot) * 1.25); }
   .week li { position: relative; z-index: 1; display: grid; justify-items: center; gap: 0.25rem; font-size: var(--day); color: var(--muted); }
   .week li::before {
     content: ""; width: var(--dot); height: var(--dot); border-radius: 50%; box-sizing: border-box;
     background: var(--paper); border: 2px solid color-mix(in srgb, var(--muted) 45%, var(--paper));
   }
   .week li.on { color: var(--ink); font-weight: 600; }
-  .week li.on::before { border-color: var(--line-fill, var(--line)); }   /* meeting days are rings on the line */
+  .week li.on::before { border-color: var(--line-fill, var(--line)); border-width: max(3px, calc(var(--dot) / 4)); }   /* meeting days are bold rings on the line */
 
 /* ------------------------------------------------------------------ 14. Filters and chips
    <details class="filters panel" open data-collapse-below="60rem">

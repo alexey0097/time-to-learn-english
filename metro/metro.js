@@ -4,6 +4,7 @@
  *
  *   data-date="2026-10-04"      on a .linemap link or a .day — today's one gets marked
  *                               (the mini week .week gets .is-today on today's day without any attribute)
+ *                               on today's .day the meetup on now gets .is-now (by the <time> of each li)
  *   data-clamp                  folds long text to a few lines and adds "Read more"
  *   data-clamp="3"              … to 3 lines
  *   data-copy="+7 900 000-00-00" a button that copies its value and says "Copied"
@@ -20,7 +21,12 @@
     var TIME_ZONE = 'Europe/Moscow';   // "today" is counted in Moscow time, like the schedule
 
     // ---------- today ----------
+    // ?today=YYYY-MM-DD and ?now=HH:MM override the clock, to test the markup without waiting.
+    var todayParam = /[?&]today=(\d{4}-\d{2}-\d{2})/.exec(location.search);
+    var nowParam = /[?&]now=(\d{1,2}):(\d{2})/.exec(location.search);
+
     function todayISO() {
+        if (todayParam) return todayParam[1];
         // en-CA gives YYYY-MM-DD
         return new Intl.DateTimeFormat('en-CA', { timeZone: TIME_ZONE }).format(new Date());
     }
@@ -40,6 +46,32 @@
             if (day) day.classList.add('is-today');
         });
     }
+
+    // ---------- now on the route ----------
+    // On today's .day the station of a meetup is filled (.is-now) only while the date and the time
+    // both match: it lights up at the meetup's start and goes out 60 minutes later. Every .route is
+    // checked on its own, so the online branch has its own circles. Moscow time, refreshed every minute.
+    var NOW_MINUTES = 60;
+
+    function minutesNow() {
+        if (nowParam) return Number(nowParam[1]) * 60 + Number(nowParam[2]);
+        var hm = new Intl.DateTimeFormat('en-GB', { hour: '2-digit', minute: '2-digit', hourCycle: 'h23', timeZone: TIME_ZONE })
+            .format(new Date()).split(':');
+        return Number(hm[0]) * 60 + Number(hm[1]);
+    }
+
+    function markNow(root) {
+        var today = todayISO(), now = minutesNow();
+        root.querySelectorAll('.route > li.is-now').forEach(function (li) { li.classList.remove('is-now'); });
+        root.querySelectorAll('.day[data-date="' + today + '"] .route > li').forEach(function (li) {
+            var time = li.querySelector('time');
+            var m = time && /(\d{1,2}):(\d{2})/.exec(time.textContent);
+            if (!m) return;
+            var start = Number(m[1]) * 60 + Number(m[2]);
+            if (now >= start && now < start + NOW_MINUTES) li.classList.add('is-now');
+        });
+    }
+    setInterval(function () { markNow(document); }, 60000);
 
     // ---------- read more ----------
     function setupClamp(root) {
@@ -183,6 +215,7 @@
     function init(root) {
         root = root || document;
         markToday(root);
+        markNow(root);
         setupClamp(root);
         setupGallery(root);
     }
