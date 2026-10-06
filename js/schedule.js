@@ -74,8 +74,19 @@
         return /^(https?:\/\/|[\w\-.\/]+\.html)/.test(link || '') ? link : '#';
     }
 
+    // flag emoji from the export (🇪🇸, 🇬🇧, …) become the site's own flag images: they do not show
+    // on Windows at all. Runs after esc(), so the <img> tags stay real HTML while the rest is safe.
+    var FLAG = /(?:\uD83C[\uDDE6-\uDDFF]){2}/g;
+    function flagIcons(html) {
+        return html.replace(FLAG, function (flag) {
+            var iso = '';
+            for (var i = 1; i < flag.length; i += 2) iso += String.fromCharCode(65 + flag.charCodeAt(i) - 0xDDE6);
+            return '<img src="img/flags/' + iso.toLowerCase() + '.svg" class="flag" alt="">';
+        });
+    }
+
     function row(e) {
-        return '<li><time>' + esc(e.time) + '</time> <a href="' + esc(safeHref(e.link)) + '" target="_blank">' + esc(e.club) + '</a>' +
+        return '<li><time>' + esc(e.time) + '</time> <a href="' + esc(safeHref(e.link)) + '" target="_blank">' + flagIcons(esc(e.club)) + '</a>' +
             (e.online || !e.place ? '' : ' <span class="where">' + esc(e.place) + '</span>') + tag(e) + '</li>';
     }
 
