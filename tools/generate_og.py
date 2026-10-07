@@ -129,10 +129,17 @@ class Server(socketserver.ThreadingMixIn, http.server.HTTPServer):
         super().handle_error(request, client_address)
 
 
-def set_og(page_html, prop, val):
+def set_og(page_html, prop, val, after=None):
     tag = '<meta content="%s" property="og:%s"/>' % (html.escape(val, quote=True), prop)
     pat = re.compile(r'<meta[^>]*property="og:%s"[^>]*>' % re.escape(prop))
-    return pat.sub(lambda m: tag, page_html, count=1) if pat.search(page_html) else page_html
+    if pat.search(page_html):
+        return pat.sub(lambda m: tag, page_html, count=1)
+    if after:                                   # тега ещё нет — вставляем сразу после указанного
+        apat = re.compile(r'(<meta[^>]*property="og:%s"[^>]*>)' % re.escape(after))
+        m = apat.search(page_html)
+        if m:
+            return page_html[:m.end()] + "\n" + tag + page_html[m.end():]
+    return page_html
 
 
 def main():
@@ -178,6 +185,9 @@ def main():
             raw = set_og(raw, "title", title)
             raw = set_og(raw, "description", desc)
             raw = set_og(raw, "image", img)
+            raw = set_og(raw, "image:width", "1200", "image")
+            raw = set_og(raw, "image:height", "630", "image")
+            raw = set_og(raw, "image:type", "image/jpeg", "image")
             if raw != orig:
                 open(page_path, "w", encoding="utf-8", newline="").write(raw)
             done += 1
