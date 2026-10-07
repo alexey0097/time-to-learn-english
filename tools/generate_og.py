@@ -120,6 +120,14 @@ class Quiet(http.server.SimpleHTTPRequestHandler):
 class Server(socketserver.ThreadingMixIn, http.server.HTTPServer):
     daemon_threads = True
 
+    # Браузер между клубами перезагружает страницу и обрывает незавершённые запросы (шрифты,
+    # фото). socketserver печатает это как «Exception occurred during processing of request» —
+    # обрыв безвреден для генерации, поэтому гасим его и не засоряем лог.
+    def handle_error(self, request, client_address):
+        if isinstance(sys.exc_info()[1], (ConnectionResetError, BrokenPipeError, ConnectionAbortedError)):
+            return
+        super().handle_error(request, client_address)
+
 
 def set_og(page_html, prop, val):
     tag = '<meta content="%s" property="og:%s"/>' % (html.escape(val, quote=True), prop)
