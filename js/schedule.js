@@ -86,7 +86,7 @@
     }
 
     function row(e) {
-        return '<li><time>' + esc(e.time) + '</time> <a href="' + esc(safeHref(e.link)) + '" target="_blank">' + flagIcons(esc(e.club)) + '</a>' +
+        return '<li><time>' + esc(e.time) + '</time> <a href="' + esc(safeHref(e.link)) + '">' + flagIcons(esc(e.club)) + '</a>' +
             (e.online || !e.place ? '' : ' <span class="where">' + esc(e.place) + '</span>') + tag(e) + '</li>';
     }
 
