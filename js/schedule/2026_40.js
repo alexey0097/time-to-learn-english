@@ -387,8 +387,8 @@ const schedule_2026_40 = {
     }, {
       "time" : "18:55",
       "dateTime" : "2026-10-08T18:55",
-      "club" : "Thursday After Work",
-      "link" : "clubs/thursday-after-work.html",
+      "club" : "Moscow After Work",
+      "link" : "clubs/moscow-after-work.html",
       "telegramLink" : "https://t.me/+mjdU1p9I_QM3YjNk",
       "place" : "Debri Bar",
       "online" : false,
