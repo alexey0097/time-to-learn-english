@@ -706,15 +706,6 @@ const schedule_2026_40 = {
       "online" : false,
       "emoji" : null
     }, {
-      "time" : "17:00",
-      "dateTime" : "2026-10-10T17:00",
-      "club" : "V&K English Speaking Club",
-      "link" : "clubs/vk-english-speaking-club.html",
-      "telegramLink" : "https://t.me/EnglishTogetherVK",
-      "place" : "Coffee Shop Here’n’now",
-      "online" : false,
-      "emoji" : "🆕"
-    }, {
       "time" : "17:30",
       "dateTime" : "2026-10-10T17:30",
       "club" : "CherryPie Club",
@@ -723,6 +714,15 @@ const schedule_2026_40 = {
       "place" : "Sytinsky lane 3/5",
       "online" : false,
       "emoji" : null
+    }, {
+      "time" : "18:00",
+      "dateTime" : "2026-10-10T17:00",
+      "club" : "V&K English Speaking Club",
+      "link" : "clubs/vk-english-speaking-club.html",
+      "telegramLink" : "https://t.me/EnglishTogetherVK",
+      "place" : "Coffee Shop Here’n’now",
+      "online" : false,
+      "emoji" : "🆕"
     }, {
       "time" : "18:00",
       "dateTime" : "2026-10-10T18:00",
