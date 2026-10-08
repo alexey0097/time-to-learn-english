@@ -2160,6 +2160,20 @@
                     // ========== ФУНКЦИЯ ОТРИСОВКИ ==========
                     const esc = s => String(s).replace(/[&<>"]/g, ch => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;'}[ch]));
 
+                    // По умолчанию на десктопе текст раскрыт («Show less»), на планшетах и телефонах свёрнут («Read more»)
+                    const CLAMP_DESKTOP = window.matchMedia('(min-width: 60rem)');
+                    function applyClampDefault(root) {
+                        if (!CLAMP_DESKTOP.matches) return;
+                        root.querySelectorAll('[data-clamp].is-clamped').forEach(el => {
+                            el.classList.remove('is-clamped');
+                            const btn = el.nextElementSibling;
+                            if (btn && btn.classList.contains('clamp-toggle')) {
+                                btn.textContent = 'Show less';
+                                btn.setAttribute('aria-expanded', 'true');
+                            }
+                        });
+                    }
+
                     function renderTeachers(list) {
                         const box = document.getElementById('teacherList');
                         const count = document.getElementById('resultCount');
@@ -2204,6 +2218,7 @@
                         }).join('');
 
                         Metro.init(box);
+                        applyClampDefault(box);
                     }
 
 
