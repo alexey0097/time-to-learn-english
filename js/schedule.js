@@ -4,6 +4,8 @@
  * Every week is a file js/schedule/YYYY_WW.js that declares `const schedule_YYYY_WW = {...}`.
  * The newest published week replaces the day list of the current week (#current-week);
  * the earlier weeks of the current month go into "Earlier weeks" as collapsed blocks.
+ * Every archived week is the whole post, not only its days. Once the newest week is over and the next file
+ * is not out yet, it goes there too and the current week is hidden.
  * The block of the previous hand-made week is moved there too. Weeks of past months are not loaded.
  * If no files exist, the page stays as it is. Add ?today=YYYY-MM-DD to the URL to test another date.
  */
@@ -111,11 +113,28 @@
 
     function title(week) { return 'This Week in Moscow: ' + week.weekRange; }
 
-    function foldFromWeek(week) {
+    // An archived week is a copy of the whole post (intro, schedule, tips, "New Here?"): the hand-made
+    // #current-week is the template and its title becomes the summary. A file week brings its own date line and days.
+    function fold(template, week) {
+        var post = template.cloneNode(true);
+        var h2 = post.querySelector('h2');
+        var summary = document.createElement('summary');
+        summary.textContent = week ? title(week) : h2.textContent;
+        h2.remove();
+        if (week) {
+            Array.prototype.forEach.call(post.querySelectorAll(':scope > section.day'), function (s) { s.remove(); });
+            var meta = post.querySelector('.meta');
+            if (meta) meta.outerHTML = metaHtml(week);
+            post.querySelector('.legend').insertAdjacentHTML('afterend', week.days.map(function (d) { return dayHtml(d, false); }).join(''));
+        }
+        post.removeAttribute('id');
+        Array.prototype.forEach.call(post.querySelectorAll('[id],[data-date]'), function (x) {
+            x.removeAttribute('id');
+            x.removeAttribute('data-date');
+        });
         var el = document.createElement('details');
         el.className = 'fold';
-        el.innerHTML = '<summary>' + esc(title(week)) + '</summary><article class="prose">' + metaHtml(week) +
-            '<h2>Weekly Schedule</h2>' + week.days.map(function (d) { return dayHtml(d, false); }).join('') + '</article>';
+        el.append(summary, post);
         return el;
     }
 
@@ -128,37 +147,19 @@
         var archive = document.querySelector('section[aria-label="Earlier weeks"]');
         if (!weeks.length || !current || !archive) return;
 
-        var latest = weeks[0];
-        var older = weeks.slice(1);
+        // a week that is already over goes to the archive too, even if the next one is not published yet
+        var t = utc(today);
+        var monday = iso(t - ((new Date(t).getUTCDay() + 6) % 7) * DAY);
+        var latest = end(weeks[0]) >= monday ? weeks[0] : null;
+        var older = latest ? weeks.slice(1) : weeks;
         var covered = {};
         weeks.forEach(function (w) { w.days.forEach(function (d) { covered[d.date] = 1; }); });
-        var folds = older.map(function (w) { return { start: start(w), el: foldFromWeek(w) }; });
+        var template = current.cloneNode(true);
+        var folds = older.map(function (w) { return { start: start(w), el: fold(template, w) }; });
 
         // the hand-made current week goes to the archive unless a file already covers it
         var manual = Array.prototype.slice.call(current.querySelectorAll(':scope > section.day'));
-        if (manual.length && !covered[manual[0].dataset.date]) {
-            var fold = document.createElement('details');
-            fold.className = 'fold';
-            var inner = document.createElement('article');
-            inner.className = 'prose';
-            for (var node = current.querySelector('.meta'); node; node = node.nextElementSibling) {
-                var copy = node.cloneNode(true);
-                if (copy.removeAttribute) {
-                    copy.removeAttribute('id');
-                    copy.removeAttribute('data-date');
-                    Array.prototype.forEach.call(copy.querySelectorAll('[id],[data-date]'), function (x) {
-                        x.removeAttribute('id');
-                        x.removeAttribute('data-date');
-                    });
-                }
-                inner.appendChild(copy);
-                if (node === manual[manual.length - 1]) break;
-            }
-            var summary = document.createElement('summary');
-            summary.textContent = current.querySelector('h2').textContent;
-            fold.append(summary, inner);
-            folds.push({ start: manual[0].dataset.date, el: fold });
-        }
+        if (manual.length && !covered[manual[0].dataset.date]) folds.push({ start: manual[0].dataset.date, el: fold(template, null) });
 
         // hand-made folds that a file now covers are dropped, to avoid showing a week twice
         Array.prototype.forEach.call(archive.querySelectorAll('details.fold'), function (f) {
@@ -173,11 +174,14 @@
 
         // the current week
         manual.forEach(function (s) { s.remove(); });
+        if (!latest) {   // nothing published for this week yet: the whole post waits for the file
+            current.hidden = true;
+            return;
+        }
         current.querySelector('h2').textContent = title(latest);
         var meta = current.querySelector('.meta');
         if (meta) meta.outerHTML = metaHtml(latest);
-        var legend = current.querySelector('.legend');
-        legend.insertAdjacentHTML('afterend', latest.days.map(function (d) { return dayHtml(d, true); }).join(''));
+        current.querySelector('.legend').insertAdjacentHTML('afterend', latest.days.map(function (d) { return dayHtml(d, true); }).join(''));
         if (window.Metro) window.Metro.init(current);
     }
 

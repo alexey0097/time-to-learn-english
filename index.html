@@ -388,18 +388,6 @@
       </section>
 
       <div class="sticky">
-        <section class="panel panel--quiet" id="archives">
-          <h4>Archives</h4>
-          <ol>
-            <li><a href="#">October 2026</a></li>
-            <li><a href="archive/september2026.html">September 2026</a></li>
-            <li><a href="archive/august2026.html">August 2026</a></li>
-            <li><a href="archive/july2026.html">July 2026</a></li>
-            <li><a href="archive/june2026.html">June 2026</a></li>
-            <li><a href="archive/may2026.html">May 2026</a></li>
-            <li><a href="archive/april2026.html">April 2026</a></li>
-          </ol>
-        </section>
         <section class="panel panel--quiet" id="contacts">
           <h4>Elsewhere</h4>
           <ol>
@@ -441,7 +429,11 @@
       a.querySelector('.dot').textContent = date.getUTCDate();
       var day = days.filter(function (s) { return s.dataset.date === iso; })[0] ||
                 days.filter(function (s) { return weekday(s.dataset.date) === i; })[0];   // the newest week comes first on the page
-      if (!day) return;
+      if (!day) {   // no current schedule yet: no stale link or count from the hand-made week
+        a.removeAttribute('href');
+        a.querySelector('.count').textContent = '';
+        return;
+      }
       a.setAttribute('href', '#' + day.id);
       var n = day.querySelector('h3 small');
       if (n) a.querySelector('.count').textContent = n.textContent;

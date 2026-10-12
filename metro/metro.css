@@ -712,6 +712,7 @@
   .small { font-size: var(--step--1); }
   .gap-top { margin-top: 4rem; }
   .gap-top-sm { margin-top: 2rem; }
+  [hidden]:first-child + .gap-top { margin-top: 0; }   /* the first block is hidden: the next one takes its place */
   .visually-hidden {
     position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
     overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
