@@ -21,6 +21,7 @@
 <link rel="manifest" href="img/favicon/site.webmanifest" />
 <style>
   #post { margin-bottom: 3rem; }
+  #post blockquote { margin-top: 0.25rem; }
 </style>
 </head>
 <body>
@@ -111,6 +112,7 @@
 
   // The post is plain lines joined by <br>, like a Telegram message: Telegram keeps <br> when pasting,
   // while paragraph and heading boundaries get lost. An empty line between blocks is <br><br>.
+  // The events of a day are a <blockquote>: Telegram pastes it as a quote.
   var BR = '<br>', GAP = '<br><br>';
 
   function row(e) {
@@ -122,13 +124,13 @@
   function day(d) {
     var events = (d.events || []).slice().sort(function (a, b) { return a.dateTime < b.dateTime ? -1 : a.dateTime > b.dateTime ? 1 : 0; });
     if (!events.length) return '';
-    return '<strong>' + fmt(d.date, { weekday: 'long', month: 'long', day: 'numeric' }) + '</strong>' + BR +
-      events.map(row).join(BR) + GAP;
+    return '<strong>' + fmt(d.date, { weekday: 'long', month: 'long', day: 'numeric' }) + '</strong>' +
+      '<blockquote>' + events.map(row).join(BR) + '</blockquote>' + BR;   // the quote ends its line itself: one <br> is the empty line
   }
 
   function post(week) {
     var total = week.days.reduce(function (n, d) { return n + (d.events || []).length; }, 0);
-    return '<p>' +
+    return '<div>' +
       '<strong>This Week in Moscow: ' + esc(week.weekRange) + '</strong>' + GAP +
       'A new week of English practice is here! Here is your weekly lineup of speaking clubs, game nights, and special events happening all over Moscow. Whether you are a beginner or an advanced speaker, there is something for you.' + GAP +
       'This week we have <strong>over ' + total + ' events</strong> across the city and online. Venues range from cozy coffee shops like Coffee Bean and Stars Coffee to lively bars like Katie O\'Shea\'s and Axiom Pub. Most clubs welcome new faces — just show up and start talking!' + GAP +
@@ -139,7 +141,7 @@
       'English Club with Nataly offers monthly subscriptions for 4, 6, and 8 sessions.' + GAP +
       '💥 Surf Coffee gives all participants a 10% discount on any drinks' + GAP +
       '<strong><a href="' + SITE + '">READ THE SCHEDULE WITHOUT VPN</a></strong>' +
-      '</p>';
+      '</div>';
   }
 
   var box = document.getElementById('post');
