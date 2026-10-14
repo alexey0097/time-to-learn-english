@@ -54,7 +54,7 @@ const schedule_2026_42 = {
     }, {
       "time" : "19:00",
       "dateTime" : "2026-10-12T19:00",
-      "club" : "Pablo Place - The Art of Gatherings",
+      "club" : "Pablo Place",
       "link" : "clubs/pablo-place.html",
       "telegramLink" : "https://t.me/pabloplace",
       "place" : "Park Muzeon",
@@ -103,7 +103,7 @@ const schedule_2026_42 = {
     "events" : [ {
       "time" : "10:30",
       "dateTime" : "2026-10-13T10:30",
-      "club" : "Pablo Place - Strangers for Two Hours",
+      "club" : "Pablo Place",
       "link" : "clubs/pablo-place.html",
       "telegramLink" : "https://t.me/pabloplace",
       "place" : "Online",
@@ -354,7 +354,7 @@ const schedule_2026_42 = {
     "events" : [ {
       "time" : "10:30",
       "dateTime" : "2026-10-15T10:30",
-      "club" : "Pablo Place - The Art of Gatherings",
+      "club" : "Pablo Place",
       "link" : "clubs/pablo-place.html",
       "telegramLink" : "https://t.me/pabloplace",
       "place" : "Online",
@@ -803,7 +803,7 @@ const schedule_2026_42 = {
     }, {
       "time" : "20:30",
       "dateTime" : "2026-10-17T20:30",
-      "club" : "Pablo Place - Strangers for Two Hours",
+      "club" : "Pablo Place",
       "link" : "clubs/pablo-place.html",
       "telegramLink" : "https://t.me/pabloplace",
       "place" : "MEGA Khimki",
