@@ -103,7 +103,7 @@ const schedule_2026_42 = {
     "events" : [ {
       "time" : "10:30",
       "dateTime" : "2026-10-13T10:30",
-      "club" : "Pablo Place - The Art of Gatherings",
+      "club" : "Pablo Place - Strangers for Two Hours",
       "link" : "clubs/pablo-place.html",
       "telegramLink" : "https://t.me/pabloplace",
       "place" : "Online",
@@ -798,6 +798,15 @@ const schedule_2026_42 = {
       "link" : "clubs/clean-open-mic.html",
       "telegramLink" : "https://t.me/englishstandupinmoscow",
       "place" : "Silvers Irish Pub",
+      "online" : false,
+      "emoji" : "🆕"
+    }, {
+      "time" : "20:30",
+      "dateTime" : "2026-10-17T20:30",
+      "club" : "Pablo Place - Strangers for Two Hours",
+      "link" : "clubs/pablo-place.html",
+      "telegramLink" : "https://t.me/pabloplace",
+      "place" : "MEGA Khimki",
       "online" : false,
       "emoji" : "🆕"
     } ]
