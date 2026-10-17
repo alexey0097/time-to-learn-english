@@ -453,6 +453,80 @@
   .entry:has(.more:hover) h2 { color: var(--line); }
   .flag { display: inline-block; width: 1.3em; height: 0.9em; object-fit: cover; border-radius: 2px; vertical-align: -0.1em; box-shadow: 0 0 0 1px var(--rule); margin-right: 0.25em; }   /* a little air before the text */
   .flag + .flag { margin-left: 0.05em; }   /* flags in a row: 0.3em apart in total */
+  .st { display: inline-block; width: 1.15em; height: 1.15em; vertical-align: -0.2em; background: var(--line); -webkit-mask: var(--st) center / contain no-repeat; mask: var(--st) center / contain no-repeat; }   /* brand sticker instead of emoji: the SVG file is a mask painted in the line colour of its card */
+  li.has-st { list-style: none; }   /* the sticker is the bullet */
+  /* stickers: img/stickers/NN-name.svg, the same files as in the brandbook */
+  .st-online { --st: url("../img/stickers/01-online.svg"); }
+  .st-place { --st: url("../img/stickers/02-place.svg"); }
+  .st-time { --st: url("../img/stickers/03-time.svg"); }
+  .st-schedule { --st: url("../img/stickers/04-schedule.svg"); }
+  .st-price { --st: url("../img/stickers/05-price.svg"); }
+  .st-gift { --st: url("../img/stickers/06-gift.svg"); }
+  .st-education { --st: url("../img/stickers/07-education.svg"); }
+  .st-level { --st: url("../img/stickers/08-level.svg"); }
+  .st-talk { --st: url("../img/stickers/09-talk.svg"); }
+  .st-group { --st: url("../img/stickers/10-group.svg"); }
+  .st-age { --st: url("../img/stickers/11-age.svg"); }
+  .st-books { --st: url("../img/stickers/12-books.svg"); }
+  .st-games { --st: url("../img/stickers/13-games.svg"); }
+  .st-film { --st: url("../img/stickers/14-film.svg"); }
+  .st-stage { --st: url("../img/stickers/15-stage.svg"); }
+  .st-photo { --st: url("../img/stickers/16-photo.svg"); }
+  .st-world { --st: url("../img/stickers/17-world.svg"); }
+  .st-business { --st: url("../img/stickers/18-business.svg"); }
+  .st-link { --st: url("../img/stickers/19-link.svg"); }
+  .st-star { --st: url("../img/stickers/20-star.svg"); }
+  .st-coffee { --st: url("../img/stickers/21-coffee.svg"); }
+  .st-bar { --st: url("../img/stickers/22-bar.svg"); }
+  .st-party { --st: url("../img/stickers/23-party.svg"); }
+  .st-outdoor { --st: url("../img/stickers/24-outdoor.svg"); }
+  .st-meet { --st: url("../img/stickers/25-meet.svg"); }
+  .st-sparkle { --st: url("../img/stickers/26-sparkle.svg"); }
+  .st-heart { --st: url("../img/stickers/27-heart.svg"); }
+  .st-smile { --st: url("../img/stickers/28-smile.svg"); }
+  .st-ticket { --st: url("../img/stickers/29-ticket.svg"); }
+  .st-music { --st: url("../img/stickers/30-music.svg"); }
+  .st-billiard { --st: url("../img/stickers/31-billiard.svg"); }
+  .st-channel { --st: url("../img/stickers/32-channel.svg"); }
+  .st-cards { --st: url("../img/stickers/33-cards.svg"); }
+  .st-mafia { --st: url("../img/stickers/34-mafia.svg"); }
+  .st-puzzle { --st: url("../img/stickers/35-puzzle.svg"); }
+  .st-crown { --st: url("../img/stickers/36-crown.svg"); }
+  .st-trophy { --st: url("../img/stickers/37-trophy.svg"); }
+  .st-idea { --st: url("../img/stickers/38-idea.svg"); }
+  .st-fire { --st: url("../img/stickers/39-fire.svg"); }
+  .st-rocket { --st: url("../img/stickers/40-rocket.svg"); }
+  .st-lightning { --st: url("../img/stickers/41-lightning.svg"); }
+  .st-clover { --st: url("../img/stickers/42-clover.svg"); }
+  .st-theatre { --st: url("../img/stickers/43-theatre.svg"); }
+  .st-sun { --st: url("../img/stickers/44-sun.svg"); }
+  .st-picnic { --st: url("../img/stickers/45-picnic.svg"); }
+  .st-train { --st: url("../img/stickers/46-train.svg"); }
+  .st-walk { --st: url("../img/stickers/47-walk.svg"); }
+  .st-ball { --st: url("../img/stickers/48-ball.svg"); }
+  .st-city { --st: url("../img/stickers/49-city.svg"); }
+  .st-home { --st: url("../img/stickers/50-home.svg"); }
+  .st-phone { --st: url("../img/stickers/51-phone.svg"); }
+  .st-mail { --st: url("../img/stickers/52-mail.svg"); }
+  .st-bot { --st: url("../img/stickers/53-bot.svg"); }
+  .st-key { --st: url("../img/stickers/54-key.svg"); }
+  .st-poll { --st: url("../img/stickers/55-poll.svg"); }
+  .st-plane { --st: url("../img/stickers/56-plane.svg"); }
+  .st-food { --st: url("../img/stickers/57-food.svg"); }
+  .st-headphones { --st: url("../img/stickers/58-headphones.svg"); }
+  .st-yoga { --st: url("../img/stickers/59-yoga.svg"); }
+  .st-no { --st: url("../img/stickers/60-no.svg"); }
+  .st-target { --st: url("../img/stickers/61-target.svg"); }
+  .st-repeat { --st: url("../img/stickers/62-repeat.svg"); }
+  .st-pencil { --st: url("../img/stickers/63-pencil.svg"); }
+  .st-search { --st: url("../img/stickers/64-search.svg"); }
+  .st-check { --st: url("../img/stickers/65-check.svg"); }
+  .st-hand { --st: url("../img/stickers/66-hand.svg"); }
+  .st-math { --st: url("../img/stickers/67-math.svg"); }
+  .st-medical { --st: url("../img/stickers/68-medical.svg"); }
+  .st-mountain { --st: url("../img/stickers/69-mountain.svg"); }
+  .st-pin { --st: url("../img/stickers/70-pin.svg"); }
+  .st-news { --st: url("../img/stickers/71-news.svg"); }
   @media (max-width: 40rem) {
     .entry { --media: 5.5rem; column-gap: 1rem; grid-template-rows: auto; }
     .entry:has(.entry__avatar) { --media: 3.5rem; column-gap: 1rem; }
