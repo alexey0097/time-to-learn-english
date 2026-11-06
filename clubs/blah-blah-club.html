@@ -7,6 +7,49 @@
 <meta content="Alexey Leonov" name="author"/>
 <link rel="stylesheet" href="../metro/metro.css">
 <script src="../metro/metro.js"></script>
+<style>
+  .marquee {
+    overflow: hidden;
+    white-space: nowrap;
+    margin-block: 1.25rem;
+    padding-block: 0.5rem;
+    border-block: 1px solid var(--rule);
+    line-height: 1;
+  }
+  .marquee__track { display: inline-flex; vertical-align: top; animation: marquee 22s linear infinite; }
+  .marquee__group { display: inline-flex; align-items: center; gap: 0.7rem; padding-right: 2.5rem; }
+  .marquee__group b { display: inline-flex; align-items: center; gap: 0.7rem; font: 600 0.86rem/1 var(--text); letter-spacing: 0.02em; }
+  .marquee .st { width: 0.95em; height: 0.95em; }
+  @keyframes marquee { to { transform: translateX(-50%); } }
+  @media (prefers-reduced-motion: reduce) { .marquee__track { animation: none; } }
+
+  .formats { display: grid; grid-template-columns: 1fr 1fr; column-gap: 2rem; margin-top: 1.25rem; }
+  .format { display: grid; grid-template-columns: 3.6rem minmax(0, 1fr); gap: 0.85rem; align-items: start; padding: 0.85rem 0; border-top: 1px solid var(--rule); }
+  .format:nth-child(-n + 2) { border-top: 0; padding-top: 0; }
+  .format__photo { width: 3.6rem; height: 3.6rem; aspect-ratio: 1; object-fit: cover; border-radius: 10px; box-shadow: 0 0 0 1px var(--rule); }
+  .format__body { display: block; }
+  .format h4 { display: flex; align-items: center; gap: 0.4rem; font-size: 1rem; line-height: 1.3; margin: 0; }
+  .format h4 .st { width: 0.9em; height: 0.9em; }
+  .format__body p { margin-top: 0.2rem; color: var(--muted); font-size: 0.82rem; line-height: 1.5; }
+  @media (max-width: 40rem) {
+    .formats { grid-template-columns: 1fr; }
+    .format:nth-child(2) { border-top: 1px solid var(--rule); padding-top: 0.85rem; }
+  }
+
+  .team { grid-template-columns: repeat(10, minmax(0, 1fr)); gap: 2rem 1.5rem; margin-top: 1.75rem; }
+  .team .person { grid-column: span 2; }
+  .team .person .avatar { width: 100%; height: auto; aspect-ratio: 1; border-radius: 1.2rem; margin-bottom: 0.7rem; box-shadow: 0 0 0 1px var(--rule); }
+  @media (max-width: 48rem) {
+    .team { grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 1.9rem 1.25rem; }
+  }
+  @media (max-width: 40rem) {
+    .team { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.6rem 1rem; }
+  }
+  .layout__aside .panel > .photo {
+    margin-top: 1rem;
+    border-radius: var(--radius);
+  }
+</style>
 <meta name="theme-color" content="#18803a">
 <title>Blah-Blah Club — Time to Learn English</title>
 
@@ -90,10 +133,12 @@
                             communication in a relaxed setting, breaking the language barrier, and having a great time
                             over your favourite drink. <span class="st st-coffee" aria-hidden="true"></span>
                         </p>
-<hr/>
-<p><b><span class="st st-rocket" aria-hidden="true"></span> BOOST YOUR SPEAKING SKILLS<span class="st st-rocket" aria-hidden="true"></span> BOOST YOUR SPEAKING SKILLS <span class="st st-rocket" aria-hidden="true"></span> BOOST YOUR SPEAKING
-                                    SKILLS <span class="st st-rocket" aria-hidden="true"></span> BOOST YOUR SPEAKING SKILLS <span class="st st-rocket" aria-hidden="true"></span> BOOST YOUR SPEAKING SKILLS <span class="st st-rocket" aria-hidden="true"></span></b></p>
-<hr/>
+<div class="marquee" aria-label="Boost your speaking skills">
+<div class="marquee__track">
+<span class="marquee__group"><b><span class="st st-rocket" aria-hidden="true"></span> BOOST YOUR SPEAKING SKILLS <span class="st st-rocket" aria-hidden="true"></span> BOOST YOUR SPEAKING SKILLS <span class="st st-rocket" aria-hidden="true"></span> BOOST YOUR SPEAKING SKILLS <span class="st st-rocket" aria-hidden="true"></span></b></span>
+<span class="marquee__group" aria-hidden="true"><b><span class="st st-rocket" aria-hidden="true"></span> BOOST YOUR SPEAKING SKILLS <span class="st st-rocket" aria-hidden="true"></span> BOOST YOUR SPEAKING SKILLS <span class="st st-rocket" aria-hidden="true"></span> BOOST YOUR SPEAKING SKILLS <span class="st st-rocket" aria-hidden="true"></span></b></span>
+</div>
+</div>
 <h3>Our Format</h3>
 <p>
                             Every meetup starts with introductions: everyone shares a little about themselves and their
@@ -160,9 +205,10 @@
 </tbody>
 </table></div>
 <h3>Meetup formats</h3>
-<div class="grid" style="--min: 12rem">
-<div>
-<div class="panel">
+<div class="formats">
+<div class="format">
+<img alt="Members gathered around a cafe table in the evening" class="format__photo" loading="lazy" src="../img/min_IMG_2242.jpg"/>
+<div class="format__body">
 <h4><span class="st st-talk" aria-hidden="true"></span> Speaking club at cafés / bars</h4>
 <p>
                                             Regular meetups at various Surf Coffee® locations and other cafés in Moscow
@@ -170,16 +216,19 @@
                                         </p>
 </div>
 </div>
-<div>
-<div class="panel">
+<div class="format">
+<img alt="Members playing a board game at a meetup" class="format__photo" loading="lazy" src="../img/min_english-games-club-01.jpg"/>
+<div class="format__body">
 <h4><span class="st st-games" aria-hidden="true"></span> Game-based meetups</h4>
 <p>
                                             Alias, Cashflow, Shelter, and other board games, plus quizzes in English.
+                                            No experience needed.
                                         </p>
 </div>
 </div>
-<div>
-<div class="panel">
+<div class="format">
+<img alt="Members sitting on a picnic blanket in a park" class="format__photo" loading="lazy" src="../img/min_kates-picnic-01.jpg"/>
+<div class="format__body">
 <h4><span class="st st-picnic" aria-hidden="true"></span> Events / picnics</h4>
 <p>
                                             Networking, chatting in English, team games, and great company.
@@ -187,13 +236,13 @@
                                         </p>
 </div>
 </div>
-<div>
-<div class="panel">
+<div class="format">
+<img alt="Teacher leading a group session for a company" class="format__photo" loading="lazy" src="../img/min_mecc-01.jpg"/>
+<div class="format__body">
 <h4><span class="st st-business" aria-hidden="true"></span> Work with companies</h4>
 <p>
-                                            Corporate partnerships: team-building events and other activities to level
-                                            up your English. We also design and run group or individual sessions with
-                                            our teachers for your company.
+                                            Corporate team-building and other activities to level up your English,
+                                            plus group or individual sessions.
                                         </p>
 </div>
 </div>
@@ -243,7 +292,7 @@
                                 </p>
 <hr/>
 <h3>Team</h3>
-<div class="grid" style="--min: 12rem">
+<div class="grid team">
 <div class="person">
 <img alt="Anastasia" class="avatar" loading="lazy" src="../img/IMG_9792.JPG"/>
 <h4>Anastasia</h4>
@@ -335,26 +384,27 @@
                         </p>
 <hr/>
 <h3>What people say</h3>
+<div id="reviewsContainer">
 <blockquote>
 <p>
                                     All good! The teacher set the right tone for conversation, and the participants were
                                     supportive too. A native speaker was a bonus <span class="st st-smile" aria-hidden="true"></span> Thank you! I'll come again if the
                                     schedule works out for me ))
                                 </p>
-<footer>Anna Sokolova · <img src="../img/flags/ru.svg" class="flag" alt=""> Russia · May 3, 2026 · <span class="st st-star" aria-hidden="true"></span><span class="st st-star" aria-hidden="true"></span><span class="st st-star" aria-hidden="true"></span><span class="st st-star" aria-hidden="true"></span><span class="st st-star" aria-hidden="true"></span></footer></blockquote>
+<footer>Anna Sokolova · <img src="../img/flags/ru.svg" class="flag" alt=""> Russia · May 3, 2026 · <span class="st st-star-fill" aria-hidden="true"></span><span class="st st-star-fill" aria-hidden="true"></span><span class="st st-star-fill" aria-hidden="true"></span><span class="st st-star-fill" aria-hidden="true"></span><span class="st st-star-fill" aria-hidden="true"></span></footer></blockquote>
 <blockquote>
 <p>
                                     I really enjoyed it! The topic was interesting, the meetup was well moderated, and
                                     the guys were really engaged in the conversation. I'm planning to join other meetups
                                     after my vacation.
                                 </p>
-<footer>Dmitry Volkov · <img src="../img/flags/ru.svg" class="flag" alt=""> Russia · April 25, 2026 · <span class="st st-star" aria-hidden="true"></span><span class="st st-star" aria-hidden="true"></span><span class="st st-star" aria-hidden="true"></span><span class="st st-star" aria-hidden="true"></span><span class="st st-star" aria-hidden="true"></span></footer></blockquote>
+<footer>Dmitry Volkov · <img src="../img/flags/ru.svg" class="flag" alt=""> Russia · April 25, 2026 · <span class="st st-star-fill" aria-hidden="true"></span><span class="st st-star-fill" aria-hidden="true"></span><span class="st st-star-fill" aria-hidden="true"></span><span class="st st-star-fill" aria-hidden="true"></span><span class="st st-star-fill" aria-hidden="true"></span></footer></blockquote>
 <blockquote>
 <p>
                                     Hey! That was cool, I liked it <span class="st st-smile" aria-hidden="true"></span> The discussion is well moderated, which is great.
                                     The topic was awesome too — there's something to talk about at any level of English.
                                 </p>
-<footer>Polina Smirnova · <img src="../img/flags/ru.svg" class="flag" alt=""> Russia · April 18, 2026 · <span class="st st-star" aria-hidden="true"></span><span class="st st-star" aria-hidden="true"></span><span class="st st-star" aria-hidden="true"></span><span class="st st-star" aria-hidden="true"></span><span class="st st-star" aria-hidden="true"></span></footer></blockquote>
+<footer>Polina Smirnova · <img src="../img/flags/ru.svg" class="flag" alt=""> Russia · April 18, 2026 · <span class="st st-star-fill" aria-hidden="true"></span><span class="st st-star-fill" aria-hidden="true"></span><span class="st st-star-fill" aria-hidden="true"></span><span class="st st-star-fill" aria-hidden="true"></span><span class="st st-star-fill" aria-hidden="true"></span></footer></blockquote>
 <blockquote>
 <p>
                                     Just wanted to say a few words about Anna-Maria: she is magnificent! I really
@@ -366,20 +416,20 @@
                                     convenient times, more topics, more people. Love <span class="st st-heart" aria-hidden="true"></span> So I decided to leave a review
                                     too <span class="st st-smile" aria-hidden="true"></span>
                                 </p>
-<footer>Ekaterina Morozova · <img src="../img/flags/ru.svg" class="flag" alt=""> Russia · May 7, 2026 · <span class="st st-star" aria-hidden="true"></span><span class="st st-star" aria-hidden="true"></span><span class="st st-star" aria-hidden="true"></span><span class="st st-star" aria-hidden="true"></span><span class="st st-star" aria-hidden="true"></span></footer></blockquote>
+<footer>Ekaterina Morozova · <img src="../img/flags/ru.svg" class="flag" alt=""> Russia · May 7, 2026 · <span class="st st-star-fill" aria-hidden="true"></span><span class="st st-star-fill" aria-hidden="true"></span><span class="st st-star-fill" aria-hidden="true"></span><span class="st st-star-fill" aria-hidden="true"></span><span class="st st-star-fill" aria-hidden="true"></span></footer></blockquote>
 <blockquote>
 <p>
                                     Good evening! Everything was great, I really enjoyed it <span class="st st-smile" aria-hidden="true"></span> I hadn't practiced
                                     English for a long time, so it was hard at first, but by the end I got into the
                                     flow. Everyone was very nice and friendly <span class="st st-smile" aria-hidden="true"></span>
                                 </p>
-<footer>Olga Kuznetsova · <img src="../img/flags/ru.svg" class="flag" alt=""> Russia · April 30, 2026 · <span class="st st-star" aria-hidden="true"></span><span class="st st-star" aria-hidden="true"></span><span class="st st-star" aria-hidden="true"></span><span class="st st-star" aria-hidden="true"></span><span class="st st-star" aria-hidden="true"></span></footer></blockquote>
+<footer>Olga Kuznetsova · <img src="../img/flags/ru.svg" class="flag" alt=""> Russia · April 30, 2026 · <span class="st st-star-fill" aria-hidden="true"></span><span class="st st-star-fill" aria-hidden="true"></span><span class="st st-star-fill" aria-hidden="true"></span><span class="st st-star-fill" aria-hidden="true"></span><span class="st st-star-fill" aria-hidden="true"></span></footer></blockquote>
 <blockquote>
 <p>
                                     Coming to your speaking clubs has kind of become a routine for me, honestly: I want
                                     to go once a week in Moscow. If I had the time, I'd go to every single one.
                                 </p>
-<footer>Ivan Petrov · <img src="../img/flags/ru.svg" class="flag" alt=""> Russia · May 1, 2026 · <span class="st st-star" aria-hidden="true"></span><span class="st st-star" aria-hidden="true"></span><span class="st st-star" aria-hidden="true"></span><span class="st st-star" aria-hidden="true"></span><span class="st st-star" aria-hidden="true"></span></footer></blockquote>
+<footer>Ivan Petrov · <img src="../img/flags/ru.svg" class="flag" alt=""> Russia · May 1, 2026 · <span class="st st-star-fill" aria-hidden="true"></span><span class="st st-star-fill" aria-hidden="true"></span><span class="st st-star-fill" aria-hidden="true"></span><span class="st st-star-fill" aria-hidden="true"></span><span class="st st-star-fill" aria-hidden="true"></span></footer></blockquote>
 <blockquote>
 <p>
                                     Hello! I really enjoyed it. The participants' language level was high, so we could
@@ -387,7 +437,8 @@
                                     Anastasia organized everything wonderfully, and it was also lovely to chat with her
                                     after the club.
                                 </p>
-<footer>Maria Fedorova · <img src="../img/flags/ru.svg" class="flag" alt=""> Russia · May 5, 2026 · <span class="st st-star" aria-hidden="true"></span><span class="st st-star" aria-hidden="true"></span><span class="st st-star" aria-hidden="true"></span><span class="st st-star" aria-hidden="true"></span><span class="st st-star" aria-hidden="true"></span></footer></blockquote>
+<footer>Maria Fedorova · <img src="../img/flags/ru.svg" class="flag" alt=""> Russia · May 5, 2026 · <span class="st st-star-fill" aria-hidden="true"></span><span class="st st-star-fill" aria-hidden="true"></span><span class="st st-star-fill" aria-hidden="true"></span><span class="st st-star-fill" aria-hidden="true"></span><span class="st st-star-fill" aria-hidden="true"></span></footer></blockquote>
+</div>
 <hr/>
 <h3>Join us</h3>
 <p>

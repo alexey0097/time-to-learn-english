@@ -6,6 +6,24 @@
 <meta content="" name="description"/>
 <meta content="Alexey Leonov" name="author"/>
 <link rel="stylesheet" href="../metro/metro.css">
+<style>
+  .circles { display: grid; grid-template-columns: 1fr 1fr; column-gap: 2rem; margin-top: 1.25rem; }
+  .circle {
+    display: grid; grid-template-columns: 3.6rem minmax(0, 1fr);
+    align-items: start; gap: .85rem;
+    padding: .85rem 0; border-top: 1px solid var(--rule);
+  }
+  .circle:nth-child(-n + 2) { border-top: 0; padding-top: 0; }
+  .circle img { width: 3.6rem; height: 3.6rem; object-fit: cover; border-radius: 10px; }
+  .circle__main { display: block; }
+  .circle__title { display: flex; align-items: center; gap: .4rem; font: 600 1rem/1.3 var(--display); }
+  .circle__title .st { width: .9em; height: .9em; }
+  .circle__text { display: block; margin-top: .2rem; color: var(--muted); font-size: .82rem; line-height: 1.5; }
+  @media (max-width: 40rem) {
+    .circles { grid-template-columns: 1fr; }
+    .circle:nth-child(2) { border-top: 1px solid var(--rule); padding-top: .85rem; }
+  }
+</style>
 <script src="../metro/metro.js"></script>
 <meta name="theme-color" content="#18803a">
 <title>English Club with Nataly — Time to Learn English</title>
@@ -147,33 +165,32 @@
 <br/>
 <h4><span class="st st-sparkle" aria-hidden="true"></span> Interest Circles</h4>
 <p>Themed small-group discussions built around <strong>shared interests</strong>. Each meetup is dedicated to one topic — you talk in <strong>groups of 4–5 people with rotation</strong>, sharing personal experiences rather than giving "correct answers". Interest Circles are built around a range of interests our guests have in common:</p>
-<div class="grid" style="--min: 12rem">
-<div>
-<p><strong><span class="st st-books" aria-hidden="true"></span> Book Club</strong></p>
-<p>No specific book to read — just come ready to <strong>share your favourite authors and books</strong>, swap recommendations, and meet fellow bookworms.</p>
+<div class="circles">
+<div class="circle">
+<img alt="" loading="lazy" src="../img/min_IMG_2201.jpg"/>
+<span class="circle__main"><span class="circle__title"><span class="st st-books" aria-hidden="true"></span> Book Club</span><span class="circle__text">No specific book to read — just come ready to <strong>share your favourite authors and books</strong>, swap recommendations, and meet fellow bookworms.</span></span>
 </div>
-<div>
-<p><strong><span class="st st-film" aria-hidden="true"></span> Film Club</strong></p>
-<p>From the films you <strong>love or hate</strong> to your favorite directors and genres — let's dive into our preferences and everything film-related.</p>
+<div class="circle">
+<img alt="" loading="lazy" src="../img/min_IMG_2207.jpg"/>
+<span class="circle__main"><span class="circle__title"><span class="st st-film" aria-hidden="true"></span> Film Club</span><span class="circle__text">From the films you <strong>love or hate</strong> to your favorite directors and genres — let's dive into our preferences and everything film-related.</span></span>
 </div>
-<div>
-<p><strong><span class="st st-heart" aria-hidden="true"></span> Wellness Club</strong></p>
-<p>Let's talk about the key aspects of our well-being: <strong>diet, sleep, exercise, and mental health</strong> — and motivate each other to lead a healthier lifestyle.</p>
+<div class="circle">
+<img alt="" loading="lazy" src="../img/min_IMG_2208.jpg"/>
+<span class="circle__main"><span class="circle__title"><span class="st st-heart" aria-hidden="true"></span> Wellness Club</span><span class="circle__text">Let's talk about the key aspects of our well-being: <strong>diet, sleep, exercise, and mental health</strong> — and motivate each other to lead a healthier lifestyle.</span></span>
 </div>
-<div>
-<p><strong><span class="st st-talk" aria-hidden="true"></span> Polyglot Club</strong></p>
-<p>Whether you speak a second foreign language or not, come get <strong>inspired by language learning experiences</strong>, exchange tips, and discover useful resources.</p>
+<div class="circle">
+<img alt="" loading="lazy" src="../img/min_IMG_2210.jpg"/>
+<span class="circle__main"><span class="circle__title"><span class="st st-talk" aria-hidden="true"></span> Polyglot Club</span><span class="circle__text">Whether you speak a second foreign language or not, come get <strong>inspired by language learning experiences</strong>, exchange tips, and discover useful resources.</span></span>
 </div>
-<div>
-<p><strong><span class="st st-level" aria-hidden="true"></span> Business Club</strong></p>
-<p>We'll be discussing <strong>professional experiences, career moves, job search</strong>, and more — share your path and learn from others.</p>
+<div class="circle">
+<img alt="" loading="lazy" src="../img/min_IMG_2212.JPG"/>
+<span class="circle__main"><span class="circle__title"><span class="st st-level" aria-hidden="true"></span> Business Club</span><span class="circle__text">We'll be discussing <strong>professional experiences, career moves, job search</strong>, and more — share your path and learn from others.</span></span>
 </div>
-<div>
-<p><strong><span class="st st-plane" aria-hidden="true"></span> Travel Club</strong></p>
-<p>We'd love to hear your <strong>favourite travel stories</strong> and learn about the destinations you've explored or dream of visiting.</p>
+<div class="circle">
+<img alt="" loading="lazy" src="../img/min_IMG_2186.JPG"/>
+<span class="circle__main"><span class="circle__title"><span class="st st-plane" aria-hidden="true"></span> Travel Club</span><span class="circle__text">We'd love to hear your <strong>favourite travel stories</strong> and learn about the destinations you've explored or dream of visiting.</span></span>
 </div>
 </div>
-<img alt="Interest Circles meetup" class="photo" loading="lazy" src="../img/min_IMG_2201.jpg"/>
 <h4><span class="st st-heart" aria-hidden="true"></span> English Speed Dating</h4>
 <p>Looking for someone you'll <strong>truly click with</strong>? At our speed-dating meetup, you'll make lots of acquaintances, have plenty of speaking practice in English, and maybe even find someone special. We've already held several speed-dating events, with <strong>almost 40 people attending each</strong>.</p>
 <p>We rent a <strong>private venue just for our group</strong>, so there's no awkwardness of strangers watching. The evening starts with a group warm-up, then fast pair chats, free mingling, and light games — <strong>3 hours total</strong>, so there's more time and less rush. Drinks and snacks are included, and you'll get a <strong>matching sheet</strong> to mark the people you connected with — matches arrive the next day. Spots are limited to <strong>20 women and 20 men</strong>.</p>
@@ -212,7 +229,7 @@
 
 <p>I’ve been a regular at the English Club with Nataly for about half a year. I’d like to say a big thank you to the hosts for the brilliant idea and for putting together each meeting so smoothly. This club is a fantastic opportunity to practise your spoken English and get to know new people. You can take part in both one-on-one chats, where the topics range from travelling and weekend plans to psychology, and group discussions, where you can share stories from your own life or give your opinion on a debatable topic. I’d recommend this club to anyone who’s learning English or to those who are just tired of the daily grind and want to socialise more. See you there!
 					</p>
-<footer>Roman Smirnov · <img src="../img/flags/ru.svg" class="flag" alt=""> Russia · May 7, 2026 · <span class="st st-star" aria-hidden="true"></span><span class="st st-star" aria-hidden="true"></span><span class="st st-star" aria-hidden="true"></span><span class="st st-star" aria-hidden="true"></span><span class="st st-star" aria-hidden="true"></span></footer></blockquote>
+<footer>Roman Smirnov · <img src="../img/flags/ru.svg" class="flag" alt=""> Russia · May 7, 2026 · <span class="st st-star-fill" aria-hidden="true"></span><span class="st st-star-fill" aria-hidden="true"></span><span class="st st-star-fill" aria-hidden="true"></span><span class="st st-star-fill" aria-hidden="true"></span><span class="st st-star-fill" aria-hidden="true"></span></footer></blockquote>
 </div>
       </article>
       <section class="gap-top" aria-label="Latest posts">
