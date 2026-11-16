@@ -433,7 +433,7 @@
   .entry:has(.entry__avatar) { --media: 4.5rem; column-gap: 1.25rem; grid-template-rows: auto; }
   /* square photo with rounded corners, as on the teacher cards: the radius is 30% of the side,
      and the side matches the height of the head next to it (name, role, tags), so the photo reads as a column.
-     Phones keep the round portrait: there the blocks stack, and the circle sits better with a two-line head */
+     Phones keep the round portrait: there the blocks stack in one column */
   @media (min-width: 40rem) {
     .entry__avatar.entry__avatar--square { border-radius: 30%; }
     .entry:has(.entry__avatar--square) { --media: 5rem; }
@@ -447,10 +447,11 @@
   .entry:has(> .entry__avatar) > .entry__head > * { grid-column: 2; }
   .entry:has(> .entry__avatar) > .entry__head > .facts { grid-column: 1 / -1; }   /* facts start at the left edge */
   .entry:has(> .entry__avatar) > .entry__text { margin-top: 1rem; max-width: none; }   /* text uses the full card width */
-  /* on desktop the tags sit in their own column, so the facts row gets a larger gap above and a tighter one below;
-     on phones the tags and the facts are stacked in one column and stay one meta block */
+  /* on desktop the tags sit in their own column: they hug the role, keep a small gap under them (the photo's bottom
+     edge runs below), and the facts row and the text share one even gap. Phones keep tags and facts as one meta block */
   @media (min-width: 40rem) {
-    .entry:has(> .entry__avatar--square) > .entry__head > .facts { margin-top: 1rem; }
+    .entry:has(> .entry__avatar--square) > .entry__head > .tags { margin-top: 0.35rem; margin-bottom: 0.35rem; }
+    .entry:has(> .entry__avatar--square) > .entry__head > .facts { margin-top: 0.75rem; }
     .entry:has(> .entry__avatar--square) > .entry__text { margin-top: 0.75rem; }
   }
   .entry h2 { font-size: var(--step-1); margin-top: 0.2rem; }
