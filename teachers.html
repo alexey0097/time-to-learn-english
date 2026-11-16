@@ -2193,8 +2193,8 @@
                             const [person, ...rest] = t.name.split(' — ');
                             const role = rest.join(' — ');
                             const avatar = t.photo
-                                ? `<img class="entry__avatar" src="${esc(t.photo)}" alt="" width="72" height="72" loading="lazy">`
-                                : `<div class="entry__avatar" aria-hidden="true">${initials(t.name)}</div>`;
+                                ? `<img class="entry__avatar entry__avatar--square" src="${esc(t.photo)}" alt="" width="72" height="72" loading="lazy">`
+                                : `<div class="entry__avatar entry__avatar--square" aria-hidden="true">${initials(t.name)}</div>`;
                             const langs = t.languages.map(l => `<b class="tag ${LANG_COLOR[l] ? 'line-' + LANG_COLOR[l] : 'tag--plain'}">${esc(l)}</b>`).join('');
                             const facts = t.facts.length ? `<ul class="facts">${t.facts.map(f => `<li>${f}</li>`).join('')}</ul>` : '';
                             const label = (t.contactLabel || '').replace(/\s*→\s*$/, '');

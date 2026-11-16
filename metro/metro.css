@@ -431,6 +431,14 @@
     background: var(--surface); color: var(--muted); font: 600 1.1rem/1 var(--display);
   }
   .entry:has(.entry__avatar) { --media: 4.5rem; column-gap: 1.25rem; grid-template-rows: auto; }
+  /* square photo with rounded corners, as on the teacher cards: the radius is 30% of the side,
+     and the side matches the height of the head next to it (name, role, tags), so the photo reads as a column.
+     Phones keep the round portrait: there the blocks stack, and the circle sits better with a two-line head */
+  @media (min-width: 40rem) {
+    .entry__avatar.entry__avatar--square { border-radius: 30%; }
+    .entry:has(.entry__avatar--square) { --media: 5rem; }
+    .entry:has(> .entry__avatar--square) > .entry__avatar { align-self: center; }   /* name, role and tags stay centred beside the photo */
+  }
   /* people: only the head sits next to the portrait, the text and buttons use the full width */
   .entry:has(> .entry__avatar) > .entry__avatar { grid-row: 1 / span 3; }
   .entry:has(> .entry__avatar):not(:has(.entry__sub)) > .entry__avatar { grid-row: 1 / span 2; }
@@ -439,6 +447,12 @@
   .entry:has(> .entry__avatar) > .entry__head > * { grid-column: 2; }
   .entry:has(> .entry__avatar) > .entry__head > .facts { grid-column: 1 / -1; }   /* facts start at the left edge */
   .entry:has(> .entry__avatar) > .entry__text { margin-top: 1rem; max-width: none; }   /* text uses the full card width */
+  /* on desktop the tags sit in their own column, so the facts row gets a larger gap above and a tighter one below;
+     on phones the tags and the facts are stacked in one column and stay one meta block */
+  @media (min-width: 40rem) {
+    .entry:has(> .entry__avatar--square) > .entry__head > .facts { margin-top: 1rem; }
+    .entry:has(> .entry__avatar--square) > .entry__text { margin-top: 0.75rem; }
+  }
   .entry h2 { font-size: var(--step-1); margin-top: 0.2rem; }
   .entry__sub { margin-top: 0.3rem; color: var(--muted); font-size: 0.95rem; }
   .entry__sub--line { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }   /* one line: the card never grows; full text in title */
